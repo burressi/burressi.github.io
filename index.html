@@ -1,33 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Ian Burress | Mechanical Engineer</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ian Burress - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
+
 <body>
-<header>
-<h1>Ian Burress</h1>
-<p>Mechanical Engineer | Motorsports | Hybrid Powertrains</p>
-</header>
-<section>
-<h2>About Me</h2>
-<p>I am a mechanical engieer focused in automotive powertrain and large engine applications. </p>
-</section>
-<section>
-<h2>Projects</h2>
-<ul>
-<li><strong>Solar Car Racing Team – Texas A&M</strong>: Led 85+ members to design and race a road-legal EV.</li>
-<li><strong>FSAE Chassis Simulator conversion </strong>: Converting a retired chassis into a functional simulator for training.</li>
-</ul>
-</section>
-<section>
-<h2>Resume</h2>
-<a href="Your_Resume.pdf" target="_blank">Download My Resume</a>
-</section>
-<footer>
-<p>Contact me: ian.n.burress@gmail.com | <a href="https://www.linkedin.com/in/YOUR-LINKEDIN">LinkedIn</a></p>
-</footer>
+  <!-- Sidebar -->
+  <section id="sidebar">
+    <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank">
+      <img class="sidebarIcon icon" src="icons/LinkedIn.png" />
+    </a>
+    <a href="https://github.com/YOUR_USERNAME" target="_blank">
+      <img class="sidebarIcon icon" src="icons/Github.png" />
+    </a>
+    <a href="mailto:ian.n.burress@gmail.com" target="_blank">
+      <img class="sidebarIcon icon" src="icons/Email.png" />
+    </a>
+  </section>
+
+  <!-- Main Section -->
+  <main>
+    <!-- Intro -->
+    <section id="intro" class="page">
+      <p id="introText">Ian Burress</p>
+    </section>
+
+    <!-- About -->
+    <section id="page1" class="page scroll">
+      <div id="contentPage1" class="center">
+        <div class="spacer"></div>
+        <div class="black_out">
+          <p class="pageTitle">About Me</p>
+          <p class="pageText">Mechanical Engineer with experience at Caterpillar and deep involvement in electric vehicle research, sustainability design, and student leadership. My work integrates product validation, hands-on design, and multidisciplinary engineering collaboration.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="page2" class="page">
+      <div id="contentPage2" class="center">
+        <div class="platform">
+          <div class="platformImage">
+            <div class="background" style="background-image:url('images/fsae.png')"></div>
+          </div>
+          <p class="blockTitle">FSAE Chassis iRacing Rig</p>
+          <div class="platformDescription">
+            <p class="largeText">Simulator Conversion Project</p>
+            <p class="smallText">2022–2023</p>
+            <p class="mediumText">Converted a Formula Student chassis into a working iRacing setup with structural modifications, interface mounts, and driver comfort considerations using Autodesk design tools.</p>
+          </div>
+        </div>
+
+        <div class="platform">
+          <div class="platformImage">
+            <div class="background" style="background-image:url('images/thesis.png')"></div>
+          </div>
+          <p class="blockTitle">DOE Electron Beam Facility</p>
+          <div class="platformDescription">
+            <p class="largeText">M.S. Thesis Project</p>
+            <p class="smallText">2022–2024</p>
+            <p class="mediumText">Designed a mobile electron beam system for soil remediation funded by the Department of Energy. Focused on mechanical design, simulation, and review with stakeholders.</p>
+          </div>
+        </div>
+
+        <!-- Add more projects in the same format -->
+      </div>
+    </section>
+
+    <!-- Resume Link -->
+    <section id="page3" class="page">
+      <div class="center">
+        <p class="pageTitle">Resume</p>
+        <a href="Burress_Ian_Resume.pdf" download>Download PDF</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <section id="footer">
+    <p id="footerText">© Ian Burress</p>
+  </section>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
- 
