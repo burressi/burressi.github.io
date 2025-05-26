@@ -2,112 +2,117 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ian Burress - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 
 <body>
   <!-- Sidebar -->
-  <section id="sidebar">
-    <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank">
-      <img class="sidebarIcon icon" src="icons/linkedin.png" />
+  <nav id="sidebar">
+    <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" aria-label="LinkedIn Profile">
+      <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
     </a>
-    <a href="https://github.com/YOUR_USERNAME" target="_blank">
-      <img class="sidebarIcon icon" src="icons/github.png" />
+    <a href="https://github.com/YOUR_USERNAME" target="_blank" aria-label="GitHub Profile">
+      <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
     </a>
-    <a href="mailto:ian.n.burress@gmail.com" target="_blank">
-      <img class="sidebarIcon icon" src="icons/Email.png" />
+    <a href="mailto:ian.n.burress@gmail.com" target="_blank" aria-label="Email Ian">
+      <img class="sidebarIcon icon" src="icons/Email.png" alt="Email Icon" />
     </a>
-  </section>
+  </nav>
 
   <!-- Main Section -->
   <main>
     <!-- Intro -->
     <section id="intro" class="page">
-      <p id="introText">Ian Burress</p>
+      <h1 id="introText">Ian Burress</h1>
     </section>
 
     <!-- About -->
     <section id="page1" class="page scroll">
-      <div id="contentPage1" class="center">
+      <div class="center">
         <div class="spacer"></div>
         <div class="black_out">
-          <p class="pageTitle">About Me</p>
-		<p class="pageText" style="text-align:left;">I am a Mechanical Engineer with primary interest in automotive engineering, hybrid powertrains, and structures engineering. </p>
-		<p class="pageText" style="text-align:left;">I have completed my Bachelor's and Master's degree in Mechanical Engineering from Drexel University in June 2018.</p>
-		<p class="pageText" style="text-align:left;">This website provides an overview of various work experiences, projects, and related activities that I have done since the start of my Bachelor's program.</p>         </div>
+          <h2 class="pageTitle">About Me</h2>
+          <p class="pageText">I am a Mechanical Engineer with a primary interest in automotive engineering, hybrid powertrains, and structures engineering.</p>
+          <p class="pageText">I earned both my Bachelor's and Master's degrees in Mechanical Engineering from Drexel University in June 2018.</p>
+          <p class="pageText">This website highlights my work experiences, engineering projects, and related activities since the start of my undergraduate journey.</p>
+        </div>
       </div>
     </section>
 
     <!-- Projects -->
     <section id="page2" class="page">
-      <div id="contentPage2" class="center">
+      <div class="center">
+        <!-- Project -->
         <div class="platform">
           <div class="platformImage">
             <div class="background" style="background-image:url('images/fsae.png')"></div>
           </div>
-          <p class="blockTitle">FSAE Chassis iRacing Rig</p>
           <div class="platformDescription">
+            <h3 class="blockTitle">FSAE Chassis iRacing Rig</h3>
             <p class="largeText">Simulator Conversion Project</p>
             <p class="smallText">2022–2023</p>
             <p class="mediumText">Converted a Formula Student chassis into a working iRacing setup with structural modifications, interface mounts, and driver comfort considerations using Autodesk design tools.</p>
-          <!-- </a>
-								<a href="https://www.facebook.com/media/set/?set=a.1050070291681276&type=3" target="_blank">
-									<span class="icon-facebook"></span>
-								</a>
-								<a href="https://www.youtube.com/watch?v=gSi5bnm5Jxc" target="_blank">
-									<span class="icon-youtube"></span>
-							
-								</a>
-								<a href="https://www.egr.msu.edu/fsae/news/2016-north-american-international-auto-show" target="_blank">
-									<span class="icon-document"></span>
-		  -->
-	  </div>
+          </div>
         </div>
 
+        <!-- Project -->
         <div class="platform">
           <div class="platformImage">
             <div class="background" style="background-image:url('images/thesis.png')"></div>
           </div>
-          <p class="blockTitle"> Racing Pit Lane Intervention Marshall</p>
           <div class="platformDescription">
-            <p class="largeText"> Pit Fire Marshall </p>
-            <p class="smallText"> Fall 2023 to Present </p>
-            <p class="mediumText">Served as a pit lane intervention marshal for WEC, NASCAR, and other major series at Circuit of The Americas. Ensured crew safety during refueling by coordinating with teams and operating a fire extinguisher, while monitoring pit activity and supporting crowd control.</p>
+            <h3 class="blockTitle">COTA Intervention Marshal</h3>
+            <p class="largeText">Pit Fire Intervention Marshal</p>
+            <p class="smallText">Fall 2023 to Present</p>
+            <p class="mediumText">Served as a pit lane intervention marshal for WEC, NASCAR, and other major series at Circuit of The Americas. Ensured crew safety during refueling, coordinated with teams, and supported crowd control.</p>
           </div>
-        </div>        
+        </div>
+
+        <!-- Project -->
         <div class="platform">
           <div class="platformImage">
             <div class="background" style="background-image:url('images/thesis.png')"></div>
           </div>
-          <p class="blockTitle">DOE Electron Beam Facility</p>
           <div class="platformDescription">
+            <h3 class="blockTitle">DOE Electron Beam Facility</h3>
             <p class="largeText">M.S. Thesis Project</p>
             <p class="smallText">2022–2024</p>
-            <p class="mediumText">Designed a mobile electron beam system for soil remediation funded by the Department of Energy. Focused on mechanical design, simulation, and review with stakeholders.</p>
+            <p class="mediumText">Designed a mobile electron beam system for soil remediation funded by the Department of Energy. Focused on mechanical design, simulation, and stakeholder review.</p>
           </div>
         </div>
 
-        <!-- Add more projects in the same format -->
+        <!-- Project -->
+        <div class="platform">
+          <div class="platformImage">
+            <div class="background" style="background-image:url('images/thesis.png')"></div>
+          </div>
+          <div class="platformDescription">
+            <h3 class="blockTitle">First Person View Drone Pilot</h3>
+            <p class="largeText">First Person View Quadcopter Drone</p>
+            <p class="smallText">Spring 2019 to Present</p>
+            <p class="mediumText">Assembled and configured a custom FPV racing drone. Tuned flight controls using Betaflight for optimal stability and responsiveness.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Resume Link -->
+    <!-- Resume -->
     <section id="page3" class="page">
       <div class="center">
-        <p class="pageTitle">Resume</p>
+        <h2 class="pageTitle">Resume</h2>
         <a href="Burress_Ian_Resume.pdf" download>Download PDF</a>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <section id="footer">
+  <footer id="footer">
     <p id="footerText">© Ian Burress</p>
-  </section>
+  </footer>
 
   <script src="script.js"></script>
 </body>
