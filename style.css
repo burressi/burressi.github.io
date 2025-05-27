@@ -11,6 +11,56 @@ a {
   text-decoration: none;
   color: inherit;
 }
+/* Header*/
+#mainHeader {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+.headerLeft {
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex: 1;
+}
+
+.headerCenter {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+#headerLogo {
+  height: 50px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.headerRight {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.headerRight a {
+  font-size: 1rem;
+  color: #222;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.headerRight a:hover {
+  color: #0077cc;
+}
 
 /* Sidebar */
 #sidebar {
