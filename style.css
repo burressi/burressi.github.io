@@ -35,7 +35,7 @@ a {
 }
 
 .introBackground {
-  background-image: url('pictures/introImage.jpg'); /* change path as needed */
+  background-image: url('pictures/introImage.jpg'); 
   background-size: cover;            /* scales image to fill */
   background-position: center;       /* centers the image */
   background-repeat: no-repeat;      /* prevents tiling */
