@@ -72,6 +72,47 @@ a {
   margin-bottom: 1rem;
 }
 
+/* Carousel formatting*/
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carouselImage {
+  display: none;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carouselImage.active {
+  display: block;
+}
+
+.carouselBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carouselBtn.prev {
+  left: 10px;
+}
+
+.carouselBtn.next {
+  right: 10px;
+}
+
 /* Project Layout */
 /*
 .platform {
