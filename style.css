@@ -84,11 +84,18 @@ a {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.platformImage .background {
+/* .platformImage .background {
   width: 150px;
   height: 150px;
   background-size: cover;
   background-position: center;
+  border-radius: 10px;
+}
+*/
+.platformImage img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
   border-radius: 10px;
 }
 
