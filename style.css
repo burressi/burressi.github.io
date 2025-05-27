@@ -145,7 +145,7 @@ a {
   min-width: 250px;
 }
 */
-.platform {
+/* .platform {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -171,6 +171,29 @@ a {
 
 .platformDescription {
   flex: 2 1 400px;
+  min-width: 250px;
+}
+*/
+
+.platform {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  align-items: flex-start;
+}
+
+.platformImage {
+  flex: 0 0 300px; /* Fixed width for image */
+  max-width: 100%;
+}
+
+.platformDescription {
+  flex: 1;
   min-width: 250px;
 }
 
