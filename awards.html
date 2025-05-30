@@ -1,23 +1,260 @@
+<!-- 
+PROGRAMMER:Ian Burress
+DATE CREATED: 5/20/2025
+PURPOSE: Engineering Portfolio of Ian Burress
+CONTACT INFO: ian.n.burress@gmail.com
+-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me - Ian Burress</title>
+  <title>Ian Burress - Awards </title>
+    <!-- Favicon -->
+  <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
+
   <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
+
+
+
 <body>
-  <header>
-    <!-- You can reuse your existing header here -->
+<!-- Header-->
+  <header id="mainHeader">
+    <div class="headerLeft">
+     <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" aria-label="LinkedIn Profile">
+        <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
+      </a>
+      <a href="https://github.com/burressi" target="_blank" aria-label="GitHub Profile">
+        <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
+      </a>
+      <a href="mailto:ian.n.burress@gmail.com" target="_blank" aria-label="Email Ian">
+        <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />  
+      </a>
+    </div>
+     
+    <div class="headerCenter">
+      <img src="icons/ClearBlack2.png" alt="Ian Burress Logo" id="headerLogo" />
+    </div>
+    <nav class="headerRight">
+      <a href="about.html">About Me</a>
+      <a href="projects.html">Projects</a>
+      <a href="awards.html">Awards</a>
+      <a href="contact.html">Contact Me</a>
+    </nav>
   </header>
 
+
+  <!-- Main Section -->
   <main>
-    <h1>About Me</h1>
-    <p>This is the About Me page content.</p>
+    <!-- Intro -->
+    <section id="intro" class="page">
+  <!-- Full background image for intro -->
+  <div class="introBackground">
+    <h1 id="introText">Ian Burress</h1>
+  </div>
+</section>
+
+<!-- About -->
+    <section id="page1" class="page scroll">
+      <div class="center">
+        <div class="spacer"></div>
+        <div class="black_out">
+          <h2 class="pageTitle">Awards</h2>
+<!--          <p class="pageText">I am a Mechanical Engineer with a primary interest in automotive engineering, hybrid powertrains, and structures engineering.</p> -->
+        </div>
+      </div>
+    </section>
+  <section id="page2" class="page">
+    <div class="center">
+
+
+      
+<!-- AWARDS-->
+    <!-- TROPY level items -->
+        <div class="platform">
+          <div class="platformImage">
+            <div class="carousel">
+              <img src="awards/SusAward.png" alt="Award 1" class="carouselImage active" />
+              <img src="awards/SusAPhoto.png" alt="Award 2" class="carouselImage" />
+              <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button>
+              <button class="carouselBtn next" aria-label="Next image">&#10095;</button>
+            </div>
+          </div>
+          <div class="platformDescription">
+            <h3 class="blockTitle">Texas A&M University Graduate Sustainability Champion  </h3>
+            <p class="largeText"> #### </p>
+            <p class="smallText"> Spring 2024 </p>
+            <p class="mediumText"> The quick brown fox jumped over the lazy dog. </p>
+          </div>
+        </div>
+
+    <!-- Scholarships-->
+    
+<!-- GUEST SPEAKERS-->
+
+<!-- CERTIFICATIONS--> 
+
+<!-- MEDIA RECOGNITION-->     
+
+        <!-- Project -->
+
+
+
+<!-- Pit Fire Marshall -->
+        
+<!-- E-Beam Trailer -->
+        <div class="platform">
+          <div class="platformImage">
+            <div class="carousel">
+              <img src="pictures/Trailer.png" alt="Project view 1" class="carouselImage active" />
+              <img src="pictures/DoseProfile.png" alt="Project view 2" class="carouselImage" />
+              <img src="pictures/LoadingAsem.png" alt="Project view 3" class="carouselImage" />
+              <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button>
+              <button class="carouselBtn next" aria-label="Next image">&#10095;</button>
+            </div>
+          </div>
+          <div class="platformDescription">
+            <h3 class="blockTitle">DOE Electron Beam Facility</h3>
+            <p class="largeText">M.S. Thesis Project</p>
+            <p class="smallText"> 2022 – 2024 </p>
+            <p class="mediumText">Designed a mobile electron beam system for soil remediation funded by the Department of Energy. Focused on mechanical design, simulation, and stakeholder review.</p>
+          </div>
+        </div>
+
+<!-- Car Infotainment   -->
+        <div class="platform">
+          <div class="platformImage">
+            <div class="carousel">
+              <img src="pictures/ThermalBatteryFinal.png" alt="Project view 1" class="carouselImage active" />
+              <img src="pictures/ThermalBattery.png" alt="Project view 2" class="carouselImage" />
+              <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button>
+              <button class="carouselBtn next" aria-label="Next image">&#10095;</button>
+            </div>
+          </div>
+          <div class="platformDescription">
+            <h3 class="blockTitle"> Hot Swappable Infotainment Project </h3>
+            <p class="largeText"> Fiat Chrysler Automobiles Project </p>
+            <p class="smallText"> Summer 2020 </p>
+            <p class="mediumText"> Hosted Q&A using knowledge of Autodesk, Photoshop, and various CAD softwares to build visualizations, collaborated cross functionally with 20+ other employees to ensure feasibility of an infotainment system design concept. </p>
+          </div>
+        </div>
+
+<!-- Work Instruction   -->
+        <div class="platform">
+          <div class="platformImage">
+            <div class="carousel">
+              <img src="pictures/realwear.jpg" alt="Project view 1" class="carouselImage active" />
+              <img src="pictures/InspectionExample.PNG" alt="Project view 2" class="carouselImage" />
+              <img src="pictures/datamap.PNG" alt="Project view 3" class="carouselImage" />
+              <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button>
+              <button class="carouselBtn next" aria-label="Next image">&#10095;</button>
+            </div>
+          </div>
+          <div class="platformDescription">
+            <h3 class="blockTitle"> Assisted Reality Work Instruction Device </h3>
+            <p class="largeText"> Caterpillar Project </p>
+            <p class="smallText"> Summer 2022 </p>
+            <p class="mediumText"> Assessed remote collaboration capabilities for field inspections and technician support using wearable AR devices. Developed a comprehensive digital workflow for 773–775 main rail weld inspections, enabling documentation of up to 20 common defect types per inspection point. Integrated features such as serial number capture, photo documentation, measurement logging, technician communication, and comment tracking. </p>
+          </div>
+        </div>
+        
+<!-- FPV Drone -->
+        <div class="platform">
+          <div class="platformImage">
+            <div class="carousel">
+              <img src="pictures/BetaFlight.png" alt="Project view 1" class="carouselImage active" />
+              <img src="pictures/FPVcomp.png" alt="Project view 2" class="carouselImage" />
+              <img src="pictures/disassembled.jpg" alt="Project view 3" class="carouselImage" />
+              <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button>
+              <button class="carouselBtn next" aria-label="Next image">&#10095;</button>
+            </div>
+          </div>
+          <div class="platformDescription">
+            <h3 class="blockTitle">First Person View Drone Pilot</h3>
+            <p class="largeText">First Person View Quadcopter Drone</p>
+            <p class="smallText">Spring 2019 to Present</p>
+            <p class="mediumText">Assembled and configured a custom FPV racing drone. Tuned flight controls using Betaflight for optimal stability and responsiveness.</p>
+          </div>
+        </div>
+        
+<!-- Can Crusher  -->
+        <div class="platform">
+          <div class="platformImage">
+            <div class="carousel">
+              <img src="pictures/CanCrusher2.png" alt="Project view 1" class="carouselImage active" />
+              <img src="pictures/CanCrusher1.png" alt="Project view 2" class="carouselImage" />
+              <img src="pictures/CanCrusher3.png" alt="Project view 3" class="carouselImage" />
+              <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button>
+              <button class="carouselBtn next" aria-label="Next image">&#10095;</button>
+            </div>
+          </div>
+          <div class="platformDescription">
+            <h3 class="blockTitle"> Can Crusher </h3>
+            <p class="largeText"> Can Crusher - Univesity Project </p>
+            <p class="smallText"> Spring 2021 </p>
+            <p class="mediumText">Conducted velocity, acceleration, kinematic, and gear analysis, implemented the 4-bar slider linkage.  </p>
+          </div>
+        </div>
+
+        
+<!-- Thermal Battery  -->
+        <div class="platform">
+          <div class="platformImage">
+            <div class="carousel">
+              <img src="pictures/ThermalBatteryFinal.png" alt="Project view 1" class="carouselImage active" />
+              <img src="pictures/ThermalBattery.png" alt="Project view 2" class="carouselImage" />
+              <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button>
+              <button class="carouselBtn next" aria-label="Next image">&#10095;</button>
+            </div>
+          </div>
+          <div class="platformDescription">
+            <h3 class="blockTitle"> Thermal Battery </h3>
+            <p class="largeText"> Thermal Battery - Univesity Project </p>
+            <p class="smallText"> Fall 2021 </p>
+            <p class="mediumText"> Charging, discharging and storage of heat source and calculated melting point and heat flux of parafin wax.   </p>
+          </div>
+        </div>
+
+<!-- MSU Solar Car Chassis   -->
+        <div class="platform">
+          <div class="platformImage">
+            <div class="carousel">
+              <img src="pictures/ThermalBatteryFinal.png" alt="Project view 1" class="carouselImage active" />
+              <img src="pictures/ThermalBattery.png" alt="Project view 2" class="carouselImage" />
+              <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button>
+              <button class="carouselBtn next" aria-label="Next image">&#10095;</button>
+            </div>
+          </div>
+          <div class="platformDescription">
+            <h3 class="blockTitle"> Multi Occupant Solar Chassis </h3>
+            <p class="largeText"> Michigan State University Solar Car </p>
+            <p class="smallText"> 2019-2022 </p>
+            <p class="mediumText"> Redesigned prexisting chassis to race standard. Executed design on multi passenger vehicle to compete in the American Solar Challenge </p>
+          </div>
+        </div>
+
+        
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="page3" class="page">
+      <div class="center">
+        <h2 class="pageTitle">Resume</h2>
+        <a href="Burress_Ian_Resume.pdf" download>Download PDF</a>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>© Ian Burress</p>
+  <!-- Footer -->
+  <footer id="footer">
+    <p id="footerText">© Ian Burress</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
