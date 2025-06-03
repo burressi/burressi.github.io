@@ -1,23 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Me - Ian Burress</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <!-- You can reuse your existing header here -->
-  </header>
+<section id="contact" class="page">
+  <div class="center">
+    <h2 class="pageTitle">Contact Me</h2>
+    <p class="pageText">Fill out the form below and click "Email Me" to open your email client with the message pre-filled.</p>
 
-  <main>
-    <h1>About Me</h1>
-    <p>This is the About Me page content.</p>
-  </main>
+    <form id="emailForm" onsubmit="sendEmail(); return false;" class="contact-form">
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" required />
 
-  <footer>
-    <p>© Ian Burress</p>
-  </footer>
-</body>
-</html>
+      <label for="body">Message:</label>
+      <textarea id="body" name="body" rows="6" required></textarea>
+
+      <button type="submit">Email Me</button>
+    </form>
+
+    <a href="Burress_Ian_Resume.pdf" download class="resume-button">Download My Resume</a>
+  </div>
+</section>
+
+<script>
+  function sendEmail() {
+    const subject = encodeURIComponent(document.getElementById('subject').value);
+    const body = encodeURIComponent(document.getElementById('body').value);
+    const email = "ian.n.burress@gmail.com";
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  }
+</script>
