@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ian Burress - Awards </title>
+  <link rel="icon" type="image/png" href="icons/logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+  <header id="mainHeader">
+    <div class="headerLeft">
+      <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank"><img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn" /></a>
+      <a href="https://github.com/burressi" target="_blank"><img class="sidebarIcon icon" src="icons/github.png" alt="GitHub" /></a>
+      <a href="mailto:ian.n.burress@gmail.com" target="_blank"><img class="sidebarIcon icon" src="icons/email.png" alt="Email" /></a>
+    </div>
+    <div class="headerCenter">
+      <img src="icons/logo.jpg" alt="Ian Burress Logo" id="headerLogo" />
+    </div>
+    <nav class="headerRight">
+      <a href="about.html">About Me</a>
+      <a href="projects.html">Projects</a>
+      <a href="awards.html">Awards</a>
+      <a href="contact.html">Contact Me</a>
+      <button id="darkToggle">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="page1" class="page scroll">
+      <div class="center">
+        <div class="spacer"></div>
+        <div class="black_out">
+          <h2 class="pageTitle">Awards</h2>
+        </div>
+      </div>
+    </section>
+
+    <section id="page2" class="page">
+      <div class="center">
+        <!-- Original content begins here -->
+        <!-- (Place your full awards/scholarship/speaking/certification HTML blocks here) -->
+      </div>
+    </section>
+
+    <!-- Media Recognition Section -->
+    <section id="media" class="page">
+      <div class="center">
+        <h2 class="pageTitle">Media Recognition</h2>
+        <!-- CHANGE LINK HERE (https://drive.google.com/file/d/1UdjaNB6muEToka5QUrXWQnMBXuVok1gR/preview) -->
+        <!-- <iframe src="https://drive.google.com/file/d/1UdjaNB6muEToka5QUrXWQnMBXuVok1gR/preview" width="100%" height="480" allow="autoplay"></iframe> -->
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/y8hWRUxwnvM" frameborder="0" allowfullscreen></iframe>
+        <ul>
+          <li><a href="https://spirit.txamfoundation.com/summer-2024/solar-car-success.aspx" target="_blank">Spirit Magazine Feature</a></li>
+          <li><a href="https://engineering.tamu.edu/news/2024/10/racing-across-america-solar-team-takes-11th-in-national-competition.html" target="_blank">TAMU Engineering News – Solar Team</a></li>
+          <li><a href="https://engineering.tamu.edu/news/2024/05/one-students-sustainable-legacy-removing-forever-chemicals-and-racing-solar-cars.html" target="_blank">TAMU Engineering News – Sustainable Legacy</a></li>
+          <li><a href="https://www.egr.msu.edu/seescholars/scholars/ian-burress" target="_blank">SEE Scholars Feature</a></li>
+          <li><a href="https://msuspartans.com/sports/wrestling/roster/ian-burress/8912" target="_blank">MSU Wrestling Roster</a></li>
+          <li><a href="https://www.facebook.com/story.php/?story_fbid=990982896366241&id=100063636187100&_rdr" target="_blank">Facebook Feature</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <p id="footerText">© Ian Burress 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('darkToggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>
