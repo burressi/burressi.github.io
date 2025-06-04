@@ -396,3 +396,14 @@ a {
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+/* Add in style.css */
+.platform:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+/* Improve contrast for accessibility */
+.pageText {
+  color: #444; /* Darker than current #222 */
+}
