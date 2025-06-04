@@ -51,3 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
     showImage(current); // Initialize
   });
 });
+// In script.js - Remove duplicate carousel code and add touch support:
+document.querySelectorAll('.carousel').forEach(carousel => {
+  // Add touch events for mobile
+  carousel.addEventListener('touchstart', handleTouchStart);
+  carousel.addEventListener('touchmove', handleTouchMove);
+});
