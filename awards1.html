@@ -15,7 +15,35 @@ CONTACT INFO: ian.n.burress@gmail.com
 <link href="icons/ClearWLogo.png" rel="icon" type="image/png"/>
 <link href="style.css" rel="stylesheet"/>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-</head>
+<style>
+/* Add to CSS */
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+.award-meta {
+  display: flex;
+  gap: 15px;
+  margin: 10px 0;
+  font-size: 0.9em;
+}
+.stat-pill {
+  display: inline-block;
+  background: #0077cc;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  margin-right: 8px;
+}
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+</style></head>
 <body>
 <!-- Header-->
 <header id="mainHeader">
@@ -46,7 +74,7 @@ CONTACT INFO: ian.n.burress@gmail.com
 <button data-category="academic">Academic</button>
 <button data-category="professional">Professional</button>
 <button data-category="leadership">Leadership</button>
-</div>
+<button data-category="media">Media</button></div>
 <!-- Main Section -->
 <main>
 <!-- Intro 
@@ -144,7 +172,7 @@ CONTACT INFO: ian.n.burress@gmail.com
 <p id="footerText">© Ian Burress 2025</p>
 </footer>
 <script src="script.js"></script>
-<section data-category="academic"></section><section data-category="professional"></section><section data-category="leadership"></section><section data-category="all"><div class="platform">
+<section class="platform" data-category="media"><h2>Media Recognition</h2><div class="platform">
 <div class="platformImage">
 <div class="carousel">
 <img alt="Award 1" class="carouselImage active" src="awards/TeamSolarPhoto.jpg"/>
@@ -322,5 +350,17 @@ CONTACT INFO: ian.n.burress@gmail.com
 <p class="smallText"> Summer 2024 </p>
 <p class="mediumText"> The quick brown fox jumped over the lazy dog. </p>
 </div>
-</div></section></body>
+</div></section><script>
+// Add filtering functionality
+document.querySelectorAll('.filter-buttons button').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const category = this.dataset.category;
+    document.querySelectorAll('.platform').forEach(platform => {
+      platform.style.display = (category === 'all' || platform.dataset.category.includes(category)) 
+        ? 'flex' 
+        : 'none';
+    });
+  });
+});
+</script></body>
 </html>
