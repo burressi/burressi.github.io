@@ -1,19 +1,39 @@
-<!-- Create 404.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Not Found | Ian Burress</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .error-container {
+      text-align: center;
+      padding: 50px 20px;
+      min-height: 60vh;
+    }
+    .error-code {
+      font-size: 5rem;
+      font-weight: bold;
+      color: #0077cc;
+    }
+  </style>
 </head>
 <body>
   <header id="mainHeader">
-    <!-- Reuse your existing header -->
+    <!-- Copy your existing header here -->
   </header>
-  <main class="center">
-    <h1>404 - Page Not Found</h1>
-    <p>The page you're looking for doesn't exist.</p>
-    <a href="/" class="resume-button">Return Home</a>
+
+  <main>
+    <div class="error-container">
+      <div class="error-code">404</div>
+      <h1>Page Not Found</h1>
+      <p>The page you're looking for doesn't exist or has been moved.</p>
+      <a href="/" class="resume-button">Return to Homepage</a>
+    </div>
   </main>
+
+  <footer id="footer">
+    <p id="footerText">© Ian Burress 2025</p>
+  </footer>
 </body>
 </html>
