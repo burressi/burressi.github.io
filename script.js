@@ -150,7 +150,102 @@ function initDarkMode() {
     }
   });
 }
+$(document).ready(function() {
+  // Initialize carousels
+  initCarousels();
+  
+  // Initialize dark mode from localStorage
+  initDarkMode();
+  
+  // Sidebar icon hover
+  $('.sidebarIcon').hover(
+    function() { $(this).css('opacity', '0.7'); },
+    function() { $(this).css('opacity', '1'); }
+  );
+  
+  // Awards filtering
+  $('.filter-btn').click(function() {
+    const filter = $(this).data('filter');
+    $('.filter-btn').removeClass('active');
+    $(this).addClass('active');
+    
+    if(filter === 'all') {
+      $('.award-card').show();
+    } else {
+      $('.award-card').each(function() {
+        $(this).toggle($(this).data('categories').includes(filter));
+      });
+    }
+  });
+});
 
+function initCarousels() {
+  $('.award-images').each(function() {
+    const $container = $(this);
+    const $images = $container.find('img');
+    let current = 0;
+    
+    if($images.length <= 1) return;
+    
+    // Create nav buttons
+    $container.append(`
+      <button class="carouselBtn prev" aria-label="Previous">&#10094;</button>
+      <button class="carouselBtn next" aria-label="Next">&#10095;</button>
+    `);
+    
+    function showImage(index) {
+      $images.removeClass('active').addClass('hidden');
+      $images.eq(index).removeClass('hidden').addClass('active');
+    }
+    
+    $container.on('click', '.prev', function(e) {
+      e.stopPropagation();
+      current = (current - 1 + $images.length) % $images.length;
+      showImage(current);
+    });
+    
+    $container.on('click', '.next', function(e) {
+      e.stopPropagation();
+      current = (current + 1) % $images.length;
+      showImage(current);
+    });
+    
+    // Touch support
+    let touchStartX = 0;
+    $container.on('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+    });
+    
+    $container.on('touchend', function(e) {
+      const touchEndX = e.changedTouches[0].clientX;
+      if(touchStartX - touchEndX > 50) {
+        $container.find('.next').click();
+      } else if(touchEndX - touchStartX > 50) {
+        $container.find('.prev').click();
+      }
+    });
+    
+    showImage(0);
+  });
+}
+
+function initDarkMode() {
+  // Check for saved preference
+  if(localStorage.getItem('darkMode') === 'true') {
+    $('body').addClass('dark-mode');
+    $('.dark-icon').show();
+    $('.light-icon').hide();
+  }
+  
+  // Toggle handler
+  $('#darkModeToggle').click(function() {
+    $('body').toggleClass('dark-mode');
+    const isDark = $('body').hasClass('dark-mode');
+    localStorage.setItem('darkMode', isDark);
+    
+    $('.dark-icon, .light-icon').toggle();
+  });
+}
 // Initialize everything
 $(document).ready(function() {
   // Sidebar icon hover
