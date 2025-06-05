@@ -1,30 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me - Ian Burress</title>
+  <title>Ian Burress - Engineering Projects</title>
+  <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
+
 <body>
-  <header>
-    <!-- You can reuse your existing header here -->
+  <!-- Header -->
+  <header id="mainHeader">
+    <div class="headerLeft">
+      <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" aria-label="LinkedIn Profile">
+        <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
+      </a>
+      <a href="https://github.com/burressi" target="_blank" aria-label="GitHub Profile">
+        <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
+      </a>
+      <a href="mailto:ian.n.burress@gmail.com" target="_blank" aria-label="Email Ian">
+        <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />
+      </a>
+    </div>
+    <div class="headerCenter">
+      <a href="index.html" aria-label="Home">
+        <img src="icons/ClearBlack2.png" alt="Ian Burress Logo" id="headerLogo" />
+      </a>
+    </div>
+    <nav class="headerRight">
+      <a href="about.html">About Me</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="awards.html">Awards</a>
+      <a href="contact.html">Contact Me</a>
+      <button id="darkModeToggle" aria-label="Toggle dark mode" class="dark-mode-btn">
+        <span class="light-icon">☀️</span>
+        <span class="dark-icon">🌙</span>
+      </button>
+    </nav>
   </header>
 
+  <!-- Main Content -->
   <main>
-    <h1>About Me</h1>
-    <p>This is the About Me page content.</p>
+    <section class="projects-hero">
+      <div class="center">
+        <h1>Engineering Projects</h1>
+        <p class="subtitle">Hands-on solutions combining innovation with practical execution</p>
+      </div>
+    </section>
 
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTfTVR2UJpbtT9Lwac17xNRyggdCJd5Fgl8-y3JpDu3lwmwgAjhaXDBCdBnUuSFZjwX4hBnw5dN5yvE/pubhtml?widget=true&amp;headers=false"></iframe>
+    <section class="projects-section">
+      <div class="center">
+        <!-- Project Filter Buttons -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="automotive">Automotive</button>
+          <button class="filter-btn" data-filter="research">Research</button>
+          <button class="filter-btn" data-filter="manufacturing">Manufacturing</button>
+          <button class="filter-btn" data-filter="academic">Academic</button>
+        </div>
 
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          
+          <!-- FSAE Chassis iRacing Rig -->
+          <div class="project-card" data-categories="automotive academic">
+            <div class="project-carousel">
+              <img src="pictures/ChassisSnow.jpg" alt="FSAE Rig in Snow" class="active">
+              <img src="pictures/ChassisBack.png" alt="FSAE Rig Back View" class="hidden">
+              <button class="carouselBtn prev">&#10094;</button>
+              <button class="carouselBtn next">&#10095;</button>
+            </div>
+            <div class="project-content">
+              <h2>FSAE Chassis iRacing Rig</h2>
+              <div class="project-meta">
+                <span class="project-category">Automotive Simulation</span>
+                <span class="project-date">2022-2023</span>
+                <span class="project-duration">6 months</span>
+              </div>
+              <div class="project-description">
+                <p>Converted a Formula SAE chassis into a fully functional iRacing simulator with structural modifications and custom interface mounts.</p>
+                <ul class="project-features">
+                  <li>Adapted real racing chassis for simulation use</li>
+                  <li>Designed modular mounting system for peripherals</li>
+                  <li>Optimized driver position for ergonomics</li>
+                </ul>
+              </div>
+              <div class="project-tech">
+                <span class="tech-tag">SolidWorks</span>
+                <span class="tech-tag">Fabrication</span>
+                <span class="tech-tag">Ergonomics</span>
+              </div>
+            </div>
+          </div>
 
+          <!-- DOE Electron Beam Facility -->
+          <div class="project-card" data-categories="research">
+            <div class="project-carousel">
+              <img src="pictures/Trailer.png" alt="E-Beam Trailer" class="active">
+              <img src="pictures/DoseProfile.png" alt="Dose Profile" class="hidden">
+              <img src="pictures/LoadingAsem.png" alt="Loading Assembly" class="hidden">
+              <button class="carouselBtn prev">&#10094;</button>
+              <button class="carouselBtn next">&#10095;</button>
+            </div>
+            <div class="project-content">
+              <h2>Mobile Electron Beam Facility</h2>
+              <div class="project-meta">
+                <span class="project-category">Research Thesis</span>
+                <span class="project-date">2022-2024</span>
+                <span class="project-duration">18 months</span>
+              </div>
+              <div class="project-description">
+                <p>Designed a mobile electron beam system for soil remediation funded by the Department of Energy.</p>
+                <ul class="project-features">
+                  <li>Developed mechanical design for mobile deployment</li>
+                  <li>Conducted simulation and safety analysis</li>
+                  <li>Presented findings at international conference</li>
+                </ul>
+              </div>
+              <div class="project-tech">
+                <span class="tech-tag">ANSYS</span>
+                <span class="tech-tag">STAR-CCM+</span>
+                <span class="tech-tag">NX</span>
+              </div>
+            </div>
+          </div>
 
+          <!-- Pit Fire Marshall -->
+          <div class="project-card" data-categories="automotive">
+            <div class="project-carousel">
+              <img src="pictures/pitfire2.jpg" alt="Pit Fire Intervention" class="active">
+              <img src="pictures/MustangFire.png" alt="Mustang Fire" class="hidden">
+              <img src="pictures/pitfire1.png" alt="Pit Lane" class="hidden">
+              <button class="carouselBtn prev">&#10094;</button>
+              <button class="carouselBtn next">&#10095;</button>
+            </div>
+            <div class="project-content">
+              <h2>COTA Pit Fire Intervention</h2>
+              <div class="project-meta">
+                <span class="project-category">Motorsports Safety</span>
+                <span class="project-date">2023-Present</span>
+                <span class="project-duration">Ongoing</span>
+              </div>
+              <div class="project-description">
+                <p>Served as pit lane intervention marshal for WEC, NASCAR, and other major series at Circuit of The Americas.</p>
+                <ul class="project-features">
+                  <li>Managed crew safety during refueling operations</li>
+                  <li>Coordinated emergency response protocols</li>
+                  <li>Handled high-pressure race conditions</li>
+                </ul>
+              </div>
+              <div class="project-tech">
+                <span class="tech-tag">Safety Protocols</span>
+                <span class="tech-tag">Crisis Management</span>
+                <span class="tech-tag">Team Coordination</span>
+              </div>
+            </div>
+          </div>
 
-    
+          <!-- Assisted Reality Work Instruction -->
+          <div class="project-card" data-categories="manufacturing">
+            <div class="project-carousel">
+              <img src="pictures/realwear.jpg" alt="AR Headset" class="active">
+              <img src="pictures/InspectionExample.PNG" alt="Inspection Example" class="hidden">
+              <img src="pictures/datamap.PNG" alt="Data Mapping" class="hidden">
+              <button class="carouselBtn prev">&#10094;</button>
+              <button class="carouselBtn next">&#10095;</button>
+            </div>
+            <div class="project-content">
+              <h2>AR Work Instruction System</h2>
+              <div class="project-meta">
+                <span class="project-category">Manufacturing Tech</span>
+                <span class="project-date">Summer 2022</span>
+                <span class="project-duration">3 months</span>
+              </div>
+              <div class="project-description">
+                <p>Developed assisted reality workflow for field inspections using wearable AR devices at Caterpillar.</p>
+                <ul class="project-features">
+                  <li>Created digital workflow for weld inspections</li>
+                  <li>Enabled documentation of 20+ defect types</li>
+                  <li>Integrated measurement logging and reporting</li>
+                </ul>
+              </div>
+              <div class="project-tech">
+                <span class="tech-tag">AR Technology</span>
+                <span class="tech-tag">Process Design</span>
+                <span class="tech-tag">Six Sigma</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- FPV Drone -->
+          <div class="project-card" data-categories="academic">
+            <div class="project-carousel">
+              <img src="pictures/BetaFlight.png" alt="BetaFlight Config" class="active">
+              <img src="pictures/FPVcomp.png" alt="FPV Components" class="hidden">
+              <img src="pictures/disassembled.jpg" alt="Disassembled Drone" class="hidden">
+              <button class="carouselBtn prev">&#10094;</button>
+              <button class="carouselBtn next">&#10095;</button>
+            </div>
+            <div class="project-content">
+              <h2>Custom FPV Racing Drone</h2>
+              <div class="project-meta">
+                <span class="project-category">Personal Project</span>
+                <span class="project-date">2019-Present</span>
+                <span class="project-duration">Ongoing</span>
+              </div>
+              <div class="project-description">
+                <p>Built and configured a high-performance FPV racing drone from components.</p>
+                <ul class="project-features">
+                  <li>Sourced and assembled all components</li>
+                  <li>Tuned flight controls using Betaflight software</li>
+                  <li>Maintained and upgraded over 5+ years</li>
+                </ul>
+              </div>
+              <div class="project-tech">
+                <span class="tech-tag">Electronics</span>
+                <span class="tech-tag">PID Tuning</span>
+                <span class="tech-tag">CAD Design</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Thermal Battery -->
+          <div class="project-card" data-categories="academic research">
+            <div class="project-carousel">
+              <img src="pictures/ThermalBatteryFinal.png" alt="Thermal Battery Final" class="active">
+              <img src="pictures/ThermalBattery.png" alt="Thermal Battery Design" class="hidden">
+              <button class="carouselBtn prev">&#10094;</button>
+              <button class="carouselBtn next">&#10095;</button>
+            </div>
+            <div class="project-content">
+              <h2>Phase Change Thermal Battery</h2>
+              <div class="project-meta">
+                <span class="project-category">Academic Research</span>
+                <span class="project-date">Fall 2021</span>
+                <span class="project-duration">4 months</span>
+              </div>
+              <div class="project-description">
+                <p>Designed and tested a thermal energy storage system using phase change materials.</p>
+                <ul class="project-features">
+                  <li>Analyzed heat flux of paraffin wax</li>
+                  <li>Optimized charging/discharging cycles</li>
+                  <li>Presented findings to engineering faculty</li>
+                </ul>
+              </div>
+              <div class="project-tech">
+                <span class="tech-tag">Thermodynamics</span>
+                <span class="tech-tag">Data Analysis</span>
+                <span class="tech-tag">LabVIEW</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>© Ian Burress</p>
+  <footer id="footer">
+    <p id="footerText">© Ian Burress 2025</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
