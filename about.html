@@ -10,136 +10,229 @@ CONTACT INFO: ian.n.burress@gmail.com
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ian Burress - About Me </title>
-    <!-- Favicon -->
+  <title>Ian Burress - About Me</title>
   <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
-
   <link rel="stylesheet" href="style.css" />
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
-
-
 <body>
-<!-- Header-->
+  <!-- Header -->
   <header id="mainHeader">
     <div class="headerLeft">
-     <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" aria-label="LinkedIn Profile">
+      <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" aria-label="LinkedIn Profile">
         <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
       </a>
       <a href="https://github.com/burressi" target="_blank" aria-label="GitHub Profile">
         <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
       </a>
       <a href="mailto:ian.n.burress@gmail.com" target="_blank" aria-label="Email Ian">
-        <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />  
+        <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />
       </a>
     </div>
-     
     <div class="headerCenter">
-      <a href="https://burressi.github.io/" aria-label="Home">
+      <a href="index.html" aria-label="Home">
         <img src="icons/ClearBlack2.png" alt="Ian Burress Logo" id="headerLogo" />
       </a>
     </div>
     <nav class="headerRight">
-      <a href="about.html">About Me</a>
-      <a href="projects.html">Projects</a>
-      <a href="awards.html">Awards</a>
-      <a href="contact.html">Contact Me</a>
+      <a href="about.html" class="active">About Me</a>
+      <a href="projects.html">Projects</a>
+      <a href="awards.html">Awards</a>
+      <a href="contact.html">Contact Me</a>
+      <button id="darkModeToggle" aria-label="Toggle dark mode" class="dark-mode-btn">
+        <span class="light-icon">☀️</span>
+        <span class="dark-icon">🌙</span>
+      </button>
     </nav>
   </header>
 
-
-  <!-- Main Section -->
+  <!-- Main Content -->
   <main>
-<main>
-  <section class="page">
-    <div class="center">
-      <h2 class="pageTitle">Hi, I’m Ian Burress</h2>
-      <p class="pageText">
-        I’m a mechanical engineer passionate about solving complex challenges through <strong>innovative design</strong>, <strong>hands-on testing</strong>, and <strong>cross-functional collaboration</strong>. From leading the MSU Solar Car Racing Team to mentoring 350+ students nationwide, my journey blends engineering excellence with human impact.
-      </p>
-
-      <div class="resume-button">
-        <a href="Burress_Ian_Resume.pdf" download onclick="trackDownload()" class="downloadBtn">Download My Resume</a>
-      </div>
-
-      <div class="stats-grid">
-        <div class="stat-block"><h3>2</h3><p>Engineering Degrees</p></div>
-        <div class="stat-block"><h3>350+</h3><p>Students Mentored</p></div>
-        <div class="stat-block"><h3>5</h3><p>Industry Internships</p></div>
-        <div class="stat-block"><h3>3</h3><p>Solar Car Awards</p></div>
-      </div>
-
-      <h3 class="blockTitle">Professional Timeline</h3>
-      <div class="timeline">
-        <div class="timeline-item">
-          <h4>2025 — Present</h4>
-          <details>
-            <summary>Caterpillar – Engineer, ERDP Rotation</summary>
-            <p>Supporting global validation, failure analysis, and new product development for marine and oil & gas systems. Working with cross-functional teams to solve product challenges and support field investigations.</p>
-          </details>
-        </div>
-        <div class="timeline-item">
-          <h4>Summer Internships</h4>
-          <details>
-            <summary>Stellantis (Summer 2022)</summary>
-            <p>Quality & launch engineering for RAM trucks. Supported testing & design validation improvements on-site in manufacturing environments.</p>
-          </details>
-          <details>
-            <summary>Harley-Davidson (Summer 2021)</summary>
-            <p>Led manufacturing design improvements & proposed a weld automation process with long-term ROI modeling.</p>
-          </details>
-          <details>
-            <summary>Fiat Chrysler Automobiles (Summer 2020)</summary>
-            <p>Analyzed tooling processes in engine manufacturing. Worked on process control & root-cause investigations.</p>
-          </details>
-        </div>
-        <div class="timeline-item">
-          <h4>2023 – 2025</h4>
-          <p>MSME @ Texas A&M: Research in plasma remediation, Solar Car Racing Team project lead, and TAMU Sustainability Champion.</p>
-        </div>
-        <div class="timeline-item">
-          <h4>2018 – 2022</h4>
-          <p>BSME @ Michigan State: NCAA Wrestler (100+ hours on mat), Senior Business Director for MSU Solar Car Team.</p>
+    <section class="about-hero">
+      <div class="center">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Ian Burress</h1>
+            <h2>Mechanical Engineer & Technical Leader</h2>
+            <p class="tagline">Bridging innovative engineering with hands-on execution to solve complex challenges</p>
+            <a href="Burress_Ian_Resume.pdf" download class="resume-button">Download Full Resume</a>
+          </div>
+          <div class="hero-image">
+            <img src="pictures/ProfessionalPhoto.jpg" alt="Ian Burress Professional Photo">
+          </div>
         </div>
       </div>
+    </section>
 
-      <h3 class="blockTitle">What Drives Me</h3>
-      <div class="core-values">
-        <div class="value-card">
-          <h4>Mentorship</h4>
-          <p>I aim to help young engineers find their voice and their path.</p>
-        </div>
-        <div class="value-card">
-          <h4>Sustainability</h4>
-          <p>Engineering solutions that reduce waste and maximize impact.</p>
-        </div>
-        <div class="value-card">
-          <h4>Resilience</h4>
-          <p>Whether on the mat or in the field, I strive to persist through adversity.</p>
+    <section class="about-section">
+      <div class="center">
+        <div class="stats-grid">
+          <div class="stat-block">
+            <h3>2</h3>
+            <p>Engineering Degrees</p>
+          </div>
+          <div class="stat-block">
+            <h3>350+</h3>
+            <p>Students Mentored</p>
+          </div>
+          <div class="stat-block">
+            <h3>5</h3>
+            <p>Industry Internships</p>
+          </div>
+          <div class="stat-block">
+            <h3>3</h3>
+            <p>Solar Car Awards</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <h3 class="blockTitle">Fun Facts</h3>
-      <ul class="fun-facts">
-  <li>Wrestled over 100+ hours of on-mat time as an NCAA athlete.</li>
-  <li>Built and raced two solar cars covering over 2,000 miles.</li>
-  <li>Extinguished two pit lane fires during high-pressure racing conditions.</li>
-  <li>Earned a U.S. patent before turning 21.</li>
-  <li>Presented nuclear research at an international accelerator conference.</li>
-  <li>Once simultaneously managed racing logistics across three time zones.</li>
-  <li>Designed and simulated a mobile electron beam system for soil remediation.</li>
-  <li>Completed three internships at global vehicle manufacturers by age 22.</li>
-</ul>
-    </div>
-  </section>
-</main>
+    <section class="about-section bg-light">
+      <div class="center">
+        <h2 class="section-title">Professional Journey</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>2025 — Present</h3>
+            <div class="timeline-content">
+              <h4>Caterpillar – Engineer, ERDP Rotation</h4>
+              <p>Supporting global validation, failure analysis, and new product development for marine and oil & gas systems. Working with cross-functional teams to solve product challenges and support field investigations.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <h3>Summer Internships</h3>
+            <div class="timeline-content">
+              <details>
+                <summary>Stellantis (Summer 2022)</summary>
+                <p>Quality & launch engineering for RAM trucks. Supported testing & design validation improvements on-site in manufacturing environments.</p>
+              </details>
+              <details>
+                <summary>Harley-Davidson (Summer 2021)</summary>
+                <p>Led manufacturing design improvements & proposed a weld automation process with long-term ROI modeling.</p>
+              </details>
+              <details>
+                <summary>Fiat Chrysler Automobiles (Summer 2020)</summary>
+                <p>Analyzed tooling processes in engine manufacturing. Worked on process control & root-cause investigations.</p>
+              </details>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <h3>2023 – 2025</h3>
+            <div class="timeline-content">
+              <h4>MSME @ Texas A&M University</h4>
+              <ul>
+                <li>Research in plasma remediation of PFAS chemicals</li>
+                <li>Project Lead for Texas A&M Solar Car Racing Team</li>
+                <li>TAMU Sustainability Champion Award recipient</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <h3>2018 – 2022</h3>
+            <div class="timeline-content">
+              <h4>BSME @ Michigan State University</h4>
+              <ul>
+                <li>Senior Business Director for MSU Solar Car Team</li>
+                <li>NCAA Wrestler (100+ hours of on-mat time)</li>
+                <li>4x Dean's List honoree</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script>
-function trackDownload() {
-  // Basic download counter placeholder — real implementation needs backend
-  console.log('Resume downloaded');
-  // Could be extended using Google Analytics or a backend counter script
-}
-</script>
+    <section class="about-section">
+      <div class="center">
+        <h2 class="section-title">Engineering Philosophy</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <h3><span>🔧</span> Hands-On Innovation</h3>
+            <p>I believe the best engineering solutions come from combining theoretical knowledge with physical prototyping and testing. My work on solar cars and the FSAE sim rig demonstrates this approach.</p>
+          </div>
+          <div class="value-card">
+            <h3><span>🌱</span> Sustainable Solutions</h3>
+            <p>From solar vehicle development to PFAS remediation research, I'm committed to engineering that reduces environmental impact while maintaining performance.</p>
+          </div>
+          <div class="value-card">
+            <h3><span>👥</span> Mentorship Focused</h3>
+            <p>Having guided 350+ students, I'm passionate about helping the next generation of engineers develop both technical skills and professional confidence.</p>
+          </div>
+          <div class="value-card">
+            <h3><span>🏁</span> Resilient Execution</h3>
+            <p>My experience as a wrestler and solar car competitor taught me to persist through technical challenges and tight deadlines without compromising quality.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="about-section bg-light">
+      <div class="center">
+        <h2 class="section-title">Technical Proficiencies</h2>
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3>Engineering Software</h3>
+            <ul class="skills-list">
+              <li>SolidWorks <span class="skill-level expert">Expert</span></li>
+              <li>ANSYS <span class="skill-level advanced">Advanced</span></li>
+              <li>Siemens NX <span class="skill-level advanced">Advanced</span></li>
+              <li>STAR-CCM+ <span class="skill-level intermediate">Intermediate</span></li>
+              <li>MATLAB <span class="skill-level advanced">Advanced</span></li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Technical Skills</h3>
+            <ul class="skills-list">
+              <li>Finite Element Analysis <span class="skill-level advanced">Advanced</span></li>
+              <li>Computational Fluid Dynamics <span class="skill-level intermediate">Intermediate</span></li>
+              <li>Six Sigma Methodologies <span class="skill-level expert">Green Belt Certified</span></li>
+              <li>Technical Documentation <span class="skill-level advanced">Advanced</span></li>
+              <li>Design for Manufacturing <span class="skill-level advanced">Advanced</span></li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Leadership</h3>
+            <ul class="skills-list">
+              <li>Cross-Functional Team Leadership</li>
+              <li>Technical Mentorship</li>
+              <li>Project Management</li>
+              <li>Stakeholder Communication</li>
+              <li>Crisis Management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="center">
+        <h2 class="section-title">Beyond Engineering</h2>
+        <div class="fun-facts">
+          <div class="fun-fact">
+            <h3>🏅 NCAA Athlete</h3>
+            <p>Competed in Division I wrestling at Michigan State University, logging 100+ hours of on-mat time while maintaining engineering studies.</p>
+          </div>
+          <div class="fun-fact">
+            <h3>🏁 Motorsports Enthusiast</h3>
+            <p>Served as pit lane marshal at Circuit of The Americas for WEC and NASCAR events, handling high-pressure situations during races.</p>
+          </div>
+          <div class="fun-fact">
+            <h3>🚀 Technical Presenter</h3>
+            <p>Presented nuclear research at the 2024 International Topical Meeting on Nuclear Applications of Accelerators.</p>
+          </div>
+          <div class="fun-fact">
+            <h3>✈️ Avid Traveler</h3>
+            <p>Coordinated solar car logistics across three time zones during national competitions, developing adaptability and crisis management skills.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <p id="footerText">© Ian Burress 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
