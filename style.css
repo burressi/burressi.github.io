@@ -28,26 +28,36 @@ a {
 #mainHeader {
   position: sticky;
   top: 0;
-  width: 100%; /* Full viewport width */
-  left: 0;
-  right: 0;
+  width: 100%;
   background-color: white;
   z-index: 1000;
   display: flex;
-  flex-wrap: wrap; /* Allows stacking on small screens */
-  justify-content: space-between;
+  justify-content: space-between; /* This is key */
   align-items: center;
   padding: 0 20px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
 
-.headerLeft, .headerCenter, .headerRight {
-  flex: 1;
-  min-width: 0; 
-  gap: 10px
+.headerLeft {
   display: flex;
-  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto; /* Don't grow or shrink */
+}
+
+/* Header Center - Logo */
+.headerCenter {
+  position: absolute; /* Absolute positioning for perfect center */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Header Right - Navigation */
+.headerRight {
+  display: flex;
+  gap: 12px;
+  flex: 0 0 auto; /* Don't grow or shrink */
+  margin-left: auto; /* Pushes it to the right */
 }
 
 .headerLeft .icon {
@@ -78,20 +88,22 @@ a {
 @media (max-width: 768px) {
   #mainHeader {
     flex-direction: column;
-    gap: 10px;
     padding: 10px;
   }
   
-  .headerLeft, .headerCenter, .headerRight {
-    width: 20px;
-    height: 20px;
-    justify-content: center;
+  .headerCenter {
+    position: static;
+    transform: none;
+    order: -1; /* Logo first on mobile */
+    margin-bottom: 10px;
   }
   
-  .headerRight {
-    flex-wrap: wrap;
+  .headerLeft, .headerRight {
+    justify-content: center;
+    width: 100%;
   }
 }
+
 
 .contact-form {
   display: flex;
