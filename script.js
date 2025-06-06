@@ -327,13 +327,3 @@ $(document).ready(function() {
     showImage(0);
   });
 });
-// Find elements wider than viewport
-const docWidth = document.documentElement.offsetWidth;
-[].forEach.call(
-    document.querySelectorAll('*'),
-    function(el) {
-        if (el.offsetWidth > docWidth) {
-            console.log(el);
-        }
-    }
-);
