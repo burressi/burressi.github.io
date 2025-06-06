@@ -27,7 +27,7 @@ a {
 /* === Sticky Header === */
 #mainHeader {
   position: sticky;
-  top: 0;
+  top: 2px;
   width: 100%;
   background-color: white;
   z-index: 1000;
