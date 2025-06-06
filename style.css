@@ -45,14 +45,14 @@ a {
 .headerLeft, .headerCenter, .headerRight {
   flex: 1;
   min-width: 0; 
-  gap: 8px
+  gap: 10px
   display: flex;
   align-items: center;
 }
 
 .headerLeft .icon {
-  width: 24px; 
-  height: 24px;
+  width: 32px; 
+  height: 32px;
 }
 
 
