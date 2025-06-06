@@ -37,22 +37,27 @@ a {
   flex-wrap: wrap; /* Allows stacking on small screens */
   justify-content: space-between;
   align-items: center;
-  padding: 10px 5%;
+  padding: 8px 3%;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
 
 .headerLeft, .headerCenter, .headerRight {
   flex: 1;
-  min-width: 0; /* Crucial for flex item shrinking */
+  min-width: 0; 
+  gap: 8px
   display: flex;
   align-items: center;
 }
 
-.headerLeft {
-  justify-content: flex-start;
-  gap: 10px;
+.headerLeft .icon {
+  width: 24px; 
+  height: 24px;
 }
+
+
+
+
 
 .headerCenter {
   justify-content: center;
@@ -78,7 +83,8 @@ a {
   }
   
   .headerLeft, .headerCenter, .headerRight {
-    width: 100%;
+    width: 20px;
+    height: 20px;
     justify-content: center;
   }
   
