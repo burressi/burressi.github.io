@@ -281,6 +281,12 @@ a {
   right: 0;
 }
 
+/* Prevent any potential overflow */
+body > *:not(header):not(footer) {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 /* Mobile Responsive */
 @media screen and (max-width: 600px) {
   .platform {
@@ -358,7 +364,6 @@ a {
 .platform:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  transform: translateY(-5px);
   transition: all 0.3s ease;
 }
 
@@ -1355,4 +1360,4 @@ a {
     justify-content: flex-start;
   }
 }
-overflow-x: hidden;
+
