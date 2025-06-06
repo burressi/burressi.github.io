@@ -257,3 +257,73 @@ $(document).ready(function() {
   initCarousels();
   initDarkMode();
 });
+// Project Filter Functionality
+function initProjectFilters() {
+  $('.project-filters .filter-btn').click(function() {
+    const filter = $(this).data('filter');
+    
+    // Update active button
+    $('.project-filters .filter-btn').removeClass('active');
+    $(this).addClass('active');
+    
+    // Filter projects
+    if (filter === 'all') {
+      $('.project-card').show();
+    } else {
+      $('.project-card').each(function() {
+        const categories = $(this).data('categories');
+        $(this).toggle(categories.includes(filter));
+      });
+    }
+  });
+}
+
+// Initialize when document ready
+$(document).ready(function() {
+  initCarousels();
+  initDarkMode();
+  initProjectFilters();
+  
+  // Initialize all project carousels
+  $('.project-carousel').each(function() {
+    const $carousel = $(this);
+    const $images = $carousel.find('img');
+    let current = 0;
+    
+    if ($images.length <= 1) return;
+    
+    function showImage(index) {
+      $images.removeClass('active').addClass('hidden');
+      $images.eq(index).removeClass('hidden').addClass('active');
+    }
+    
+    $carousel.on('click', '.prev', function(e) {
+      e.stopPropagation();
+      current = (current - 1 + $images.length) % $images.length;
+      showImage(current);
+    });
+    
+    $carousel.on('click', '.next', function(e) {
+      e.stopPropagation();
+      current = (current + 1) % $images.length;
+      showImage(current);
+    });
+    
+    // Touch support
+    let touchStartX = 0;
+    $carousel.on('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+    });
+    
+    $carousel.on('touchend', function(e) {
+      const touchEndX = e.changedTouches[0].clientX;
+      if (touchStartX - touchEndX > 50) {
+        $carousel.find('.next').click();
+      } else if (touchEndX - touchStartX > 50) {
+        $carousel.find('.prev').click();
+      }
+    });
+    
+    showImage(0);
+  });
+});
