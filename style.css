@@ -26,51 +26,65 @@ a {
 /* Header*/
 /* === Sticky Header === */
 #mainHeader {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    max-width: 100vw;
-    height: auto;
-    min-height: 50px;
-    background-color: white;
-    z-index: 1000;
-    display: flex;
-    flex-wrap: wrap; /* Allows header to stack on small screens */
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 5%;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+  position: sticky;
+  top: 0;
+  width: 100vw; /* Full viewport width */
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
+  display: flex;
+  flex-wrap: wrap; /* Allows stacking on small screens */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 .headerLeft, .headerCenter, .headerRight {
-    flex: 1 1 auto;
-    min-width: 0;
-    display: flex;
-    align-items: center;
-    padding: 5px 0;
+  flex: 1;
+  min-width: 0; /* Crucial for flex item shrinking */
+  display: flex;
+  align-items: center;
 }
 
 .headerLeft {
-    justify-content: flex-start;
-    gap: 10px;
-    flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
 .headerCenter {
-    justify-content: center;
+  justify-content: center;
 }
 
 .headerRight {
-    justify-content: flex-end;
-    gap: 10px;
-    flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
 }
 
 #headerLogo {
-    height: 30px;
-    max-width: 100%;
-    object-fit: contain;
+  height: 30px;
+  width: auto;
+  max-width: 100%;
+}
+
+/* Mobile header */
+@media (max-width: 768px) {
+  #mainHeader {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .headerLeft, .headerCenter, .headerRight {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .headerRight {
+    flex-wrap: wrap;
+  }
 }
 
 .contact-form {
@@ -255,13 +269,22 @@ a {
   margin-top: 10px;
 }
 
-/* Footer */
 #footer {
-  padding: 40px 0;
+  width: 100vw;
+  padding: 20px 5%;
   text-align: center;
   background: #222;
   color: white;
-  font-size: 0.9rem;
+  box-sizing: border-box;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+/* Prevent any potential overflow */
+body > *:not(header):not(footer) {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 /* Mobile Responsive */
