@@ -357,13 +357,20 @@ body > *:not(header):not(footer) {
 }
 
 .timeline {
-  border-left: 3px solid #0077cc;
-  margin: 20px 0;
+  border-left: 3px solid #007BFF; /* blue line */
   padding-left: 20px;
 }
+
 .timeline-item {
-  margin-bottom: 15px;
+  border-left: none;  /* remove nested borders */
+  padding-left: 15px;
 }
+
+.timeline-subitem {
+  border-left: none; /* make subitems align cleanly */
+  margin-left: 10px;
+}
+
 
 .core-values {
   display: flex;
