@@ -16,6 +16,8 @@ CONTACT INFO: ian.n.burress@gmail.com
   Fix: About: Professional timeline: needs to be adjusted A LOT 
   Fix: Projects tab
   -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,9 +30,125 @@ CONTACT INFO: ian.n.burress@gmail.com
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=7" />
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
   <script src="script.js" defer></script>
+
+  <style>
+    /* Clean Mission Statement Typography */
+    .intro-statement {
+      max-width: 850px;
+      margin: 0 auto 80px auto;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #475569;
+      line-height: 1.8;
+    }
+    .intro-statement p {
+      margin-bottom: 20px;
+    }
+
+    /* Alternating Vertical Timeline */
+    .timeline-tree {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto 80px auto;
+      padding: 20px 0;
+    }
+    /* The Center Line */
+    .timeline-tree::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: #e2e8f0;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+    .timeline-node {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+    /* The Dots */
+    .timeline-node::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: -10px;
+      background-color: #ffffff;
+      border: 4px solid #18453B;
+      top: 25px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .node-left {
+      left: 0;
+    }
+    .node-right {
+      left: 50%;
+    }
+    .node-right::after {
+      left: -10px;
+    }
+    .node-content {
+      padding: 30px;
+      background-color: #ffffff;
+      position: relative;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .node-content:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+      border-color: #18453B;
+    }
+    .node-content h4 {
+      margin: 0 0 5px 0;
+      font-size: 1.35rem;
+      color: #1e293b;
+    }
+    .node-date {
+      display: inline-block;
+      background: #18453B;
+      color: #ffffff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    /* Mobile Timeline Adjustments */
+    @media (max-width: 768px) {
+      .intro-statement {
+        text-align: left;
+        font-size: 1.1rem;
+        padding: 0 10px;
+      }
+      .timeline-tree::after {
+        left: 20px;
+      }
+      .timeline-node {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 0;
+      }
+      .node-right {
+        left: 0;
+      }
+      .timeline-node::after {
+        left: 10px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -65,90 +183,95 @@ CONTACT INFO: ian.n.burress@gmail.com
 
   <main class="wrapper">
     <section class="about-intro">
-      <h1 class="section-title">About Me</h1>
-      <div class="about-grid">
-        <div class="about-bio-text">
-          <p>
-            I am a mechanical engineer built for high-stakes environments. My technical philosophy wasn't just shaped in the lab—it was forged on the mats as an NCAA Division I wrestler and tested in the pit lane suppressing live engine fires as a track marshal. 
-          </p>
-          <p>
-            I specialize in bridging the gap between high-fidelity hardware validation and aggressive performance criteria. Whether I am executing complex powertrain testing, designing structural chassis components, or managing cross-country racing logistics, I thrive in spaces where rigorous precision and extreme pressure intersect.
-          </p>
-        </div>
-        
-        <div class="about-hobbies-card">
-          <h3>Applied Engineering</h3>
-          <ul class="hobbies-list">
-            <li><strong>FPV Drone Systems:</strong> Applied mechatronics. I design, solder, and PID-tune high-speed cinematic quadcopters, balancing thrust-to-weight ratios with structural resilience.</li>
-            <li><strong>Automotive Prototyping:</strong> I treat project vehicles as live testbeds, executing hands-on custom fabrication, telemetry monitoring, and mechanical performance tuning.</li>
-            <li><strong>Motorsports Operations:</strong> Active trackside deployment, translating mechanical intuition into rapid-response safety interventions and technical compliance inspections.</li>
-          </ul>
-        </div>
+      <h1 class="section-title text-center" style="margin-bottom: 40px;">About Me</h1>
+      
+      <div class="intro-statement">
+        <p>
+          I am a mechanical engineer built for high-stakes environments. My technical philosophy wasn't just shaped in the lab—it was forged on the mats as an NCAA Division I wrestler and tested in the pit lane suppressing live engine fires as a track marshal. 
+        </p>
+        <p>
+          I specialize in bridging the gap between high-fidelity hardware validation and aggressive performance criteria. Whether I am executing complex powertrain testing, designing structural chassis components, or managing cross-country racing logistics, I thrive in spaces where rigorous precision and extreme pressure intersect.
+        </p>
       </div>
     </section>
 
     <section class="timeline-section">
-      <h2 class="section-title">Professional Timeline</h2>
-      <div class="timeline-container">
+      <h2 class="section-title text-center" style="margin-bottom: 60px;">Professional Timeline</h2>
+      
+      <div class="timeline-tree">
         
-        <div class="timeline-card current-role">
-          <div class="timeline-header">
+        <div class="timeline-node node-left">
+          <div class="node-content">
             <h4>Caterpillar Inc.</h4>
-            <span class="timeline-date">2024 – Present</span>
+            <span class="node-date">2024 – Present</span>
+            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Engineering Rotational Development (ERD)</p>
+            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Executing high-impact corporate rotations designed to solidify core competencies across industrial engine validation and system design workflows.</p>
+            <ul style="font-size: 0.9rem; color: #475569; padding-left: 18px; margin-top: 15px; line-height: 1.6;">
+              <li style="margin-bottom: 5px;"><strong>Houston, Texas:</strong> Heavy powertrain validation testing and diagnostic analysis.</li>
+              <li><strong>Raleigh, North Carolina:</strong> Component life-cycle tracking and equipment configurations.</li>
+            </ul>
           </div>
-          <p class="timeline-role">Engineering Rotational Development (ERD) Program</p>
-          <p class="timeline-desc">Executing high-impact corporate rotations designed to solidify core competencies across industrial engine validation, system design, and alternative energy development workflows.</p>
-          <ul class="timeline-bullets">
-            <li><strong>Rotation 1 &amp; Current Placement:</strong> Houston, Texas — Managing heavy powertrain validation testing, instrumentation execution, and diagnostic analysis.</li>
-            <li><strong>Corporate Rotation Hub:</strong> Raleigh, North Carolina — Focused on localized equipment configurations, component life-cycle tracking, and cross-functional team synchronization.</li>
-          </ul>
         </div>
 
-        <div class="timeline-card">
-          <div class="timeline-header">
+        <div class="timeline-node node-right">
+          <div class="node-content">
             <h4>Texas A&M University</h4>
-            <span class="timeline-date">2022 – 2024</span>
+            <span class="node-date">2022 – 2024</span>
+            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">M.S. Mechanical Engineering</p>
+            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Advanced core systems engineering, multi-physics simulation validation, and empirical testing layouts.</p>
+            <ul style="font-size: 0.9rem; color: #475569; padding-left: 18px; margin-top: 15px; line-height: 1.6;">
+              <li style="margin-bottom: 5px;">Graduate Research Assistant, DOE Mobile Electron Beam Soil Remediation Project</li>
+              <li>Logistics &amp; Operations Engineer, Texas A&M Solar Car Racing Team</li>
+            </ul>
           </div>
-          <p class="timeline-role">Master of Science in Mechanical Engineering</p>
-          <p class="timeline-desc">Advanced core systems engineering, multi-physics simulation validation, and empirical testing layouts.</p>
-          <ul class="timeline-bullets">
-            <li>Graduate Research Assistant — DOE Mobile Electron Beam Soil Remediation Project</li>
-            <li>Logistics &amp; Operations Systems Engineer — Texas A&M Solar Car Racing Team</li>
-          </ul>
         </div>
 
-        <div class="timeline-card">
-          <div class="timeline-header">
+        <div class="timeline-node node-left">
+          <div class="node-content">
             <h4>Michigan State University</h4>
-            <span class="timeline-date">2018 – 2022</span>
+            <span class="node-date">2018 – 2022</span>
+            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">B.S. Mechanical Engineering</p>
+            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Laid foundational principles in fluid dynamics, thermal analysis, structural design, and component fabrication layout.</p>
+            <ul style="font-size: 0.9rem; color: #475569; padding-left: 18px; margin-top: 15px; line-height: 1.6;">
+              <li style="margin-bottom: 5px;">NCAA Division I Student-Athlete (Wrestling Team)</li>
+              <li style="margin-bottom: 5px;">Senior Business Director, MSU Solar Car Racing Team</li>
+              <li>Undergraduate Research Assistant, Clean Combustion Laboratory</li>
+            </ul>
           </div>
-          <p class="timeline-role">Bachelor of Science in Mechanical Engineering</p>
-          <p class="timeline-desc">Laid foundational principles in fluid dynamics, thermal analysis, structural design, and hands-on component fabrication layout.</p>
-          <ul class="timeline-bullets">
-            <li>NCAA Division I Student-Athlete (Wrestling Team)</li>
-            <li>Senior Business &amp; Logistics Director — MSU Solar Car Racing Team</li>
-            <li>Undergraduate Research Assistant — Clean Combustion Laboratory</li>
-          </ul>
         </div>
 
       </div>
     </section>
 
     <section class="fun-facts-section">
-      <h2 class="section-title">Metrics &amp; Milestones</h2>
-      <div class="facts-grid">
-        <div class="fact-item"><span class="fact-accent">100+</span> <p>Hours of high-intensity competitive mat time logged as an NCAA athlete.</p></div>
-        <div class="fact-item"><span class="fact-accent">2k+</span> <p>Miles covered across design, construction, and tracking of two fully functional solar cars.</p></div>
-        <div class="fact-item"><span class="fact-accent">2</span> <p>Live pit lane fire emergency interventions managed successfully under track conditions.</p></div>
-        <div class="fact-item"><span class="fact-accent">1</span> <p>United States Patent application submitted prior to reaching 21 years of age.</p></div>
-        <div class="fact-item"><span class="fact-accent">3</span> <p>Time zones managed simultaneously to synchronize high-stakes race logistics.</p></div>
-        <div class="fact-item"><span class="fact-accent">Nuclear</span> <p>Research findings generated and presented at an international accelerator conference.</p></div>
-        <div class="fact-item"><span class="fact-accent">3</span> <p>Completed engineering internships at global vehicle manufacturing leaders by age 22.</p></div>
+      <h2 class="section-title text-center" style="margin-bottom: 40px;">Metrics &amp; Milestones</h2>
+      <div class="facts-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto;">
+        
+        <div style="background: #18453B; color: #ffffff; padding: 35px 25px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+          <span style="font-size: 2.8rem; font-weight: 700; display: block; margin-bottom: 10px;">100+</span> 
+          <p style="font-size: 0.95rem; line-height: 1.6; margin: 0;">Hours of high-intensity competitive mat time logged as an NCAA athlete.</p>
+        </div>
+        
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 35px 25px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+          <span style="font-size: 2.8rem; font-weight: 700; color: #18453B; display: block; margin-bottom: 10px;">2k+</span> 
+          <p style="font-size: 0.95rem; color: #475569; line-height: 1.6; margin: 0;">Miles covered across design, construction, and tracking of two fully functional solar cars.</p>
+        </div>
+
+        <div style="background: #18453B; color: #ffffff; padding: 35px 25px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+          <span style="font-size: 2.8rem; font-weight: 700; display: block; margin-bottom: 10px;">2</span> 
+          <p style="font-size: 0.95rem; line-height: 1.6; margin: 0;">Live pit lane fire emergency interventions managed successfully under track conditions.</p>
+        </div>
+
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 35px 25px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+          <span style="font-size: 2.8rem; font-weight: 700; color: #18453B; display: block; margin-bottom: 10px;">3</span> 
+          <p style="font-size: 0.95rem; color: #475569; line-height: 1.6; margin: 0;">Time zones managed simultaneously to synchronize high-stakes race logistics.</p>
+        </div>
+
       </div>
     </section>
   </main>
 
-  <footer id="footer">
+  <footer id="footer" style="margin-top: 80px;">
     <div class="footer-container">
       <p id="footerText">&copy; 2026 Ian Burress. Hand-coded using HTML5 &amp; CSS3.</p>
     </div>
