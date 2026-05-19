@@ -1385,4 +1385,218 @@ body > *:not(header):not(footer) {
     justify-content: flex-start;
   }
 }
+/* =========================================
+   Modernized Portfolio Additions
+   ========================================= */
 
+/* Typography & Base */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header & Sticky Nav */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 10px 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header-links a {
+  text-decoration: none;
+  color: #333;
+  margin-left: 20px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.header-links a:hover {
+  color: #0056b3;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('pictures/DuoOnTrack.jpg') center/cover;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #ffcc00; /* Subtle nod to Caterpillar/Motorsports yellow */
+  color: #111 !important;
+}
+
+.btn-primary:hover {
+  background: #e6b800;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+  background: #fff;
+  color: #111;
+  transform: translateY(-2px);
+}
+
+/* Sections & Wrappers */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Z-Pattern Project Cards */
+.project-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.project-gallery {
+  flex: 1;
+}
+
+.main-project-img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.main-project-img:hover {
+  transform: scale(1.02);
+}
+
+.project-details {
+  flex: 1;
+}
+
+.project-title {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.project-role {
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Tech Tags */
+.tech-tags {
+  margin: 20px 0;
+}
+
+.tag {
+  display: inline-block;
+  background: #eee;
+  color: #333;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-right: 8px;
+  font-weight: 600;
+}
+
+.btn-text {
+  color: #0056b3;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn-text:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+#mainFooter {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.footer-container .icon {
+  width: 30px;
+  margin: 0 10px;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s ease;
+}
+
+.footer-container .icon:hover {
+  opacity: 0.7;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .project-card, .row-reverse {
+    flex-direction: column;
+  }
+  
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
