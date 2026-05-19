@@ -565,5 +565,145 @@ a {
     grid-template-columns: 1fr;
     gap: 30px;
   }
+
+   /* =========================================
+   PROJECT GALLERY FILTER BUTTONS
+   ========================================= */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  color: var(--text-light);
+  padding: 10px 22px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.filter-btn.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white);
+  box-shadow: var(--box-shadow-light);
+}
+
+/* =========================================
+   PROJECT DISPLAY CARD LAYOUT GRID
+   ========================================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 35px;
+}
+
+.project-display-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow-light);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.project-display-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--box-shadow);
+  border-color: #cbd5e1;
+}
+
+.project-carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Internal Card Content Typography */
+.project-display-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-display-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.project-meta-badges {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.meta-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.meta-badge.category {
+  background: #e8ecea;
+  color: var(--primary-color);
+}
+
+.meta-badge.date {
+  background: #f1f5f9;
+  color: var(--text-light);
+}
+
+.project-summary-text p {
+  font-size: 0.98rem;
+  color: var(--text-main);
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.project-bullets-list {
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+.project-bullets-list li {
+  font-size: 0.92rem;
+  color: var(--text-light);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Responsive Scaling for Grid Panels */
+@media (max-width: 1100px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-display-content {
+    padding: 20px;
+  }
+  .project-display-content h2 {
+    font-size: 1.3rem;
+  }
 }
 }
