@@ -414,4 +414,156 @@ a {
     flex-wrap: wrap;
     justify-content: center;
   }
+   /* =========================================
+   ABOUT PAGE CONTENT LAYOUTS
+   ========================================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 40px;
+  margin-bottom: 60px;
+  align-items: start;
+}
+
+.about-bio-text p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: var(--text-light);
+}
+
+.about-hobbies-card {
+  background: var(--bg-light);
+  border-left: 4px solid var(--primary-color);
+  padding: 25px;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  box-shadow: var(--box-shadow-light);
+}
+
+.about-hobbies-card h3 {
+  font-size: 1.3rem;
+  color: var(--black);
+  margin-bottom: 15px;
+}
+
+.hobbies-list {
+  list-style: none;
+}
+
+.hobbies-list li {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+/* =========================================
+   CLEAN METRIC TIMELINE STRUCTURE
+   ========================================= */
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.timeline-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--box-shadow-light);
+  transition: var(--transition);
+}
+
+.timeline-card:hover {
+  transform: translateX(4px);
+  border-color: var(--primary-color);
+}
+
+.current-role {
+  border-left: 4px solid var(--primary-color);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.timeline-header h4 {
+  font-size: 1.5rem;
+  color: var(--black);
+}
+
+.timeline-date {
+  font-weight: 700;
+  color: var(--primary-color);
+  background: #e8ecea;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.timeline-role {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.timeline-desc {
+  color: var(--text-light);
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.timeline-bullets {
+  padding-left: 20px;
+}
+
+.timeline-bullets li {
+  margin-bottom: 6px;
+  color: var(--text-light);
+}
+
+/* =========================================
+   FUN FACTS GRID
+   ========================================= */
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.fact-item {
+  background: var(--bg-light);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: var(--box-shadow-light);
+}
+
+.fact-accent {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.fact-item p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* Responsive fixes for tablet/mobile viewports */
+@media (max-width: 850px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
 }
