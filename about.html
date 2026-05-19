@@ -20,199 +20,138 @@ CONTACT INFO: ian.n.burress@gmail.com
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Ian Burress - Mechanical Engineer specializing in testing, alternative energies, and heavy powertrains." />
   <title>Ian Burress - About Me</title>
-  <!-- Favicon -->
+  
   <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=2" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-  <!-- Header-->
-  <header id="mainHeader">
-    <div class="headerLeft">
-      <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" aria-label="LinkedIn Profile">
-        <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
-      </a>
-      <a href="https://github.com/burressi" target="_blank" aria-label="GitHub Profile">
-        <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
-      </a>
-      <a href="mailto:ian.n.burress@gmail.com" target="_blank" aria-label="Email Ian">
-        <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />  
-      </a>
+  <header id="mainHeader" class="sticky-nav">
+    <div class="header-container">
+      <div class="headerLeft">
+        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" aria-label="LinkedIn Profile">
+          <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
+        </a>
+        <a href="https://github.com/burressi" target="_blank" aria-label="GitHub Profile">
+          <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
+        </a>
+        <a href="mailto:ian.n.burress@gmail.com" target="_blank" aria-label="Email Ian">
+          <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />
+        </a>
+      </div>
+
+      <div class="headerCenter">
+        <a href="https://burressi.github.io/">
+          <img src="icons/ClearBlack2.png" alt="Ian Burress Logo" id="headerLogo" />
+        </a>
+      </div>
+      
+      <nav class="headerRight header-links">
+        <a href="about.html" class="active">About Me</a>
+        <a href="projects1.html">Projects</a>
+        <a href="accolades.html">Accolades</a>
+        <a href="contact.html" class="btn-primary-nav">Contact Me</a>
+      </nav>
     </div>
-     
-    <div class="headerCenter">
-      <a href="https://burressi.github.io/" aria-label="Home">
-        <img src="icons/ClearBlack2.png" alt="Ian Burress Logo" id="headerLogo" />
-      </a>
-    </div>
-    <nav class="headerRight">
-      <a href="about.html">About Me</a>
-      <a href="projects1.html">Projects</a>
-      <a href="accolades.html">Accolades</a>
-      <a href="contact.html">Contact Me</a>
-    </nav>
   </header>
 
-  <!-- Main Section -->
-  <main>
-    <section class="page">
-      <div class="center">
-        <h2 class="pageTitle">Hi, I'm Ian Burress</h2>
-        <p class="pageText">
-          I am a Michigan State and Texas A&M grad working full time at Caterpillar as part of their Engineering Rotational Development Program. My day to day work varies but is centered around the Large Power Systems Division working on C175, 3500, 3600 series engines mainly focused in the Oil and Gas and Electric Power divisions.
-        </p>
-        <p class="pageText">
-          My passion for the automotive industry began very early in my life, I learned colors and numbers by going to the local NASCAR track and from then on I was hooked. I always wanted to learn how things work and would tear everything apart and try to put it back together. This passion grew then to me fixing up motorcycles in high school and growing up just outside of NASA Langley Research Center in Virginia meant that there was no shortage of S.T.E.M. programs to get involved in. As a former Division 1 athlete and first generation college graduate, I tend to thrive in high pace high demand environments.
-        </p>
-        <p class="pageText">
-          While at Michigan State in undergrad, my free time was either spent in study hall, in the wrestling room competing for their D1 program or in the solar car garage working on the chassis or website. Once I got to Texas A&M while I did not continue wrestling I did continue solar car, the only problem was there was no team. So I started a team and became the project manager of the team, forcing me to understand a lot of vehicle concepts very quickly and navigate and create a competitive vehicle. All of this while completing a masters thesis in the Non-Equilibrium Plasma Laboratory at Texas A&M. So for someone who was used to being so busy for so long I now try to enjoy my free time with various hobbies such as flying FPV drones, iRacing, martial arts (judo, jujitsu, striking, cage sparring), fitness, and motorsports! Most weekends you can find me at the track with a fire extinguisher in hand or in the gym training.
-        </p>
-        <p class="pageText">
-          My background is very heavily influenced by the automotive industry. I have interned at companies like Harley Davidson and Stellantis twice, before eventually coming to Caterpillar and interning several times. In those internships I played various roles such as quality engineering, production engineering, components engineer, and interior design engineer. While each role taught me something new I eventually settled on becoming an applications engineer. While my role is constantly developing I think I can use my well rounded skill set to work with the various Cat teams to make sure we are producing the best unit we can for our customer (very similar to my experience running a solar car team). My career interests continue to expand and evolve and I expect to learn more as my engineering career continues but I think my passion is in testing, simulation, and validation. Seeing a concept through its iterations come to life is incredibly satisfying.
-        </p>
-        <p class="pageText">
-          While at Michigan State I was a webmaster for the solar car team, this is my first time creating a website from scratch using HTML instead of a UI like wordpress. I hope to continue to evolve this website as I grow.
-        </p>
-<!--
-        <div class="resume-button">
-          <a href="Burress_Ian_Resume.pdf" download onclick="trackDownload()" class="downloadBtn">Download My Resume</a>
+  <main class="wrapper">
+    <section class="about-intro">
+      <h1 class="section-title">About Me</h1>
+      <div class="about-grid">
+        <div class="about-bio-text">
+          <p>
+            I am a driven mechanical engineer who loves bridging the gap between high-fidelity hardware testing and aggressive performance criteria. Currently, I am expanding my technical breadth within the <strong>Caterpillar Engineering Rotational Development (ERD) Program</strong> in Houston, Texas, focusing on heavy-duty powertrains and alternative energy systems.
+          </p>
+          <p>
+            My engineering philosophy was forged in high-intensity environments: from wrestling on the mats as an NCAA Division I athlete to suppressing live engine pit fires as a track marshal. Whether simulating advanced thermal profiles or executing hands-on component fabrication, I thrive on challenging, interdisciplinary projects.
+          </p>
         </div>
--->
-        <div class="stats-grid">
-          <div class="stat-block"><h3>52</h3><p>University Classes Completed</p></div>
-          <div class="stat-block"><h3>27</h3><p>Students Mentored</p></div>
-          <div class="stat-block"><h3>5</h3><p>Industry Internships</p></div>
-          <div class="stat-block"><h3>11</h3><p>Merit Awards</p></div>
+        
+        <div class="about-hobbies-card">
+          <h3>Beyond the Lab</h3>
+          <ul class="hobbies-list">
+            <li><strong>FPV Drone Pilot:</strong> Building, tuning, and piloting high-speed cinematic and freestyle quadcopters.</li>
+            <li><strong>Project Cars:</strong> Hands-on automotive tuning, custom fabrication, and performance modifications.</li>
+            <li><strong>Motorsports:</strong> Actively serving in engineering operations and track marshal execution.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-section">
+      <h2 class="section-title">Professional Timeline</h2>
+      <div class="timeline-container">
+        
+        <div class="timeline-card current-role">
+          <div class="timeline-header">
+            <h4>Caterpillar Inc.</h4>
+            <span class="timeline-date">2024 – Present</span>
+          </div>
+          <p class="timeline-role">Engineering Rotational Development (ERD) Program</p>
+          <p class="timeline-desc">Executing technical rotations spanning design, validation, and performance test operations across alternative energy frameworks and large-scale industrial powertrains.</p>
+          <ul class="timeline-bullets">
+            <li><strong>Rotation 1:</strong> [Insert specialized department/focus area, e.g., Powertrain Validation Engineering]</li>
+            <li><strong>Rotation 2:</strong> [Insert focus area or leave clear for upcoming rotation assignments]</li>
+          </ul>
         </div>
 
-<!-- Professional Timeline Section -->
-<h3 class="blockTitle">Professional Timeline</h3>
-<div class="timeline">
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <h4>Texas A&M University</h4>
+            <span class="timeline-date">2022 – 2024</span>
+          </div>
+          <p class="timeline-role">Master of Science in Mechanical Engineering</p>
+          <p class="timeline-desc">Advanced core systems design, simulation workflows, and empirical testing criteria.</p>
+          <ul class="timeline-bullets">
+            <li>Graduate Research Assistant, DOE Mobile Electron Beam Remediation System</li>
+            <li>Logistics &amp; Operations Engineer, Texas A&M Solar Car Racing Team</li>
+          </ul>
+        </div>
 
-  <!-- Caterpillar Rotations -->
-  <div class="timeline-item">
-    <h4>2024 — Present</h4>
-    <p><strong>Caterpillar – Engineering Rotational Development Program (ERDP)</strong></p>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <h4>Michigan State University</h4>
+            <span class="timeline-date">2018 – 2022</span>
+          </div>
+          <p class="timeline-role">Bachelor of Science in Mechanical Engineering</p>
+          <p class="timeline-desc">Laid foundational principles in thermodynamics, structural analysis, and hands-on manufacturing.</p>
+          <ul class="timeline-bullets">
+            <li>NCAA Division I Student-Athlete (Wrestling)</li>
+            <li>Senior Business Director, MSU Solar Car Racing Team</li>
+            <li>Research Assistant, Clean Combustion Laboratory</li>
+          </ul>
+        </div>
 
-    <div class="timeline-subitem">
-      <h5>July 2025 – Present | Test & Development Engineer – Clayton, NC</h5>
-      <p>Performed engine and component testing using Dewesoft, CANape, and CADet. Deployed sensors including strain rosettes, thermocouples, and instrumented bolts. Reinforced precision knowledge with GD&T training.</p>
-    </div>
+      </div>
+    </section>
 
-    <div class="timeline-subitem">
-      <h5>March 2025 – July 2025 | G3500 Platform Engineer – Lafayette, IN</h5>
-      <p>Rebuilt field failure engines, organized 360+ components, and resolved part discrepancies. Investigated turbocharger failures and documented failure modes. Supported roading and bump tests on customer chassis.</p>
-    </div>
-
-    <div class="timeline-subitem">
-      <h5>December 2024 – March 2025 | Product Support Engineer – Lafayette, IN</h5>
-      <p>Conducted warranty investigations and failure analysis across marine, locomotive, oil & gas, and electric power applications. Interfaced with dealers and customers to trace in-field failures and supported NPI projects.</p>
-    </div>
-
-    <div class="timeline-subitem">
-      <h5>August 2024 – December 2024 | Application & Installation Engineer – Houston, TX</h5>
-      <p>Executed field audits, troubleshooting equipment in advance. Acted as liaison between global dealers and Caterpillar, resolving technical inquiries and ensuring product support alignment. Presented audit results at division conference.</p>
-    </div>
-  </div>
-
-  <!-- Caterpillar Internships -->
-  <div class="timeline-item">
-    <h4>Internships</h4>
-
-    <div class="timeline-subitem">
-      <h5>Summer 2023 | Caterpillar – Manufacturing Technology & Solutions Intern (Chillicothe, IL)</h5>
-      <p>Earned Six Sigma Green Belt leading safety improvement projects. Designed installation plan saving $250,000 if implemented.</p>
-    </div>
-
-    <div class="timeline-subitem">
-      <h5>Summer 2022 | Caterpillar – Integrated Components & Solutions Intern (Peoria, IL)</h5>
-      <p>Facilitated assisted reality adoption for manufacturing. Supported production troubleshooting and quality improvements.</p>
-    </div>
-
-    <div class="timeline-subitem">
-      <h5>Summer 2021 | Stellantis – Manufacturing Quality Intern (Dundee, MI)</h5>
-      <p>Initiated continuous improvement initiatives, managed audits, and deployed WCM strategies. Generated cost savings of $50,000+ annually.</p>
-    </div>
-
-    <div class="timeline-subitem">
-      <h5>Summer 2020 | Fiat Chrysler Automobiles – Interior Design Intern (Auburn Hills, MI)</h5>
-      <p>Collaborated on infotainment concepts using CAD and visualization software. Awarded “Most Innovative Concept” with patent consideration.</p>
-    </div>
-
-    <div class="timeline-subitem">
-      <h5>Summer 2019 | Harley-Davidson – Manufacturing Intern (York, PA)</h5>
-      <p>Diagnosed engine issues, designed parts and tools, and contributed to model introductions across two facilities.</p>
-    </div>
-  </div>
-
-  <!-- Academic Research Roles -->
-  <div class="timeline-item">
-    <h4>Academic Research</h4>
-
-    <div class="timeline-subitem">
-      <h5>2022 – 2024 | Graduate Research Assistant – Texas A&M University</h5>
-      <p>Designed a mobile radiation treatment facility, performed SolidWorks feasibility and FEA simulations, and coordinated weekly design reviews with advisors.</p>
-    </div>
-
-    <div class="timeline-subitem">
-      <h5>2020 – 2022 | Research Assistant – Michigan State University</h5>
-      <p>Investigated sequential two-stage combustion, analyzed flame propagation using high-speed Schlieren imaging, and processed results in Matlab.</p>
-    </div>
-  </div>
-
-  <!-- Education Section -->
-  <div class="timeline-item">
-    <h4>Education</h4>
-
-    <div class="timeline-subitem">
-      <h5>2022 – 2024 | Texas A&M University</h5>
-      <p>Master of Science in Mechanical Engineering</p>
-      <ul>
-        <li>Thesis: “Design of a Mobile Electron Beam Treatment Station for Contaminated Soils”</li>
-        <li>Graduate Research Assistant, Non-Equilibrium Plasma Lab</li>
-        <li>Founder & Project Manager, Texas A&M Solar Car Racing Team</li>
-      </ul>
-    </div>
-
-    <div class="timeline-subitem">
-      <h5>2018 – 2022 | Michigan State University</h5>
-      <p>Bachelor of Science in Mechanical Engineering</p>
-      <ul>
-        <li>NCAA Division I Wrestler</li>
-        <li>Senior Business Director, Solar Car Racing Team</li>
-        <li>Research Assistant, Combustion Lab</li>
-      </ul>
-    </div>
-  </div>
-
-</div>
-
-
-
-
-        <h3 class="blockTitle">Fun Facts</h3>
-        <ul class="fun-facts">
-          <li>Wrestled over 100+ hours of on-mat time as an NCAA athlete.</li>
-          <li>Built and raced two solar cars covering over 2,000 miles.</li>
-          <li>Extinguished two pit lane fires during high-pressure racing conditions.</li>
-          <li>Earned a U.S. patent before turning 21.</li>
-          <li>Presented nuclear research at an international accelerator conference.</li>
-          <li>Once simultaneously managed racing logistics across three time zones.</li>
-          <li>Designed and simulated a mobile electron beam system for soil remediation.</li>
-          <li>Completed three internships at global vehicle manufacturers by age 22.</li>
-        </ul>
+    <section class="fun-facts-section">
+      <h2 class="section-title">Fun Facts &amp; Milestones</h2>
+      <div class="facts-grid">
+        <div class="fact-item"><span class="fact-accent">100+</span> <p>Hours of high-intensity competitive mat time as an NCAA athlete.</p></div>
+        <div class="fact-item"><span class="fact-accent">2k+</span> <p>Miles covered across design, construction, and tracking of two functional solar cars.</p></div>
+        <div class="fact-item"><span class="fact-accent">2</span> <p>Live pit lane fire emergency interventions managed successfully under track conditions.</p></div>
+        <div class="fact-item"><span class="fact-accent">1</span> <p>United States Patent applied for/earned prior to turning 21 years old.</p></div>
+        <div class="fact-item"><span class="fact-accent">3</span> <p>Time zones managed simultaneously to synchronize high-stakes race logistics.</p></div>
+        <div class="fact-item"><span class="fact-accent">Nuclear</span> <p>Research findings generated and presented at an international accelerator conference.</p></div>
       </div>
     </section>
   </main>
 
-  <script>
-    function trackDownload() {
-      // Basic download counter placeholder — real implementation needs backend
-      console.log('Resume downloaded');
-      // Could be extended using Google Analytics or a backend counter script
-    }
-  </script>
+  <footer id="footer">
+    <div class="footer-container">
+      <p id="footerText">&copy; 2026 Ian Burress. Hand-coded using HTML5 &amp; CSS3.</p>
+    </div>
+  </footer>
 </body>
 </html>
