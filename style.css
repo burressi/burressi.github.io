@@ -706,4 +706,28 @@ a {
     font-size: 1.3rem;
   }
 }
+   /* =========================================
+   ACCOLADES BADGES & CONTENT CARD STYLING
+   ========================================= */
+.award-meta-badges {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.award-desc {
+  font-size: 0.98rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.award-content h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
 }
