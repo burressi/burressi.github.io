@@ -10,7 +10,7 @@ CONTACT INFO: ian.n.burress@gmail.com
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Accolades, awards, and media recognition for Ian Burress." />
+  <meta name="description" content="Accolades, awards, certifications, and media features for Ian Burress." />
   <title>Ian Burress - Accolades</title>
   
   <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
@@ -19,37 +19,37 @@ CONTACT INFO: ian.n.burress@gmail.com
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
   
   <style>
     .accolades-safe-wrapper {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 60px auto;
       padding: 0 25px;
       font-family: 'Inter', sans-serif;
     }
     
-    /* Fixed Filter Button Container Row */
+    /* Horizontal Capsule Filter Pill Track */
     .filter-safe-container {
       display: flex !important;
       flex-direction: row !important;
       justify-content: center !important;
-      gap: 12px !important;
+      gap: 10px !important;
       margin-bottom: 50px !important;
       flex-wrap: wrap !important;
       width: 100% !important;
     }
 
-    /* Fixed Filter Button Styling */
+    /* Fixed Isolated Button Mechanics */
     .filter-safe-btn {
       display: inline-block !important;
       width: auto !important;
       background: #ffffff !important;
       border: 1px solid #cbd5e1 !important;
       color: #64748b !important;
-      padding: 10px 22px !important;
-      font-size: 0.9rem !important;
+      padding: 10px 20px !important;
+      font-size: 0.88rem !important;
       font-weight: 600 !important;
       border-radius: 30px !important;
       cursor: pointer !important;
@@ -63,16 +63,16 @@ CONTACT INFO: ian.n.burress@gmail.com
     }
 
     .filter-safe-btn.active-safe {
-      background: #18453B !important; /* MSU Green */
+      background: #18453B !important; /* MSU Green Preferred Tone */
       border-color: #18453B !important;
       color: #ffffff !important;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 6px -1px rgba(24, 69, 59, 0.15);
     }
 
-    /* Grid Panel Architecture */
+    /* Card Architecture Grid */
     .awards-safe-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
       gap: 30px;
       margin-top: 30px;
     }
@@ -90,14 +90,15 @@ CONTACT INFO: ian.n.burress@gmail.com
 
     .award-safe-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+      box-shadow: 0 12px 20px -5px rgba(0,0,0,0.08);
     }
 
     .award-safe-images {
       width: 100%;
-      height: 220px;
+      height: 210px;
       overflow: hidden;
       background: #f1f5f9;
+      position: relative;
     }
 
     .award-safe-images img {
@@ -105,9 +106,15 @@ CONTACT INFO: ian.n.burress@gmail.com
       height: 100%;
       object-fit: cover;
     }
+    
+    .award-safe-images iframe {
+      border: 0;
+      width: 100%;
+      height: 100%;
+    }
 
     .award-safe-content {
-      padding: 25px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -115,7 +122,7 @@ CONTACT INFO: ian.n.burress@gmail.com
     }
 
     .award-safe-content h2 {
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: #1e293b;
       margin: 0 0 12px 0;
@@ -124,15 +131,18 @@ CONTACT INFO: ian.n.burress@gmail.com
 
     .award-safe-badges {
       display: flex;
-      gap: 8px;
-      margin-bottom: 15px;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
     }
 
     .badge-safe {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 600;
       padding: 4px 10px;
       border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
     }
 
     .badge-safe.cat {
@@ -142,31 +152,38 @@ CONTACT INFO: ian.n.burress@gmail.com
 
     .badge-safe.dt {
       background: #f1f5f9;
+      color: #475569;
+    }
+    
+    .badge-safe.st {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
       color: #64748b;
     }
 
     .award-safe-desc {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: #475569;
-      line-height: 1.6;
-      margin: 0 0 20px 0;
+      line-height: 1.55;
+      margin: 0 0 16px 0;
       flex-grow: 1;
     }
 
-    .btn-safe-text {
+    .btn-safe-link {
       display: inline-block;
       color: #18453B;
       font-weight: 600;
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       transition: color 0.2s ease;
+      margin-top: auto;
     }
 
-    .btn-safe-text:hover {
+    .btn-safe-link:hover {
       color: #11302a;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 768px) {
       .awards-safe-grid {
         grid-template-columns: 1fr;
       }
@@ -210,62 +227,185 @@ CONTACT INFO: ian.n.burress@gmail.com
     </div>
       
     <div class="filter-safe-container">
-      <button class="filter-safe-btn active-safe" data-filter="all">All Recognition</button>
-      <button class="filter-safe-btn" data-filter="award">Awards &amp; Honors</button>
-      <button class="filter-safe-btn" data-filter="media">Media Features</button>
+      <button class="filter-safe-btn active-safe" data-filter="all">All Accolades</button>
+      <button class="filter-safe-btn" data-filter="award">Major Awards</button>
+      <button class="filter-safe-btn" data-filter="speaking">Speaking</button>
+      <button class="filter-safe-btn" data-filter="societies">Professional Societies</button>
+      <button class="filter-safe-btn" data-filter="certification">Certifications</button>
+      <button class="filter-safe-btn" data-filter="media">Media</button>
     </div>
 
     <div class="awards-safe-grid">
       
       <div class="award-safe-card" data-category="award">
         <div class="award-safe-images">
-          <img src="awards/PerseveranceAward1.jpg" alt="Team Perseverance Award Presentation" />
+          <img src="awards/SusAward.png" alt="Sustainability Award Grid Cover" />
         </div>
         <div class="award-safe-content">
-          <h2>Team Perseverance Award</h2>
+          <h2>Texas A&M Graduate Sustainability Champion</h2>
           <div class="award-safe-badges">
-            <span class="badge-safe cat">Award / Honor</span>
-            <span class="badge-safe dt">Summer 2024</span>
+            <span class="badge-safe cat">Individual Award</span>
+            <span class="badge-safe dt">Spring 2024</span>
+            <span class="badge-safe st">Sole Recipient</span>
           </div>
           <p class="award-safe-desc">
-            Awarded to the Texas A&M Solar Car Racing Team by event officials at the 2024 American Solar Challenge for outstanding endurance, engineering adaptability, and technical problem-solving excellence under tight field constraints.
+            Recognized for demonstrating exemplary effort, dedication, and leadership in fostering a campus culture of sustainability.
           </p>
         </div>
       </div>
 
       <div class="award-safe-card" data-category="media">
         <div class="award-safe-images">
-          <img src="pictures/DuoOnTrack.jpg" alt="Texas A&M Solar Car on Track" />
+          <iframe src="https://www.youtube.com/embed/tiXcNwf2Xpw?si=tNKk5Y7AOPqYPxXu" title="Texas A&M National TV Feature" allowfullscreen></iframe>
         </div>
         <div class="award-safe-content">
-          <h2>Texas A&M Foundation Spirit Magazine Feature</h2>
+          <h2>Texas A&M National TV Spotlight</h2>
           <div class="award-safe-badges">
-            <span class="badge-safe cat">Media Spotlight</span>
-            <span class="badge-safe dt">Summer 2024</span>
+            <span class="badge-safe cat">Media Feature</span>
+            <span class="badge-safe dt">2025</span>
+            <span class="badge-safe st">National Spot (25M Views)</span>
           </div>
           <p class="award-safe-desc">
-            Featured in the "Discovering Aggieland" media series profiling high-impact student engineering innovation to attract research support and donor engagement for alternative energy vehicle platforms.
+            Represented core institution values, highlighting alternative energy engineering and solar car initiatives for national audiences.
           </p>
-          <a href="https://spirit.txamfoundation.com/summer-2024/solar-car-success.aspx" target="_blank" class="btn-safe-text">Read Article &rarr;</a>
         </div>
       </div>
 
-      <div class="award-safe-card" data-category="media">
+      <div class="award-safe-card" data-category="award">
         <div class="award-safe-images">
-          <img src="awards/EngineeringSolarWin.jpg" alt="Texas A&M Engineering News Feature Layout" />
+          <img src="awards/TeamSolarPhoto.jpg" alt="Solar Racing Team" />
         </div>
         <div class="award-safe-content">
-          <h2>Racing Across America: Solar Team Takes 11th Nationally</h2>
+          <h2>American Solar Challenge Perseverance Award</h2>
           <div class="award-safe-badges">
-            <span class="badge-safe cat">Media Spotlight</span>
+            <span class="badge-safe cat">Team Award</span>
+            <span class="badge-safe dt">Summer 2024</span>
+            <span class="badge-safe st">1 of 42 Teams</span>
+          </div>
+          <p class="award-safe-desc">
+            Awarded to the team for enduring external complications, showing extreme resilience and trackside technical adaptation.
+          </p>
+        </div>
+      </div>
+
+      <div class="award-safe-card" data-category="speaking">
+        <div class="award-safe-images">
+          <img src="awards/AccelApp.PNG" alt="Accelerator Research Application Paper" />
+        </div>
+        <div class="award-safe-content">
+          <h2>Accelerator Conference Presenter</h2>
+          <div class="award-safe-badges">
+            <span class="badge-safe cat">Research Presenter</span>
+            <span class="badge-safe dt">March 2024</span>
+            <span class="badge-safe st">International Meeting</span>
+          </div>
+          <p class="award-safe-desc">
+            Presented on behalf of Dr. David Staack's Plasma Lab at the 2024 International Topical Meeting on Nuclear Applications of Accelerators.
+          </p>
+        </div>
+      </div>
+
+      <div class="award-safe-card" data-category="societies">
+        <div class="award-safe-images">
+          <img src="awards/Body_Sizing1.JPG" alt="Technical Inspecting Layout" />
+        </div>
+        <div class="award-safe-content">
+          <h2>American Solar Challenge Body &amp; Sizing Judge</h2>
+          <div class="award-safe-badges">
+            <span class="badge-safe cat">Technical Inspector</span>
+            <span class="badge-safe dt">Summer 2025</span>
+            <span class="badge-safe st">38 Teams Managed</span>
+          </div>
+          <p class="award-safe-desc">
+            Served as a technical inspector for scrutineering track validation steps at the Formula Sun Grand Prix event.
+          </p>
+        </div>
+      </div>
+
+      <div class="award-safe-card" data-category="certification">
+        <div class="award-safe-images">
+          <img src="awards/GreenBeltCert.PNG" alt="Green Belt Certification Ledger" />
+        </div>
+        <div class="award-safe-content">
+          <h2>Six Sigma Green Belt Certification</h2>
+          <div class="award-safe-badges">
+            <span class="badge-safe cat">Professional Certification</span>
             <span class="badge-safe dt">Summer 2023</span>
+            <span class="badge-safe st">Caterpillar Quality System</span>
           </div>
           <p class="award-safe-desc">
-            National cross-country competitive racing coverage highlighting the team's engineering deployment through the Formula Sun Grand Prix and American Solar Challenge, locking in 11th place overall.
+            Certified in quantitative process optimization and structured DMAIC problem-solving methodologies.
           </p>
-          <a href="https://engineering.tamu.edu/news/2024/10/racing-across-america-solar-team-takes-11th-in-national-competition.html" target="_blank" class="btn-safe-text">Read Article &rarr;</a>
         </div>
-      </div>     
+      </div>
+
+      <div class="award-safe-card" data-category="speaking">
+        <div class="award-safe-images">
+          <img src="awards/AdminPresentation.PNG" alt="Technical Administration Slide Deck Presentation" />
+        </div>
+        <div class="award-safe-content">
+          <h2>American Solar Challenge Conference Speaker</h2>
+          <div class="award-safe-badges">
+            <span class="badge-safe cat">Technical Speaker</span>
+            <span class="badge-safe dt">Winter 2024</span>
+            <span class="badge-safe st">275+ Attendees</span>
+          </div>
+          <p class="award-safe-desc">
+            Instructed technical operations, multi-zone logistics management strategies, and regulatory coordination structures to 28 competing teams.
+          </p>
+        </div>
+      </div>
+
+      <div class="award-safe-card" data-category="societies">
+        <div class="award-safe-images">
+          <img src="awards/Intern1.jpg" alt="Committee Operations" />
+        </div>
+        <div class="award-safe-content">
+          <h2>Caterpillar Intern Committee Chair</h2>
+          <div class="award-safe-badges">
+            <span class="badge-safe cat">Committee Leader</span>
+            <span class="badge-safe dt">Summer 2024 - Fall 2025</span>
+            <span class="badge-safe st">268 Interns Guided</span>
+          </div>
+          <p class="award-safe-desc">
+            Led professional onboarding committees bridging undergraduate technical talent networks with enterprise engineering mentors.
+          </p>
+        </div>
+      </div>
+
+      <div class="award-safe-card" data-category="media">
+        <div class="award-safe-images">
+          <iframe src="https://www.youtube.com/embed/y8hWRUxwnvM?si=eR_sAwjHXidnNQa4" title="Texas A&M Foundation Video" allowfullscreen></iframe>
+        </div>
+        <div class="award-safe-content">
+          <h2>Texas A&M Foundation Profile Featured Interview</h2>
+          <div class="award-safe-badges">
+            <span class="badge-safe cat">Media Spotlight</span>
+            <span class="badge-safe dt">Spring 2025</span>
+            <span class="badge-safe st">"Discovering Aggieland" Series</span>
+          </div>
+          <p class="award-safe-desc">
+            Participated in the specialized engineering spotlight documentation series to communicate research efficacy and infrastructure resource needs to external program donors.
+          </p>
+        </div>
+      </div>
+
+      <div class="award-safe-card" data-category="societies">
+        <div class="award-safe-images">
+          <img src="awards/Advisor1.jpg" alt="Advising Panel Project Engagement" />
+        </div>
+        <div class="award-safe-content">
+          <h2>Texas A&M Solar Car Alumni Advisor</h2>
+          <div class="award-safe-badges">
+            <span class="badge-safe cat">Advisory Board</span>
+            <span class="badge-safe dt">Present</span>
+            <span class="badge-safe st">Technical Engineering Continuity</span>
+          </div>
+          <p class="award-safe-desc">
+            Provides continuity guidance, safety evaluation oversight, and specialized trackside deployment instruction for modern structural racing teams.
+          </p>
+        </div>
+      </div>
 
     </div>
   </main>
@@ -283,16 +423,16 @@ CONTACT INFO: ian.n.burress@gmail.com
 
       buttons.forEach(button => {
         button.addEventListener('click', function() {
-          // Manage active state look
+          // Adjust state indicators
           buttons.forEach(btn => btn.classList.remove('active-safe'));
           this.classList.add('active-safe');
 
-          const targetFilter = this.getAttribute('data-filter');
+          const currentSelection = this.getAttribute('data-filter');
 
-          // Smooth toggle matching cards
+          // Smooth display filtering logic
           cards.forEach(card => {
             const cardCategory = card.getAttribute('data-category');
-            if (targetFilter === 'all' || cardCategory === targetFilter) {
+            if (currentSelection === 'all' || cardCategory === currentSelection) {
               card.style.display = 'flex';
             } else {
               card.style.display = 'none';
