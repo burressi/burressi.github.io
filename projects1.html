@@ -1,504 +1,248 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <!-- Add race car engineer -->
 <!-- Add AI development tool -->
 <!-- Add Lifting tool -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Accolades, awards, certifications, and media features for Ian Burress." />
-  <title>Ian Burress - Accolades</title>
-  
-  <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css?v=5" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
-  
+  <title>Ian Burress - Engineering Projects</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <style>
-    .accolades-safe-wrapper {
-      max-width: 1240px;
-      margin: 60px auto;
-      padding: 0 25px;
-      font-family: 'Inter', sans-serif;
-    }
+    .projects-hero { padding: 60px 20px; text-align: center; }
+    .project-filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
+    .filter-btn { padding: 8px 16px; border: 1px solid var(--primary-color); background: transparent; cursor: pointer; border-radius: 20px; transition: var(--transition); font-weight: 600; }
+    .filter-btn.active, .filter-btn:hover { background: var(--primary-color); color: white; }
     
-    /* Horizontal Capsule Filter Pill Track Layout */
-    .filter-safe-container {
-      display: flex !important;
-      flex-direction: row !important;
-      justify-content: center !important;
-      gap: 10px !important;
-      margin-bottom: 50px !important;
-      flex-wrap: wrap !important;
-      width: 100% !important;
-    }
-
-    /* Fixed Isolated Capsule Button Mechanics */
-    .filter-safe-btn {
-      display: inline-block !important;
-      width: auto !important;
-      background: #ffffff !important;
-      border: 1px solid #cbd5e1 !important;
-      color: #64748b !important;
-      padding: 10px 20px !important;
-      font-size: 0.88rem !important;
-      font-weight: 600 !important;
-      border-radius: 30px !important;
-      cursor: pointer !important;
-      transition: all 0.2s ease !important;
-      box-sizing: border-box !important;
-    }
-
-    .filter-safe-btn:hover {
-      border-color: #18453B !important;
-      color: #18453B !important;
-    }
-
-    .filter-safe-btn.active-safe {
-      background: #18453B !important; /* MSU Green Preferred Tone */
-      border-color: #18453B !important;
-      color: #ffffff !important;
-      box-shadow: 0 4px 6px -1px rgba(24, 69, 59, 0.15);
-    }
-
-    /* Fixed Clean Multi-Card Structure Grid */
-    .awards-safe-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .award-safe-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .award-safe-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 20px -5px rgba(0,0,0,0.08);
-    }
-
-    .award-safe-images {
-      width: 100%;
-      height: 210px;
-      overflow: hidden;
-      background: #f1f5f9;
-      position: relative;
-    }
-
-    .award-safe-images img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; padding: 20px; }
+    .project-display-card { border: 1px solid var(--border-color); border-radius: var(--border-radius); overflow: hidden; display: flex; flex-direction: column; background: var(--white); }
+    .project-carousel-wrapper { position: relative; height: 250px; background: #eee; overflow: hidden; }
+    .carouselImage, .carouselImage video { width: 100%; height: 100%; object-fit: cover; display: none; }
+    .carouselImage.active { display: block; }
+    .carouselBtn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; z-index: 5; }
+    .prev { left: 0; }
+    .next { right: 0; }
     
-    .award-safe-images iframe {
-      border: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .award-safe-content {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      text-align: left;
-    }
-
-    .award-safe-content h2 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #1e293b;
-      margin: 0 0 12px 0;
-      line-height: 1.4;
-    }
-
-    .award-safe-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 14px;
-    }
-
-    .badge-safe {
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-
-    .badge-safe.cat {
-      background: #e8ecea;
-      color: #18453B;
-    }
-
-    .badge-safe.dt {
-      background: #f1f5f9;
-      color: #475569;
-    }
-    
-    .badge-safe.st {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      color: #64748b;
-    }
-
-    .award-safe-desc {
-      font-size: 0.92rem;
-      color: #475569;
-      line-height: 1.55;
-      margin: 0 0 16px 0;
-      flex-grow: 1;
-    }
-
-    .btn-safe-link {
-      display: inline-block;
-      color: #18453B;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s ease;
-      margin-top: auto;
-    }
-
-    .btn-safe-link:hover {
-      color: #11302a;
-    }
-
-    @media (max-width: 768px) {
-      .awards-safe-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+    .project-display-content { padding: 20px; flex-grow: 1; }
+    .project-meta-badges { margin-bottom: 10px; }
+    .meta-badge { font-size: 0.75rem; background: #eef2f1; padding: 4px 8px; border-radius: 4px; margin-right: 5px; color: var(--primary-color); }
+    .project-bullets-list { font-size: 0.9rem; padding-left: 20px; margin-top: 10px; }
   </style>
 </head>
-
 <body>
-  <header id="mainHeader" class="sticky-nav">
-    <div class="header-container">
-      <div class="headerLeft">
-        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" aria-label="LinkedIn Profile">
-          <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
-        </a>
-        <a href="https://github.com/burressi" target="_blank" aria-label="GitHub Profile">
-          <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
-        </a>
-        <a href="mailto:ian.n.burress@gmail.com" target="_blank" aria-label="Email Ian">
-          <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />
-        </a>
-      </div>
 
-      <div class="headerCenter">
-        <a href="https://burressi.github.io/">
-          <img src="icons/ClearBlack2.png" alt="Ian Burress Logo" id="headerLogo" />
-        </a>
-      </div>
-      
-      <nav class="headerRight header-links">
-        <a href="about.html">About Me</a>
-        <a href="projects1.html">Projects</a>
-        <a href="accolades.html" class="active">Accolades</a>
-        <a href="contact.html" class="btn-primary-nav">Contact Me</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wrapper">
-    <section class="projects-hero text-center">
+  <main>
+    <section class="projects-hero">
       <h1>Engineering Projects</h1>
-      <p class="subtitle">Hands-on solutions combining innovation with practical execution</p>
+      <p>Hands-on solutions combining innovation with practical execution</p>
     </section>
 
-    <section class="projects-section">
-      <div class="filter-container">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="automotive">Automotive</button>
-        <button class="filter-btn" data-filter="research">Research</button>
-        <button class="filter-btn" data-filter="manufacturing">Manufacturing</button>
-        <button class="filter-btn" data-filter="academic">Academic</button>
+    <div class="project-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="automotive">Automotive</button>
+      <button class="filter-btn" data-filter="research">Research</button>
+      <button class="filter-btn" data-filter="manufacturing">Manufacturing</button>
+      <button class="filter-btn" data-filter="academic">Academic</button>
+    </div>
+
+    <section class="projects-grid">
+      <!-- 1. Mechanical Can Crusher -->
+      <div class="project-display-card" data-categories="academic">
+        <div class="project-carousel-wrapper">
+          <img src="pictures/CanCrusher2.png" alt="Can Crusher" class="carouselImage active">
+          <img src="pictures/CanCrusher1.png" alt="Can Crusher" class="carouselImage">
+          <img src="pictures/CanCrusher3.png" alt="Can Crusher" class="carouselImage">
+          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+        </div>
+        <div class="project-display-content">
+          <h2>Mechanical Can Crusher</h2>
+          <div class="project-meta-badges"><span class="meta-badge">Academic</span><span class="meta-badge">Spring 2021</span></div>
+          <p>Designed and analyzed a can crusher using four-bar slider linkage principles.</p>
+          <ul class="project-bullets-list"><li>Kinematic and gear ratio analysis</li><li>Velocity/acceleration modeling</li><li>Physical prototype</li></ul>
+        </div>
       </div>
 
-      <div class="projects-grid">
-    
-        <div class="project-display-card" data-categories="academic">
-          <div class="project-carousel-wrapper">
-            <img src="pictures/CanCrusher2.png" alt="Can Crusher Front" class="carouselImage active">
-            <img src="pictures/CanCrusher1.png" alt="Can Crusher Side" class="carouselImage">
-            <img src="pictures/CanCrusher3.png" alt="Can Crusher Mechanism" class="carouselImage">
-            <button class="carouselBtn prev">&#10094;</button>
-            <button class="carouselBtn next">&#10095;</button>
-          </div>
-          <div class="project-display-content">
-            <h2>Mechanical Can Crusher</h2>
-            <div class="project-meta-badges">
-              <span class="meta-badge category">Academic</span>
-              <span class="meta-badge date">Spring 2021</span>
-            </div>
-            <div class="project-summary-text">
-              <p>Designed and analyzed a can crusher using four-bar slider linkage principles for a mechanical systems course.</p>
-              <ul class="project-bullets-list">
-                <li>Performed kinematic and gear ratio analysis</li>
-                <li>Implemented velocity and acceleration modeling</li>
-                <li>Built and tested physical prototype</li>
-              </ul>
-            </div>
-          </div>
+      <!-- 2. Solar Chassis -->
+      <div class="project-display-card" data-categories="automotive academic">
+        <div class="project-carousel-wrapper">
+          <img src="pictures/MOV_Chassis1.jpg" alt="Solar Chassis" class="carouselImage active">
+          <img src="pictures/MOV_Chassis2.jpg" alt="Solar Chassis" class="carouselImage">
+          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
         </div>
-
-        <div class="project-display-card" data-categories="automotive academic">
-          <div class="project-carousel-wrapper">
-            <img src="pictures/MOV_Chassis1.jpg" alt="Solar Chassis" class="carouselImage active">
-            <img src="pictures/MOV_Chassis2.jpg" alt="Solar Chassis" class="carouselImage">
-            <button class="carouselBtn prev">&#10094;</button>
-            <button class="carouselBtn next">&#10095;</button>
-          </div>
-          <div class="project-display-content">
-            <h2>Multi-Occupant Solar Chassis</h2>
-            <div class="project-meta-badges">
-              <span class="meta-badge category">Automotive</span>
-              <span class="meta-badge date">2019–2022</span>
-            </div>
-            <div class="project-summary-text">
-              <p>Redesigned and executed a chassis concept to race standards for the American Solar Challenge.</p>
-              <ul class="project-bullets-list">
-                <li>Upgraded structural design for safety and weight</li>
-                <li>Adapted for multi-passenger seating and solar compliance</li>
-                <li>Collaborated with MSU Solar Car Team</li>
-              </ul>
-            </div>
-          </div>
+        <div class="project-display-content">
+          <h2>Multi-Occupant Solar Chassis</h2>
+          <div class="project-meta-badges"><span class="meta-badge">Automotive</span><span class="meta-badge">2019-2022</span></div>
+          <p>Redesigned chassis concept to race standards for the American Solar Challenge.</p>
+          <ul class="project-bullets-list"><li>Structural safety & weight optimization</li><li>Multi-passenger compliance</li></ul>
         </div>
+      </div>
 
-        <div class="project-display-card" data-categories="automotive">
-          <div class="project-carousel-wrapper">
-            <img src="pictures/ChassisSnow.jpg" alt="Chassis Front" class="carouselImage active">
-            <img src="pictures/ChassisInSnow.png" alt="Chassis Back" class="carouselImage">
-            <button class="carouselBtn prev">&#10094;</button>
-            <button class="carouselBtn next">&#10095;</button>
-          </div>
-          <div class="project-display-content">
-            <h2>FSAE Chassis iRacing Rig</h2>
-            <div class="project-meta-badges">
-              <span class="meta-badge category">Automotive</span>
-              <span class="meta-badge date">2022-2023</span>
-            </div>
-            <div class="project-summary-text">
-              <p>Converted a Formula SAE chassis into a fully functional iRacing simulator with structural modifications.</p>
-              <ul class="project-bullets-list">
-                <li>Adapted real racing chassis for simulation</li>
-                <li>Designed modular mounting system</li>
-                <li>Optimized driver position for ergonomics</li>
-              </ul>
-            </div>
-          </div>
+      <!-- 3. FSAE iRacing Rig -->
+      <div class="project-display-card" data-categories="automotive">
+        <div class="project-carousel-wrapper">
+          <img src="pictures/ChassisSnow.jpg" alt="Chassis" class="carouselImage active">
+          <img src="pictures/ChassisInSnow.png" alt="Chassis" class="carouselImage">
+          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
         </div>
-
-        <div class="project-display-card" data-categories="research">
-          <div class="project-carousel-wrapper">
-            <img src="pictures/Trailer.png" alt="E-Beam Trailer" class="carouselImage active">
-            <img src="pictures/DoseProfile.png" alt="Dose Profile" class="carouselImage">
-            <img src="pictures/LoadingAsem.png" alt="Loading Assembly" class="carouselImage">
-            <button class="carouselBtn prev">&#10094;</button>
-            <button class="carouselBtn next">&#10095;</button>
-          </div>
-          <div class="project-display-content">
-            <h2>Mobile Electron Beam Facility</h2>
-            <div class="project-meta-badges">
-              <span class="meta-badge category">Research</span>
-              <span class="meta-badge date">2022-2024</span>
-            </div>
-            <div class="project-summary-text">
-              <p>Designed a mobile electron beam system for soil remediation funded by the Department of Energy.</p>
-              <ul class="project-bullets-list">
-                <li>Mechanical design for mobile deployment</li>
-                <li>Simulation and safety analysis</li>
-                <li>International conference presentation</li>
-              </ul>
-            </div>
-          </div>
+        <div class="project-display-content">
+          <h2>FSAE Chassis iRacing Rig</h2>
+          <div class="project-meta-badges"><span class="meta-badge">Automotive</span><span class="meta-badge">2022-2023</span></div>
+          <p>Converted a Formula SAE chassis into a functional iRacing simulator.</p>
         </div>
+      </div>
 
-        <div class="project-display-card" data-categories="automotive academic">
-          <div class="project-carousel-wrapper">
-            <img src="pictures/MEMDesign.png" alt="Design" class="carouselImage active">
-            <img src="pictures/MEMSCAD.png" alt="CAD" class="carouselImage">
-            <button class="carouselBtn prev">&#10094;</button>
-            <button class="carouselBtn next">&#10095;</button>
-          </div>
-          <div class="project-display-content">
-            <h2>Micro-Electromechanical System (MEMS) Design</h2>
-            <div class="project-meta-badges">
-              <span class="meta-badge category">Academic</span>
-              <span class="meta-badge date">Spring 2023</span>
-            </div>
-            <div class="project-summary-text">
-              <p>Using polysilicon masks to create micro comb drives for seismic tremor detection.</p>
-              <ul class="project-bullets-list">
-                <li>Process: Deep Reactive Ion Etching</li>
-              </ul>
-            </div>
-          </div>
+      <!-- 4. Electron Beam -->
+      <div class="project-display-card" data-categories="research">
+        <div class="project-carousel-wrapper">
+          <img src="pictures/Trailer.png" alt="Trailer" class="carouselImage active">
+          <img src="pictures/DoseProfile.png" alt="Profile" class="carouselImage">
+          <img src="pictures/LoadingAsem.png" alt="Assembly" class="carouselImage">
+          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
         </div>
-
-        <div class="project-display-card" data-categories="academic">
-          <div class="project-carousel-wrapper">
-            <img src="pictures/Slider_Crank_1.PNG" alt="Slider Crank" class="carouselImage active">
-            <img src="pictures/Slider_Crank_2.PNG" alt="Slider Crank" class="carouselImage">
-            <img src="pictures/Slider_Crank.JPG" alt="Crank" class="carouselImage">
-            <button class="carouselBtn prev">&#10094;</button>
-            <button class="carouselBtn next">&#10095;</button>
-          </div>
-          <div class="project-display-content">
-            <h2>Slider Crank Design & Assembly</h2>
-            <div class="project-meta-badges">
-              <span class="meta-badge category">Academic</span>
-              <span class="meta-badge date">Spring 2020</span>
-            </div>
-            <div class="project-summary-text">
-              <p>Create, simulate, and design a dynamic slider crank paperweight using NX and 3D printing.</p>
-            </div>
-          </div>
+        <div class="project-display-content">
+          <h2>Mobile Electron Beam Facility</h2>
+          <div class="project-meta-badges"><span class="meta-badge">Research</span><span class="meta-badge">2022-2024</span></div>
+          <p>Designed mobile electron beam system for soil remediation.</p>
         </div>
+      </div>
 
-        <div class="project-display-card" data-categories="automotive academic">
-          <div class="project-carousel-wrapper">
-            <img src="pictures/Combustion1.PNG" alt="Combustion" class="carouselImage active">
-            <img src="pictures/Combustion2.PNG" alt="Combustion" class="carouselImage">
-            <button class="carouselBtn prev">&#10094;</button>
-            <button class="carouselBtn next">&#10095;</button>
-          </div>
-          <div class="project-display-content">
-            <h2>Ford Mustang Predator Combustion Analysis</h2>
-            <div class="project-meta-badges">
-              <span class="meta-badge category">Automotive</span>
-              <span class="meta-badge date">Spring 2021</span>
-            </div>
-            <div class="project-summary-text">
-              <p>Analysis of 5.2L 760hp 2021 Mustang Shelby GT500 engine using CEARUN and CHEMKIN.</p>
-            </div>
-          </div>
+      <!-- 5. MEMS -->
+      <div class="project-display-card" data-categories="academic automotive">
+        <div class="project-carousel-wrapper">
+          <img src="pictures/MEMDesign.png" alt="Design" class="carouselImage active">
+          <img src="pictures/MEMSCAD.png" alt="CAD" class="carouselImage">
+          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
         </div>
-
-        <div class="project-display-card" data-categories="automotive">
-          <div class="project-carousel-wrapper">
-            <img src="pictures/pitfire2.jpg" alt="Pit Fire" class="carouselImage active">
-            <img src="pictures/MustangFire.png" alt="Mustang Fire" class="carouselImage">
-            <img src="pictures/pitfire1.png" alt="Pit Lane" class="carouselImage">
-            <button class="carouselBtn prev">&#10094;</button>
-            <button class="carouselBtn next">&#10095;</button>
-          </div>
-          <div class="project-display-content">
-            <h2>COTA Pit Fire Intervention</h2>
-            <div class="project-meta-badges">
-              <span class="meta-badge category">Automotive</span>
-              <span class="meta-badge date">2023-Present</span>
-            </div>
-            <div class="project-summary-text">
-              <p>Served as pit lane intervention marshal for WEC, NASCAR, and other series at Circuit of The Americas.</p>
-            </div>
-          </div>
+        <div class="project-display-content">
+          <h2>MEMS Design</h2>
+          <div class="project-meta-badges"><span class="meta-badge">Academic</span><span class="meta-badge">Spring 2023</span></div>
+          <p>Micro comb drives for seismic tremor detection using Deep Reactive Ion Etching.</p>
         </div>
+      </div>
 
-        <div class="project-display-card" data-categories="manufacturing">
-          <div class="project-carousel-wrapper">
-            <img src="pictures/realwear.jpg" alt="AR Headset" class="carouselImage active">
-            <img src="pictures/InspectionExample.PNG" alt="Inspection" class="carouselImage">
-            <img src="pictures/datamap.PNG" alt="Data" class="carouselImage">
-            <button class="carouselBtn prev">&#10094;</button>
-            <button class="carouselBtn next">&#10095;</button>
-          </div>
-          <div class="project-display-content">
-            <h2>AR Work Instruction System</h2>
-            <div class="project-meta-badges">
-              <span class="meta-badge category">Manufacturing</span>
-              <span class="meta-badge date">Summer 2022</span>
-            </div>
-            <div class="project-summary-text">
-              <p>Developed assisted reality workflow for field inspections using wearable AR devices at Caterpillar.</p>
-            </div>
-          </div>
+      <!-- 6. Slider Crank -->
+      <div class="project-display-card" data-categories="academic">
+        <div class="project-carousel-wrapper">
+          <img src="pictures/Slider_Crank_1.PNG" alt="Slider" class="carouselImage active">
+          <img src="pictures/Slider_Crank_2.PNG" alt="Slider" class="carouselImage">
+          <img src="pictures/Slider_Crank.JPG" alt="Slider" class="carouselImage">
+          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
         </div>
-
-        <div class="project-display-card" data-categories="academic">
-          <div class="project-carousel-wrapper">
-            <img src="pictures/BetaFlight.png" alt="Drone" class="carouselImage active">
-            <img src="pictures/FPVcomp.png" alt="Drone" class="carouselImage">
-            <img src="pictures/disassembled.jpg" alt="Drone" class="carouselImage">
-            <button class="carouselBtn prev">&#10094;</button>
-            <button class="carouselBtn next">&#10095;</button>
-          </div>
-          <div class="project-display-content">
-            <h2>Custom FPV Racing Drone</h2>
-            <div class="project-meta-badges">
-              <span class="meta-badge category">Personal</span>
-              <span class="meta-badge date">2019-Present</span>
-            </div>
-            <div class="project-summary-text">
-              <p>Built and configured a high-performance FPV racing drone, tuned via Betaflight.</p>
-            </div>
-          </div>
+        <div class="project-display-content">
+          <h2>Slider Crank Design</h2>
+          <div class="project-meta-badges"><span class="meta-badge">Academic</span><span class="meta-badge">Spring 2020</span></div>
+          <p>Simulate and design dynamic slider crank paperweight using NX.</p>
         </div>
+      </div>
 
-        <div class="project-display-card" data-categories="automotive">
-          <div class="project-carousel-wrapper">
-             <video class="carouselImage active" autoplay muted loop playsinline>
-                <source src="pictures/modular.mp4" type="video/mp4">
-              </video>
-          </div>
-          <div class="project-display-content">
-            <h2>Hot Swappable Infotainment Project</h2>
-            <div class="project-meta-badges">
-              <span class="meta-badge category">Automotive</span>
-              <span class="meta-badge date">Summer 2020</span>
-            </div>
-            <div class="project-summary-text">
-              <p>Collaborated cross-functionally to visualize and validate infotainment system concepts.</p>
-            </div>
-          </div>
+      <!-- 7. Combustion Analysis -->
+      <div class="project-display-card" data-categories="automotive academic">
+        <div class="project-carousel-wrapper">
+          <img src="pictures/Combustion1.PNG" alt="Analysis" class="carouselImage active">
+          <img src="pictures/Combustion2.PNG" alt="Analysis" class="carouselImage">
+          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
         </div>
-
-        <div class="project-display-card" data-categories="academic research">
-          <div class="project-carousel-wrapper">
-            <img src="pictures/ThermalBatteryFinal.png" alt="Battery" class="carouselImage active">
-            <img src="pictures/ThermalBattery.png" alt="Battery" class="carouselImage">
-            <button class="carouselBtn prev">&#10094;</button>
-            <button class="carouselBtn next">&#10095;</button>
-          </div>
-          <div class="project-display-content">
-            <h2>Phase Change Thermal Battery</h2>
-            <div class="project-meta-badges">
-              <span class="meta-badge category">Research</span>
-              <span class="meta-badge date">Fall 2021</span>
-            </div>
-            <div class="project-summary-text">
-              <p>Designed and tested a thermal energy storage system using phase change materials.</p>
-            </div>
-          </div>
+        <div class="project-display-content">
+          <h2>Combustion Analysis</h2>
+          <div class="project-meta-badges"><span class="meta-badge">Automotive</span><span class="meta-badge">Spring 2021</span></div>
+          <p>5.2L Shelby GT500 engine analysis using CEARUN and CHEMKIN.</p>
         </div>
+      </div>
 
-      </div> </section>
+      <!-- 8. Pit Fire -->
+      <div class="project-display-card" data-categories="automotive">
+        <div class="project-carousel-wrapper">
+          <img src="pictures/pitfire2.jpg" alt="Fire" class="carouselImage active">
+          <img src="pictures/MustangFire.png" alt="Fire" class="carouselImage">
+          <img src="pictures/pitfire1.png" alt="Fire" class="carouselImage">
+          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+        </div>
+        <div class="project-display-content">
+          <h2>COTA Pit Fire Intervention</h2>
+          <div class="project-meta-badges"><span class="meta-badge">Automotive</span><span class="meta-badge">2023-Present</span></div>
+          <p>Pit lane intervention marshal for WEC, NASCAR, and other series.</p>
+        </div>
+      </div>
+
+      <!-- 9. AR System -->
+      <div class="project-display-card" data-categories="manufacturing">
+        <div class="project-carousel-wrapper">
+          <img src="pictures/realwear.jpg" alt="AR" class="carouselImage active">
+          <img src="pictures/InspectionExample.PNG" alt="AR" class="carouselImage">
+          <img src="pictures/datamap.PNG" alt="AR" class="carouselImage">
+          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+        </div>
+        <div class="project-display-content">
+          <h2>AR Work Instruction System</h2>
+          <div class="project-meta-badges"><span class="meta-badge">Manufacturing</span><span class="meta-badge">Summer 2022</span></div>
+          <p>Developed assisted reality workflow for inspections at Caterpillar.</p>
+        </div>
+      </div>
+
+      <!-- 10. Drone -->
+      <div class="project-display-card" data-categories="academic">
+        <div class="project-carousel-wrapper">
+          <img src="pictures/BetaFlight.png" alt="Drone" class="carouselImage active">
+          <img src="pictures/FPVcomp.png" alt="Drone" class="carouselImage">
+          <img src="pictures/disassembled.jpg" alt="Drone" class="carouselImage">
+          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+        </div>
+        <div class="project-display-content">
+          <h2>Custom FPV Racing Drone</h2>
+          <div class="project-meta-badges"><span class="meta-badge">Personal</span><span class="meta-badge">2019-Present</span></div>
+          <p>Configured high-performance FPV racing drone via Betaflight.</p>
+        </div>
+      </div>
+
+      <!-- 11. Infotainment -->
+      <div class="project-display-card" data-categories="automotive">
+        <div class="project-carousel-wrapper">
+           <video class="carouselImage active" autoplay muted loop playsinline><source src="pictures/modular.mp4" type="video/mp4"></video>
+        </div>
+        <div class="project-display-content">
+          <h2>Hot Swappable Infotainment</h2>
+          <div class="project-meta-badges"><span class="meta-badge">Automotive</span><span class="meta-badge">Summer 2020</span></div>
+          <p>Visualized and validated infotainment concepts.</p>
+        </div>
+      </div>
+
+      <!-- 12. Thermal Battery -->
+      <div class="project-display-card" data-categories="research academic">
+        <div class="project-carousel-wrapper">
+          <img src="pictures/ThermalBatteryFinal.png" alt="Battery" class="carouselImage active">
+          <img src="pictures/ThermalBattery.png" alt="Battery" class="carouselImage">
+          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+        </div>
+        <div class="project-display-content">
+          <h2>Phase Change Thermal Battery</h2>
+          <div class="project-meta-badges"><span class="meta-badge">Research</span><span class="meta-badge">Fall 2021</span></div>
+          <p>Designed and tested thermal energy storage system.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer id="footer">
-    <div class="footer-container">
-      <p id="footerText">&copy; 2026 Ian Burress. Hand-coded from scratch using HTML5 &amp; CSS3.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+  <script>
+    $('.next').on('click', function() {
+      let current = $(this).siblings('.carouselImage.active');
+      let next = current.next('.carouselImage').length ? current.next('.carouselImage') : $(this).siblings('.carouselImage').first();
+      current.removeClass('active'); next.addClass('active');
+    });
+    $('.prev').on('click', function() {
+      let current = $(this).siblings('.carouselImage.active');
+      let prev = current.prev('.carouselImage').length ? current.prev('.carouselImage') : $(this).siblings('.carouselImage').last();
+      current.removeClass('active'); prev.addClass('active');
+    });
+    $('.filter-btn').on('click', function() {
+      $('.filter-btn').removeClass('active'); $(this).addClass('active');
+      const filter = $(this).data('filter');
+      $('.project-display-card').each(function() {
+        if(filter === 'all' || $(this).data('categories').includes(filter)) $(this).show();
+        else $(this).hide();
+      });
+    });
+  </script>
 </body>
 </html>
