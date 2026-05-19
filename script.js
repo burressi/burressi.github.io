@@ -52,4 +52,24 @@ $(document).ready(function() {
 function trackDownload() {
   console.log('Resume downloaded');
   // Ready to be hooked into Google Analytics Event tags if needed later
+
+// 4. Interactive Projects Filter Mechanics
+$('.filter-btn').click(function() {
+  // Highlight chosen button
+  $('.filter-btn').removeClass('active');
+  $(this).addClass('active');
+
+  const selectedFilter = $(this).data('filter');
+
+  $('.project-display-card').each(function() {
+    // Parse individual card tags string natively
+    const cardCategories = eval($(this).attr('data-categories'));
+    
+    if (selectedFilter === 'all' || cardCategories.includes(selectedFilter)) {
+      $(this).fadeIn(300);
+    } else {
+      $(this).fadeOut(200);
+    }
+  });
+});
 }
