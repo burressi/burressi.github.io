@@ -4,191 +4,33 @@
 <!-- Add Lifting tool -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Accolades, awards, certifications, and media features for Ian Burress." />
-  <title>Ian Burress - Accolades</title>
-  
-  <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css?v=5" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
-  
+  <title>Ian Burress - Engineering Projects</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <style>
-    .accolades-safe-wrapper {
-      max-width: 1240px;
-      margin: 60px auto;
-      padding: 0 25px;
-      font-family: 'Inter', sans-serif;
-    }
+    .projects-hero { padding: 60px 20px; text-align: center; }
+    .project-filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
+    .filter-btn { padding: 8px 16px; border: 1px solid var(--primary-color); background: transparent; cursor: pointer; border-radius: 20px; transition: var(--transition); font-weight: 600; }
+    .filter-btn.active, .filter-btn:hover { background: var(--primary-color); color: white; }
     
-    /* Horizontal Capsule Filter Pill Track Layout */
-    .filter-safe-container {
-      display: flex !important;
-      flex-direction: row !important;
-      justify-content: center !important;
-      gap: 10px !important;
-      margin-bottom: 50px !important;
-      flex-wrap: wrap !important;
-      width: 100% !important;
-    }
-
-    /* Fixed Isolated Capsule Button Mechanics */
-    .filter-safe-btn {
-      display: inline-block !important;
-      width: auto !important;
-      background: #ffffff !important;
-      border: 1px solid #cbd5e1 !important;
-      color: #64748b !important;
-      padding: 10px 20px !important;
-      font-size: 0.88rem !important;
-      font-weight: 600 !important;
-      border-radius: 30px !important;
-      cursor: pointer !important;
-      transition: all 0.2s ease !important;
-      box-sizing: border-box !important;
-    }
-
-    .filter-safe-btn:hover {
-      border-color: #18453B !important;
-      color: #18453B !important;
-    }
-
-    .filter-safe-btn.active-safe {
-      background: #18453B !important; /* MSU Green Preferred Tone */
-      border-color: #18453B !important;
-      color: #ffffff !important;
-      box-shadow: 0 4px 6px -1px rgba(24, 69, 59, 0.15);
-    }
-
-    /* Fixed Clean Multi-Card Structure Grid */
-    .awards-safe-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .award-safe-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .award-safe-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 20px -5px rgba(0,0,0,0.08);
-    }
-
-    .award-safe-images {
-      width: 100%;
-      height: 210px;
-      overflow: hidden;
-      background: #f1f5f9;
-      position: relative;
-    }
-
-    .award-safe-images img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; padding: 20px; }
+    .project-display-card { border: 1px solid var(--border-color); border-radius: var(--border-radius); overflow: hidden; display: flex; flex-direction: column; background: var(--white); }
+    .project-carousel-wrapper { position: relative; height: 250px; background: #eee; overflow: hidden; }
+    .carouselImage, .carouselImage video { width: 100%; height: 100%; object-fit: cover; display: none; }
+    .carouselImage.active { display: block; }
+    .carouselBtn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; z-index: 5; }
+    .prev { left: 0; }
+    .next { right: 0; }
     
-    .award-safe-images iframe {
-      border: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .award-safe-content {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      text-align: left;
-    }
-
-    .award-safe-content h2 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #1e293b;
-      margin: 0 0 12px 0;
-      line-height: 1.4;
-    }
-
-    .award-safe-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 14px;
-    }
-
-    .badge-safe {
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-
-    .badge-safe.cat {
-      background: #e8ecea;
-      color: #18453B;
-    }
-
-    .badge-safe.dt {
-      background: #f1f5f9;
-      color: #475569;
-    }
-    
-    .badge-safe.st {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      color: #64748b;
-    }
-
-    .award-safe-desc {
-      font-size: 0.92rem;
-      color: #475569;
-      line-height: 1.55;
-      margin: 0 0 16px 0;
-      flex-grow: 1;
-    }
-
-    .btn-safe-link {
-      display: inline-block;
-      color: #18453B;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s ease;
-      margin-top: auto;
-    }
-
-    .btn-safe-link:hover {
-      color: #11302a;
-    }
-
-    @media (max-width: 768px) {
-      .awards-safe-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+    .project-display-content { padding: 20px; flex-grow: 1; }
+    .project-meta-badges { margin-bottom: 10px; }
+    .meta-badge { font-size: 0.75rem; background: #eef2f1; padding: 4px 8px; border-radius: 4px; margin-right: 5px; color: var(--primary-color); }
+    .project-bullets-list { font-size: 0.9rem; padding-left: 20px; margin-top: 10px; }
   </style>
 </head>
-
 <body>
 
   <main>
@@ -381,11 +223,7 @@
       </div>
     </section>
   </main>
-  <footer id="footer" style="margin-top: 80px;">
-    <div class="footer-container">
-      <p id="footerText">&copy; 2026 Ian Burress. Hand-coded using HTML5 &amp; CSS3.</p>
-    </div>
-  </footer>
+
   <script>
     $('.next').on('click', function() {
       let current = $(this).siblings('.carouselImage.active');
