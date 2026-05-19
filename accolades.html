@@ -10,8 +10,8 @@ CONTACT INFO: ian.n.burress@gmail.com
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Accolades, awards, and media recognition for Ian Burress." />
-  <title>Ian Burress - Accolades</title>
+  <meta name="description" content="Get in touch with Ian Burress regarding engineering opportunities, collaborations, or technical questions." />
+  <title>Ian Burress - Contact Me</title>
   
   <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
 
@@ -19,9 +19,153 @@ CONTACT INFO: ian.n.burress@gmail.com
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=4" />
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
   <script src="script.js" defer></script>
+
+  <style>
+    .contact-safe-wrapper {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 25px;
+      font-family: 'Inter', sans-serif;
+    }
+    .contact-safe-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 40px;
+      margin-top: 40px;
+      align-items: start;
+    }
+    .contact-safe-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .contact-safe-sidebar {
+      background: #f8fafc;
+      border-top: 4px solid #18453B; /* MSU Green */
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .form-safe-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .form-safe-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-safe-group input,
+    .form-safe-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 1rem;
+      color: #334155;
+      background: #ffffff;
+      box-sizing: border-box;
+      transition: all 0.2s ease;
+    }
+    .form-safe-group input:focus,
+    .form-safe-group textarea:focus {
+      outline: none;
+      border-color: #18453B;
+      box-shadow: 0 0 0 3px rgba(24, 69, 59, 0.1);
+    }
+    
+    /* Fixed Form Action Submit Button */
+    .btn-safe-submit {
+      display: block;
+      width: 100%;
+      background: #18453B !important; /* Forces MSU Green color override */
+      color: #ffffff !important;
+      border: none !important;
+      padding: 14px 20px !important;
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+      border-radius: 6px !important;
+      cursor: pointer;
+      text-align: center;
+      box-sizing: border-box;
+      transition: background 0.2s ease;
+    }
+    .btn-safe-submit:hover {
+      background: #11302a !important;
+    }
+
+    /* Fixed Sidebar Resume Button Styling */
+    .btn-safe-resume {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      border: 2px solid #18453B !important;
+      color: #18453B !important;
+      background: transparent !important;
+      font-weight: 600 !important;
+      padding: 12px 20px !important;
+      border-radius: 6px !important;
+      margin-bottom: 25px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-safe-resume:hover {
+      background: #18453B !important;
+      color: #ffffff !important;
+    }
+
+    /* Social Layout Row Links */
+    .social-safe-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 12px 15px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      text-decoration: none;
+      color: inherit;
+      box-sizing: border-box;
+      transition: all 0.2s ease;
+    }
+    .social-safe-row:hover {
+      border-color: #18453B;
+      transform: translateX(4px);
+    }
+    .social-safe-row img {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+    .social-safe-text {
+      text-align: left;
+    }
+    .social-safe-text h5 {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #1e293b;
+    }
+    .social-safe-text span {
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+    @media (max-width: 850px) {
+      .contact-safe-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -48,81 +192,80 @@ CONTACT INFO: ian.n.burress@gmail.com
       <nav class="headerRight header-links">
         <a href="about.html">About Me</a>
         <a href="projects1.html">Projects</a>
-        <a href="accolades.html" class="active">Accolades</a>
-        <a href="contact.html" class="btn-primary-nav">Contact Me</a>
+        <a href="accolades.html">Accolades</a>
+        <a href="contact.html" class="btn-primary-nav active">Contact Me</a>
       </nav>
     </div>
   </header>
 
-  <main class="wrapper">
-    <section class="accolades-section">
-      <h1 class="section-title text-center">Accolades &amp; Recognition</h1>
-      
-      <div class="filter-container">
-        <button class="filter-btn active" data-filter="all">All Recognition</button>
-        <button class="filter-btn" data-filter="award">Awards &amp; Honors</button>
-        <button class="filter-btn" data-filter="media">Media Features</button>
+  <main class="contact-safe-wrapper">
+    <div style="text-align: center; margin-bottom: 30px;">
+      <h1 style="font-size: 2.5rem; font-weight: 700; color: #1e293b; margin-bottom: 10px;">Get In Touch</h1>
+      <p style="color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.5;">
+        Have a technical question, project inquiry, or professional opportunity? Drop a message below or connect via social channels.
+      </p>
+    </div>
+
+    <div class="contact-safe-grid">
+      <div class="contact-safe-card">
+        <form id="portfolio-contact-form" action="https://formspree.io/f/your_form_id_here" method="POST">
+          
+          <div class="form-safe-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+          </div>
+          
+          <div class="form-safe-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="_replyto" placeholder="your.email@example.com" required>
+          </div>
+          
+          <div class="form-safe-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What are you reaching out about?" required>
+          </div>
+
+          <div class="form-safe-group">
+            <label for="body">Message</label>
+            <textarea id="body" name="body" rows="6" placeholder="Write your message here..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-safe-submit">Send Message</button>
+        </form>
       </div>
 
-      <div class="awards-grid">
+      <div class="contact-safe-sidebar">
+        <h3 style="margin-top: 0; color: #1e293b; font-size: 1.3rem; margin-bottom: 10px;">Direct Channels</h3>
+        <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px;">
+          Feel free to download a summary copy of my engineering credentials directly, or message me via professional platforms.
+        </p>
         
-        <div class="award-card" data-categories="['all', 'award']">
-          <div class="award-images">
-            <img src="awards/PerseveranceAward1.jpg" alt="Team Perseverance Award Trophy Presentation" class="active" />
+        <a href="Burress_Ian_Resume.pdf" download class="btn-safe-resume">
+          Download PDF Resume
+        </a>
+        
+        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" class="social-safe-row">
+          <img src="icons/linkedin.png" alt="LinkedIn">
+          <div class="social-safe-text">
+            <h5>LinkedIn</h5>
+            <span>/in/ian-burress22</span>
           </div>
-          <div class="award-content">
-            <h2>Team Perseverance Award</h2>
-            <div class="award-meta-badges">
-              <span class="meta-badge category">Award / Honor</span>
-              <span class="meta-badge date">Summer 2024</span>
-            </div>
-            <p class="award-desc">
-              Awarded to the Texas A&M Solar Car Racing Team by the event officials at the 2024 American Solar Challenge for outstanding endurance, mechanical adaptability, and problem-solving excellence under extreme constraints.
-            </p>
-          </div>
-        </div>
+        </a>
 
-        <div class="award-card" data-categories="['all', 'media']">
-          <div class="award-images">
-            <img src="pictures/DuoOnTrack.jpg" alt="Texas A&M Solar Car on Track Feature" class="active" />
+        <a href="https://github.com/burressi" target="_blank" class="social-safe-row">
+          <img src="icons/github.png" alt="GitHub">
+          <div class="social-safe-text">
+            <h5>GitHub</h5>
+            <span>github.com/burressi</span>
           </div>
-          <div class="award-content">
-            <h2>Texas A&M Foundation Spirit Magazine Feature</h2>
-            <div class="award-meta-badges">
-              <span class="meta-badge category">Media Spotlight</span>
-              <span class="meta-badge date">Summer 2024</span>
-            </div>
-            <p class="award-desc">
-              Featured in the "Discovering Aggieland" media series profiling high-impact student innovation to attract research support and donor engagement for alternative energy engineering engineering initiatives.
-            </p>
-            <a href="https://spirit.txamfoundation.com/summer-2024/solar-car-success.aspx" target="_blank" class="btn-text">Read Article &rarr;</a>
-          </div>
-        </div>
-
-        <div class="award-card" data-categories="['all', 'media']">
-          <div class="award-images">
-            <img src="awards/EngineeringSolarWin.jpg" alt="Texas A&M Engineering News Coverage" class="active" />
-          </div>
-          <div class="award-content">
-            <h2>Racing Across America: Solar Team Takes 11th Nationally</h2>
-            <div class="award-meta-badges">
-              <span class="meta-badge category">Media Spotlight</span>
-              <span class="meta-badge date">Summer 2023</span>
-            </div>
-            <p class="award-desc">
-              National competitive racing coverage highlighting the team's engineering execution through the Formula Sun Grand Prix and American Solar Challenge cross-country layout, capturing 11th overall and 7th in division.
-            </p>
-            <a href="https://engineering.tamu.edu/news/2024/10/racing-across-america-solar-team-takes-11th-in-national-competition.html" target="_blank" class="btn-text">Read Article &rarr;</a>
-          </div>
-        </div>     
-
+        </a>
       </div>
-    </section>
+    </div>
   </main>
 
-  <footer id="footer">
+  <footer id="footer" style="margin-top: 80px;">
     <div class="footer-container">
-      <p id="footerText">&copy; 2026 Ian Burress. Hand-coded from scratch using HTML5 &amp; CSS3.</p>
+      <p id="footerText">&copy; 2026 Ian Burress. Hand-coded using HTML5 &amp; CSS3.</p>
     </div>
   </footer>
 </body>
