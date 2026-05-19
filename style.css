@@ -10,7 +10,7 @@
   --border-color: #e2e8f0;
   --box-shadow-light: 0 4px 6px rgba(0,0,0,0.05);
 }
-
+body{
 .wrapper { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
 .text-center { text-align: center; }
 
@@ -963,5 +963,6 @@ a {
   .contact-form-container {
     padding: 25px 20px;
   }
+}
 }
 }
