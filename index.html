@@ -7,172 +7,145 @@ CONTACT INFO: ian.n.burress@gmail.com
 -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ian Burress - Portfolio</title>
-    <!-- Favicon -->
+  <meta name="description" content="Engineering Portfolio of Ian Burress - Mechanical Engineer specializing in testing, automotive powertrains, and motorsports." />
+  <title>Ian Burress | Mechanical Engineer</title>
+  
   <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 
-
-
 <body>
-<!-- Header-->
-  <header id="mainHeader">
-    <div class="headerLeft">
-      <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" aria-label="LinkedIn Profile">
-        <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
-      </a>
-      <a href="https://github.com/burressi" target="_blank" aria-label="GitHub Profile">
-        <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
-      </a>
-      <a href="mailto:ian.n.burress@gmail.com" target="_blank" aria-label="Email Ian">
-        <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />  
-      </a>
+  <header id="mainHeader" class="sticky-nav">
+    <div class="header-container">
+      <div class="header-logo">
+        <a href="https://burressi.github.io/" aria-label="Home">
+          <img src="icons/ClearBlack2.png" alt="Ian Burress Logo" id="headerLogo" />
+        </a>
+      </div>
+      
+      <nav class="header-links">
+        <a href="about.html">About Me</a>
+        <a href="projects1.html">Projects</a>
+        <a href="accolades.html">Accolades</a>
+        <a href="contact.html" class="btn-primary">Contact Me</a>
+      </nav>
     </div>
-     
-    <div class="headerCenter">
-      <a href="https://burressi.github.io/" aria-label="Home">
-        <img src="icons/ClearBlack2.png" alt="Ian Burress Logo" id="headerLogo" />
-      </a>
-    </div>
-    <nav class="headerRight">
-      <a href="about.html">About Me</a>
-      <a href="projects1.html">Projects</a>
-      <a href="accolades.html">Accolades</a>
-      <a href="contact.html">Contact Me</a>
-    </nav>
   </header>
 
-
-  <!-- Main Section -->
   <main>
-    <!-- Intro -->
-    <section id="intro" class="page">
-  <!-- Full background image for intro -->
-  <div class="introBackground">
-    <h1 id="introText">Ian Burress</h1>
-  </div>
-</section>
-
-<!-- About -->
-    <section id="page1" class="page scroll">
-      <div class="center">
-        <div class="spacer"></div>
-        <div class="black_out">
-          <h2 class="pageTitle">Howdy! </h2>
-       
-          <p class="pageText"> Welcome to my page! I am a mechanical engineer living in Houston Texas. My interests include alternative energies, automotive powertrains, and motorsports.    </p>
-          <p class="pageText"> I created this website as a challenge to myself to push myself outside my comfort zone and learn HTML, and Java. This website is a portfolio and reflection of my achievments starting from undergraduate university to now and serves as a portfolio and personal archive </p>
-          
+    
+    <section id="hero" class="hero-section hero-background">
+      <div class="hero-content">
+        <h1 class="hero-title">Ian Burress</h1>
+        <p class="hero-subtitle">Mechanical Engineer | Powertrain Testing | Motorsports</p>
+        <div class="hero-actions">
+          <a href="#featured-projects" class="btn-primary">View Projects</a>
+          <a href="Burress_Ian_Resume.pdf" download class="btn-secondary">Download Resume</a>
         </div>
       </div>
     </section>
- <h2 class="pageTitle"> Featured Projects </h2>
-<!-- FSAE Chassis Rebuild -->
-    <section id="page2" class="page">
-      <div class="center">
-        <!-- Project -->
-        <div class="platform">
-          <div class="platformImage">
-           <div class="carousel">
-              <img src="pictures/ChassisSnow.jpg" alt="Project view 1" class="carouselImage active" />
-              <img src="pictures/ChassisBack.png" alt="Project view 2" class="carouselImage" />
-           <!--   <img src="pictures/project1-3.jpg" alt="Project view 3" class="carouselImage" /> -->
-              <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button>
-              <button class="carouselBtn next" aria-label="Next image">&#10095;</button>
-          </div>
 
-          </div>
-          <div class="platformDescription">
-            <h3 class="blockTitle">FSAE Chassis iRacing Rig</h3>
-            <p class="largeText">Simulator Conversion Project</p>
-            <p class="smallText">2022–2023</p>
-            <p class="mediumText">Converted a Formula Student chassis into a working iRacing setup with structural modifications, interface mounts, and driver comfort considerations using Autodesk design tools.</p>
-          </div>
-        </div>
-
-
-<!-- Pit Fire Marshall -->
-        <div class="platform">
-          <div class="platformImage">
-            <div class="carousel">
-              <img src="pictures/pitfire2.jpg" alt="Project view 1" class="carouselImage active" />
-              <img src="pictures/MustangFire.png" alt="Project view 2" class="carouselImage" />
-              <img src="pictures/pitfire1.png" alt="Project view 3" class="carouselImage" />
-              <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button>
-              <button class="carouselBtn next" aria-label="Next image">&#10095;</button>
-            </div>
-          </div>
-          <div class="platformDescription">
-            <h3 class="blockTitle">COTA Intervention Marshal</h3>
-            <p class="largeText">Pit Fire Intervention Marshal</p>
-            <p class="smallText">Fall 2023 to Present</p>
-            <p class="mediumText">Served as a pit lane intervention marshal for WEC, NASCAR, and other major series at Circuit of The Americas. Ensured crew safety during refueling, coordinated with teams, and supported crowd control.</p>
-          </div>
-        </div>
-
-<!-- E-Beam Trailer -->
-        <div class="platform">
-          <div class="platformImage">
-            <div class="carousel">
-              <img src="pictures/Trailer.png" alt="Project view 1" class="carouselImage active" />
-              <img src="pictures/DoseProfile.png" alt="Project view 2" class="carouselImage" />
-              <img src="pictures/LoadingAsem.png" alt="Project view 3" class="carouselImage" />
-              <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button>
-              <button class="carouselBtn next" aria-label="Next image">&#10095;</button>
-            </div>
-          </div>
-          <div class="platformDescription">
-            <h3 class="blockTitle">DOE Electron Beam Facility</h3>
-            <p class="largeText">M.S. Thesis Project</p>
-            <p class="smallText"> 2022 – 2024 </p>
-            <p class="mediumText">Designed a mobile electron beam system for soil remediation funded by the Department of Energy. Focused on mechanical design, simulation, and stakeholder review.</p>
-          </div>
-        </div>
-
-<!-- MSU Solar Car Chassis   -->
-        <div class="platform">
-          <div class="platformImage">
-            <div class="carousel">
-              <img src="pictures/MOV_Chassis1.jpg" alt="Project view 1" class="carouselImage active" />
-              <img src="pictures/MOV_Chassis2.jpg" alt="Project view 2" class="carouselImage" />
-              <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button>
-              <button class="carouselBtn next" aria-label="Next image">&#10095;</button>
-            </div>
-          </div>
-          <div class="platformDescription">
-            <h3 class="blockTitle"> Multi Occupant Solar Chassis </h3>
-            <p class="largeText"> Michigan State University Solar Car </p>
-            <p class="smallText"> 2019-2022 </p>
-            <p class="mediumText"> Redesigned prexisting chassis to race standard. Executed design on multi passenger vehicle to compete in the American Solar Challenge </p>
-          </div>
-        </div>
-
-        
+    <section id="intro" class="intro-section wrapper">
+      <div class="intro-text">
+        <h2 class="section-title">Howdy!</h2>
+        <p>
+          Welcome to my portfolio. I am a mechanical engineer based in Houston, Texas, currently working within Caterpillar's Engineering Rotational Development Program. My technical interests are deeply rooted in alternative energies, heavy-duty automotive powertrains, and motorsports.
+        </p>
+        <p>
+          I built this website from scratch as a personal challenge to expand my skill set into HTML, CSS, and JavaScript. Below, you will find a curated selection of my engineering projects—ranging from solar vehicle chassis design to mobile electron beam facilities.
+        </p>
       </div>
     </section>
 
-    <!-- Resume -->
-    <section id="page3" class="page">
-      <div class="center">
-        <h2 class="pageTitle">Resume</h2>
-        <a href="Burress_Ian_Resume.pdf" download>Download PDF</a>
-      </div>
+    <section id="featured-projects" class="projects-section wrapper">
+      <h2 class="section-title text-center">Featured Projects</h2>
+      
+      <article class="project-card row-normal">
+        <div class="project-gallery">
+          <img src="pictures/Trailer.png" alt="3D CAD Render of the mobile electron beam system trailer" class="main-project-img" loading="lazy" />
+        </div>
+        <div class="project-details">
+          <h3 class="project-title">DOE Electron Beam Facility</h3>
+          <p class="project-role">M.S. Thesis Project | 2022–2024</p>
+          <p class="project-desc">
+            Designed and simulated a mobile electron beam system for soil remediation, funded by the Department of Energy. Focused heavily on mechanical design feasibility, FEA simulation, and rigorous stakeholder review processes.
+          </p>
+          <div class="tech-tags">
+            <span class="tag">SolidWorks</span>
+            <span class="tag">FEA</span>
+            <span class="tag">Systems Engineering</span>
+          </div>
+          <a href="projects1.html" class="btn-text">Read Case Study &rarr;</a>
+        </div>
+      </article>
+
+      <article class="project-card row-reverse">
+        <div class="project-gallery">
+          <img src="pictures/ChassisSnow.jpg" alt="FSAE chassis converted to an iRacing simulator rig" class="main-project-img" loading="lazy" />
+        </div>
+        <div class="project-details">
+          <h3 class="project-title">FSAE Chassis iRacing Rig</h3>
+          <p class="project-role">Simulator Conversion Project | 2022–2023</p>
+          <p class="project-desc">
+            Converted a retired Formula Student chassis into a fully functional, high-fidelity iRacing setup. Developed structural modifications, custom interface mounts, and optimized driver ergonomics using Autodesk design tools.
+          </p>
+          <div class="tech-tags">
+            <span class="tag">Autodesk</span>
+            <span class="tag">Fabrication</span>
+            <span class="tag">Ergonomics</span>
+          </div>
+          <a href="projects1.html" class="btn-text">Read Case Study &rarr;</a>
+        </div>
+      </article>
+
+      <article class="project-card row-normal">
+        <div class="project-gallery">
+          <img src="pictures/MOV_Chassis1.jpg" alt="Multi-occupant solar car chassis bare frame" class="main-project-img" loading="lazy" />
+        </div>
+        <div class="project-details">
+          <h3 class="project-title">Multi-Occupant Solar Chassis</h3>
+          <p class="project-role">Michigan State University Solar Car | 2019–2022</p>
+          <p class="project-desc">
+            Redesigned a pre-existing vehicle chassis to meet stringent racing standards. Executed the mechanical design on a multi-passenger vehicle to successfully compete in the American Solar Challenge.
+          </p>
+          <div class="tech-tags">
+            <span class="tag">Chassis Design</span>
+            <span class="tag">Welding</span>
+            <span class="tag">Project Management</span>
+          </div>
+          <a href="projects1.html" class="btn-text">Read Case Study &rarr;</a>
+        </div>
+      </article>
+
     </section>
   </main>
-  <script src="script.js"></script>
-  <!-- Footer -->
-  <footer id="footer">
-    <p id="footerText">© Ian Burress</p>
+
+  <footer id="mainFooter">
+    <div class="footer-container">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" aria-label="LinkedIn Profile">
+          <img class="icon" src="icons/linkedin.png" alt="LinkedIn Icon" loading="lazy" />
+        </a>
+        <a href="https://github.com/burressi" target="_blank" aria-label="GitHub Profile">
+          <img class="icon" src="icons/github.png" alt="GitHub Icon" loading="lazy" />
+        </a>
+        <a href="mailto:ian.n.burress@gmail.com" target="_blank" aria-label="Email Ian">
+          <img class="icon" src="icons/email.png" alt="Email Icon" loading="lazy" />  
+        </a>
+      </div>
+      <p class="copyright-text">&copy; 2026 Ian Burress. Hand-coded from scratch.</p>
+    </div>
   </footer>
 
-
 </body>
-
 </html>
