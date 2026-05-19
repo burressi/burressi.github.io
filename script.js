@@ -72,4 +72,23 @@ $('.filter-btn').click(function() {
     }
   });
 });
+
+   // 5. Interactive Accolades Filter Mechanics
+$('.filter-btn').click(function() {
+  $('.filter-btn').removeClass('active');
+  $(this).addClass('active');
+
+  const selectedFilter = $(this).data('filter');
+
+  $('.award-card').each(function() {
+    // Parse individual card tags array natively
+    const cardCategories = eval($(this).attr('data-categories'));
+    
+    if (selectedFilter === 'all' || cardCategories.includes(selectedFilter)) {
+      $(this).fadeIn(300);
+    } else {
+      $(this).fadeOut(200);
+    }
+  });
+});
 }
