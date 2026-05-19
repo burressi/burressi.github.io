@@ -91,4 +91,40 @@ $('.filter-btn').click(function() {
     }
   });
 });
+   $(document).ready(function() {
+    // Project Filtering Logic
+    $('.filter-btn').on('click', function() {
+        const filter = $(this).data('filter');
+
+        // Update active button state
+        $('.filter-btn').removeClass('active');
+        $(this).addClass('active');
+
+        // Filter cards
+        if (filter === 'all') {
+            $('.project-card').show();
+        } else {
+            $('.project-card').hide().filter(function() {
+                return $(this).data('categories').includes(filter);
+            }).show();
+        }
+    });
+
+    // Carousel Logic (Prev/Next)
+    $('.carouselBtn').on('click', function() {
+        const $carousel = $(this).siblings('.project-carousel');
+        const $images = $carousel.find('img, video');
+        const $active = $images.filter('.active');
+        let $next;
+
+        if ($(this).hasClass('next')) {
+            $next = $active.next().length ? $active.next() : $images.first();
+        } else {
+            $next = $active.prev().length ? $active.prev() : $images.last();
+        }
+
+        $active.removeClass('active').addClass('hidden');
+        $next.removeClass('hidden').addClass('active');
+    });
+});
 }
