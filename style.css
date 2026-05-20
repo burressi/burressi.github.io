@@ -83,7 +83,24 @@ body{
 .project-content {
     padding: 20px;
 }
+/* Constrain standalone project images (non-carousel cards) */
+.main-project-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: block;
+}
 
+/* Prevent gallery overflow for all project cards */
+.project-gallery {
+  flex: 0 0 50%;
+  max-width: 50%;
+  width: 50%;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+}
 /* =========================================
    2. GLOBAL RESETS
    ========================================= */
