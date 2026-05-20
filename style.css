@@ -478,6 +478,11 @@ a {
   .carousel {
     height: 320px;
   }
+   
+.main-project-img {
+    height: 320px;  /* matches your carousel responsive height */
+  }
+
 }
 
 @media (max-width: 768px) {
