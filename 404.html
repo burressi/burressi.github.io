@@ -1,10 +1,3 @@
-<!-- 
-PROGRAMMER:Ian Burress
-DATE CREATED: 5/20/2025
-DATE EDITED: 6/26/2026
-PURPOSE: Engineering Portfolio of Ian Burress
-CONTACT INFO: ian.n.burress@gmail.com
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,241 +5,174 @@ CONTACT INFO: ian.n.burress@gmail.com
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Accolades, awards, certifications, and media features for Ian Burress." />
-  <title>Ian Burress - Accolades</title>
-  
+  <title>Ian Burress - 404</title>
+
   <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
 
+  <!-- FIXED Google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css?v=5" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
-  
+
   <style>
-    .accolades-safe-wrapper {
-      max-width: 1240px;
-      margin: 60px auto;
-      padding: 0 25px;
+    body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
-    }
-    
-    /* Horizontal Capsule Filter Pill Track Layout */
-    .filter-safe-container {
-      display: flex !important;
-      flex-direction: row !important;
-      justify-content: center !important;
-      gap: 10px !important;
-      margin-bottom: 50px !important;
-      flex-wrap: wrap !important;
-      width: 100% !important;
-    }
-
-    /* Fixed Isolated Capsule Button Mechanics */
-    .filter-safe-btn {
-      display: inline-block !important;
-      width: auto !important;
-      background: #ffffff !important;
-      border: 1px solid #cbd5e1 !important;
-      color: #64748b !important;
-      padding: 10px 20px !important;
-      font-size: 0.88rem !important;
-      font-weight: 600 !important;
-      border-radius: 30px !important;
-      cursor: pointer !important;
-      transition: all 0.2s ease !important;
-      box-sizing: border-box !important;
-    }
-
-    .filter-safe-btn:hover {
-      border-color: #18453B !important;
-      color: #18453B !important;
-    }
-
-    .filter-safe-btn.active-safe {
-      background: #18453B !important; /* MSU Green Preferred Tone */
-      border-color: #18453B !important;
-      color: #ffffff !important;
-      box-shadow: 0 4px 6px -1px rgba(24, 69, 59, 0.15);
-    }
-
-    /* Fixed Clean Multi-Card Structure Grid */
-    .awards-safe-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .award-safe-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .award-safe-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 20px -5px rgba(0,0,0,0.08);
-    }
-
-    .award-safe-images {
-      width: 100%;
-      height: 210px;
-      overflow: hidden;
-      background: #f1f5f9;
-      position: relative;
-    }
-
-    .award-safe-images img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .award-safe-images iframe {
-      border: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .award-safe-content {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      text-align: left;
-    }
-
-    .award-safe-content h2 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #1e293b;
-      margin: 0 0 12px 0;
-      line-height: 1.4;
-    }
-
-    .award-safe-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 14px;
-    }
-
-    .badge-safe {
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-
-    .badge-safe.cat {
-      background: #e8ecea;
-      color: #18453B;
-    }
-
-    .badge-safe.dt {
-      background: #f1f5f9;
-      color: #475569;
-    }
-    
-    .badge-safe.st {
       background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      color: #64748b;
+      color: #1e293b;
     }
 
-    .award-safe-desc {
-      font-size: 0.92rem;
+    main {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .error-wrapper {
+      display: flex;
+      max-width: 1000px;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .error-text {
+      flex: 1;
+    }
+
+    .error-code {
+      font-size: 5rem;
+      font-weight: 700;
+      color: #0077cc;
+      margin-bottom: 10px;
+    }
+
+    .error-text h1 {
+      margin: 0 0 10px;
+    }
+
+    .error-text p {
+      margin: 0 0 20px;
       color: #475569;
-      line-height: 1.55;
-      margin: 0 0 16px 0;
-      flex-grow: 1;
     }
 
-    .btn-safe-link {
+    .funny-line {
+      font-style: italic;
+    }
+
+    .home-button {
       display: inline-block;
-      color: #18453B;
-      font-weight: 600;
+      padding: 12px 20px;
+      background: #0077cc;
+      color: white;
+      border-radius: 6px;
       text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s ease;
-      margin-top: auto;
+      font-weight: 600;
     }
 
-    .btn-safe-link:hover {
-      color: #11302a;
+    .home-button:hover {
+      background: #005fa3;
+    }
+
+    .error-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .error-image img {
+      max-width: 100%;
+      border-radius: 10px;
     }
 
     @media (max-width: 768px) {
-      .awards-safe-grid {
-        grid-template-columns: 1fr;
+      .error-wrapper {
+        flex-direction: column;
+        text-align: center;
       }
+
+      .error-code {
+        font-size: 4rem;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #64748b;
     }
   </style>
 </head>
 
 <body>
-  <header id="mainHeader" class="sticky-nav">
-    <div class="header-container">
-      <div class="headerLeft">
-        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" aria-label="LinkedIn Profile">
-          <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
-        </a>
-        <a href="https://github.com/burressi" target="_blank" aria-label="GitHub Profile">
-          <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
-        </a>
-        <a href="mailto:ian.n.burress@gmail.com" target="_blank" aria-label="Email Ian">
-          <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />
-        </a>
-      </div>
 
-      <div class="headerCenter">
-        <a href="https://burressi.github.io/">
-          <img src="icons/ClearBlack2.png" alt="Ian Burress Logo" id="headerLogo" />
-        </a>
-      </div>
-      
-      <nav class="headerRight header-links">
-        <a href="about.html">About Me</a>
-        <a href="projects1.html">Projects</a>
-        <a href="accolades.html" class="active">Accolades</a>
-        <a href="contact.html" class="btn-primary-nav">Contact Me</a>
-      </nav>
+<header id="mainHeader" class="sticky-nav">
+  <div class="header-container">
+
+    <div class="headerLeft">
+      <a href="https://www.linkedin.com" target="_blank">
+        <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn">
+      </a>
+
+      <a href="https://github.com" target="_blank">
+        <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub">
+      </a>
+
+      <a href="mailto:ian.n.burress@gmail.com">
+        <img class="sidebarIcon icon" src="icons/email.png" alt="Email">
+      </a>
     </div>
-  </header>
 
-  <main>
-    <div class="error-wrapper">
-
-      <div class="error-text">
-        <div class="error-code">404</div>
-
-       <h1>Whoops! This Page Can Not Found</h1>
-      <p>The page you're looking for doesn't exist, was deleted or I have a deadlink somewhere (it's probably not you its probably me) .</p>
-
-        <p class="funny-line">
-           Don't worry I get lost sometimes too
-        </p>
-
-        <a href="/" class="home-button">Take me home</a>
-      </div>
-
-      <div class="error-image">
-        <img src="pictures/simpson.gif" alt="Homer Simpson backing into bushes" />
-      </div>
-
+    <div class="headerCenter">
+      <a href="index.html">
+        <img src="icons/ClearBlack2.png" alt="Logo" id="headerLogo">
+      </a>
     </div>
-  </main>
 
-  <footer>
-    <p>© Ian Burress 2026</p>
-  </footer>
+    <nav class="headerRight header-links">
+      <a href="about.html">About Me</a>
+      <a href="projects1.html">Projects</a>
+      <a href="accolades.html">Accolades</a>
+      <a href="contact.html" class="btn-primary-nav">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+  <div class="error-wrapper">
+
+    <div class="error-text">
+      <div class="error-code">404</div>
+
+      <h1>This page pulled a Homer.</h1>
+
+      <p>
+        The page you’re looking for doesn’t exist… or quietly backed into the bushes.
+      </p>
+
+      <p class="funny-line">
+        Don’t worry — I get lost sometimes too.
+      </p>
+
+      <a href="index.html" class="home-button">Take me home</a>
+    </div>
+
+
+    <div class="error-image">
+      <img src="pictures/simpson.gif" alt="Homer backing into bushes">
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>© Ian Burress 2026</p>
+</footer>
+
 </body>
 </html>
