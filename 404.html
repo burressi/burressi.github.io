@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Not Found | Ian Burress</title>
+  <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
+
   <link rel="stylesheet" href="style.css">
   <style>
     .error-container {
@@ -19,21 +21,47 @@
   </style>
 </head>
 <body>
-  <header id="mainHeader">
-    <!-- Copy your existing header here -->
-  </header>
+  <header id="mainHeader" class="sticky-nav">
+    <div class="header-container">
+      <div class="headerLeft">
+        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" aria-label="LinkedIn Profile">
+          <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
+        </a>
+        <a href="https://github.com/burressi" target="_blank" aria-label="GitHub Profile">
+          <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
+        </a>
+        <a href="mailto:ian.n.burress@gmail.com" target="_blank" aria-label="Email Ian">
+          <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />
+        </a>
+      </div>
 
+      <div class="headerCenter">
+        <a href="https://burressi.github.io/">
+          <img src="icons/ClearBlack2.png" alt="Ian Burress Logo" id="headerLogo" />
+        </a>
+      </div>
+      
+      <nav class="headerRight header-links">
+        <a href="about.html">About Me</a>
+        <a href="projects1.html">Projects</a>
+        <a href="accolades.html" class="active">Accolades</a>
+        <a href="contact.html" class="btn-primary-nav">Contact Me</a>
+      </nav>
+    </div>
+  </header>
   <main>
     <div class="error-container">
       <div class="error-code">404</div>
-      <h1>Page Not Found</h1>
-      <p>The page you're looking for doesn't exist or has been moved.</p>
+      <h1>Whoops! This Page Can Not Found</h1>
+      <p>The page you're looking for doesn't exist, was deleted or I have a deadlink somewhere (it's probably not you its probably me) .</p>
+      <p>Don't worry I get lost sometimes too</p>
+
       <a href="/" class="resume-button">Return to Homepage</a>
     </div>
   </main>
 
   <footer id="footer">
-    <p id="footerText">© Ian Burress 2025</p>
+    <p id="footerText">© Ian Burress 2026</p>
   </footer>
 </body>
 </html>
