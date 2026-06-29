@@ -47,7 +47,7 @@ Future updates may include:
 - Add accessibility improvements
 - Improve visual design and page structure
 
-## Suggested Portfolio Sections
+## Portfolio Sections
 
 Sections for the site:
 
