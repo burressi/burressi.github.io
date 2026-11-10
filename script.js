@@ -1,130 +1,83 @@
 /* =========================================
    PROGRAMMER: Ian Burress
-   PURPOSE: Interactive Logic for Engineering Portfolio
+   DATE CREATED: 5/20/2025
+    LAST UPDATED: 11/10/2026
+    PURPOSE: Engineering Portfolio of Ian Burress
+    CONTACT INFO: ian.n.burress@gmail.com
    ========================================= */
 
-$(document).ready(function() {
-  
-  // 1. Social Icon Hover Effects
-  $('.sidebarIcon').hover(function() {
-    $(this).css('opacity', '0.6');
-  }, function() {
-    $(this).css('opacity', '1');
-  });
+document.addEventListener('DOMContentLoaded', () => {
 
-  // 2. Initialize Dynamic Project Carousels
-  // Maps natively to the .carousel wrapper in your updated homepage layout
-  document.querySelectorAll('.carousel').forEach(carousel => {
-    const images = carousel.querySelectorAll('.carouselImage');
+  // 1. Image carousels (Projects page and case studies)
+  document.querySelectorAll('.project-carousel-wrapper, .carousel').forEach(carousel => {
+    const slides = carousel.querySelectorAll('.carouselImage');
     const prevBtn = carousel.querySelector('.prev');
     const nextBtn = carousel.querySelector('.next');
-    let current = 0;
+    if (!slides.length) return;
 
-    // Safety check: if buttons or images don't exist in a block, skip it
-    if (!images.length || !prevBtn || !nextBtn) return;
+    let current = Array.from(slides).findIndex(s => s.classList.contains('active'));
+    if (current < 0) current = 0;
 
-    const showImage = index => {
-      images.forEach((img, i) => {
-        img.classList.toggle('active', i === index);
-      });
+    const show = index => {
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
     };
 
-    // Left navigation control
-    prevBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      current = (current - 1 + images.length) % images.length;
-      showImage(current);
-    });
-
-    // Right navigation control
-    nextBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      current = (current + 1) % images.length;
-      showImage(current);
-    });
-
-    // Initialize the first image viewport state
-    showImage(current);
-  });
-});
-
-// 3. Resume Tracking Metric Utility Hook
-function trackDownload() {
-  console.log('Resume downloaded');
-  // Ready to be hooked into Google Analytics Event tags if needed later
-
-// 4. Interactive Projects Filter Mechanics
-$('.filter-btn').click(function() {
-  // Highlight chosen button
-  $('.filter-btn').removeClass('active');
-  $(this).addClass('active');
-
-  const selectedFilter = $(this).data('filter');
-
-  $('.project-display-card').each(function() {
-    // Parse individual card tags string natively
-    const cardCategories = eval($(this).attr('data-categories'));
-    
-    if (selectedFilter === 'all' || cardCategories.includes(selectedFilter)) {
-      $(this).fadeIn(300);
-    } else {
-      $(this).fadeOut(200);
+    // Hide arrows when there is only one image
+    if (slides.length < 2) {
+      [prevBtn, nextBtn].forEach(btn => btn && (btn.hidden = true));
     }
-  });
-});
 
-   // 5. Interactive Accolades Filter Mechanics
-$('.filter-btn').click(function() {
-  $('.filter-btn').removeClass('active');
-  $(this).addClass('active');
-
-  const selectedFilter = $(this).data('filter');
-
-  $('.award-card').each(function() {
-    // Parse individual card tags array natively
-    const cardCategories = eval($(this).attr('data-categories'));
-    
-    if (selectedFilter === 'all' || cardCategories.includes(selectedFilter)) {
-      $(this).fadeIn(300);
-    } else {
-      $(this).fadeOut(200);
-    }
-  });
-});
-   $(document).ready(function() {
-    // Project Filtering Logic
-    $('.filter-btn').on('click', function() {
-        const filter = $(this).data('filter');
-
-        // Update active button state
-        $('.filter-btn').removeClass('active');
-        $(this).addClass('active');
-
-        // Filter cards
-        if (filter === 'all') {
-            $('.project-card').show();
-        } else {
-            $('.project-card').hide().filter(function() {
-                return $(this).data('categories').includes(filter);
-            }).show();
-        }
+    prevBtn && prevBtn.addEventListener('click', e => {
+      e.preventDefault();
+      current = (current - 1 + slides.length) % slides.length;
+      show(current);
     });
 
-    // Carousel Logic (Prev/Next)
-    $('.carouselBtn').on('click', function() {
-        const $carousel = $(this).siblings('.project-carousel');
-        const $images = $carousel.find('img, video');
-        const $active = $images.filter('.active');
-        let $next;
-
-        if ($(this).hasClass('next')) {
-            $next = $active.next().length ? $active.next() : $images.first();
-        } else {
-            $next = $active.prev().length ? $active.prev() : $images.last();
-        }
-
-        $active.removeClass('active').addClass('hidden');
-        $next.removeClass('hidden').addClass('active');
+    nextBtn && nextBtn.addEventListener('click', e => {
+      e.preventDefault();
+      current = (current + 1) % slides.length;
+      show(current);
     });
+
+    show(current);
+  });
+
+  // 2. Generic category filter
+  //    buttonSelector: filter buttons with data-filter="..."
+  //    cardSelector:   cards with data-categories="a b" (space separated) or data-category="a"
+  const setupFilter = (buttonSelector, cardSelector, activeClass) => {
+    const buttons = document.querySelectorAll(buttonSelector);
+    const cards = document.querySelectorAll(cardSelector);
+    if (!buttons.length || !cards.length) return;
+
+    buttons.forEach(button => {
+      button.setAttribute('aria-pressed', button.classList.contains(activeClass) ? 'true' : 'false');
+
+      button.addEventListener('click', () => {
+        buttons.forEach(b => {
+          b.classList.remove(activeClass);
+          b.setAttribute('aria-pressed', 'false');
+        });
+        button.classList.add(activeClass);
+        button.setAttribute('aria-pressed', 'true');
+
+        const filter = button.dataset.filter;
+        cards.forEach(card => {
+          const categories = (card.dataset.categories || card.dataset.category || '')
+            .split(/\s+/)
+            .filter(Boolean);
+          const show = filter === 'all' || categories.includes(filter);
+          card.hidden = !show;
+        });
+      });
+    });
+  };
+
+  setupFilter('.filter-btn', '.project-display-card', 'active');          // Projects page
+  setupFilter('.filter-safe-btn', '.award-safe-card', 'active-safe');     // Accolades page
+
+  // 3. Resume download hook (ready for analytics later)
+  document.querySelectorAll('a[href$="Resume.pdf"]').forEach(link => {
+    link.addEventListener('click', () => console.log('Resume downloaded'));
+  });
 });
-}
