@@ -1,19 +1,18 @@
-
+<!DOCTYPE html>
 <!-- 
-PROGRAMMER:Ian Burress
+PROGRAMMER: Ian Burress
 DATE CREATED: 5/20/2025
-DATE EDITED: 6/26/2026
+LAST UPDATED: 11/10/2026
 PURPOSE: Engineering Portfolio of Ian Burress
 CONTACT INFO: ian.n.burress@gmail.com
 -->
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Accolades, awards, certifications, and media features for Ian Burress." />
-  <title>Ian Burress - Accolades</title>
+  <meta name="description" content="Engineering portfolio of Ian Burress, a mechanical engineer in Houston, TX: powertrain testing, motorsports race strategy, solar car programs and alternative energy research." />
+  <title>Ian Burress - Mechanical Engineer Portfolio</title>
   
   <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
 
@@ -21,189 +20,20 @@ CONTACT INFO: ian.n.burress@gmail.com
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=5" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
-  
-  <style>
-    .accolades-safe-wrapper {
-      max-width: 1240px;
-      margin: 60px auto;
-      padding: 0 25px;
-      font-family: 'Inter', sans-serif;
-    }
-    
-    /* Horizontal Capsule Filter Pill Track Layout */
-    .filter-safe-container {
-      display: flex !important;
-      flex-direction: row !important;
-      justify-content: center !important;
-      gap: 10px !important;
-      margin-bottom: 50px !important;
-      flex-wrap: wrap !important;
-      width: 100% !important;
-    }
-
-    /* Fixed Isolated Capsule Button Mechanics */
-    .filter-safe-btn {
-      display: inline-block !important;
-      width: auto !important;
-      background: #ffffff !important;
-      border: 1px solid #cbd5e1 !important;
-      color: #64748b !important;
-      padding: 10px 20px !important;
-      font-size: 0.88rem !important;
-      font-weight: 600 !important;
-      border-radius: 30px !important;
-      cursor: pointer !important;
-      transition: all 0.2s ease !important;
-      box-sizing: border-box !important;
-    }
-
-    .filter-safe-btn:hover {
-      border-color: #18453B !important;
-      color: #18453B !important;
-    }
-
-    .filter-safe-btn.active-safe {
-      background: #18453B !important; /* MSU Green Preferred Tone */
-      border-color: #18453B !important;
-      color: #ffffff !important;
-      box-shadow: 0 4px 6px -1px rgba(24, 69, 59, 0.15);
-    }
-
-    /* Fixed Clean Multi-Card Structure Grid */
-    .awards-safe-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .award-safe-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .award-safe-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 20px -5px rgba(0,0,0,0.08);
-    }
-
-    .award-safe-images {
-      width: 100%;
-      height: 210px;
-      overflow: hidden;
-      background: #f1f5f9;
-      position: relative;
-    }
-
-    .award-safe-images img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .award-safe-images iframe {
-      border: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .award-safe-content {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      text-align: left;
-    }
-
-    .award-safe-content h2 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #1e293b;
-      margin: 0 0 12px 0;
-      line-height: 1.4;
-    }
-
-    .award-safe-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 14px;
-    }
-
-    .badge-safe {
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-
-    .badge-safe.cat {
-      background: #e8ecea;
-      color: #18453B;
-    }
-
-    .badge-safe.dt {
-      background: #f1f5f9;
-      color: #475569;
-    }
-    
-    .badge-safe.st {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      color: #64748b;
-    }
-
-    .award-safe-desc {
-      font-size: 0.92rem;
-      color: #475569;
-      line-height: 1.55;
-      margin: 0 0 16px 0;
-      flex-grow: 1;
-    }
-
-    .btn-safe-link {
-      display: inline-block;
-      color: #18453B;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s ease;
-      margin-top: auto;
-    }
-
-    .btn-safe-link:hover {
-      color: #11302a;
-    }
-
-    @media (max-width: 768px) {
-      .awards-safe-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
 
 <body>
   <header id="mainHeader" class="sticky-nav">
     <div class="header-container">
       <div class="headerLeft">
-        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" aria-label="LinkedIn Profile">
+        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
           <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
         </a>
-        <a href="https://github.com/burressi" target="_blank" aria-label="GitHub Profile">
+        <a href="https://github.com/burressi" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
           <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
         </a>
-        <a href="mailto:ian.n.burress@gmail.com" target="_blank" aria-label="Email Ian">
+        <a href="mailto:ian.n.burress@gmail.com" aria-label="Email Ian">
           <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />
         </a>
       </div>
@@ -217,7 +47,7 @@ CONTACT INFO: ian.n.burress@gmail.com
       <nav class="headerRight header-links">
         <a href="about.html">About Me</a>
         <a href="projects1.html">Projects</a>
-        <a href="accolades.html" class="active">Accolades</a>
+        <a href="accolades.html">Accolades</a>
         <a href="contact.html" class="btn-primary-nav">Contact Me</a>
       </nav>
     </div>
@@ -240,20 +70,72 @@ CONTACT INFO: ian.n.burress@gmail.com
       <div class="intro-text">
         <h2 class="section-title">Howdy!</h2>
         <p>
-          Welcome to my portfolio. I am a mechanical engineer based in Houston, Texas, currently a application engineer and data strategist. My technical interests are deeply rooted in motorsports, alternative energies, and heavy-duty automotive powertrains. 
+          Welcome to my portfolio. I am a mechanical engineer based in Houston, Texas, currently working as an Application &amp; Installation Engineer and race data strategist. My technical interests are deeply rooted in motorsports, alternative energies, and heavy-duty automotive powertrains. 
         </p>
         <p>
-          I found that with the rise of AI resumes dont tend to tell the full story, therefore I built this website from scratch as a personal challenge to expand my skill set into HTML, CSS, and JavaScript. Below, you will find a curated selection of my notable skills and expertise.
+          With the rise of AI-generated resumes, a single page rarely tells the full story, so I built this website from scratch as a personal challenge to expand my skill set into HTML, CSS, and JavaScript. Below you will find a snapshot of what I do today, my core skills, and a curated selection of projects.
         </p>
       </div>
     </section>
 
+
+    <section id="snapshot" class="snapshot-section wrapper" aria-labelledby="snapshot-title">
+      <h2 id="snapshot-title" class="section-title text-center">At a Glance</h2>
+      <div class="snapshot-grid">
+        <div class="snapshot-card snapshot-card--accent">
+          <h3>What I'm Doing Now</h3>
+          <ul class="snapshot-list">
+            <li><strong>Application &amp; Installation Engineer</strong><span>Caterpillar Oil &amp; Gas | Houston, TX | Oct 2025&ndash;Present</span></li>
+            <li><strong>Race Strategy Engineer</strong><span>Cambern Performance, Ginetta G55 GTA | 2025&ndash;Present</span></li>
+            <li><strong>Solar Car Dynamics &amp; Body Sizing Judge</strong><span>Innovators Educational Foundation | 2025&ndash;Present</span></li>
+          </ul>
+        </div>
+        <div class="snapshot-card">
+          <h3>Education &amp; Credentials</h3>
+          <ul class="snapshot-list">
+            <li><strong>M.S. Mechanical Engineering</strong><span>Texas A&amp;M University | 2024</span></li>
+            <li><strong>B.S. Mechanical Engineering</strong><span>Michigan State University | 2022 | NCAA D1 Wrestler</span></li>
+            <li><strong>Six Sigma Green Belt</strong><span>SCCA Flagging &amp; Communications certified</span></li>
+          </ul>
+        </div>
+        <div class="snapshot-card">
+          <h3>Impact in Numbers</h3>
+          <div class="snapshot-stats">
+            <div><span class="stat-num">85+</span><span class="stat-label">person solar car team founded &amp; led</span></div>
+            <div><span class="stat-num">$300K+</span><span class="stat-label">cost savings identified across internships</span></div>
+            <div><span class="stat-num">350+</span><span class="stat-label">students mentored across 11 design teams</span></div>
+            <div><span class="stat-num">6&ndash;12 hr</span><span class="stat-label">endurance races strategized, 30+ car fields</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="snapshot-interests">
+        <span class="snapshot-interests-label">Interested in connecting about:</span>
+        <span class="tag">Powertrain Testing &amp; Validation</span>
+        <span class="tag">Motorsports Engineering</span>
+        <span class="tag">Alternative Energy</span>
+        <span class="tag">Heavy-Duty Power Systems</span>
+        <a href="contact.html" class="btn-text">Get in touch &rarr;</a>
+      </div>
+    </section>
+
+    <section id="core-skills" class="wrapper core-skills-section" aria-labelledby="core-skills-title">
+      <h2 id="core-skills-title" class="section-title text-center">Core Skills</h2>
+      <div class="skills-strip">
+        <div><h3>Test &amp; Instrumentation</h3><p>Dewesoft, CANape, CAN bus, strain gauges, thermocouples, pressure transducers</p></div>
+        <div><h3>Design &amp; CAD</h3><p>SolidWorks, Siemens NX, Creo, Teamcenter, GD&amp;T</p></div>
+        <div><h3>Simulation &amp; Analysis</h3><p>FEA, Ansys, LS-DYNA, STAR-CCM+, Thermal Desktop</p></div>
+        <div><h3>Data &amp; Programming</h3><p>Python, MATLAB, Excel VBA, HTML/CSS/JavaScript</p></div>
+      </div>
+      <p class="text-center"><a href="about.html#skills" class="btn-text">See full skills &amp; tools &rarr;</a></p>
+    </section>
+
     <section id="featured-projects" class="projects-section wrapper">
       <h2 class="section-title text-center">Noteworthy Projects</h2>
+      <p class="text-center section-lead">Highlights below. <a href="projects1.html" class="btn-text">Browse all projects &rarr;</a></p>
 
        <article class="project-card row-reverse">
         <div class="project-gallery">
-          <img src="pictures/ginetta.JPG" alt="Ginetta_On_Track" class="main-project-img" loading="lazy" />
+          <img src="pictures/ginetta.JPG" alt="Ginetta G55 GTA race car on track during an endurance race" class="main-project-img" loading="lazy" />
         </div>
         <div class="project-details">
           <h3 class="project-title">Professional Endurance Strategy Engineer</h3>
@@ -266,6 +148,7 @@ CONTACT INFO: ian.n.burress@gmail.com
             <span class="tag">Strategy</span>
             <span class="tag">Endurance</span>
           </div>
+          <a href="case-race-strategy.html" class="btn-text">Read the Case Study &rarr;</a>
         </div>
       </article>
       
@@ -285,16 +168,34 @@ CONTACT INFO: ian.n.burress@gmail.com
             <span class="tag">FEA</span>
             <span class="tag">Systems Engineering</span>
           </div>
-          <a href="https://drive.google.com/file/d/1gdNsjJjIsdINwzuMXbQe2TtEMGbL5sUI/view?usp=sharing" class="btn-text"> Published Thesis &rarr;</a>        
-        </p>
-        <p>
-          <a href="https://drive.google.com/file/d/1oA-8KJk6o8EXwguGIPhuQSQGjigqY1Dl/view?usp=sharing" class="btn-text"> Defense Presentation &rarr;</a>
+          <a href="case-electron-beam.html" class="btn-text">Read the Case Study &rarr;</a>
+          <a href="https://drive.google.com/file/d/1gdNsjJjIsdINwzuMXbQe2TtEMGbL5sUI/view?usp=sharing" class="btn-text" target="_blank" rel="noopener noreferrer"> Published Thesis &rarr;</a>
+          <a href="https://drive.google.com/file/d/1oA-8KJk6o8EXwguGIPhuQSQGjigqY1Dl/view?usp=sharing" class="btn-text" target="_blank" rel="noopener noreferrer"> Defense Presentation &rarr;</a>
           <!--post thesis link: https://drive.google.com/file/d/1gdNsjJjIsdINwzuMXbQe2TtEMGbL5sUI/view?usp=sharing-->
           <!-- Post Defense Link: https://drive.google.com/file/d/1oA-8KJk6o8EXwguGIPhuQSQGjigqY1Dl/view?usp=sharing -->
         </div>
       </article>
 
      
+
+       <article class="project-card row-reverse">
+        <div class="project-gallery">
+          <img src="awards/TeamSolarPhoto.jpg" alt="Texas A&amp;M Solar Car Racing Team with their solar-powered vehicle" class="main-project-img" loading="lazy" />
+        </div>
+        <div class="project-details">
+          <h3 class="project-title">Texas A&amp;M Solar Car Racing Program</h3>
+          <p class="project-role">Founder &amp; Program Director | 2022&ndash;2024</p>
+          <p class="project-desc">
+            Founded and led an 85+ person team across 14+ sub-teams and 12+ majors through the full product development life cycle of a road-legal, solar-powered electric vehicle. The team posted a top-5 fastest lap at the Formula Sun Grand Prix and was the only first-year program since 2018 to qualify for and finish the American Solar Challenge cross-country event.
+          </p>
+          <div class="tech-tags">
+            <span class="tag">Program Leadership</span>
+            <span class="tag">Vehicle Development</span>
+            <span class="tag">Systems Integration</span>
+          </div>
+          <a href="case-solar-car.html" class="btn-text">Read the Case Study &rarr;</a>
+        </div>
+      </article>
 
        <article class="project-card row-reverse">
         <div class="project-gallery">
@@ -311,7 +212,7 @@ CONTACT INFO: ian.n.burress@gmail.com
             <span class="tag">Welding </span>
             <span class="tag">Project Management</span>
           </div>
-          <a href="https://www.msusolar.com/" class="btn-text"> About Michigan State Solar Car &rarr;</a>
+          <a href="https://www.msusolar.com/" class="btn-text" target="_blank" rel="noopener noreferrer">About Michigan State Solar Car &rarr;</a>
         </div>
       </article>
 
@@ -324,5 +225,6 @@ CONTACT INFO: ian.n.burress@gmail.com
     </div>
   </footer>
 
+  <script src="script.js" defer></script>
 </body>
 </html>
