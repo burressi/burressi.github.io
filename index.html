@@ -2,31 +2,29 @@
 <!-- 
 PROGRAMMER:Ian Burress
 DATE CREATED: 5/20/2025
-DATE EDITED: 6/26/2026
+DATE EDITED: 11/10/2026
 PURPOSE: Engineering Portfolio of Ian Burress
 CONTACT INFO: ian.n.burress@gmail.com
 -->
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Engineering portfolio of Ian Burress, a mechanical engineer in Houston, TX: powertrain testing, motorsports race strategy, solar car programs and alternative energy research." />
-  <title>Ian Burress - Mechanical Engineer Portfolio</title>
-  
+  <title>Ian Burress | Mechanical Engineer</title>
+  <meta name="description" content="Portfolio of Ian Burress, a mechanical engineer in Houston, TX working in powertrain testing and validation, endurance race strategy, and solar vehicle programs." />
   <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css?v=7" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css?v=9" />
+  <script src="script.js" defer></script>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
     <div class="site-header-inner">
-      <a href="index.html" class="site-name">Ian Burress</a>
+      <a href="index.html" class="site-name"><img src="icons/ClearBlack2.png" alt="" class="site-logo" /><span>Ian Burress</span></a>
       <nav class="site-nav" aria-label="Main">
         <a href="projects1.html">Projects</a>
         <a href="about.html">About</a>
@@ -36,87 +34,64 @@ CONTACT INFO: ian.n.burress@gmail.com
     </div>
   </header>
 
-  <main class="home">
-
-    <section class="home-hero">
-      <div class="home-hero-text">
+  <main id="main" class="home">
+    <section class="container home-hero">
+      <div>
         <p class="eyebrow">Mechanical Engineer &middot; Houston, TX</p>
         <h1>Testing, validation, and race strategy for heavy-duty and motorsport powertrains.</h1>
-        <p class="home-hero-lede">
-          I&rsquo;m an Application &amp; Installation Engineer at Caterpillar and a race strategy engineer in endurance sports car racing. I built this site from scratch because a one-page resume doesn&rsquo;t tell the whole story.
-        </p>
+        <p class="home-hero-lede">I&rsquo;m an Application &amp; Installation Engineer at Caterpillar and a race strategy engineer in endurance sports car racing. I built this site from scratch because a one-page resume doesn&rsquo;t tell the whole story.</p>
         <p class="home-hero-links">
           <a href="about.html" class="link-arrow">Learn more about me &rarr;</a>
           <a href="Burress%20Resume.pdf" class="link-plain">R&eacute;sum&eacute; (PDF)</a>
         </p>
       </div>
-      <figure class="home-hero-photo">
+      <figure class="photo">
         <img src="pictures/ginetta.JPG" alt="Ginetta G55 GTA race car on track during an endurance race" />
         <figcaption>Ginetta G55 GTA, ZR2 class &middot; race strategy, 2025 endurance season</figcaption>
       </figure>
     </section>
 
-    <section class="home-stats" aria-label="Highlights">
-      <div>
-        <span class="home-stat-num">85+</span>
-        <span class="home-stat-label">Person solar car team founded &amp; led</span>
-      </div>
-      <div>
-        <span class="home-stat-num">350+</span>
-        <span class="home-stat-label">Students mentored across 11 collegiate design teams</span>
+    <section class="container" aria-label="Highlights">
+      <div class="stats">
+        <div><span class="stat-num">85+</span><span class="stat-label">Person solar car team founded &amp; led</span></div>
+        <div><span class="stat-num">350+</span><span class="stat-label">Students mentored across 11 collegiate design teams</span></div>
       </div>
     </section>
 
-    <section class="home-now" aria-labelledby="now-title">
+    <section class="container page-section" aria-labelledby="now-title">
       <h2 id="now-title" class="section-label">What I&rsquo;m Doing Now</h2>
       <ul class="now-list">
-        <li>
-          <strong>Application &amp; Installation Engineer</strong>
-          <span>Caterpillar Oil &amp; Gas &middot; Houston, TX &middot; Oct 2025&ndash;Present</span>
-        </li>
-        <li>
-          <strong>Race Strategy Engineer</strong>
-          <span>Cambern Performance, Ginetta G55 GTA &middot; 2025&ndash;Present</span>
-        </li>
-        <li>
-          <strong>Solar Car Dynamics &amp; Body Sizing Judge</strong>
-          <span>Innovators Educational Foundation &middot; 2025&ndash;Present</span>
-        </li>
+        <li><strong>Application &amp; Installation Engineer</strong><span>Caterpillar Oil &amp; Gas &middot; Houston, TX &middot; Oct 2025&ndash;Present</span></li>
+        <li><strong>Race Strategy Engineer</strong><span>Cambern Performance, Ginetta G55 GTA &middot; 2025&ndash;Present</span></li>
+        <li><strong>Solar Car Dynamics &amp; Body Sizing Judge</strong><span>Innovators Educational Foundation &middot; 2025&ndash;Present</span></li>
       </ul>
     </section>
 
-    <section class="home-featured" aria-labelledby="featured-title">
+    <section class="container page-section" aria-labelledby="featured-title">
       <h2 id="featured-title" class="section-label">Featured Projects</h2>
       <div class="featured-layout">
         <article class="featured-main">
-          <a href="case-solar-car.html" class="featured-img-link">
-            <img src="awards/EngineeringSolarWin.jpg" alt="Texas A&amp;M solar car on the road during the American Solar Challenge" loading="lazy" />
-          </a>
+          <a href="case-solar-car.html" class="featured-img-link"><img src="awards/EngineeringSolarWin.jpg" alt="Texas A&amp;M solar car on the road during the American Solar Challenge" loading="lazy" /></a>
           <h3><a href="case-solar-car.html">Texas A&amp;M Solar Car Program</a></h3>
-          <p class="featured-meta">Founder &amp; Program Director &middot; 2022&ndash;2024</p>
+          <p class="meta">Founder &amp; Program Director &middot; 2022&ndash;2024</p>
           <p>Started the team from scratch and led 85+ students through the design, build, and racing of a road-legal solar electric vehicle. We posted a top-5 fastest lap at the Formula Sun Grand Prix and finished the American Solar Challenge in our first year.</p>
           <a href="case-solar-car.html" class="link-arrow">Read case study &rarr;</a>
         </article>
-
         <div class="featured-side">
           <article class="featured-item">
-            <a href="case-electron-beam.html" class="featured-img-link">
-              <img src="pictures/Trailer.png" alt="CAD render of the mobile electron beam treatment trailer" loading="lazy" />
-            </a>
+            <a href="case-electron-beam.html" class="featured-img-link"><img src="pictures/Trailer.png" alt="CAD render of the mobile electron beam treatment trailer" loading="lazy" /></a>
             <div>
               <h3><a href="case-electron-beam.html">Mobile Electron Beam Facility</a></h3>
-              <p class="featured-meta">M.S. Thesis, Texas A&amp;M &middot; 2022&ndash;2024</p>
+              <p class="meta">M.S. Thesis, Texas A&amp;M &middot; 2022&ndash;2024</p>
               <p>A DOE-funded design for a trailer-mounted system that treats contaminated soil on site.</p>
               <a href="case-electron-beam.html" class="link-arrow">Read case study &rarr;</a>
             </div>
           </article>
           <article class="featured-item">
-            <a href="case-race-strategy.html" class="featured-img-link">
-              <img src="pictures/VIR Race Pace.png" alt="Race pace chart from Virginia International Raceway" loading="lazy" />
-            </a>
+            <a href="case-race-strategy.html" class="featured-img-link"><img src="pictures/VIR%20Race%20Pace.png" alt="Race pace chart from Virginia International Raceway" loading="lazy" /></a>
             <div>
               <h3><a href="case-race-strategy.html">Endurance Race Strategy</a></h3>
-              <p class="featured-meta">Cambern Performance &middot; 2025&ndash;Present</p>
+              <p class="meta">Cambern Performance &middot; 2025&ndash;Present</p>
               <p>Fuel, tire, and pit-window strategy for 6&ndash;12 hour races, backed by a calculator I built.</p>
               <a href="case-race-strategy.html" class="link-arrow">Read case study &rarr;</a>
             </div>
@@ -126,7 +101,7 @@ CONTACT INFO: ian.n.burress@gmail.com
       <p class="featured-all"><a href="projects1.html" class="link-arrow">See all projects &rarr;</a></p>
     </section>
 
-    <section class="home-skills" aria-labelledby="skills-title">
+    <section class="container" aria-labelledby="skills-title">
       <h2 id="skills-title" class="section-label">Core Skills</h2>
       <dl class="skills-list">
         <div><dt>Test &amp; instrumentation</dt><dd>Dewesoft, CANape, CAN bus, strain gauges, thermocouples, pressure transducers</dd></div>
@@ -136,7 +111,6 @@ CONTACT INFO: ian.n.burress@gmail.com
       </dl>
       <p><a href="about.html#skills" class="link-arrow">Full skills &amp; tools &rarr;</a></p>
     </section>
-
   </main>
 
   <footer class="site-footer">
@@ -150,7 +124,5 @@ CONTACT INFO: ian.n.burress@gmail.com
       </p>
     </div>
   </footer>
-
-  <script src="script.js" defer></script>
 </body>
 </html>
