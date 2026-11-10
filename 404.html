@@ -7,156 +7,23 @@ PURPOSE: Engineering Portfolio of Ian Burress
 CONTACT INFO: ian.n.burress@gmail.com
 -->
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Page not found on Ian Burress's engineering portfolio." />
-  <meta name="robots" content="noindex" />
   <title>Page Not Found | Ian Burress</title>
-
+  <meta name="description" content="Page not found on Ian Burress&#x27;s engineering portfolio." />
+  <meta name="robots" content="noindex" />
   <link rel="icon" type="image/png" href="/icons/ClearWLogo.png" />
-
-  <!-- FIXED Google font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="/style.css?v=8" />
-
-  <style>
-    .error-layout {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.error-text-block {
-  flex: 1;
-}
-
-.error-image-block {
-  flex: 1;
-  text-align: center;
-}
-
-.error-image-block img {
-  max-width: 100%;
-  border-radius: 8px;
-}
-
-/* Match your typography scale */
-.error-code {
-  font-size: 5rem;
-  color: var(--primary-color);
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-
-/* Mobile responsiveness (matches your pattern) */
-@media (max-width: 850px) {
-  .error-layout {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-    body {
-      margin: 0;
-      font-family: var(--font-main);
-      background: #f8fafc;
-      color: #1e293b;
-    }
-
-    main {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-    }
-
-    .error-wrapper {
-      display: flex;
-      max-width: 1000px;
-      width: 100%;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-    }
-
-    .error-text {
-      flex: 1;
-    }
-
-    .error-code {
-      font-size: 5rem;
-      font-weight: 700;
-      color: #0077cc;
-      margin-bottom: 10px;
-    }
-
-    .error-text h1 {
-      margin: 0 0 10px;
-    }
-
-    .error-text p {
-      margin: 0 0 20px;
-      color: #475569;
-    }
-
-    .funny-line {
-      font-style: italic;
-    }
-
-    .home-button {
-      display: inline-block;
-      padding: 12px 20px;
-      background: #0077cc;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .home-button:hover {
-      background: #005fa3;
-    }
-
-    .error-image {
-      flex: 1;
-      text-align: center;
-    }
-
-    .error-image img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-
-    @media (max-width: 768px) {
-      .error-wrapper {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .error-code {
-        font-size: 4rem;
-      }
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #64748b;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="/style.css?v=9" />
+  <script src="/script.js" defer></script>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header">
+  <header class="site-header">
     <div class="site-header-inner">
       <a href="/" class="site-name"><img src="/icons/ClearBlack2.png" alt="" class="site-logo" /><span>Ian Burress</span></a>
       <nav class="site-nav" aria-label="Main">
@@ -168,37 +35,19 @@ CONTACT INFO: ian.n.burress@gmail.com
     </div>
   </header>
 
-<main>
-  <section class="wrapper" style="padding-top:120px; padding-bottom:120px;">
-
-    <div class="error-layout">
-
-      <div class="error-text-block">
-        <div class="error-code">404</div>
-
-        <h1 class="section-title">Whoops! This page can&rsquo;t be found.</h1>
-        <a href="/index.html" class="btn-primary">Take me home</a>
-        <p class="intro-text">
-          The page you're looking for doesn&rsquo;t exist, was moved, or I have a dead link somewhere (it&rsquo;s probably not you, it&rsquo;s probably me).
-        </p>
-
-        <p style="color: var(--text-light); margin-bottom: 30px;">
-          Don’t worry, I get lost sometimes too.
-        </p>
-
-
+  <main id="main">
+    <div class="container not-found">
+      <div>
+        <p class="not-found-code">404</p>
+        <h1>Whoops! This page can&rsquo;t be found.</h1>
+        <p>The page you&rsquo;re looking for doesn&rsquo;t exist, was moved, or I have a dead link somewhere (it&rsquo;s probably not you, it&rsquo;s probably me). Don&rsquo;t worry, I get lost sometimes too.</p>
+        <p><a href="/" class="link-arrow">Take me home &rarr;</a></p>
       </div>
-
-      <div class="error-image-block">
-        <img src="/pictures/simpson.gif" alt="Homer Simpson backing into bushes">
-      </div>
-
+      <img src="/pictures/simpson.gif" alt="Homer Simpson backing slowly into a hedge" />
     </div>
+  </main>
 
-  </section>
-</main>
-
-<footer class="site-footer">
+  <footer class="site-footer">
     <div class="site-footer-inner">
       <p>&copy; 2026 Ian Burress</p>
       <p class="site-footer-links">
@@ -209,7 +58,5 @@ CONTACT INFO: ian.n.burress@gmail.com
       </p>
     </div>
   </footer>
-
-  <script src="/script.js" defer></script>
 </body>
 </html>
