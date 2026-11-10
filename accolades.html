@@ -1,11 +1,11 @@
+<!DOCTYPE html>
 <!-- 
 PROGRAMMER:Ian Burress
 DATE CREATED: 5/20/2025
-RECENT EDIT: 6/26/2026
+RECENT EDIT: 11/10/2026
 PURPOSE: Engineering Portfolio of Ian Burress
 CONTACT INFO: ian.n.burress@gmail.com
 -->
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,8 +20,7 @@ CONTACT INFO: ian.n.burress@gmail.com
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=5" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=6" />
   
   <style>
     .accolades-safe-wrapper {
@@ -196,13 +195,13 @@ CONTACT INFO: ian.n.burress@gmail.com
   <header id="mainHeader" class="sticky-nav">
     <div class="header-container">
       <div class="headerLeft">
-        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" aria-label="LinkedIn Profile">
+        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
           <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
         </a>
-        <a href="https://github.com/burressi" target="_blank" aria-label="GitHub Profile">
+        <a href="https://github.com/burressi" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
           <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
         </a>
-        <a href="mailto:ian.n.burress@gmail.com" target="_blank" aria-label="Email Ian">
+        <a href="mailto:ian.n.burress@gmail.com" aria-label="Email Ian">
           <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />
         </a>
       </div>
@@ -216,7 +215,7 @@ CONTACT INFO: ian.n.burress@gmail.com
       <nav class="headerRight header-links">
         <a href="about.html">About Me</a>
         <a href="projects1.html">Projects</a>
-        <a href="accolades.html" class="active">Accolades</a>
+        <a href="accolades.html" aria-current="page" class="active">Accolades</a>
         <a href="contact.html" class="btn-primary-nav">Contact Me</a>
       </nav>
     </div>
@@ -227,7 +226,7 @@ CONTACT INFO: ian.n.burress@gmail.com
       <h1 style="font-size: 2.5rem; font-weight: 700; color: #1e293b; margin-bottom: 10px;">Accolades &amp; Recognition</h1>
     </div>
       
-    <div class="filter-safe-container">
+    <div class="filter-safe-container" role="group" aria-label="Filter accolades by category">
       <button class="filter-safe-btn active-safe" data-filter="all">All Accolades</button>
       <button class="filter-safe-btn" data-filter="award">Major Awards</button>
       <button class="filter-safe-btn" data-filter="scholarship">Scholarships</button>
@@ -244,14 +243,14 @@ CONTACT INFO: ian.n.burress@gmail.com
           <img src="awards/WEC Grid.JPG" alt="WEC Post Race" />
         </div>
         <div class="award-safe-content">
-          <h2>Cirguit of The Americas Pit/Paddock/Grid Marshal</h2>
+          <h2>Circuit of the Americas Pit/Paddock/Grid Marshal</h2>
           <div class="award-safe-badges">
             <span class="badge-safe cat">Technical Inspector</span>
             <span class="badge-safe dt"> August 2024 - Present </span>
             <span class="badge-safe st">7 races worked</span>
           </div>
           <p class="award-safe-desc">
-            Grid Marshal for Circuit of the Americas for PPG (Pit/Paddock/Grid) working alongside teams and drivers to ensure safety of all race partipants and observers.
+            Grid Marshal for Circuit of the Americas for PPG (Pit/Paddock/Grid) working alongside teams and drivers to ensure safety of all race participants and observers.
           </p>
         </div>
       </div>
@@ -457,7 +456,7 @@ CONTACT INFO: ian.n.burress@gmail.com
           <p class="award-safe-desc">
             Graduate student media profile spotlighting specialized research tracks involving environmental chemical decomposition and technical leadership rebuilding the solar car platform.
           </p>
-          <a href="https://engineering.tamu.edu/news/2024/05/one-students-sustainable-legacy-removing-forever-chemicals-and-racing-solar-cars.html" target="_blank" class="btn-safe-link">Read Full News Article &rarr;</a>
+          <a href="https://engineering.tamu.edu/news/2024/05/one-students-sustainable-legacy-removing-forever-chemicals-and-racing-solar-cars.html" target="_blank" rel="noopener noreferrer" class="btn-safe-link">Read Full News Article &rarr;</a>
         </div>
       </div>
 
@@ -593,7 +592,7 @@ CONTACT INFO: ian.n.burress@gmail.com
           <p class="award-safe-desc">
             Involved in the specialized institutional documentation print highlighting major heavy-duty commercial automotive infrastructure and power partnerships.
           </p>
-          <a href="https://spirit.txamfoundation.com/summer-2024/solar-car-success.aspx" target="_blank" class="btn-safe-link">View Digital Feature &rarr;</a>
+          <a href="https://spirit.txamfoundation.com/summer-2024/solar-car-success.aspx" target="_blank" rel="noopener noreferrer" class="btn-safe-link">View Digital Feature &rarr;</a>
         </div>
       </div>
 
@@ -610,13 +609,14 @@ CONTACT INFO: ian.n.burress@gmail.com
           <p class="award-safe-desc">
             National news coverage outlining the solar team's cross-country racing deployment parameters, competitive divisions, and final scoring standings.
           </p>
-          <a href="https://engineering.tamu.edu/news/2024/10/racing-across-america-solar-team-takes-11th-in-national-competition.html" target="_blank" class="btn-safe-link">Read Full Press Release &rarr;</a>
+          <a href="https://engineering.tamu.edu/news/2024/10/racing-across-america-solar-team-takes-11th-in-national-competition.html" target="_blank" rel="noopener noreferrer" class="btn-safe-link">Read Full Press Release &rarr;</a>
         </div>
       </div>
 
       <div class="award-safe-card" data-category="media">
         <div class="award-safe-images">
-          <img src="awards/Legacy.jpg" alt="MSU Wrestling Roster" />
+          <div class="award-safe-placeholder" role="img" aria-label="Michigan State Wrestling"><span>MSU Wrestling</span></div>
+          <!-- TODO: replace with a wrestling photo, e.g. awards/MSUWrestling.jpg -->
         </div>
         <div class="award-safe-content">
           <h2>"Meet the Spartans" Wrestling Feature</h2>
@@ -627,13 +627,14 @@ CONTACT INFO: ian.n.burress@gmail.com
           <p class="award-safe-desc">
             Official collegiate athletic roster profile and introductory media feature highlighting my transition into the NCAA Division I wrestling program.
           </p>
-          <a href="https://msuspartans.com/news/2018/10/18/wrestling-meet-the-spartans-ian-burress" target="_blank" class="btn-safe-link">View Roster Feature &rarr;</a>
+          <a href="https://msuspartans.com/news/2018/10/18/wrestling-meet-the-spartans-ian-burress" target="_blank" rel="noopener noreferrer" class="btn-safe-link">View Roster Feature &rarr;</a>
         </div>
       </div>
 
       <div class="award-safe-card" data-category="media">
         <div class="award-safe-images">
-          <img src="awards/SEEScholar.png" alt="MSU SEE Scholars Profile" />
+          <div class="award-safe-placeholder" role="img" aria-label="MSU SEE Scholars"><span>SEE Scholars Profile</span></div>
+          <!-- TODO: optional - add a distinct image; SEEScholar.png is already used on the scholarship card -->
         </div>
         <div class="award-safe-content">
           <h2>MSU SEE Scholars Profile</h2>
@@ -644,13 +645,14 @@ CONTACT INFO: ian.n.burress@gmail.com
           <p class="award-safe-desc">
             Featured academic profile for the Supporting Engineering Excellence (SEE) program, funded by a grant from the National Science Foundation.
           </p>
-          <a href="https://www.egr.msu.edu/seescholars/scholars/ian-burress" target="_blank" class="btn-safe-link">View Scholar Profile &rarr;</a>
+          <a href="https://www.egr.msu.edu/seescholars/scholars/ian-burress" target="_blank" rel="noopener noreferrer" class="btn-safe-link">View Scholar Profile &rarr;</a>
         </div>
       </div>
 
       <div class="award-safe-card" data-category="media">
         <div class="award-safe-images">
-          <img src="icons/linkedin.png" alt="Big Ten Conference Spotlight" />
+          <div class="award-safe-placeholder" role="img" aria-label="Big Ten Conference"><span>Big Ten Conference</span></div>
+          <!-- TODO: replace with a Big Ten feature image, e.g. awards/BigTen.jpg -->
         </div>
         <div class="award-safe-content">
           <h2>Big Ten Conference Spotlight</h2>
@@ -661,7 +663,7 @@ CONTACT INFO: ian.n.burress@gmail.com
           <p class="award-safe-desc">
             Highlighted by the Big Ten Conference network following my freshman year, detailing the balance of collegiate athletics with a rigorous mechanical engineering curriculum.
           </p>
-          <a href="https://www.facebook.com/BigTenConference/posts/following-his-freshman-year-with-michigan-state-university-wrestling-ian-burress/10157072879200102/" target="_blank" class="btn-safe-link">View Social Feature &rarr;</a>
+          <a href="https://www.facebook.com/BigTenConference/posts/following-his-freshman-year-with-michigan-state-university-wrestling-ian-burress/10157072879200102/" target="_blank" rel="noopener noreferrer" class="btn-safe-link">View Social Feature &rarr;</a>
         </div>
       </div>
 
@@ -673,32 +675,6 @@ CONTACT INFO: ian.n.burress@gmail.com
       <p id="footerText">&copy; 2026 Ian Burress. Hand-coded using HTML5 &amp; CSS3.</p>
     </div>
   </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const pillButtons = document.querySelectorAll('.filter-safe-btn');
-      const awardCards = document.querySelectorAll('.award-safe-card');
-
-      pillButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          // Manage button state look
-          pillButtons.forEach(btn => btn.classList.remove('active-safe'));
-          this.classList.add('active-safe');
-
-          const userSelection = this.getAttribute('data-filter');
-
-          // Multi-card evaluation check logic
-          awardCards.forEach(card => {
-            const currentCardCategory = card.getAttribute('data-category');
-            if (userSelection === 'all' || currentCardCategory === userSelection) {
-              card.style.display = 'flex';
-            } else {
-              card.style.display = 'none';
-            }
-          });
-        });
-      });
-    });
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
