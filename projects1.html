@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <!-- 
 PROGRAMMER:Ian Burress
 DATE CREATED: 5/20/2025
@@ -9,17 +9,19 @@ CONTACT INFO: ian.n.burress@gmail.com
 <!-- Add menefee challenge removal--> 
 <!-- Add AI development tool -->
 <!-- Add Lifting tool when created -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ian Burress - Engineering Projects</title>
+  <meta name="description" content="Engineering projects by Ian Burress: endurance race strategy, solar car chassis design, mobile electron beam research, combustion analysis, and more." />
 
   <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
   
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=6" />
   <style>
     /* Adjusting grid to force a 3-column maximum at larger screens */
     .projects-grid { 
@@ -63,13 +65,13 @@ CONTACT INFO: ian.n.burress@gmail.com
   <header id="mainHeader" class="sticky-nav">
     <div class="header-container">
       <div class="headerLeft">
-        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" aria-label="LinkedIn Profile">
+        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
           <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
         </a>
-        <a href="https://github.com/burressi" target="_blank" aria-label="GitHub Profile">
+        <a href="https://github.com/burressi" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
           <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
         </a>
-        <a href="mailto:ian.n.burress@gmail.com" target="_blank" aria-label="Email Ian">
+        <a href="mailto:ian.n.burress@gmail.com" aria-label="Email Ian">
           <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />
         </a>
       </div>
@@ -82,8 +84,8 @@ CONTACT INFO: ian.n.burress@gmail.com
       
       <nav class="headerRight header-links">
         <a href="about.html">About Me</a>
-        <a href="projects1.html">Projects</a>
-        <a href="accolades.html" class="active">Accolades</a>
+        <a href="projects1.html" aria-current="page" class="active">Projects</a>
+        <a href="accolades.html">Accolades</a>
         <a href="contact.html" class="btn-primary-nav">Contact Me</a>
       </nav>
     </div>
@@ -94,59 +96,61 @@ CONTACT INFO: ian.n.burress@gmail.com
       <p>Hands-on solutions combining innovation with practical execution</p>
     </section>
 
-    <div class="project-filters">
+    <div class="project-filters" role="group" aria-label="Filter projects by category">
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="automotive">Automotive</button>
       <button class="filter-btn" data-filter="research">Research</button>
       <button class="filter-btn" data-filter="manufacturing">Manufacturing</button>
       <button class="filter-btn" data-filter="academic">Academic</button>
+      <button class="filter-btn" data-filter="personal">Personal</button>
     </div>
 
     <section class="projects-grid">
       <!-- 0. Race Strategy Calculator -->
       <div class="project-display-card" data-categories="automotive">
         <div class="project-carousel-wrapper">
-          <img src="pictures/VIR Race Pace.png" alt="Track Sheet" class="carouselImage active">
-          <img src="pictures/VIR Lap time.png" alt="Lap Time" class="carouselImage">
-          <img src="pictures/Track Sheet as of Road America.png" alt="Race Pace" class="carouselImage">
-          <img src="pictures/Barber fuel consumption.png" alt="Fuel Consumption" class="carouselImage">
-          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+          <img src="pictures/VIR Race Pace.png" alt="Race pace chart from Virginia International Raceway" class="carouselImage active">
+          <img src="pictures/VIR Lap time.png" alt="Lap time chart from Virginia International Raceway" class="carouselImage">
+          <img src="pictures/Track Sheet as of Road America.png" alt="Season track sheet as of Road America" class="carouselImage">
+          <img src="pictures/Barber fuel consumption.png" alt="Fuel consumption chart from Barber Motorsports Park" class="carouselImage">
+          <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button><button class="carouselBtn next" aria-label="Next image">&#10095;</button>
         </div>
         <div class="project-display-content">
           <h2>Endurance Race Strategy Calculator</h2>
           <div class="project-meta-badges"><span class="meta-badge">Automotive</span><span class="meta-badge">Current</span></div>
-          <p> Designed a strategy based spreadsheet to track manual entry of 2 diffrent vehicle classes of variable data </p>
-          <ul class="project-bullets-list"><li> Endurance Race Strategy </li><li>Tire Degridation </li><li>Fuel Consumption</li></ul>
+          <p> Designed a strategy spreadsheet that tracks manually entered race data for 2 different vehicle classes, modeling pace, tire wear, and fuel use to plan pit windows.</p>
+          <ul class="project-bullets-list"><li>Endurance race strategy</li><li>Tire degradation</li><li>Fuel consumption</li></ul>
+          <a href="case-race-strategy.html" class="btn-text">Read the Case Study &rarr;</a>
         </div>
       </div>
 
       <!-- 01. Dodge Wacky Wednesday -->
       <div class="project-display-card" data-categories="automotive">
         <div class="project-carousel-wrapper">
-          <img src="pictures/post race.jpg" alt="post race" class="carouselImage active">
-          <img src="pictures/inside before.jpg" alt="Inside before" class="carouselImage">
-          <img src="pictures/outside before" alt="outside before" class="carouselImage">
-          <img src="pictures/inside during.jpg" alt="Inside during" class="carouselImage">
-          <img src="pictures/outside during.jpg" alt="outside during" class="carouselImage">
-          <img src="pictures/inside after.jpg" alt="Inside after" class="carouselImage">
-          <img src="pictures/outside after.jpg" alt="Outside after" class="carouselImage">
-          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+          <img src="pictures/post race.jpg" alt="Dodge short track car after the race" class="carouselImage active">
+          <img src="pictures/inside before.jpg" alt="Dodge interior before the retrofit" class="carouselImage">
+          <img src="pictures/outside before.jpg" alt="Dodge exterior before the retrofit" class="carouselImage">
+          <img src="pictures/inside during.jpg" alt="Dodge interior during the retrofit" class="carouselImage">
+          <img src="pictures/outside during.jpg" alt="Dodge exterior during the retrofit" class="carouselImage">
+          <img src="pictures/inside after.jpg" alt="Dodge interior after the retrofit" class="carouselImage">
+          <img src="pictures/outside after.jpg" alt="Dodge exterior after the retrofit" class="carouselImage">
+          <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button><button class="carouselBtn next" aria-label="Next image">&#10095;</button>
         </div>
         <div class="project-display-content">
-          <h2>Local Short Track "Wacky Wednesday" Car </h2>
+          <h2>Local Short Track "Wacky Wednesday" Car</h2>
           <div class="project-meta-badges"><span class="meta-badge">Automotive</span><span class="meta-badge">Summer 2025</span></div>
-          <p> Stripped and retrofitted junkyard Dodge into a vehicle that could manuver a slicked track, carry various items such as appliances, and avoid obsticles such as barrels and broken vehicles </p>
-          <ul class="project-bullets-list"><li> Welding </li><li> Endurance </li><li> Deconstruction </li></ul>
+          <p> Stripped and retrofitted a junkyard Dodge into a vehicle that could maneuver a slicked track, carry items such as appliances, and avoid obstacles such as barrels and broken-down vehicles.</p>
+          <ul class="project-bullets-list"><li>Welding</li><li>Endurance</li><li>Deconstruction</li></ul>
         </div>
       </div>
      
       <!-- 1. Mechanical Can Crusher -->
       <div class="project-display-card" data-categories="academic">
         <div class="project-carousel-wrapper">
-          <img src="pictures/CanCrusher2.png" alt="Can Crusher" class="carouselImage active">
-          <img src="pictures/CanCrusher1.png" alt="Can Crusher" class="carouselImage">
-          <img src="pictures/CanCrusher3.png" alt="Can Crusher" class="carouselImage">
-          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+          <img src="pictures/CanCrusher2.png" alt="Mechanical can crusher prototype, view 2" class="carouselImage active">
+          <img src="pictures/CanCrusher1.png" alt="Mechanical can crusher prototype, view 1" class="carouselImage">
+          <img src="pictures/CanCrusher3.png" alt="Mechanical can crusher prototype, view 3" class="carouselImage">
+          <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button><button class="carouselBtn next" aria-label="Next image">&#10095;</button>
         </div>
         <div class="project-display-content">
           <h2>Mechanical Can Crusher</h2>
@@ -156,12 +160,29 @@ CONTACT INFO: ian.n.burress@gmail.com
         </div>
       </div>
 
+      <!-- 1b. Texas A&M Solar Car Program -->
+      <div class="project-display-card" data-categories="automotive academic">
+        <div class="project-carousel-wrapper">
+          <img src="awards/TeamSolarPhoto.jpg" alt="Texas A&amp;M Solar Car Racing Team with their vehicle" class="carouselImage active">
+          <img src="awards/EngineeringSolarWin.jpg" alt="Texas A&amp;M solar car driving during the American Solar Challenge" class="carouselImage">
+          <img src="awards/DuoRenderFoundation.png" alt="Render of the Texas A&amp;M solar car" class="carouselImage">
+          <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button><button class="carouselBtn next" aria-label="Next image">&#10095;</button>
+        </div>
+        <div class="project-display-content">
+          <h2>Texas A&amp;M Solar Car Racing Program</h2>
+          <div class="project-meta-badges"><span class="meta-badge">Automotive</span><span class="meta-badge">2022-2024</span></div>
+          <p>Founded and directed an 85+ person team that designed, built, and raced a road-legal solar electric vehicle.</p>
+          <ul class="project-bullets-list"><li>Top-5 fastest lap at Formula Sun Grand Prix</li><li>Finished the American Solar Challenge in its first year</li><li>14+ sub-teams across 12+ majors</li></ul>
+          <a href="case-solar-car.html" class="btn-text">Read the Case Study &rarr;</a>
+        </div>
+      </div>
+
       <!-- 2. Solar Chassis -->
       <div class="project-display-card" data-categories="automotive academic">
         <div class="project-carousel-wrapper">
-          <img src="pictures/MOV_Chassis1.jpg" alt="Solar Chassis" class="carouselImage active">
-          <img src="pictures/MOV_Chassis2.jpg" alt="Solar Chassis" class="carouselImage">
-          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+          <img src="pictures/MOV_Chassis1.jpg" alt="Multi-occupant solar car chassis, view 1" class="carouselImage active">
+          <img src="pictures/MOV_Chassis2.jpg" alt="Multi-occupant solar car chassis, view 2" class="carouselImage">
+          <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button><button class="carouselBtn next" aria-label="Next image">&#10095;</button>
         </div>
         <div class="project-display-content">
           <h2>Multi-Occupant Solar Chassis</h2>
@@ -174,9 +195,9 @@ CONTACT INFO: ian.n.burress@gmail.com
       <!-- 3. FSAE iRacing Rig -->
       <div class="project-display-card" data-categories="automotive">
         <div class="project-carousel-wrapper">
-          <img src="pictures/ChassisSnow.jpg" alt="Chassis" class="carouselImage active">
-          <img src="pictures/ChassisInSnow.png" alt="Chassis" class="carouselImage">
-          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+          <img src="pictures/ChassisSnow.jpg" alt="Formula SAE chassis outdoors in the snow" class="carouselImage active">
+          <img src="pictures/ChassisInSnow.png" alt="Formula SAE chassis being converted into a simulator rig" class="carouselImage">
+          <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button><button class="carouselBtn next" aria-label="Next image">&#10095;</button>
         </div>
         <div class="project-display-content">
           <h2>FSAE Chassis iRacing Rig</h2>
@@ -188,24 +209,25 @@ CONTACT INFO: ian.n.burress@gmail.com
       <!-- 4. Electron Beam -->
       <div class="project-display-card" data-categories="research">
         <div class="project-carousel-wrapper">
-          <img src="pictures/Trailer.png" alt="Trailer" class="carouselImage active">
-          <img src="pictures/DoseProfile.png" alt="Profile" class="carouselImage">
-          <img src="pictures/LoadingAsem.png" alt="Assembly" class="carouselImage">
-          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+          <img src="pictures/Trailer.png" alt="3D CAD render of the mobile electron beam treatment trailer" class="carouselImage active">
+          <img src="pictures/DoseProfile.png" alt="Electron beam dose profile simulation" class="carouselImage">
+          <img src="pictures/LoadingAsem.png" alt="Soil loading assembly CAD model" class="carouselImage">
+          <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button><button class="carouselBtn next" aria-label="Next image">&#10095;</button>
         </div>
         <div class="project-display-content">
           <h2>Mobile Electron Beam Facility</h2>
           <div class="project-meta-badges"><span class="meta-badge">Research</span><span class="meta-badge">2022-2024</span></div>
-          <p>Designed mobile electron beam system for soil remediation.</p>
+          <p>Designed a mobile electron beam treatment station for remediating contaminated soil, funded by the Department of Energy (M.S. thesis).</p>
+          <a href="case-electron-beam.html" class="btn-text">Read the Case Study &rarr;</a>
         </div>
       </div>
 
       <!-- 5. MEMS -->
-      <div class="project-display-card" data-categories="academic automotive">
+      <div class="project-display-card" data-categories="academic research">
         <div class="project-carousel-wrapper">
-          <img src="pictures/MEMDesign.png" alt="Design" class="carouselImage active">
-          <img src="pictures/MEMSCAD.png" alt="CAD" class="carouselImage">
-          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+          <img src="pictures/MEMDesign.png" alt="MEMS comb drive design layout" class="carouselImage active">
+          <img src="pictures/MEMSCAD.png" alt="MEMS comb drive CAD model" class="carouselImage">
+          <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button><button class="carouselBtn next" aria-label="Next image">&#10095;</button>
         </div>
         <div class="project-display-content">
           <h2>MEMS Design</h2>
@@ -217,24 +239,24 @@ CONTACT INFO: ian.n.burress@gmail.com
       <!-- 6. Slider Crank -->
       <div class="project-display-card" data-categories="academic">
         <div class="project-carousel-wrapper">
-          <img src="pictures/Slider_Crank_1.PNG" alt="Slider" class="carouselImage active">
-          <img src="pictures/Slider_Crank_2.PNG" alt="Slider" class="carouselImage">
-          <img src="pictures/Slider_Crank.JPG" alt="Slider" class="carouselImage">
-          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+          <img src="pictures/Slider_Crank_1.PNG" alt="Slider crank paperweight design" class="carouselImage active">
+          <img src="pictures/Slider_Crank_2.PNG" alt="Slider crank paperweight design" class="carouselImage">
+          <img src="pictures/Slider_Crank.JPG" alt="Slider crank paperweight design" class="carouselImage">
+          <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button><button class="carouselBtn next" aria-label="Next image">&#10095;</button>
         </div>
         <div class="project-display-content">
           <h2>Slider Crank Design</h2>
           <div class="project-meta-badges"><span class="meta-badge">Academic</span><span class="meta-badge">Spring 2020</span></div>
-          <p>Simulate and design dynamic slider crank paperweight using NX.</p>
+          <p>Simulated and designed a dynamic slider crank paperweight in Siemens NX.</p>
         </div>
       </div>
 
       <!-- 7. Combustion Analysis -->
       <div class="project-display-card" data-categories="automotive academic">
         <div class="project-carousel-wrapper">
-          <img src="pictures/Combustion1.PNG" alt="Analysis" class="carouselImage active">
-          <img src="pictures/Combustion2.PNG" alt="Analysis" class="carouselImage">
-          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+          <img src="pictures/Combustion1.PNG" alt="Combustion analysis results for the 5.2L Shelby GT500 engine" class="carouselImage active">
+          <img src="pictures/Combustion2.PNG" alt="CHEMKIN combustion modeling output" class="carouselImage">
+          <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button><button class="carouselBtn next" aria-label="Next image">&#10095;</button>
         </div>
         <div class="project-display-content">
           <h2>Combustion Analysis</h2>
@@ -246,10 +268,10 @@ CONTACT INFO: ian.n.burress@gmail.com
       <!-- 8. Pit Fire -->
       <div class="project-display-card" data-categories="automotive">
         <div class="project-carousel-wrapper">
-          <img src="pictures/pitfire2.jpg" alt="Fire" class="carouselImage active">
-          <img src="pictures/MustangFire.png" alt="Fire" class="carouselImage">
-          <img src="pictures/pitfire1.png" alt="Fire" class="carouselImage">
-          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+          <img src="pictures/pitfire2.jpg" alt="Pit lane fire intervention at Circuit of the Americas" class="carouselImage active">
+          <img src="pictures/MustangFire.png" alt="Mustang Challenge car tire fire in pit lane" class="carouselImage">
+          <img src="pictures/pitfire1.png" alt="Fire marshals responding in pit lane" class="carouselImage">
+          <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button><button class="carouselBtn next" aria-label="Next image">&#10095;</button>
         </div>
         <div class="project-display-content">
           <h2>COTA Pit Fire Intervention</h2>
@@ -261,10 +283,10 @@ CONTACT INFO: ian.n.burress@gmail.com
       <!-- 9. AR System -->
       <div class="project-display-card" data-categories="manufacturing">
         <div class="project-carousel-wrapper">
-          <img src="pictures/realwear.jpg" alt="AR" class="carouselImage active">
-          <img src="pictures/InspectionExample.PNG" alt="AR" class="carouselImage">
-          <img src="pictures/datamap.PNG" alt="AR" class="carouselImage">
-          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+          <img src="pictures/realwear.jpg" alt="RealWear assisted reality headset" class="carouselImage active">
+          <img src="pictures/InspectionExample.PNG" alt="Example assisted reality inspection work instruction" class="carouselImage">
+          <img src="pictures/datamap.PNG" alt="Data map of the assisted reality inspection workflow" class="carouselImage">
+          <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button><button class="carouselBtn next" aria-label="Next image">&#10095;</button>
         </div>
         <div class="project-display-content">
           <h2>AR Work Instruction System</h2>
@@ -274,12 +296,12 @@ CONTACT INFO: ian.n.burress@gmail.com
       </div>
 
       <!-- 10. Drone -->
-      <div class="project-display-card" data-categories="academic">
+      <div class="project-display-card" data-categories="personal">
         <div class="project-carousel-wrapper">
-          <img src="pictures/BetaFlight.png" alt="Drone" class="carouselImage active">
-          <img src="pictures/FPVcomp.png" alt="Drone" class="carouselImage">
-          <img src="pictures/disassembled.jpg" alt="Drone" class="carouselImage">
-          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+          <img src="pictures/BetaFlight.png" alt="Betaflight configuration screen for the FPV drone" class="carouselImage active">
+          <img src="pictures/FPVcomp.png" alt="FPV racing drone components" class="carouselImage">
+          <img src="pictures/disassembled.jpg" alt="Disassembled FPV racing drone" class="carouselImage">
+          <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button><button class="carouselBtn next" aria-label="Next image">&#10095;</button>
         </div>
         <div class="project-display-content">
           <h2>Custom FPV Racing Drone</h2>
@@ -291,7 +313,7 @@ CONTACT INFO: ian.n.burress@gmail.com
       <!-- 11. Infotainment -->
       <div class="project-display-card" data-categories="automotive">
         <div class="project-carousel-wrapper">
-           <video class="carouselImage active" autoplay muted loop playsinline><source src="pictures/modular.mp4" type="video/mp4"></video>
+           <video class="carouselImage active" autoplay muted loop playsinline aria-label="Animation of the hot-swappable infotainment concept"><source src="pictures/modular.mp4" type="video/mp4"></video>
         </div>
         <div class="project-display-content">
           <h2>Hot Swappable Infotainment</h2>
@@ -303,9 +325,9 @@ CONTACT INFO: ian.n.burress@gmail.com
       <!-- 12. Thermal Battery -->
       <div class="project-display-card" data-categories="research academic">
         <div class="project-carousel-wrapper">
-          <img src="pictures/ThermalBatteryFinal.png" alt="Battery" class="carouselImage active">
-          <img src="pictures/ThermalBattery.png" alt="Battery" class="carouselImage">
-          <button class="carouselBtn prev">&#10094;</button><button class="carouselBtn next">&#10095;</button>
+          <img src="pictures/ThermalBatteryFinal.png" alt="Final phase change thermal battery prototype" class="carouselImage active">
+          <img src="pictures/ThermalBattery.png" alt="Phase change thermal battery design" class="carouselImage">
+          <button class="carouselBtn prev" aria-label="Previous image">&#10094;</button><button class="carouselBtn next" aria-label="Next image">&#10095;</button>
         </div>
         <div class="project-display-content">
           <h2>Phase Change Thermal Battery</h2>
@@ -315,26 +337,6 @@ CONTACT INFO: ian.n.burress@gmail.com
       </div>
     </section>
   </main>
-
-  <script>
-    $('.next').on('click', function() {
-      let current = $(this).siblings('.carouselImage.active');
-      let next = current.next('.carouselImage').length ? current.next('.carouselImage') : $(this).siblings('.carouselImage').first();
-      current.removeClass('active'); next.addClass('active');
-    });
-    $('.prev').on('click', function() {
-      let current = $(this).siblings('.carouselImage.active');
-      let prev = current.prev('.carouselImage').length ? current.prev('.carouselImage') : $(this).siblings('.carouselImage').last();
-      current.removeClass('active'); prev.addClass('active');
-    });
-    $('.filter-btn').on('click', function() {
-      $('.filter-btn').removeClass('active'); $(this).addClass('active');
-      const filter = $(this).data('filter');
-      $('.project-display-card').each(function() {
-        if(filter === 'all' || $(this).data('categories').includes(filter)) $(this).show();
-        else $(this).hide();
-      });
-    });
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
