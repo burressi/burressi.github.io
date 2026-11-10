@@ -7,244 +7,85 @@ PURPOSE: Engineering Portfolio of Ian Burress
 CONTACT INFO: ian.n.burress@gmail.com
 -->
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Get in touch with Ian Burress regarding engineering opportunities, collaborations, or technical questions." />
-  <title>Ian Burress - Contact Me</title>
-  
+  <title>Contact | Ian Burress</title>
+  <meta name="description" content="Contact Ian Burress about engineering opportunities, collaborations, or technical questions." />
   <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css?v=9" />
   <script src="script.js" defer></script>
-
-  <style>
-    .contact-safe-wrapper {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 0 25px;
-      font-family: 'Inter', sans-serif;
-    }
-    .contact-safe-grid {
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 40px;
-      margin-top: 40px;
-    }
-    .contact-safe-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 40px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-    .contact-safe-sidebar {
-      background: #f8fafc;
-      border-top: 4px solid #18453B; /* MSU Green */
-      border-radius: 8px;
-      padding: 30px;
-    }
-    .form-safe-group {
-      margin-bottom: 20px;
-    }
-    .form-safe-group label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #1e293b;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .form-safe-group input,
-    .form-safe-group textarea {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      font-size: 1rem;
-      color: #334155;
-      background: #ffffff;
-      box-sizing: border-box;
-      transition: all 0.2s ease;
-    }
-    .form-safe-group input:focus,
-    .form-safe-group textarea:focus {
-      outline: none;
-      border-color: #18453B;
-      box-shadow: 0 0 0 3px rgba(24, 69, 59, 0.1);
-    }
-    .btn-safe-submit {
-      width: 100%;
-      background: #18453B; /* MSU Green */
-      color: #ffffff;
-      border: none;
-      padding: 14px;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-    .btn-safe-submit:hover {
-      background: #11302a;
-    }
-    .btn-safe-resume {
-      display: block;
-      text-align: center;
-      border: 2px solid #18453B;
-      color: #18453B !important;
-      font-weight: 600;
-      padding: 12px;
-      border-radius: 6px;
-      margin-bottom: 25px;
-      transition: all 0.2s ease;
-    }
-    .btn-safe-resume:hover {
-      background: #18453B;
-      color: #ffffff !important;
-    }
-    .social-safe-row {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      padding: 12px 15px;
-      border-radius: 6px;
-      margin-bottom: 12px;
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.2s ease;
-    }
-    .social-safe-row:hover {
-      border-color: #18453B;
-      transform: translateX(4px);
-    }
-    .social-safe-row img {
-      width: 28px;
-      height: 28px;
-    }
-    .social-safe-text h5 {
-      margin: 0;
-      font-size: 0.95rem;
-      color: #1e293b;
-    }
-    .social-safe-text span {
-      font-size: 0.8rem;
-      color: #64748b;
-    }
-    @media (max-width: 850px) {
-      .contact-safe-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
-
 <body>
-  <header id="mainHeader" class="sticky-nav">
-    <div class="header-container">
-      <div class="headerLeft">
-        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-          <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
-        </a>
-        <a href="https://github.com/burressi" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-          <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
-        </a>
-        <a href="mailto:ian.n.burress@gmail.com" aria-label="Email Ian">
-          <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />
-        </a>
-      </div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-      <div class="headerCenter">
-        <a href="https://burressi.github.io/">
-          <img src="icons/ClearBlack2.png" alt="Ian Burress Logo" id="headerLogo" />
-        </a>
-      </div>
-      
-      <nav class="headerRight header-links">
-        <a href="about.html">About Me</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-name"><img src="icons/ClearBlack2.png" alt="" class="site-logo" /><span>Ian Burress</span></a>
+      <nav class="site-nav" aria-label="Main">
         <a href="projects1.html">Projects</a>
-        <a href="accolades.html">Accolades</a>
-        <a href="contact.html" class="btn-primary-nav active" aria-current="page">Contact Me</a>
+        <a href="about.html">About</a>
+        <a href="accolades.html">Recognition</a>
+        <a href="contact.html" aria-current="page">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="contact-safe-wrapper">
-    <div style="text-align: center; margin-bottom: 30px;">
-      <h1 style="font-size: 2.5rem; font-weight: 700; color: #1e293b; margin-bottom: 10px;">Get In Touch</h1>
-      <p style="color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.5;">
-        Have a technical question, project inquiry, or professional opportunity? Drop a message below or connect via social channels.
-      </p>
-    </div>
+  <main id="main">
+    <div class="container">
+      <header class="page-header">
+        <p class="eyebrow">Contact</p>
+        <h1>Get in touch</h1>
+        <p>Have a question about a project, or an opportunity you&rsquo;d like to talk about? Send me a message here or email me directly.</p>
+      </header>
 
-    <div class="contact-safe-grid">
-      <div class="contact-safe-card">
-        <form id="portfolio-contact-form" action="https://formspree.io/f/mbdvoazg" method="POST">
-          
-          <div class="form-safe-group">
+      <div class="contact-layout">
+        <form action="https://formspree.io/f/mbdvoazg" method="POST">
+          <div class="form-field">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="text" id="name" name="name" autocomplete="name" required />
           </div>
-          
-          <div class="form-safe-group">
+          <div class="form-field">
             <label for="email">Email</label>
-            <input type="email" id="email" name="_replyto" placeholder="your.email@example.com" required>
+            <input type="email" id="email" name="_replyto" autocomplete="email" required />
           </div>
-          
-          <div class="form-safe-group">
+          <div class="form-field">
             <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="What are you reaching out about?" required>
+            <input type="text" id="subject" name="subject" required />
           </div>
-
-          <div class="form-safe-group">
+          <div class="form-field">
             <label for="body">Message</label>
-            <textarea id="body" name="body" rows="6" placeholder="Write your message here..." required></textarea>
+            <textarea id="body" name="body" rows="7" required></textarea>
           </div>
-
-          <button type="submit" class="btn-safe-submit">Send Message</button>
+          <button type="submit" class="button">Send message</button>
         </form>
-      </div>
 
-      <div class="contact-safe-sidebar">
-        <h3 style="margin-top: 0; color: #1e293b; font-size: 1.3rem; margin-bottom: 10px;">Direct Channels</h3>
-        <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px;">
-          Feel free to download a summary copy of my resume directly, or message me via professional platforms.
-        </p>
-        
-        <a href="Burress%20Resume.pdf" download class="btn-safe-resume">
-          Download PDF Resume
-        </a>
-        
-        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" rel="noopener noreferrer" class="social-safe-row">
-          <img src="icons/linkedin.png" alt="LinkedIn">
-          <div class="social-safe-text">
-            <h5>LinkedIn</h5>
-            <span>/in/ian-burress22</span>
-          </div>
-        </a>
-
-        <a href="https://github.com/burressi" target="_blank" rel="noopener noreferrer" class="social-safe-row">
-          <img src="icons/github.png" alt="GitHub">
-          <div class="social-safe-text">
-            <h5>GitHub</h5>
-            <span>github.com/burressi</span>
-          </div>
-        </a>
+        <aside class="contact-aside" aria-labelledby="direct-title">
+          <h2 id="direct-title">Other ways to reach me</h2>
+          <dl>
+            <dt>Email</dt><dd><a href="mailto:ian.n.burress@gmail.com">ian.n.burress@gmail.com</a></dd>
+            <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" rel="noopener noreferrer">linkedin.com/in/ian-burress22</a></dd>
+            <dt>GitHub</dt><dd><a href="https://github.com/burressi" target="_blank" rel="noopener noreferrer">github.com/burressi</a></dd>
+            <dt>Based in</dt><dd>Houston, TX</dd>
+          </dl>
+          <a href="Burress%20Resume.pdf" class="link-arrow">Download my r&eacute;sum&eacute; (PDF) &rarr;</a>
+        </aside>
       </div>
     </div>
   </main>
 
-  <footer id="footer" style="margin-top: 80px;">
-    <div class="footer-container">
-      <p id="footerText">&copy; 2026 Ian Burress. Hand-coded using HTML5 &amp; CSS3.</p>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p>&copy; 2026 Ian Burress</p>
+      <p class="site-footer-links">
+        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/burressi" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:ian.n.burress@gmail.com">ian.n.burress@gmail.com</a>
+        <a href="Burress%20Resume.pdf">R&eacute;sum&eacute; (PDF)</a>
+      </p>
     </div>
   </footer>
 </body>
