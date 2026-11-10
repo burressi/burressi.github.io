@@ -14,410 +14,7 @@ CONTACT INFO: ian.n.burress@gmail.com
   Fix: About: Professional timeline: needs to be adjusted A LOT 
   Fix: Projects tab
   -->
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="About Ian Burress - Mechanical Engineer specializing in testing, alternative energies, and heavy powertrains." />
-  <title>Ian Burress - About Me</title>
-  
-  <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css?v=7" />
-  <script src="script.js" defer></script>
-
-  <style>
-    /* Clean Mission Statement Typography */
-    .intro-statement {
-      max-width: 850px;
-      margin: 0 auto 80px auto;
-      text-align: center;
-      font-size: 1.2rem;
-      color: #475569;
-      line-height: 1.8;
-    }
-    .intro-statement p {
-      margin-bottom: 20px;
-    }
-
-    /* Alternating Vertical Timeline */
-    .timeline-tree {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto 80px auto;
-      padding: 20px 0;
-    }
-    /* The Center Line */
-    .timeline-tree::after {
-      content: '';
-      position: absolute;
-      width: 4px;
-      background-color: #e2e8f0;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      margin-left: -2px;
-    }
-    .timeline-node {
-      padding: 10px 40px;
-      position: relative;
-      background-color: inherit;
-      width: 50%;
-      box-sizing: border-box;
-      margin-bottom: 20px;
-    }
-    /* The Dots */
-    .timeline-node::after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      right: -10px;
-      background-color: #ffffff;
-      border: 4px solid #18453B;
-      top: 25px;
-      border-radius: 50%;
-      z-index: 1;
-    }
-    .node-left {
-      left: 0;
-    }
-    .node-right {
-      left: 50%;
-    }
-    .node-right::after {
-      left: -10px;
-    }
-    .node-content {
-      padding: 30px;
-      background-color: #ffffff;
-      position: relative;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .node-content:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-      border-color: #18453B;
-    }
-    .node-content h4 {
-      margin: 0 0 5px 0;
-      font-size: 1.35rem;
-      color: #1e293b;
-    }
-    .node-date {
-      display: inline-block;
-      background: #18453B;
-      color: #ffffff;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
-
-    /* Mobile Timeline Adjustments */
-    @media (max-width: 768px) {
-      .intro-statement {
-        text-align: left;
-        font-size: 1.1rem;
-        padding: 0 10px;
-      }
-      .timeline-tree::after {
-        left: 20px;
-      }
-      .timeline-node {
-        width: 100%;
-        padding-left: 50px;
-        padding-right: 0;
-      }
-      .node-right {
-        left: 0;
-      }
-      .timeline-node::after {
-        left: 10px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <header id="mainHeader" class="sticky-nav">
-    <div class="header-container">
-      <div class="headerLeft">
-        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-          <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
-        </a>
-        <a href="https://github.com/burressi" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-          <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
-        </a>
-        <a href="mailto:ian.n.burress@gmail.com" aria-label="Email Ian">
-          <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />
-        </a>
-      </div>
-
-      <div class="headerCenter">
-        <a href="https://burressi.github.io/">
-          <img src="icons/ClearBlack2.png" alt="Ian Burress Logo" id="headerLogo" />
-        </a>
-      </div>
-      
-      <nav class="headerRight header-links">
-        <a href="about.html" aria-current="page" class="active">About Me</a>
-        <a href="projects1.html">Projects</a>
-        <a href="accolades.html">Accolades</a>
-        <a href="contact.html" class="btn-primary-nav">Contact Me</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wrapper">
-    <section class="about-intro">
-      <h1 class="section-title text-center" style="margin-bottom: 40px;">About Me</h1>
-      
-      <div class="intro-statement">
-        <p>
-          I am an engineer who thrives in high-pressure, fast-paced environments. My work ethic was formed by an upbringing in athletics and by managing an engineering course load while training as an NCAA Division I athlete, and it has been reinforced by my time in trackside operations with collegiate clubs and professional racing series. 
-        </p>
-        <p>
-          I excel in testing, validation, design, and quality and compliance roles, and I do my best work on complex projects with tight timelines or limited resources. 
-        </p>
-      </div>
-    </section>
-<section class="fun-facts-section">
-      <h2 class="section-title text-center" style="margin-bottom: 40px;">Metrics &amp; Milestones</h2>
-      <div class="facts-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto;">
-        
-        <div style="background: #18453B; color: #ffffff; padding: 35px 25px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-          <span style="font-size: 2.8rem; font-weight: 700; display: block; margin-bottom: 10px;">85+</span> 
-          <p style="font-size: 0.95rem; line-height: 1.6; margin: 0;">Team members led after founding the Texas A&amp;M Solar Car Racing program.</p>
-        </div>
-        
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 35px 25px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-          <span style="font-size: 2.8rem; font-weight: 700; color: #18453B; display: block; margin-bottom: 10px;">2k+</span> 
-          <p style="font-size: 0.95rem; color: #475569; line-height: 1.6; margin: 0;">Miles covered across design, construction, and tracking of two fully functional solar cars.</p>
-        </div>
-
-        <div style="background: #18453B; color: #ffffff; padding: 35px 25px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-          <span style="font-size: 2.8rem; font-weight: 700; display: block; margin-bottom: 10px;">2</span> 
-          <p style="font-size: 0.95rem; line-height: 1.6; margin: 0;">Live pit lane fire emergency interventions managed successfully under track conditions.</p>
-        </div>
-
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 35px 25px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-          <span style="font-size: 2.8rem; font-weight: 700; color: #18453B; display: block; margin-bottom: 10px;">$300K+</span> 
-          <p style="font-size: 0.95rem; color: #475569; line-height: 1.6; margin: 0;">Cost savings identified through Kaizen and process improvement projects at Stellantis and Caterpillar.</p>
-        </div>
-        
-        <div style="background: #18453B; color: #ffffff; padding: 35px 25px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-          <span style="font-size: 2.8rem; font-weight: 700; display: block; margin-bottom: 10px;">9</span> 
-          <p style="font-size: 0.95rem; line-height: 1.6; margin: 0;">Professional racing series competed in or worked as a volunteer official.</p>
-        </div>
-        
-      </div>
-    </section>
-    <section id="skills" class="skills-section" aria-labelledby="skills-title">
-      <h2 id="skills-title" class="section-title text-center" style="margin-bottom: 40px;">Skills &amp; Tools</h2>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <h3>Testing &amp; Instrumentation</h3>
-          <ul class="skill-chips">
-            <li>Dewesoft</li><li>CANape</li><li>CADet</li><li>CAN bus</li><li>Strain rosettes</li><li>Thermocouples</li><li>Pressure transducers</li><li>Displacement sensors</li><li>Instrumented bolts</li><li>Phototachs</li><li>High-speed Schlieren imaging</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3>CAD &amp; Design</h3>
-          <ul class="skill-chips">
-            <li>SolidWorks</li><li>Siemens NX</li><li>Creo</li><li>Autodesk</li><li>Teamcenter</li><li>GD&amp;T</li><li>Chassis design</li><li>Welding &amp; fabrication</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3>Simulation &amp; Analysis</h3>
-          <ul class="skill-chips">
-            <li>FEA</li><li>Ansys</li><li>LS-DYNA</li><li>STAR-CCM+</li><li>Thermal Desktop</li><li>CEARUN</li><li>CHEMKIN</li><li>Kinematic analysis</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3>Data &amp; Programming</h3>
-          <ul class="skill-chips">
-            <li>Python</li><li>MATLAB</li><li>Excel VBA</li><li>Race strategy modeling</li><li>HTML / CSS / JavaScript</li><li>Data visualization</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3>Quality &amp; Process</h3>
-          <ul class="skill-chips">
-            <li>Six Sigma Green Belt (DMAIC)</li><li>Root cause &amp; failure analysis</li><li>Warranty investigation</li><li>Kaizen / World Class Manufacturing</li><li>New Product Introduction</li><li>EBOM &amp; MQAS</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3>Leadership &amp; Field</h3>
-          <ul class="skill-chips">
-            <li>Program founding &amp; leadership</li><li>Dealer &amp; customer liaison</li><li>Field audits</li><li>Endurance race strategy</li><li>SCCA F&amp;C certified</li><li>Pit lane fire intervention</li><li>CPR certified</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="timeline-section">
-      <h2 class="section-title text-center" style="margin-bottom: 60px;">Professional Timeline</h2>
-
-      <div class="timeline-tree">
-
-        <!-- ====== NODE 1: Michigan State University ====== -->
-        <div class="timeline-node node-left">
-          <div class="node-content">
-            <h4>Michigan State University</h4>
-            <span class="node-date">2018 &ndash; 2022</span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">B.S. Mechanical Engineering</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Laid foundational principles in fluid dynamics, thermal analysis, structural design, and component fabrication.</p>
-            <ul style="font-size: 0.9rem; color: #475569; padding-left: 18px; margin-top: 15px; line-height: 1.6;">
-              <li style="margin-bottom: 5px;">NCAA Division I Wrestler &ndash; Michigan State Wrestling Team</li>
-              <li>Senior Business Director &ndash; MSU Solar Car Racing Team</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- ====== NODE 2: Harley Davidson Internship ====== -->
-        <div class="timeline-node node-right">
-          <div class="node-content">
-            <h4>Manufacturing Intern</h4>
-            <span class="node-date">May 2019 &ndash; Aug 2019</span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Harley Davidson Motor Company | York, PA</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Collaborated to diagnose engine issues utilizing knowledge of assembly, maintenance, and performance. Designed new parts, tools, and layouts through New Source Introduction to 2 facilities creating 5 different models.</p>
-          </div>
-        </div>
-
-        <!-- ====== NODE 3: FCA Internship ====== -->
-        <div class="timeline-node node-left">
-          <div class="node-content">
-            <h4>Interior Design Intern</h4>
-            <span class="node-date">June 2020 &ndash; Aug 2020</span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Fiat Chrysler Automobiles | Auburn Hills, MI</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Hosted Q&amp;A referencing knowledge of Autodesk, Photoshop, and various CAD softwares to build visualizations. Collaborated cross-functionally with 20+ employees to ensure feasibility of an infotainment design concept. Awarded most innovative concept; FCA researched idea for implementation and patent for future vehicles.</p>
-          </div>
-        </div>
-
-        <!-- ====== NODE 4: MSU Research Assistant ====== -->
-        <div class="timeline-node node-right">
-          <div class="node-content">
-            <h4>Research Assistant</h4>
-            <span class="node-date">Nov 2020 &ndash; May 2022</span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Michigan State University, Clean Combustion Laboratory | East Lansing, MI</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Worked under Dr. Elisa Toulson measuring and recording laminar flame characteristics of sequential two-stage combustion. Processed and evaluated images captured from experimental apparatus through a high-speed camera operating a Schlieren Light source. Leveraged MATLAB to gather data such as radius, area, and circularity to find laminar flame expansion speed.</p>
-          </div>
-        </div>
-
-        <!-- ====== NODE 5: Stellantis Internship ====== -->
-        <div class="timeline-node node-left">
-          <div class="node-content">
-            <h4>Manufacturing Quality Intern</h4>
-            <span class="node-date">May 2021 &ndash; Aug 2021</span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Stellantis | Dundee, MI</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Initiated 2 CPIs, managed plant-wide audits, and evaluated 15 stations for defects deploying World Class Manufacturing strategies and databases such as EBOM and MQAS. Produced 5+ Kaizens enhancing quality and saving over $50,000 annually in production and warranty costs.</p>
-          </div>
-        </div>
-
-        <!-- ====== NODE 6: Caterpillar Peoria Internship ====== -->
-        <div class="timeline-node node-right">
-          <div class="node-content">
-            <h4>Integrated Components &amp; Solutions Intern</h4>
-            <span class="node-date">May 2022 &ndash; Aug 2022</span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Caterpillar | Peoria, IL</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Facilitated adoption of assisted reality into manufacturing environment. Activities included proof of concepts of TeamViewer product for work instructions, quality gates, gathered feedback to understand time usage and data inputs. Oversaw production, contributed to fabrication troubleshooting with operators, provided feedback for enhanced end quality.</p>
-          </div>
-        </div>
-
-        <!-- ====== NODE 7: Texas A&M University ====== -->
-        <div class="timeline-node node-left">
-          <div class="node-content">
-            <h4>Texas A&amp;M University</h4>
-            <span class="node-date">2022 &ndash; 2024</span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">M.S. Mechanical Engineering</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Advanced core systems engineering, multi-physics simulation validation, and empirical testing layouts.</p>
-            <p style="font-size: 0.9rem; color: #475569; line-height: 1.6; font-style: italic; margin-top: 10px;">M.S. Thesis: &ldquo;The Design of a Mobile Electron Beam Treatment Station For Contaminated Soils&rdquo;</p>
-          </div>
-        </div>
-
-        <!-- ====== NODE 8: Graduate Research Assistant ====== -->
-        <div class="timeline-node node-right">
-          <div class="node-content">
-            <h4>Graduate Research Assistant</h4>
-            <span class="node-date">Aug 2022 &ndash; May 2024</span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Texas A&amp;M University | College Station, TX</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Worked under Dr. David Staack and the Department of Energy to complete a thesis design of a mobile radiation treatment facility for contaminated soil treatment. Hosted weekly design reviews with research advisor to review project and strategize potential avenues of improvement. Deployed SolidWorks to gather data such as feasibility, facility weight, and FEA simulations.</p>
-          </div>
-        </div>
-
-        <!-- ====== NODE 9: Texas A&M Solar Car ====== -->
-        <div class="timeline-node node-left">
-          <div class="node-content">
-            <h4>Program Director &amp; Founder</h4>
-            <span class="node-date">July 2022 &ndash; Aug 2024</span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Texas A&amp;M Solar Car Racing Team | College Station, TX</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Founded and led a design team with 14+ sub-teams across 12+ majors, achieving a 7th place finish in North America. Directed an 85+ person team through full life cycle of product development, resulting in a custom, solar-powered, road-legal electric vehicle to compete in The Formula Sun Grand Prix and American Solar Challenge. Drove record-setting competition performance, including a top 5 fastest lap, and only first-year program to qualify and finish cross-country event since 2018. Team was recognized for team perseverance during The American Solar Challenge event.</p>
-          </div>
-        </div>
-
-        <!-- ====== NODE 10: Caterpillar Chillicothe Internship ====== -->
-        <div class="timeline-node node-right">
-          <div class="node-content">
-            <h4>Manufacturing Technology &amp; Solutions Intern</h4>
-            <span class="node-date">May 2023 &ndash; Aug 2023</span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Caterpillar | Chillicothe, IL</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Earned Six Sigma Green Belt leading DMAIC process to manage safety-related improvement projects. Developed an installation plan for magnetic sensing of cabling for crane technologies, saving $250,000 if implemented.</p>
-          </div>
-        </div>
-
-        <!-- ====== NODE 11: COTA Fire Marshal ====== -->
-        <div class="timeline-node node-left">
-          <div class="node-content">
-            <h4>Circuit of The Americas Fire Marshal</h4>
-            <span class="node-date">March 2024 &ndash; Present</span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Circuit of The Americas | Austin, TX</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Certified SCCA Pit Lane Intervention Marshal at major motorsports events (World Endurance Championships, NASCAR Cup Series, Mustang Challenge, Lamborghini Super Trofeo N.A.). Ensured safety for drivers, crew, and spectators by monitoring pit lane, manning fire extinguishers during refueling, and enforcing relevant safety protocols. Required for fire suppression during 2024 Ford Mustang Challenge.</p>
-          </div>
-        </div>
-       
-        <!-- ====== NODE 12: A&I Rotation ====== -->
-        <div class="timeline-node node-right">
-          <div class="node-content">
-            <h4>Engineering Rotational Development Program: Application &amp; Installation Rotation</h4>
-            <span class="node-date">August 2024 &ndash; December 2024 </span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Caterpillar | Houston, TX</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Executed validation fieldwork, including 6 in-field audits backed by multiple days of prior equipment troubleshooting. Served as the corporate liaison between global dealers and customers, resolving technical inquiries and keeping work aligned with Caterpillar&rsquo;s product support strategies. Categorized prior-year field data into strategic touchpoints for a company- and dealer-wide conference, and mentored 350+ students across 11 collegiate design teams at 3 universities.</p>
-          </div>
-        </div>
-          <!-- ====== NODE 13: Product Support Rotation ====== -->
-        <div class="timeline-node node-left">
-          <div class="node-content">
-            <h4>Engineering Rotational Development Program: Product Support Rotation</h4>
-            <span class="node-date">December 2024 &ndash; March 2025</span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Caterpillar | Lafayette, IN</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;"> Conducted warranty investigations and failure analysis in the Large Power Systems Division for marine, locomotive, oil and gas, and electric power customers. Worked with dealers and customers on root cause analysis of in-field failures, tracing issues back to the failed component, and supported New Product Introduction projects from the warranty stage through handoff to platform engineering.</p>
-          </div>
-        </div>     
-          <!-- ====== NODE 14: Platform Rotation ====== -->
-        <div class="timeline-node node-right">
-          <div class="node-content">
-            <h4>Engineering Rotational Development Program: Platform Design Rotation</h4>
-            <span class="node-date">March 2025 &ndash; July 2025</span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Caterpillar | Lafayette, IN</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Rebuilt a field-failure G3500 engine from the block up, organizing 360+ components across 17 kits and resolving 28 part discrepancies. Investigated turbocharger failures across large engine platforms, including teardown of 3 customer-returned units, and documented roading and bump tests of a customer-designed chassis while collecting engine performance data at multiple operating points.</p>
-          </div>
-        </div>     
-          <!-- ====== NODE 15: Test Rotation ====== -->
-        <div class="timeline-node node-left">
-          <div class="node-content">
-            <h4>Engineering Rotational Development Program: Test &amp; Development Rotation</h4>
-            <span class="node-date">July 2025 &ndash; November 2025 </span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Caterpillar | Clayton, NC</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Validated the accuracy of a Caterpillar product&rsquo;s displayed measurements against a Trimble UTS reference, then built an interactive 3D visualization of the results that could be filtered by margin of error, helping the design team pinpoint &ldquo;hot spots&rdquo; with the largest deviation. Ran tests with Dewesoft, CANape, and CADet using strain rosettes, displacement sensors, thermocouples, pressure transducers, instrumented bolts, and phototachs over CAN bus, and contributed to 3 test plans and failure investigations. Completed on-site GD&amp;T training.</p>
-          </div>
-        </div>    
         <!-- ====== NODE 12: Caterpillar ERD Program ====== 
         <div class="timeline-node node-right">
           <div class="node-content">
@@ -435,47 +32,257 @@ CONTACT INFO: ian.n.burress@gmail.com
         </div>
         -->
 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Ian Burress</title>
+  <meta name="description" content="About Ian Burress: mechanical engineer at Caterpillar, endurance race strategist, and founder of the Texas A&amp;M Solar Car Racing program. Skills, experience, and education." />
+  <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css?v=9" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-        <!-- ====== NODE 14: Solar Car Judge ====== -->
-        <div class="timeline-node node-right">
-          <div class="node-content">
-            <h4>Solar Car Dynamics &amp; Body Sizing Judge</h4>
-            <span class="node-date">July 2025 &ndash; Present</span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Innovators Educational Foundation | Rolla, MO</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Race official for North American racing series hosting 50+ collegiate teams in closed track and cross-country endurance races. Directly responsible for ensuring all regulations regarding interior sizing and vehicle exterior meet track and road standards and qualifications. Core group of race officials running pre-race dynamic assessment qualification events including slalom, figure 8, wet brake, acceleration test, and u-turn test. Review and assist teams to ensure race-ready compliance prior to event via design reviews and open lines of communication.</p>
-          </div>
-        </div>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-name"><img src="icons/ClearBlack2.png" alt="" class="site-logo" /><span>Ian Burress</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="projects1.html">Projects</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="accolades.html">Recognition</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-        <!-- ====== NODE 15: Current Role ====== -->
-        <div class="timeline-node node-left">
-          <div class="node-content">
-            <h4>Application &amp; Installation Engineer</h4>
-            <span class="node-date">Oct 2025 &ndash; Present</span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Caterpillar Oil &amp; Gas | Houston, TX | Current Role</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Leading autonomous solution development internal to the Oil and Gas division of Caterpillar and providing direct customer support for 3500 gas generator sets. Serve as corporate liaison between global dealers and customers, facilitating effective communication, resolving technical inquiries, and ensuring alignment with Caterpillar&rsquo;s product support strategies. Maintain guiding documents for customers and dealers and amend existing documentation when needed.</p>
-          </div>
-        </div>
-      
-        <!-- ====== NODE 16: Race Engineer ====== -->
-        <div class="timeline-node node-right">
-          <div class="node-content">
-            <h4>Race Strategy Engineer</h4>
-            <span class="node-date">2025 &ndash; Present</span>
-            <p style="font-weight: 600; color: #18453B; margin-bottom: 10px;">Cambern Performance | Lansing, MI</p>
-            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6;">Serve as race engineer for a Ginetta G55 GTA in the ZR2 class, supporting 6-12 hour endurance races in fields of 30+ cars with a five-person crew and two drivers. Manage race operations, including fuel strategy, lap time tracking, and coordinating real-time vehicle adjustments with mechanics during pit stops. Ensure crew, driver, and vehicle readiness by maintaining strict timing for pre-grid procedures and post-race inspections.
-</p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <main id="main">
+    <div class="container">
+      <header class="page-header about-intro">
+        <p class="eyebrow">About</p>
+        <h1>Engineer, race strategist, and former Division I wrestler.</h1>
+        <p>I am an engineer who thrives in high-pressure, fast-paced environments. My work ethic was formed by an upbringing in athletics and by managing an engineering course load while training as an NCAA Division I athlete, and it has been reinforced by my time in trackside operations with collegiate clubs and professional racing series.</p>
+        <p>I excel in testing, validation, design, and quality and compliance roles, and I do my best work on complex projects with tight timelines or limited resources.</p>
+        <p><a href="Burress%20Resume.pdf" class="link-arrow">Download my r&eacute;sum&eacute; (PDF) &rarr;</a></p>
+      </header>
 
-    
+      <section class="page-section" aria-label="Highlights">
+        <div class="stats">
+          <div><span class="stat-num">85+</span><span class="stat-label">Person solar car team founded &amp; led</span></div>
+          <div><span class="stat-num">350+</span><span class="stat-label">Students mentored across 11 design teams</span></div>
+          <div><span class="stat-num">2k+</span><span class="stat-label">Miles on two solar cars I helped build</span></div>
+          <div><span class="stat-num">2</span><span class="stat-label">Live pit lane fires handled as a marshal</span></div>
+        </div>
+      </section>
+
+      <section id="skills" class="page-section" aria-labelledby="skills-title">
+        <h2 id="skills-title" class="section-label">Skills &amp; Tools</h2>
+        <div class="skill-groups">
+        <div>
+          <h3>Testing &amp; Instrumentation</h3>
+          <ul><li>Dewesoft</li><li>CANape</li><li>CADet</li><li>CAN bus</li><li>Strain rosettes</li><li>Thermocouples</li><li>Pressure transducers</li><li>Displacement sensors</li><li>Instrumented bolts</li><li>Phototachs</li><li>High-speed Schlieren imaging</li></ul>
+        </div>
+        <div>
+          <h3>CAD &amp; Design</h3>
+          <ul><li>SolidWorks</li><li>Siemens NX</li><li>Creo</li><li>Autodesk</li><li>Teamcenter</li><li>GD&amp;T</li><li>Chassis design</li><li>Welding &amp; fabrication</li></ul>
+        </div>
+        <div>
+          <h3>Simulation &amp; Analysis</h3>
+          <ul><li>FEA</li><li>Ansys</li><li>LS-DYNA</li><li>STAR-CCM+</li><li>Thermal Desktop</li><li>CEARUN</li><li>CHEMKIN</li><li>Kinematic analysis</li></ul>
+        </div>
+        <div>
+          <h3>Data &amp; Programming</h3>
+          <ul><li>Python</li><li>MATLAB</li><li>Excel VBA</li><li>Race strategy modeling</li><li>HTML / CSS / JavaScript</li><li>Data visualization</li></ul>
+        </div>
+        <div>
+          <h3>Quality &amp; Process</h3>
+          <ul><li>Six Sigma Green Belt (DMAIC)</li><li>Root cause &amp; failure analysis</li><li>Warranty investigation</li><li>Kaizen / World Class Manufacturing</li><li>New Product Introduction</li><li>EBOM &amp; MQAS</li></ul>
+        </div>
+        <div>
+          <h3>Leadership &amp; Field</h3>
+          <ul><li>Program founding &amp; leadership</li><li>Dealer &amp; customer liaison</li><li>Field audits</li><li>Endurance race strategy</li><li>SCCA F&amp;C certified</li><li>Pit lane fire intervention</li><li>CPR certified</li></ul>
+        </div>
+        </div>
+      </section>
+
+      <section id="experience" class="page-section" aria-labelledby="exp-title">
+        <h2 id="exp-title" class="section-label">Experience</h2>
+        <ol class="history">
+        <li class="history-item">
+          <p class="history-date">Oct 2025 – Present</p>
+          <div>
+            <h3>Application &amp; Installation Engineer <span class="current-tag">Current</span></h3>
+            <p class="history-org">Caterpillar Oil &amp; Gas · Houston, TX</p>
+            <p>Leading autonomous solution development internal to the Oil and Gas division of Caterpillar and providing direct customer support for 3500 gas generator sets. Serve as corporate liaison between global dealers and customers, facilitating effective communication, resolving technical inquiries, and ensuring alignment with Caterpillar’s product support strategies. Maintain guiding documents for customers and dealers and amend existing documentation when needed.</p>
+          </div>
+        </li>
+        <li class="history-item">
+          <p class="history-date">2025 – Present</p>
+          <div>
+            <h3>Race Strategy Engineer <span class="current-tag">Current</span></h3>
+            <p class="history-org">Cambern Performance · Lansing, MI</p>
+            <p>Serve as race engineer for a Ginetta G55 GTA in the ZR2 class, supporting 6-12 hour endurance races in fields of 30+ cars with a five-person crew and two drivers. Manage race operations, including fuel strategy, lap time tracking, and coordinating real-time vehicle adjustments with mechanics during pit stops. Ensure crew, driver, and vehicle readiness by maintaining strict timing for pre-grid procedures and post-race inspections.</p>
+          </div>
+        </li>
+        <li class="history-item">
+          <p class="history-date">July 2025 – November 2025</p>
+          <div>
+            <h3>Test &amp; Development Engineer (Rotation)</h3>
+            <p class="history-org">Caterpillar Engineering Rotational Development Program · Clayton, NC</p>
+            <p>Validated the accuracy of a Caterpillar product’s displayed measurements against a Trimble UTS reference, then built an interactive 3D visualization of the results that could be filtered by margin of error, helping the design team pinpoint “hot spots” with the largest deviation. Ran tests with Dewesoft, CANape, and CADet using strain rosettes, displacement sensors, thermocouples, pressure transducers, instrumented bolts, and phototachs over CAN bus, and contributed to 3 test plans and failure investigations. Completed on-site GD&amp;T training.</p>
+          </div>
+        </li>
+        <li class="history-item">
+          <p class="history-date">July 2025 – Present</p>
+          <div>
+            <h3>Solar Car Dynamics &amp; Body Sizing Judge <span class="current-tag">Current</span></h3>
+            <p class="history-org">Innovators Educational Foundation · Rolla, MO</p>
+            <p>Race official for North American racing series hosting 50+ collegiate teams in closed track and cross-country endurance races. Directly responsible for ensuring all regulations regarding interior sizing and vehicle exterior meet track and road standards and qualifications. Core group of race officials running pre-race dynamic assessment qualification events including slalom, figure 8, wet brake, acceleration test, and u-turn test. Review and assist teams to ensure race-ready compliance prior to event via design reviews and open lines of communication.</p>
+          </div>
+        </li>
+        <li class="history-item">
+          <p class="history-date">March 2025 – July 2025</p>
+          <div>
+            <h3>Platform Design Engineer (Rotation)</h3>
+            <p class="history-org">Caterpillar Engineering Rotational Development Program · Lafayette, IN</p>
+            <p>Rebuilt a field-failure G3500 engine from the block up, organizing 360+ components across 17 kits and resolving 28 part discrepancies. Investigated turbocharger failures across large engine platforms, including teardown of 3 customer-returned units, and documented roading and bump tests of a customer-designed chassis while collecting engine performance data at multiple operating points.</p>
+          </div>
+        </li>
+        <li class="history-item">
+          <p class="history-date">December 2024 – March 2025</p>
+          <div>
+            <h3>Product Support Engineer (Rotation)</h3>
+            <p class="history-org">Caterpillar Engineering Rotational Development Program · Lafayette, IN</p>
+            <p>Conducted warranty investigations and failure analysis in the Large Power Systems Division for marine, locomotive, oil and gas, and electric power customers. Worked with dealers and customers on root cause analysis of in-field failures, tracing issues back to the failed component, and supported New Product Introduction projects from the warranty stage through handoff to platform engineering.</p>
+          </div>
+        </li>
+        <li class="history-item">
+          <p class="history-date">August 2024 – December 2024</p>
+          <div>
+            <h3>Application &amp; Installation Engineer (Rotation)</h3>
+            <p class="history-org">Caterpillar Engineering Rotational Development Program · Houston, TX</p>
+            <p>Executed validation fieldwork, including 6 in-field audits backed by multiple days of prior equipment troubleshooting. Served as the corporate liaison between global dealers and customers, resolving technical inquiries and keeping work aligned with Caterpillar’s product support strategies. Categorized prior-year field data into strategic touchpoints for a company- and dealer-wide conference, and mentored 350+ students across 11 collegiate design teams at 3 universities.</p>
+          </div>
+        </li>
+        <li class="history-item">
+          <p class="history-date">March 2024 – Present</p>
+          <div>
+            <h3>Pit Lane Fire Marshal <span class="current-tag">Current</span></h3>
+            <p class="history-org">Circuit of the Americas · Austin, TX</p>
+            <p>Certified SCCA Pit Lane Intervention Marshal at major motorsports events (World Endurance Championships, NASCAR Cup Series, Mustang Challenge, Lamborghini Super Trofeo N.A.). Ensured safety for drivers, crew, and spectators by monitoring pit lane, manning fire extinguishers during refueling, and enforcing relevant safety protocols. Required for fire suppression during 2024 Ford Mustang Challenge.</p>
+          </div>
+        </li>
+        <li class="history-item">
+          <p class="history-date">May 2023 – Aug 2023</p>
+          <div>
+            <h3>Manufacturing Technology &amp; Solutions Intern</h3>
+            <p class="history-org">Caterpillar · Chillicothe, IL</p>
+            <p>Earned Six Sigma Green Belt leading DMAIC process to manage safety-related improvement projects. Developed an installation plan for magnetic sensing of cabling for crane technologies, saving $250,000 if implemented.</p>
+          </div>
+        </li>
+        <li class="history-item">
+          <p class="history-date">Aug 2022 – May 2024</p>
+          <div>
+            <h3>Graduate Research Assistant</h3>
+            <p class="history-org">Texas A&amp;M University · College Station, TX</p>
+            <p>Worked under Dr. David Staack on a Department of Energy project to design a mobile radiation treatment facility for contaminated soil, which became my M.S. thesis. Ran weekly design reviews with my advisor and used SolidWorks for feasibility studies, facility weight estimates, and FEA.</p>
+          </div>
+        </li>
+        <li class="history-item">
+          <p class="history-date">July 2022 – Aug 2024</p>
+          <div>
+            <h3>Founder &amp; Program Director</h3>
+            <p class="history-org">Texas A&amp;M Solar Car Racing Team · College Station, TX</p>
+            <p>Founded and led a design team with 14+ sub-teams across 12+ majors, achieving a 7th place finish in North America. Directed an 85+ person team through full life cycle of product development, resulting in a custom, solar-powered, road-legal electric vehicle to compete in The Formula Sun Grand Prix and American Solar Challenge. Drove record-setting competition performance, including a top 5 fastest lap, and only first-year program to qualify and finish cross-country event since 2018. Team was recognized for team perseverance during The American Solar Challenge event.</p>
+          </div>
+        </li>
+        <li class="history-item">
+          <p class="history-date">May 2022 – Aug 2022</p>
+          <div>
+            <h3>Integrated Components &amp; Solutions Intern</h3>
+            <p class="history-org">Caterpillar · Peoria, IL</p>
+            <p>Helped bring assisted reality into the manufacturing floor, running proofs of concept of TeamViewer for work instructions and quality gates and gathering operator feedback on time use and data inputs. Supported production and fabrication troubleshooting with operators to improve end quality.</p>
+          </div>
+        </li>
+        <li class="history-item">
+          <p class="history-date">May 2021 – Aug 2021</p>
+          <div>
+            <h3>Manufacturing Quality Intern</h3>
+            <p class="history-org">Stellantis · Dundee, MI</p>
+            <p>Started 2 continuous improvement projects, ran plant-wide audits, and evaluated 15 stations for defects using World Class Manufacturing methods and the EBOM and MQAS databases. Delivered 5+ Kaizens that saved over $50,000 a year in production and warranty costs.</p>
+          </div>
+        </li>
+        <li class="history-item">
+          <p class="history-date">Nov 2020 – May 2022</p>
+          <div>
+            <h3>Research Assistant</h3>
+            <p class="history-org">Michigan State University, Clean Combustion Laboratory · East Lansing, MI</p>
+            <p>Worked under Dr. Elisa Toulson measuring laminar flame characteristics of sequential two-stage combustion. Processed high-speed Schlieren images from the experimental rig and used MATLAB to measure radius, area, and circularity to find laminar flame speed.</p>
+          </div>
+        </li>
+        <li class="history-item">
+          <p class="history-date">June 2020 – Aug 2020</p>
+          <div>
+            <h3>Interior Design Intern</h3>
+            <p class="history-org">Fiat Chrysler Automobiles · Auburn Hills, MI</p>
+            <p>Built visualizations with Autodesk, Photoshop, and CAD tools, and worked with 20+ employees across functions to confirm the feasibility of an infotainment design concept. The concept won most innovative, and FCA researched it for implementation and a patent on future vehicles.</p>
+          </div>
+        </li>
+        <li class="history-item">
+          <p class="history-date">May 2019 – Aug 2019</p>
+          <div>
+            <h3>Manufacturing Intern</h3>
+            <p class="history-org">Harley-Davidson Motor Company · York, PA</p>
+            <p>Helped diagnose engine issues using knowledge of assembly, maintenance, and performance. Designed new parts, tools, and layouts through New Source Introduction for 2 facilities building 5 different models.</p>
+          </div>
+        </li>
+        </ol>
+      </section>
+
+      <section id="education" class="page-section" aria-labelledby="edu-title">
+        <h2 id="edu-title" class="section-label">Education</h2>
+        <ol class="history">
+        <li class="history-item">
+          <p class="history-date">2022 &ndash; 2024</p>
+          <div>
+            <h3>M.S. Mechanical Engineering</h3>
+            <p class="history-org">Texas A&amp;M University &middot; College Station, TX</p>
+            <p>Thesis: &ldquo;The Design of a Mobile Electron Beam Treatment Station For Contaminated Soils,&rdquo; advised by Dr. David Staack. <a href="case-electron-beam.html">Read the case study</a>.</p>
+          </div>
+        </li>
+        <li class="history-item">
+          <p class="history-date">2018 &ndash; 2022</p>
+          <div>
+            <h3>B.S. Mechanical Engineering</h3>
+            <p class="history-org">Michigan State University &middot; East Lansing, MI</p>
+            <p>Coursework in fluid dynamics, thermal analysis, structural design, and fabrication.</p>
+            <ul>
+              <li>NCAA Division I wrestler, Michigan State Wrestling</li>
+              <li>Senior Business Director, MSU Solar Car Racing Team</li>
+              <li>Dean&rsquo;s List; SEE Scholar (NSF S-STEM)</li>
+            </ul>
+          </div>
+        </li>
+        </ol>
+      </section>
+    </div>
   </main>
 
-  <footer id="footer" style="margin-top: 80px;">
-    <div class="footer-container">
-      <p id="footerText">&copy; 2026 Ian Burress. Hand-coded using HTML5 &amp; CSS3.</p>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p>&copy; 2026 Ian Burress</p>
+      <p class="site-footer-links">
+        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/burressi" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:ian.n.burress@gmail.com">ian.n.burress@gmail.com</a>
+        <a href="Burress%20Resume.pdf">R&eacute;sum&eacute; (PDF)</a>
+      </p>
     </div>
   </footer>
 </body>
 </html>
+
