@@ -1,16 +1,10 @@
-/* =========================================
-   1. CSS VARIABLES 
-   PROGRAMMER:Ian Burress
-    DATE CREATED: 5/20/2025
-    RECENT EDIT: 6/26/2026
-    PURPOSE: Engineering Portfolio of Ian Burress
-    CONTACT INFO: ian.n.burress@gmail.com
-   ========================================= 
-      One file for the whole site. Sections:
+/* ==========================================================
+   Ian Burress - portfolio stylesheet
+   One file for the whole site. Sections:
    1. Settings   2. Base   3. Header & footer   4. Shared pieces
    5. Home   6. About   7. Projects & Recognition   8. Case studies
    9. Contact   10. 404   11. Small screens
-  ========================================================== */
+   ========================================================== */
 
 /* 1. Settings ------------------------------------------------ */
 :root {
