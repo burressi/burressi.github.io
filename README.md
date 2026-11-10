@@ -6,7 +6,7 @@ This site serves as a professional landing page to share my background, experien
 
 ## Live Site
 
-[View Portfolio] (https://burressi.github.io/)
+[View Portfolio](https://burressi.github.io/)
 
 ## About
 
@@ -14,10 +14,11 @@ This portfolio is designed to provide a quick overview of my professional backgr
 
 The site includes:
 
-- Professional summary
-- Resume 
+- Professional summary and "At a Glance" snapshot
+- Resume
+- Skills and tools
 - Work experience
-- Projects and case studies
+- Projects and in-depth case studies
 - Accolades
 - Contact information
 
@@ -35,7 +36,7 @@ The goal of this portfolio is to create a simple, accessible, and professional o
 
 - HTML
 - CSS
-- JS
+- JavaScript (vanilla, no libraries)
 - GitHub Pages
 
 
@@ -52,8 +53,11 @@ Future updates may include:
 Sections for the site:
 
 ```text
-Home
-About Me
-Projects
-Accolades
-Contact Me
+Home (index.html)
+About Me (about.html)
+Projects (projects1.html)
+  Case study: Mobile Electron Beam Facility (case-electron-beam.html)
+  Case study: Texas A&M Solar Car Program (case-solar-car.html)
+  Case study: Endurance Race Strategy (case-race-strategy.html)
+Accolades (accolades.html)
+Contact Me (contact.html)
