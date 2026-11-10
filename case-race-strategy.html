@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+PROGRAMMER: Ian Burress
+PURPOSE: Case study - Endurance Race Strategy Engineering
+CONTACT INFO: ian.n.burress@gmail.com
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Case study of Ian Burress&#39;s race strategy work and custom strategy calculator for a Ginetta G55 GTA in 6&ndash;12 hour endurance races." />
+  <title>Case Study: Endurance Race Strategy | Ian Burress</title>
+  <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=6" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header id="mainHeader" class="sticky-nav">
+    <div class="header-container">
+      <div class="headerLeft">
+        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+          <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
+        </a>
+        <a href="https://github.com/burressi" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+          <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
+        </a>
+        <a href="mailto:ian.n.burress@gmail.com" aria-label="Email Ian">
+          <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />
+        </a>
+      </div>
+
+      <div class="headerCenter">
+        <a href="https://burressi.github.io/">
+          <img src="icons/ClearBlack2.png" alt="Ian Burress Logo" id="headerLogo" />
+        </a>
+      </div>
+      
+      <nav class="headerRight header-links">
+        <a href="about.html">About Me</a>
+        <a href="projects1.html">Projects</a>
+        <a href="accolades.html">Accolades</a>
+        <a href="contact.html" class="btn-primary-nav">Contact Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-hero" style="--case-hero-img: url('pictures/ginetta.JPG');">
+      <p class="eyebrow">Case Study | Motorsports Data &amp; Strategy</p>
+      <h1>Endurance Race Strategy Engineering</h1>
+      <p>Running strategy for a Ginetta G55 GTA through 6&ndash;12 hour endurance races, backed by a custom calculator for pace, tire wear, and fuel.</p>
+    </section>
+
+    <div class="case-layout">
+      <aside class="case-facts" aria-label="Project facts">
+        <dl>
+          <dt>Role</dt><dd>Race Strategy Engineer</dd>
+          <dt>Team</dt><dd>Cambern Performance | Lansing, MI</dd>
+          <dt>Timeline</dt><dd>2025 &ndash; Present</dd>
+          <dt>Car</dt><dd>Ginetta G55 GTA, ZR2 class</dd>
+          <dt>Race format</dt><dd>6&ndash;12 hours, 30+ car fields</dd>
+          <dt>Crew</dt><dd>5-person crew, 2 drivers</dd>
+          <dt>Tools</dt><dd>Custom strategy spreadsheet</dd>
+        </dl>
+        <div class="case-links">
+          <a href="projects1.html" class="btn-text">View all projects &rarr;</a>
+        </div>
+      </aside>
+
+      <article class="case-body">
+      <section>
+        <h2>The Challenge</h2>
+        <p>In a long endurance race, results are often decided in pit lane: when to stop, how much fuel to add, when tires are falling off, and how to react to cautions. With 30+ cars and multiple classes on track, the team needed a reliable way to turn lap-by-lap data into decisions in real time.</p>
+      </section>
+      <section>
+        <h2>My Role</h2>
+        <ul>
+          <li>Lead race strategy for the car, including fuel planning, stint length, and pit windows.</li>
+          <li>Track lap times and race pace, and communicate with mechanics during pit stops to guide adjustments.</li>
+          <li>Manage overall timing so the crew, drivers, and car stay aligned for pre-grid procedures and post-race inspections.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>The Strategy Calculator</h2>
+        <p>I designed a strategy spreadsheet that tracks manually entered data for two different vehicle classes. It models race pace, lap times, tire degradation, and fuel consumption, which lets the team project pit windows and compare our pace against the competition as the race develops. A running track sheet carries lessons forward from round to round across the season.</p>
+        <p class="todo-note"><strong>To fill in:</strong> Add how the tool works in more detail (inputs, key calculations, how it updates during a race) and what you would automate next.</p>
+      </section>
+      <section>
+        <h2>Results</h2>
+        <div class="case-results">
+          <div><strong>6&ndash;12 hr</strong><span>races strategized</span></div>
+          <div><strong>30+</strong><span>car fields</span></div>
+          <div><strong>2</strong><span>vehicle classes tracked</span></div>
+        </div>
+        <p class="todo-note"><strong>To fill in:</strong> Add race outcomes you can share: finishing positions, a race where the strategy call made the difference, or fuel-prediction accuracy.</p>
+      </section>
+      <section>
+        <h2>What I Learned</h2>
+        <p class="todo-note"><strong>To fill in:</strong> Add 2&ndash;3 sentences on making decisions under time pressure with incomplete data.</p>
+      </section>
+      <section>
+        <h2>Gallery</h2>
+        <div class="case-gallery">
+          <figure><img src="pictures/ginetta.JPG" alt="Ginetta G55 GTA on track" loading="lazy" /><figcaption>Ginetta G55 GTA on track</figcaption></figure>
+          <figure><img src="pictures/VIR Race Pace.png" alt="Race pace analysis, Virginia International Raceway" loading="lazy" /><figcaption>Race pace analysis, Virginia International Raceway</figcaption></figure>
+          <figure><img src="pictures/VIR Lap time.png" alt="Lap time tracking, Virginia International Raceway" loading="lazy" /><figcaption>Lap time tracking, Virginia International Raceway</figcaption></figure>
+          <figure><img src="pictures/Barber fuel consumption.png" alt="Fuel consumption model, Barber Motorsports Park" loading="lazy" /><figcaption>Fuel consumption model, Barber Motorsports Park</figcaption></figure>
+          <figure><img src="pictures/Track Sheet as of Road America.png" alt="Season track sheet as of Road America" loading="lazy" /><figcaption>Season track sheet as of Road America</figcaption></figure>
+        </div>
+      </section>
+
+      <nav class="case-nav" aria-label="More case studies">
+        <a href="case-solar-car.html" class="btn-text">&larr; Texas A&amp;M Solar Car Program</a>
+        <a href="case-electron-beam.html" class="btn-text">Mobile Electron Beam Facility &rarr;</a>
+      </nav>
+      </article>
+    </div>
+  </main>
+
+  <footer id="footer" style="margin-top: 80px;">
+    <div class="footer-container">
+      <p id="footerText">&copy; 2026 Ian Burress. Hand-coded using HTML5 &amp; CSS3.</p>
+    </div>
+  </footer>
+</body>
+</html>
