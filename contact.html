@@ -1,11 +1,11 @@
+<!DOCTYPE html>
 <!-- 
 PROGRAMMER:Ian Burress
 DATE CREATED: 5/20/2025
+DATE EDITED: 11/10/2026
 PURPOSE: Engineering Portfolio of Ian Burress
 CONTACT INFO: ian.n.burress@gmail.com
 -->
-
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,7 +21,6 @@ CONTACT INFO: ian.n.burress@gmail.com
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css?v=3" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
   <script src="script.js" defer></script>
 
   <style>
@@ -152,13 +151,13 @@ CONTACT INFO: ian.n.burress@gmail.com
   <header id="mainHeader" class="sticky-nav">
     <div class="header-container">
       <div class="headerLeft">
-        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" aria-label="LinkedIn Profile">
+        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
           <img class="sidebarIcon icon" src="icons/linkedin.png" alt="LinkedIn Icon" />
         </a>
-        <a href="https://github.com/burressi" target="_blank" aria-label="GitHub Profile">
+        <a href="https://github.com/burressi" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
           <img class="sidebarIcon icon" src="icons/github.png" alt="GitHub Icon" />
         </a>
-        <a href="mailto:ian.n.burress@gmail.com" target="_blank" aria-label="Email Ian">
+        <a href="mailto:ian.n.burress@gmail.com" aria-label="Email Ian">
           <img class="sidebarIcon icon" src="icons/email.png" alt="Email Ian" />
         </a>
       </div>
@@ -173,7 +172,7 @@ CONTACT INFO: ian.n.burress@gmail.com
         <a href="about.html">About Me</a>
         <a href="projects1.html">Projects</a>
         <a href="accolades.html">Accolades</a>
-        <a href="contact.html" class="btn-primary-nav active">Contact Me</a>
+        <a href="contact.html" class="btn-primary-nav active" aria-current="page">Contact Me</a>
       </nav>
     </div>
   </header>
@@ -196,7 +195,7 @@ CONTACT INFO: ian.n.burress@gmail.com
           </div>
           
           <div class="form-safe-group">
-            <label for="email">Email </label>
+            <label for="email">Email</label>
             <input type="email" id="email" name="_replyto" placeholder="your.email@example.com" required>
           </div>
           
@@ -210,7 +209,7 @@ CONTACT INFO: ian.n.burress@gmail.com
             <textarea id="body" name="body" rows="6" placeholder="Write your message here..." required></textarea>
           </div>
 
-          <button type="submit" class="btn-safe-submit">Send </button>
+          <button type="submit" class="btn-safe-submit">Send Message</button>
         </form>
       </div>
 
@@ -224,7 +223,7 @@ CONTACT INFO: ian.n.burress@gmail.com
           Download PDF Resume
         </a>
         
-        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" class="social-safe-row">
+        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" rel="noopener noreferrer" class="social-safe-row">
           <img src="icons/linkedin.png" alt="LinkedIn">
           <div class="social-safe-text">
             <h5>LinkedIn</h5>
@@ -232,7 +231,7 @@ CONTACT INFO: ian.n.burress@gmail.com
           </div>
         </a>
 
-        <a href="https://github.com/burressi" target="_blank" class="social-safe-row">
+        <a href="https://github.com/burressi" target="_blank" rel="noopener noreferrer" class="social-safe-row">
           <img src="icons/github.png" alt="GitHub">
           <div class="social-safe-text">
             <h5>GitHub</h5>
