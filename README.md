@@ -1,63 +1,39 @@
 # Ian Burress Portfolio
 
-Personal portfolio website for Ian Burress
+Personal portfolio for Ian Burress, a mechanical engineer working in powertrain testing and validation, endurance race strategy, and solar vehicle programs.
 
-This site serves as a professional landing page to share my background, experience, resume/CV, and selected work. It is hosted with GitHub Pages.
+Live site: [burressi.github.io](https://burressi.github.io/)
 
-## Live Site
+## Pages
 
-[View Portfolio](https://burressi.github.io/)
+| Page | File |
+|---|---|
+| Home | `index.html` |
+| About (skills, experience, education) | `about.html` |
+| Projects | `projects1.html` |
+| Case study: Mobile Electron Beam Facility | `case-electron-beam.html` |
+| Case study: Texas A&M Solar Car Program | `case-solar-car.html` |
+| Case study: Endurance Race Strategy | `case-race-strategy.html` |
+| Recognition | `accolades.html` |
+| Contact | `contact.html` |
 
-## About
+## How it's built
 
-This portfolio is designed to provide a quick overview of my professional background, skills, and career interests.
+- Plain HTML, one stylesheet (`style.css`) and one small script (`script.js`). No frameworks or libraries.
+- `style.css` is split into numbered sections (settings, base, header and footer, then one section per page). Colours and fonts are set once at the top.
+- `script.js` runs the image carousels and the category filter on the Projects page.
+- Fonts: Source Serif 4 (headings) and Source Sans 3 (text) from Google Fonts.
+- Contact form is handled by Formspree.
+- Hosted on GitHub Pages.
 
-The site includes:
+## Folders
 
-- Professional summary and "At a Glance" snapshot
-- Resume
-- Skills and tools
-- Work experience
-- Projects and in-depth case studies
-- Accolades
-- Contact information
+- `pictures/` project photos and images
+- `awards/` images for the Recognition page
+- `icons/` logo and favicon
 
-## Purpose
+## To do
 
-The goal of this portfolio is to create a simple, accessible, and professional online presence that can be shared with:
-
-- Recruiters
-- Hiring managers
-- Professional connections
-- Coworkers
-- Clients
-
-## Technologies Used
-
-- HTML
-- CSS
-- JavaScript (vanilla, no libraries)
-- GitHub Pages
-
-
-## Planned Improvements
-
-Future updates may include:
-
-- Improve mobile responsiveness
-- Add accessibility improvements
-- Improve visual design and page structure
-
-## Portfolio Sections
-
-Sections for the site:
-
-```text
-Home (index.html)
-About Me (about.html)
-Projects (projects1.html)
-  Case study: Mobile Electron Beam Facility (case-electron-beam.html)
-  Case study: Texas A&M Solar Car Program (case-solar-car.html)
-  Case study: Endurance Race Strategy (case-race-strategy.html)
-Accolades (accolades.html)
-Contact Me (contact.html)
+- Fill in the "To fill in" notes on the three case study pages
+- Add a professional headshot
+- Compress large images (or convert to WebP) to speed up loading
