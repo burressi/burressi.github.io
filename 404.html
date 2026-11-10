@@ -4,17 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Accolades, awards, certifications, and media features for Ian Burress." />
-  <title> Error 404</title>
+  <meta name="description" content="Page not found on Ian Burress's engineering portfolio." />
+  <meta name="robots" content="noindex" />
+  <title>Page Not Found | Ian Burress</title>
 
-  <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
+  <link rel="icon" type="image/png" href="/icons/ClearWLogo.png" />
 
-  <!-- FIXED Google font -->
+  <!-- FIXED font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="/style.css?v=6" />
 
   <style>
     .error-layout {
@@ -152,30 +153,30 @@
   <div class="header-container">
 
     <div class="headerLeft">
-      <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank">
-        <img class="sidebarIcon icon" src="icons/linkedin.png" />
+      <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+        <img class="sidebarIcon icon" src="/icons/linkedin.png" alt="LinkedIn Icon" />
       </a>
 
-      <a href="https://github.com/burressi" target="_blank">
-        <img class="sidebarIcon icon" src="icons/github.png" />
+      <a href="https://github.com/burressi" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+        <img class="sidebarIcon icon" src="/icons/github.png" alt="GitHub Icon" />
       </a>
 
-      <a href="mailto:ian.n.burress@gmail.com">
-        <img class="sidebarIcon icon" src="icons/email.png" />
+      <a href="mailto:ian.n.burress@gmail.com" aria-label="Email Ian">
+        <img class="sidebarIcon icon" src="/icons/email.png" alt="Email Ian" />
       </a>
     </div>
 
     <div class="headerCenter">
-      <a href="index.html">
-        <img src="icons/ClearBlack2.png" id="headerLogo" />
+      <a href="/index.html">
+        <img src="/icons/ClearBlack2.png" alt="Ian Burress Logo" id="headerLogo" />
       </a>
     </div>
 
     <nav class="headerRight header-links">
-      <a href="about.html">About Me</a>
-      <a href="projects1.html">Projects</a>
-      <a href="accolades.html">Accolades</a>
-      <a href="contact.html" class="btn-primary-nav">Contact Me</a>
+      <a href="/about.html">About Me</a>
+      <a href="/projects1.html">Projects</a>
+      <a href="/accolades.html">Accolades</a>
+      <a href="/contact.html" class="btn-primary-nav">Contact Me</a>
     </nav>
 
   </div>
@@ -189,10 +190,10 @@
       <div class="error-text-block">
         <div class="error-code">404</div>
 
-        <h2 class="section-title"> Whoops! This Page Can Not Found.</h2>
-        <a href="index.html" class="btn-primary">Take me home</a>
+        <h1 class="section-title">Whoops! This page can&rsquo;t be found.</h1>
+        <a href="/index.html" class="btn-primary">Take me home</a>
         <p class="intro-text">
-          The page you're looking for doesn't exist, was deleted or I have a deadlink somewhere (it's probably not you its probably me)
+          The page you're looking for doesn&rsquo;t exist, was moved, or I have a dead link somewhere (it&rsquo;s probably not you, it&rsquo;s probably me).
         </p>
 
         <p style="color: var(--text-light); margin-bottom: 30px;">
@@ -203,7 +204,7 @@
       </div>
 
       <div class="error-image-block">
-        <img src="pictures/simpson.gif" alt="Homer Simpson backing into bushes">
+        <img src="/pictures/simpson.gif" alt="Homer Simpson backing into bushes">
       </div>
 
     </div>
@@ -211,9 +212,12 @@
   </section>
 </main>
 
-<footer>
-  <p>© Ian Burress 2026</p>
+<footer id="footer" style="margin-top: 80px;">
+  <div class="footer-container">
+    <p id="footerText">&copy; 2026 Ian Burress. Hand-coded using HTML5 &amp; CSS3.</p>
+  </div>
 </footer>
 
+  <script src="/script.js" defer></script>
 </body>
 </html>
