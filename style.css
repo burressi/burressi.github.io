@@ -1,5 +1,10 @@
 /* =========================================
    1. CSS VARIABLES (MSU Spartan Green Theme)
+   PROGRAMMER:Ian Burress
+    DATE CREATED: 5/20/2025
+    RECENT EDIT: 6/26/2026
+    PURPOSE: Engineering Portfolio of Ian Burress
+    CONTACT INFO: ian.n.burress@gmail.com
    ========================================= */
 :root {
   --primary-color: #18453B;
@@ -9,6 +14,12 @@
   --white: #ffffff;
   --border-color: #e2e8f0;
   --box-shadow-light: 0 4px 6px rgba(0,0,0,0.05);
+  /* Previously referenced but never defined */
+  --font-main: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --primary-hover: #11302a;
+  --black: #1e293b;
+  --transition: all 0.2s ease;
+  --border-radius: 8px;
 }
 .wrapper { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
 .text-center { text-align: center; }
@@ -1018,4 +1029,174 @@ a {
     flex-direction: column;
     text-align: center;
   }
+}
+
+
+/* =========================================
+   ACCESSIBILITY & UTILITIES
+   ========================================= */
+[hidden] { display: none !important; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.sidebarIcon { transition: opacity 0.2s ease; }
+.sidebarIcon:hover { opacity: 0.6; }
+
+.header-links a[aria-current="page"] { color: var(--primary-color); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.section-lead { color: var(--text-light); margin-top: -15px; margin-bottom: 30px; }
+
+/* =========================================
+   HOME: AT A GLANCE SNAPSHOT
+   ========================================= */
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+.snapshot-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 28px 26px;
+  box-shadow: var(--box-shadow-light);
+}
+.snapshot-card h3 { margin: 0 0 16px; font-size: 1.15rem; color: var(--primary-color); }
+.snapshot-card--accent { background: var(--primary-color); color: var(--white); border-color: var(--primary-color); }
+.snapshot-card--accent h3 { color: var(--white); }
+.snapshot-list { list-style: none; margin: 0; padding: 0; }
+.snapshot-list li { padding: 10px 0; border-bottom: 1px solid rgba(148, 163, 184, 0.35); }
+.snapshot-list li:last-child { border-bottom: none; }
+.snapshot-list strong { display: block; font-size: 0.98rem; }
+.snapshot-list span { display: block; font-size: 0.86rem; opacity: 0.85; }
+.snapshot-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.stat-num { display: block; font-size: 1.8rem; font-weight: 700; color: var(--primary-color); line-height: 1.1; }
+.stat-label { display: block; font-size: 0.82rem; color: var(--text-light); margin-top: 4px; }
+.snapshot-interests {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 10px; margin-top: 30px;
+}
+.snapshot-interests-label { font-weight: 600; color: var(--black); }
+
+/* =========================================
+   HOME: CORE SKILLS STRIP
+   ========================================= */
+.core-skills-section { padding-top: 20px; }
+.skills-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.skills-strip > div {
+  border-top: 4px solid var(--primary-color);
+  background: var(--bg-light);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  padding: 20px;
+}
+.skills-strip h3 { margin: 0 0 8px; font-size: 1.05rem; color: var(--black); }
+.skills-strip p { margin: 0; font-size: 0.92rem; color: var(--text-light); }
+
+/* =========================================
+   ABOUT: SKILLS & TOOLS
+   ========================================= */
+.skills-section { margin: 70px auto; max-width: 1100px; }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 22px;
+}
+.skill-group {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 22px;
+  box-shadow: var(--box-shadow-light);
+}
+.skill-group h3 { margin: 0 0 14px; font-size: 1.05rem; color: var(--primary-color); }
+.skill-chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-chips li {
+  background: #eef2f1;
+  color: var(--primary-color);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 999px;
+}
+
+/* =========================================
+   ACCOLADES: IMAGE PLACEHOLDER
+   ========================================= */
+.award-safe-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color), #2d6a5a);
+  color: var(--white); font-weight: 700; font-size: 1.3rem; text-align: center; padding: 20px;
+}
+
+/* =========================================
+   CASE STUDY PAGES
+   ========================================= */
+.case-hero {
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), var(--case-hero-img, none) center / cover, var(--primary-color);
+  color: var(--white);
+  padding: 90px 20px 70px;
+  text-align: center;
+}
+.case-hero .eyebrow { text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 600; opacity: 0.85; }
+.case-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 10px 0 12px; color: var(--white); }
+.case-hero p { max-width: 760px; margin: 0 auto; font-size: 1.1rem; opacity: 0.92; }
+.case-layout {
+  max-width: 1100px; margin: 0 auto; padding: 60px 20px;
+  display: grid; grid-template-columns: 280px 1fr; gap: 50px; align-items: start;
+}
+.case-facts {
+  position: sticky; top: 110px;
+  background: var(--bg-light); border-radius: var(--border-radius); padding: 24px;
+}
+.case-facts dl { margin: 0; }
+.case-facts dt { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); margin-top: 14px; }
+.case-facts dt:first-child { margin-top: 0; }
+.case-facts dd { margin: 4px 0 0; font-weight: 600; color: var(--black); font-size: 0.95rem; }
+.case-facts .case-links { margin-top: 22px; display: flex; flex-direction: column; gap: 10px; }
+.case-body section { margin-bottom: 44px; }
+.case-body h2 { font-size: 1.5rem; color: var(--primary-color); margin: 0 0 14px; }
+.case-body p, .case-body li { color: #374151; font-size: 1.02rem; }
+.case-body ul { padding-left: 20px; }
+.case-results {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; margin-top: 10px;
+}
+.case-results div { border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 18px; text-align: center; }
+.case-results strong { display: block; font-size: 1.6rem; color: var(--primary-color); }
+.case-results span { font-size: 0.85rem; color: var(--text-light); }
+.case-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.case-gallery figure { margin: 0; }
+.case-gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: var(--border-radius); border: 1px solid var(--border-color); }
+.case-gallery figcaption { font-size: 0.82rem; color: var(--text-light); margin-top: 6px; }
+.todo-note {
+  background: #fff7e6; border-left: 4px solid #f59e0b; color: #7c4a03;
+  padding: 10px 14px; border-radius: 4px; font-size: 0.92rem;
+}
+.case-nav { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--border-color); padding-top: 24px; }
+
+@media (max-width: 850px) {
+  .case-layout { grid-template-columns: 1fr; gap: 30px; }
+  .case-facts { position: static; }
+  .snapshot-stats { grid-template-columns: 1fr 1fr; }
 }
