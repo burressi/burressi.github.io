@@ -454,6 +454,154 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding-top: 24px;
 }
 
+/* Season data explorer (race strategy case study) */
+.case-layout-after { padding-top: 56px; }
+.case-layout-after > .case-body { grid-column: 2; }
+
+.explorer {
+  max-width: var(--width);
+  margin: 24px auto 0;
+  padding: 0 24px;
+}
+#race-explorer {
+  background: var(--white);
+  border-top: 2px solid var(--green);
+  border-bottom: 1px solid var(--rule);
+  padding: 32px 36px 28px;
+}
+.explorer-head { max-width: 760px; margin-bottom: 20px; }
+.explorer-head h2 { font-size: 1.9rem; margin-top: 6px; }
+.explorer-head p:last-child { color: var(--muted); }
+.explorer h3 { font-size: 1.2rem; margin: 32px 0 8px; }
+.rx-tabs { margin-bottom: 24px; }
+
+.rx-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px 32px;
+  margin-bottom: 24px;
+}
+.rx-field { display: flex; flex-direction: column; gap: 4px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.rx-field-inline { flex-direction: row; align-items: center; gap: 10px; }
+.rx-field select {
+  font: 1rem var(--sans);
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid #cfcbc2;
+  padding: 8px 10px;
+  min-width: 220px;
+}
+.rx-field select:focus-visible { outline: 3px solid #d9822b; outline-offset: 2px; }
+
+.rx-cars { display: flex; gap: 12px; flex-wrap: wrap; }
+.rx-car {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 6px 14px 6px 6px;
+  font: inherit;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+.rx-car:hover { border-color: var(--green); }
+.rx-car[aria-pressed="true"] { border-color: var(--green); box-shadow: inset 0 0 0 1px var(--green); background: var(--tint); }
+.rx-car-img { display: flex; align-items: center; justify-content: center; width: 72px; height: 44px; background: var(--white); }
+.rx-car-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.rx-car-img .icon-text { font: 600 1.05rem var(--serif); color: var(--green); }
+.rx-car-label strong { display: block; font-family: var(--serif); font-size: 1.05rem; color: var(--green); line-height: 1.2; }
+.rx-car-label span { font-size: 0.82rem; color: var(--muted); }
+
+.rx-kpis { margin-bottom: 8px; }
+.rx-kpis .stat-num { font-size: 2rem; }
+.rx-summary { font-size: 1.05rem; max-width: 52em; }
+.rx-chart-head { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.rx-chart-head h3 { margin: 0; }
+
+.rx-chart { position: relative; width: 100%; }
+.rx-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.rx-chart .axis text { font: 12px var(--sans); fill: var(--muted); }
+.rx-chart .axis .axis-sub { font-size: 11px; fill: #8a8a8a; }
+.rx-chart .axis .axis-title { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.rx-chart .grid { stroke: var(--rule); stroke-width: 1; }
+.rx-chart .guide { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 3 3; }
+.rx-chart .band-yellow { fill: #f3d36b; opacity: 0.35; }
+.rx-chart .pit-mark { fill: var(--ink); }
+.rx-chart .chart-note { font: italic 12px var(--sans); fill: var(--muted); }
+.rx-chart .bar-label { font: 600 11px var(--sans); fill: var(--ink); }
+.rx-chart .rx-point { cursor: pointer; stroke: var(--white); stroke-width: 2; }
+.rx-chart .rx-point:hover, .rx-chart .rx-point:focus { r: 8; outline: none; }
+
+.chart-tip {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--green);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+.rx-legend { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 8px; font-size: 0.88rem; color: var(--muted); }
+.rx-key { display: inline-flex; align-items: center; gap: 7px; }
+.rx-key::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--key, var(--green)); }
+.rx-key-line::before { width: 18px; height: 0; border-radius: 0; border-top: 2px dashed var(--key); background: none; }
+.rx-key-band::before { width: 14px; height: 12px; border-radius: 0; background: #f3d36b; opacity: 0.6; }
+.rx-key-swap::before { border-radius: 0; background: var(--green); }
+.rx-key-noswap::before { border-radius: 0; background: #8fb3a5; }
+.rx-hint { font-size: 0.88rem; color: var(--muted); margin: 6px 0 16px; }
+
+.rx-stint-bar { display: flex; height: 30px; gap: 2px; margin: 8px 0 16px; }
+.rx-stint { min-width: 3px; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 0.78rem; font-weight: 600; }
+
+.rx-table-wrap { overflow-x: auto; }
+.rx-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+.rx-table th, .rx-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+.rx-table thead th { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; border-bottom-color: var(--green); }
+.rx-table tbody th { font-weight: 600; }
+.rx-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.rx-table tr.is-long td { color: var(--muted); }
+.rx-link { background: none; border: 0; padding: 0; font: 600 0.92rem var(--sans); color: var(--green); cursor: pointer; }
+.rx-link:hover { text-decoration: underline; }
+
+.rx-service { display: flex; gap: 8px; flex-wrap: wrap; }
+.rx-service-item { display: inline-flex; align-items: center; gap: 4px; }
+.rx-service-item img { height: 24px; width: auto; }
+.rx-service-item .icon-extra { font-size: 0.8rem; color: var(--muted); }
+.rx-table td.rx-note { white-space: normal; min-width: 180px; color: var(--muted); font-size: 0.88rem; }
+.rx-service-item .icon-text { display: inline-block; font-size: 0.8rem; background: var(--tint); color: var(--green); padding: 1px 8px; }
+.muted { color: var(--muted); }
+
+.rx-hbars { display: grid; gap: 6px; max-width: 760px; }
+.rx-hbar { display: grid; grid-template-columns: 150px 1fr 150px; align-items: center; gap: 12px; font-size: 0.9rem; }
+.rx-hbar-label { color: var(--muted); }
+.rx-hbar-track { height: 14px; background: var(--paper); }
+.rx-hbar-fill { display: block; height: 100%; background: var(--rule); }
+.rx-hbar.is-mate .rx-hbar-fill { background: #d9b48f; }
+.rx-hbar.is-team .rx-hbar-fill { background: var(--green); }
+.rx-hbar.is-team .rx-hbar-label { color: var(--green); font-weight: 600; }
+.rx-hbar-value { font-variant-numeric: tabular-nums; color: var(--muted); }
+
+.rx-source { margin: 32px 0 0; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 0.85rem; color: var(--muted); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 /* 9. Contact ------------------------------------------------- */
 .contact-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px; align-items: start; }
 
@@ -510,6 +658,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .now-list { grid-template-columns: 1fr; }
   .skills-list { grid-template-columns: 1fr 1fr; }
   .case-facts { position: static; }
+  .case-layout-after > .case-body { grid-column: auto; }
+  .case-layout-after { padding-top: 40px; }
   .history-item { grid-template-columns: 1fr; gap: 4px; }
 }
 
@@ -524,4 +674,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .skills-list,
   .featured-item { grid-template-columns: 1fr; }
   .case-results div + div { border-left: 0; border-top: 1px solid var(--rule); }
+  #race-explorer { padding: 24px 16px; }
+  .explorer { padding: 0 12px; }
+  .rx-hbar { grid-template-columns: 90px 1fr; }
+  .rx-hbar-value { grid-column: 2; font-size: 0.82rem; }
+  .rx-field select { min-width: 0; width: 100%; }
+  .rx-controls { flex-direction: column; align-items: stretch; }
 }
