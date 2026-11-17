@@ -12,13 +12,15 @@ CONTACT INFO: ian.n.burress@gmail.com
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Case Study: Endurance Race Strategy | Ian Burress</title>
-  <meta name="description" content="Case study of Ian Burress&#x27;s race strategy work and custom strategy calculator for a Ginetta G55 GTA in 6–12 hour endurance races." />
+  <meta name="description" content="Case study of Ian Burress&#x27;s endurance race strategy work, with an interactive explorer of the 2026 season timing and pit stop data." />
   <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600;700&display=swap" />
-  <link rel="stylesheet" href="style.css?v=9" />
+  <link rel="stylesheet" href="style.css?v=10" />
   <script src="script.js" defer></script>
+  <script src="race-explorer.js" defer></script>
+  <script src="2026%20Race%20Data/season.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -40,21 +42,22 @@ CONTACT INFO: ian.n.burress@gmail.com
       <header class="page-header">
         <p class="eyebrow">Case Study &middot; Motorsports Data &amp; Strategy</p>
         <h1>Endurance Race Strategy Engineering</h1>
-        <p>Running strategy for a Ginetta G55 GTA through 6–12 hour endurance races, backed by a custom calculator for pace, tire wear, and fuel.</p>
+        <p>Running race strategy for Cambern Performance’s two-car Ginetta program, the #177 G56 GTA and #178 G55 GTA, through 5–12 hour endurance races.</p>
       </header>
-      <figure class="case-cover"><img src="pictures/ginetta.JPG" alt="Ginetta G55 GTA on track" /></figure>
+      <figure class="case-cover"><img src="pictures/ginetta.JPG" alt="Cambern Performance Ginetta on track" /></figure>
       <div class="case-layout">
 <aside aria-label="Project facts" class="case-facts">
 <dl>
 <dt>Role</dt><dd>Race Strategy Engineer</dd>
 <dt>Team</dt><dd>Cambern Performance | Lansing, MI</dd>
 <dt>Timeline</dt><dd>2025 – Present</dd>
-<dt>Car</dt><dd>Ginetta G55 GTA, ZR2 class</dd>
-<dt>Race format</dt><dd>6–12 hours, 30+ car fields</dd>
-<dt>Crew</dt><dd>5-person crew, 2 drivers</dd>
-<dt>Tools</dt><dd>Custom strategy spreadsheet</dd>
+<dt>Cars</dt><dd>#177 Ginetta G56 GTA (ZR3)<br />#178 Ginetta G55 GTA (ZR2)</dd>
+<dt>2026 season</dt><dd>9 races at 6 tracks, 5–12 hours each</dd>
+<dt>Crew</dt><dd>5-person crew, 2–3 drivers per car</dd>
+<dt>Tools</dt><dd>Custom strategy spreadsheet, Python, JavaScript</dd>
 </dl>
 <div class="case-links">
+<a class="link-arrow" href="#race-data">Explore the season data →</a>
 <a class="link-arrow" href="projects1.html">View all projects →</a>
 </div>
 </aside>
@@ -71,28 +74,118 @@ CONTACT INFO: ian.n.burress@gmail.com
 <li>Manage overall timing so the crew, drivers, and car stay aligned for pre-grid procedures and post-race inspections.</li>
 </ul>
 </section>
+<!-- PHASE 2: Strategy Calculator section, hidden for now. Remove these comment markers to show it.
 <section>
 <h2>The Strategy Calculator</h2>
 <p>I designed a strategy spreadsheet that tracks manually entered data for two different vehicle classes. It models race pace, lap times, tire degradation, and fuel consumption, which lets the team project pit windows and compare our pace against the competition as the race develops. A running track sheet carries lessons forward from round to round across the season.</p>
 <p class="todo-note"><strong>To fill in:</strong> Add how the tool works in more detail (inputs, key calculations, how it updates during a race) and what you would automate next.</p>
 </section>
+-->
+</article>
+</div>
+</div>
+<section class="explorer" id="race-data" aria-labelledby="race-data-title">
+<div id="race-explorer">
+<header class="explorer-head">
+<p class="eyebrow">Interactive</p>
+<h2 id="race-data-title">2026 Season Data Explorer</h2>
+<p>Every lap and pit stop our two cars ran this season, taken from the official timing files. Start with the season, then open any race to see lap times, class position and stints, or look at the pit stops.</p>
+</header>
+
+<div class="filter-bar rx-tabs" role="tablist" aria-label="Explorer views">
+<button class="filter is-active" type="button" role="tab" id="rx-tab-season" aria-controls="rx-season" aria-selected="true" data-view="season">Season</button>
+<button class="filter" type="button" role="tab" id="rx-tab-race" aria-controls="rx-race" aria-selected="false" tabindex="-1" data-view="race">Race</button>
+<button class="filter" type="button" role="tab" id="rx-tab-pits" aria-controls="rx-pits" aria-selected="false" tabindex="-1" data-view="pits">Pit Stops</button>
+</div>
+
+<div class="rx-controls" hidden>
+<label class="rx-field"><span>Race</span><select id="rx-race-select"></select></label>
+<div class="rx-cars" role="group" aria-label="Car"></div>
+</div>
+
+<div class="rx-panel" id="rx-season" role="tabpanel" aria-labelledby="rx-tab-season">
+<div class="stats rx-kpis" id="rx-season-kpis"></div>
+<h3>Class finishing position by race</h3>
+<div class="rx-legend" id="rx-season-legend"></div>
+<div class="rx-chart" id="rx-season-chart"></div>
+<p class="rx-hint">Select a point or a row to open that race.</p>
+<div class="rx-table-wrap">
+<table class="rx-table" id="rx-season-table">
+<thead><tr><th scope="col">Race</th><th scope="col">Car</th><th scope="col" class="num">Finish</th><th scope="col" class="num">Laps</th><th scope="col" class="num">Best lap</th><th scope="col" class="num">Gap to class best</th><th scope="col" class="num">Stops</th><th scope="col" class="num">Time in pit</th><th scope="col"><span class="visually-hidden">Open</span></th></tr></thead>
+<tbody></tbody>
+</table>
+</div>
+</div>
+
+<div class="rx-panel" id="rx-race" role="tabpanel" aria-labelledby="rx-tab-race" hidden>
+<p class="rx-summary" id="rx-race-summary"></p>
+<div class="rx-chart-head">
+<h3>Lap times</h3>
+<label class="rx-field rx-field-inline"><span>Compare with</span><select id="rx-compare"></select></label>
+</div>
+<div class="rx-legend" id="rx-race-legend"></div>
+<div class="rx-chart" id="rx-lap-chart"></div>
+<p class="rx-hint">Slow laps (pit stops and yellows) are pinned to the top edge. Triangles mark pit stops. Hover for details.</p>
+<h3>Class position</h3>
+<div class="rx-chart" id="rx-pos-chart"></div>
+<h3>Stints</h3>
+<div class="rx-stint-bar" id="rx-stint-bar" aria-hidden="true"></div>
+<div class="rx-table-wrap">
+<table class="rx-table" id="rx-stint-table">
+<thead><tr><th scope="col">Stint</th><th scope="col">Driver</th><th scope="col" class="num">Lap range</th><th scope="col" class="num">Laps</th><th scope="col" class="num">Typical green lap</th><th scope="col" class="num">Best green lap</th></tr></thead>
+<tbody></tbody>
+</table>
+</div>
+</div>
+
+<div class="rx-panel" id="rx-pits" role="tabpanel" aria-labelledby="rx-tab-pits" hidden>
+<div class="stats rx-kpis" id="rx-pit-kpis"></div>
+<h3>Time in pit lane, stop by stop</h3>
+<div class="rx-legend"><span class="rx-key rx-key-swap">Driver change</span><span class="rx-key rx-key-noswap">Same driver</span></div>
+<div class="rx-chart" id="rx-pit-chart"></div>
+<div class="rx-table-wrap">
+<table class="rx-table" id="rx-pit-table">
+<thead><tr><th scope="col">Stop</th><th scope="col" class="num">Lap</th><th scope="col" class="num">Race time</th><th scope="col" class="num">Time in pit</th><th scope="col">Driver</th><th scope="col">Service</th><th scope="col">Notes</th></tr></thead>
+<tbody></tbody>
+</table>
+</div>
+<h3>Typical stop across the <span id="rx-pit-class"></span> class</h3>
+<p class="rx-hint">Median time in pit lane per car, so one long repair stop does not skew the comparison.</p>
+<div class="rx-hbars" id="rx-pit-compare"></div>
+</div>
+
+<p class="rx-source">Source: official timing and pit stop reports, 2026 season. Class positions are worked out from laps completed and elapsed time. Fuel, tire and note details come from the team's own track sheets. Rival cars are shown by number and make only; team drivers are anonymised.</p>
+<noscript><p>Turn on JavaScript to use the interactive season explorer.</p></noscript>
+</div>
+</section>
+<div class="container">
+<div class="case-layout case-layout-after">
+<article class="case-body">
 <section>
 <h2>Results</h2>
 <div class="case-results">
-<div><strong>6–12 hr</strong><span>races strategized</span></div>
-<div><strong>30+</strong><span>car fields</span></div>
-<div><strong>2</strong><span>vehicle classes tracked</span></div>
+<div><strong>9</strong><span>races in 2026</span></div>
+<div><strong>2,155</strong><span>laps run by our two cars</span></div>
+<div><strong>2</strong><span>class wins, #177</span></div>
 </div>
-<p class="todo-note"><strong>To fill in:</strong> Add race outcomes you can share: finishing positions, a race where the strategy call made the difference, or fuel-prediction accuracy.</p>
+<p>#177 took ZR3 class wins at Road America (Race 1) and Watkins Glen (Race 1), and finished second in class at Watkins Glen Race 2.</p>
 </section>
+<!-- WHAT I LEARNED: hidden until filled in. Replace the bracketed text, then delete this line and the closing comment marker below.
 <section>
 <h2>What I Learned</h2>
-<p class="todo-note"><strong>To fill in:</strong> Add 2–3 sentences on making decisions under time pressure with incomplete data.</p>
+<p>[Opening: the main lesson from running strategy, e.g. making calls under time pressure with incomplete data.]</p>
+<ul>
+<li>[Lesson 1: one specific takeaway and the race or moment that taught it.]</li>
+<li>[Lesson 2]</li>
+<li>[Lesson 3]</li>
+</ul>
+<p>[Closing: how this carries into your engineering work or what you would do differently next season.]</p>
 </section>
+-->
 <section>
 <h2>Gallery</h2>
 <div class="case-gallery">
-<figure><img alt="Ginetta G55 GTA on track" loading="lazy" src="pictures/ginetta.JPG"/><figcaption>Ginetta G55 GTA on track</figcaption></figure>
+<figure><img alt="Cambern Performance Ginetta on track" loading="lazy" src="pictures/ginetta.JPG"/><figcaption>Cambern Performance Ginetta on track</figcaption></figure>
 <figure><img alt="Race pace analysis, Virginia International Raceway" loading="lazy" src="pictures/VIR%20Race%20Pace.png"/><figcaption>Race pace analysis, Virginia International Raceway</figcaption></figure>
 <figure><img alt="Lap time tracking, Virginia International Raceway" loading="lazy" src="pictures/VIR%20Lap%20time.png"/><figcaption>Lap time tracking, Virginia International Raceway</figcaption></figure>
 <figure><img alt="Fuel consumption model, Barber Motorsports Park" loading="lazy" src="pictures/Barber%20fuel%20consumption.png"/><figcaption>Fuel consumption model, Barber Motorsports Park</figcaption></figure>
