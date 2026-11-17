@@ -81,86 +81,50 @@ CONTACT INFO: ian.n.burress@gmail.com
 <p class="todo-note"><strong>To fill in:</strong> Add how the tool works in more detail (inputs, key calculations, how it updates during a race) and what you would automate next.</p>
 </section>
 -->
-</article>
-</div>
-</div>
 <section class="explorer" id="race-data" aria-labelledby="race-data-title">
-<div id="race-explorer">
-<header class="explorer-head">
-<p class="eyebrow">Interactive</p>
 <h2 id="race-data-title">2026 Season Data Explorer</h2>
-<p>Every lap and pit stop our two cars ran this season, taken from the official timing files. Start with the season, then open any race to see lap times, class position and stints, or look at the pit stops.</p>
-</header>
+<p>Every lap and pit stop our two cars ran this season, from the official timing and the team&rsquo;s own track sheets. Pick a race to see lap times, class position and pit stops, then filter the data and select any lap, stint or stop for the detail behind it.</p>
+<div id="race-explorer">
 
-<div class="filter-bar rx-tabs" role="tablist" aria-label="Explorer views">
-<button class="filter is-active" type="button" role="tab" id="rx-tab-season" aria-controls="rx-season" aria-selected="true" data-view="season">Season</button>
-<button class="filter" type="button" role="tab" id="rx-tab-race" aria-controls="rx-race" aria-selected="false" tabindex="-1" data-view="race">Race</button>
-<button class="filter" type="button" role="tab" id="rx-tab-pits" aria-controls="rx-pits" aria-selected="false" tabindex="-1" data-view="pits">Pit Stops</button>
-</div>
-
-<div class="rx-controls" hidden>
-<label class="rx-field"><span>Race</span><select id="rx-race-select"></select></label>
-<div class="rx-cars" role="group" aria-label="Car"></div>
+<div id="rx-season">
+<div class="rx-kpis" id="rx-season-kpis"></div>
+<div class="rx-toolbar" id="rx-season-filter"></div>
+<ol class="rx-cards" id="rx-cards" aria-label="2026 races"></ol>
 </div>
 
-<div class="rx-panel" id="rx-season" role="tabpanel" aria-labelledby="rx-tab-season">
-<div class="stats rx-kpis" id="rx-season-kpis"></div>
-<h3>Class finishing position by race</h3>
-<div class="rx-legend" id="rx-season-legend"></div>
-<div class="rx-chart" id="rx-season-chart"></div>
-<p class="rx-hint">Select a point or a row to open that race.</p>
-<div class="rx-table-wrap">
-<table class="rx-table" id="rx-season-table">
-<thead><tr><th scope="col">Race</th><th scope="col">Car</th><th scope="col" class="num">Finish</th><th scope="col" class="num">Laps</th><th scope="col" class="num">Best lap</th><th scope="col" class="num">Gap to class best</th><th scope="col" class="num">Stops</th><th scope="col" class="num">Time in pit</th><th scope="col"><span class="visually-hidden">Open</span></th></tr></thead>
-<tbody></tbody>
-</table>
+<div id="rx-race" hidden>
+<div class="rx-race-nav">
+<button type="button" class="rx-link" id="rx-back">&larr; All races</button>
+<span class="rx-race-step">
+<button type="button" class="rx-link" id="rx-prev"></button>
+<button type="button" class="rx-link" id="rx-next"></button>
+</span>
 </div>
-</div>
+<h3 id="rx-race-title" tabindex="-1"></h3>
+<p class="meta" id="rx-race-meta"></p>
+<div class="rx-cars" id="rx-cars" role="group" aria-label="Car"></div>
+<div class="rx-headline" id="rx-headline"></div>
+<p class="rx-story" id="rx-story"></p>
 
-<div class="rx-panel" id="rx-race" role="tabpanel" aria-labelledby="rx-tab-race" hidden>
-<p class="rx-summary" id="rx-race-summary"></p>
-<div class="rx-chart-head">
-<h3>Lap times</h3>
-<label class="rx-field rx-field-inline"><span>Compare with</span><select id="rx-compare"></select></label>
+<div class="filter-bar rx-tabs" role="tablist" aria-label="Race data">
+<button class="filter is-active" type="button" role="tab" id="rx-tab-laps" aria-controls="rx-panel" aria-selected="true">Lap times</button>
+<button class="filter" type="button" role="tab" id="rx-tab-position" aria-controls="rx-panel" aria-selected="false" tabindex="-1">Class position</button>
+<button class="filter" type="button" role="tab" id="rx-tab-pits" aria-controls="rx-panel" aria-selected="false" tabindex="-1">Pit stops</button>
 </div>
-<div class="rx-legend" id="rx-race-legend"></div>
-<div class="rx-chart" id="rx-lap-chart"></div>
-<p class="rx-hint">Slow laps (pit stops and yellows) are pinned to the top edge. Triangles mark pit stops. Hover for details.</p>
-<h3>Class position</h3>
-<div class="rx-chart" id="rx-pos-chart"></div>
-<h3>Stints</h3>
-<div class="rx-stint-bar" id="rx-stint-bar" aria-hidden="true"></div>
-<div class="rx-table-wrap">
-<table class="rx-table" id="rx-stint-table">
-<thead><tr><th scope="col">Stint</th><th scope="col">Driver</th><th scope="col" class="num">Lap range</th><th scope="col" class="num">Laps</th><th scope="col" class="num">Typical green lap</th><th scope="col" class="num">Best green lap</th></tr></thead>
-<tbody></tbody>
-</table>
+<div id="rx-panel" role="tabpanel" aria-labelledby="rx-tab-laps">
+<div class="rx-toolbar" id="rx-toolbar"></div>
+<div class="rx-chart" id="rx-chart" tabindex="0" aria-describedby="rx-chart-help"></div>
+<p class="visually-hidden" id="rx-chart-help">Use the left and right arrow keys to step through laps or stops. Details appear below the chart.</p>
+<div class="rx-strip" id="rx-strip"></div>
+<div class="rx-detail" id="rx-detail" aria-live="polite"></div>
+<div class="rx-extra" id="rx-extra"></div>
 </div>
 </div>
 
-<div class="rx-panel" id="rx-pits" role="tabpanel" aria-labelledby="rx-tab-pits" hidden>
-<div class="stats rx-kpis" id="rx-pit-kpis"></div>
-<h3>Time in pit lane, stop by stop</h3>
-<div class="rx-legend"><span class="rx-key rx-key-swap">Driver change</span><span class="rx-key rx-key-noswap">Same driver</span></div>
-<div class="rx-chart" id="rx-pit-chart"></div>
-<div class="rx-table-wrap">
-<table class="rx-table" id="rx-pit-table">
-<thead><tr><th scope="col">Stop</th><th scope="col" class="num">Lap</th><th scope="col" class="num">Race time</th><th scope="col" class="num">Time in pit</th><th scope="col">Driver</th><th scope="col">Service</th><th scope="col">Notes</th></tr></thead>
-<tbody></tbody>
-</table>
-</div>
-<h3>Typical stop across the <span id="rx-pit-class"></span> class</h3>
-<p class="rx-hint">Median time in pit lane per car, so one long repair stop does not skew the comparison.</p>
-<div class="rx-hbars" id="rx-pit-compare"></div>
-</div>
-
-<p class="rx-source">Source: official timing and pit stop reports, 2026 season. Class positions are worked out from laps completed and elapsed time. Fuel, tire and note details come from the team's own track sheets. Rival cars are shown by number and make only; team drivers are anonymised.</p>
+<p class="rx-source">Sources: official timing and pit stop reports, and the team&rsquo;s 2026 track sheets. Class positions are worked out from laps completed and elapsed time. Rival cars are shown by number and make only; team drivers are anonymised.</p>
 <noscript><p>Turn on JavaScript to use the interactive season explorer.</p></noscript>
 </div>
 </section>
-<div class="container">
-<div class="case-layout case-layout-after">
-<article class="case-body">
 <section>
 <h2>Results</h2>
 <div class="case-results">
