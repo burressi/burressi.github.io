@@ -3,7 +3,7 @@
 PROGRAMMER: Ian Burress
 PURPOSE: Case study - Mobile Electron Beam Treatment Station
 DATE CREATED: 11/10/2026
-RECENT EDIT: 11/10/2026
+RECENT EDIT: 11/17/2026
 PURPOSE: Engineering Portfolio of Ian Burress
 CONTACT INFO: ian.n.burress@gmail.com
 -->
@@ -17,10 +17,10 @@ CONTACT INFO: ian.n.burress@gmail.com
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600;700&display=swap" />
-  <link rel="stylesheet" href="style.css?v=10" />
+  <link rel="stylesheet" href="style.css?v=12" />
   <script src="script.js" defer></script>
-  <script src="race-explorer.js" defer></script>
-  <script src="2026%20Race%20Data/season.js" defer></script>
+  <script src="race-explorer.js?v=3" defer></script>
+  <script src="2026%20Race%20Data/season.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -127,12 +127,36 @@ CONTACT INFO: ian.n.burress@gmail.com
 </section>
 <section>
 <h2>Results</h2>
-<div class="case-results">
-<div><strong>9</strong><span>races in 2026</span></div>
-<div><strong>2,155</strong><span>laps run by our two cars</span></div>
-<div><strong>2</strong><span>class wins, #177</span></div>
+<p>#177 took ZR3 class wins at Road America (Race 1) and Watkins Glen (Race 1), and finished second in class at Watkins Glen Race 2. Across the season the two cars covered:</p>
+<div class="results-grid">
+<div><strong>7,029</strong><span>race miles across 2,155 laps</span></div>
+<div><strong>320</strong><span>laps led in class</span></div>
+<div><strong>8</strong><span>class podiums, including 2 wins</span></div>
+<div><strong>54</strong><span>on-track passes for position</span></div>
+<div><strong>113</strong><span>pit stops</span></div>
+<div><strong>38</strong><span>driver swaps</span></div>
+<div><strong>1,069 gal</strong><span>fuel added in the pits</span></div>
+<div><strong>3</strong><span>races with the fastest lap in class</span></div>
 </div>
-<p>#177 took ZR3 class wins at Road America (Race 1) and Watkins Glen (Race 1), and finished second in class at Watkins Glen Race 2.</p>
+<h3>Race by race</h3>
+<div class="results-table-wrap"><table class="results-table"><thead><tr><th scope="col">Rd</th><th scope="col">Race</th><th scope="col">Car · class finish</th><th scope="col">Miles</th><th scope="col">Laps led</th><th scope="col">Stops</th><th scope="col">Fuel (gal)</th><th scope="col">Passes</th><th scope="col">Driver swaps</th></tr></thead><tbody>
+<tr><td>1</td><td>Barber Race 1</td><td>#177 ZR2 · P3/4</td><td>407</td><td>0</td><td>5</td><td>54</td><td>3</td><td>1</td></tr>
+<tr><td>2</td><td>Barber Race 2</td><td>#177 ZR2 · P4/6</td><td>462</td><td>0</td><td>10</td><td>60</td><td>3</td><td>2</td></tr>
+<tr><td>3</td><td>VIR 12 Hour</td><td>#177 ZR2 · P4/6</td><td>795</td><td>0</td><td>14</td><td>129</td><td>1</td><td>6</td></tr>
+<tr class="is-win"><td>4</td><td>Road America Race 1</td><td>#177 ZR3 · P1/9</td><td>559</td><td>26</td><td>6</td><td>83</td><td>1</td><td>2</td></tr>
+<tr><td>4</td><td>Road America Race 1</td><td>#178 ZR2 · P9/10</td><td>125</td><td>0</td><td>3</td><td>8</td><td>0</td><td>0</td></tr>
+<tr><td>5</td><td>Road America Race 2</td><td>#177 ZR3 · P3/8</td><td>587</td><td>10</td><td>9</td><td>78</td><td>8</td><td>3</td></tr>
+<tr><td>5</td><td>Road America Race 2</td><td>#178 ZR2 · P7/9</td><td>368</td><td>0</td><td>5</td><td>45</td><td>1</td><td>2</td></tr>
+<tr class="is-win"><td>6</td><td>Watkins Glen Race 1</td><td>#177 ZR3 · P1/7</td><td>636</td><td>140</td><td>7</td><td>89.5</td><td>10</td><td>3</td></tr>
+<tr><td>6</td><td>Watkins Glen Race 1</td><td>#178 ZR2 · P3/5</td><td>184</td><td>0</td><td>7</td><td>18</td><td>1</td><td>0</td></tr>
+<tr><td>7</td><td>Watkins Glen Race 2</td><td>#177 ZR3 · P2/6</td><td>517</td><td>126</td><td>6</td><td>71.6</td><td>3</td><td>2</td></tr>
+<tr><td>7</td><td>Watkins Glen Race 2</td><td>#178 ZR2 · P3/4</td><td>333</td><td>0</td><td>3</td><td>58.5</td><td>2</td><td>1</td></tr>
+<tr><td>8</td><td>Homestead-Miami 12 Hour</td><td>#177 ZR3 · P4/4</td><td>92</td><td>17</td><td>1</td><td>18</td><td>2</td><td>0</td></tr>
+<tr><td>8</td><td>Homestead-Miami 12 Hour</td><td>#178 ZR2 · P3/6</td><td>384</td><td>0</td><td>11</td><td>72</td><td>1</td><td>5</td></tr>
+<tr><td>9</td><td>Daytona 12 Hour</td><td>#177 ZR3 · P10/14</td><td>961</td><td>1</td><td>14</td><td>140.5</td><td>12</td><td>8</td></tr>
+<tr><td>9</td><td>Daytona 12 Hour</td><td>#178 ZR2 · P6/8</td><td>619</td><td>0</td><td>12</td><td>144</td><td>6</td><td>3</td></tr>
+</tbody><tfoot><tr><td></td><td>Season</td><td>15 starts</td><td>7,029</td><td>320</td><td>113</td><td>1,069</td><td>54</td><td>38</td></tr></tfoot></table></div>
+<p class="results-note">Miles use published track lengths (VIR Full Course 3.27 mi). Laps led counts laps completed as class leader. Passes count position gains on green-flag laps against any car, leaving out laps where either car was entering or leaving the pits. Fuel comes from the team pit and fuel logs.</p>
 </section>
 <!-- WHAT I LEARNED: hidden until filled in. Replace the bracketed text, then delete this line and the closing comment marker below.
 <section>
