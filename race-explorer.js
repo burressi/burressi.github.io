@@ -41,7 +41,7 @@
     if (store.waiting[id]) { store.waiting[id].push(done); return; }
     store.waiting[id] = [done];
     var s = document.createElement('script');
-    s.src = DATA_DIR + id + '.js';
+    s.src = DATA_DIR + id + '.js?v=3';
     s.onerror = function () { delete store.waiting[id]; };
     document.head.appendChild(s);
   }
@@ -325,14 +325,14 @@
     function renderSeason() {
       V.season.hidden = false;
       V.race.hidden = true;
-      var laps = 0, stops = 0, wins = 0, tracks = {};
+      var laps = 0, stops = 0, wins = 0, miles = 0, tracks = {};
       store.season.forEach(function (r) {
         tracks[r.track] = 1;
-        r.entries.forEach(function (e) { laps += e.laps; stops += e.stops; if (e.finish === 1) wins++; });
+        r.entries.forEach(function (e) { laps += e.laps; miles += e.miles; stops += e.stops; if (e.finish === 1) wins++; });
       });
       var k = $('rx-season-kpis');
       k.innerHTML = '';
-      [[store.season.length, 'races'], [Object.keys(tracks).length, 'tracks'], [laps.toLocaleString('en-US'), 'laps'],
+      [[store.season.length, 'races'], [Object.keys(tracks).length, 'tracks'], [Math.round(miles).toLocaleString('en-US'), 'race miles'],
        [stops, 'pit stops'], [wins, 'class wins']].forEach(function (x) {
         var d = el('div', null, null, k);
         el('strong', null, x[0], d);
@@ -427,11 +427,12 @@
       h.innerHTML = '';
       var fuel = car.stops.filter(function (s) { return s.fuel != null; });
       [['P' + car.finish, 'class finish', 'of ' + info.starters + ' in ' + car.class],
-       [car.lapCount, 'laps', car.lapCount < info.winnerLaps ? (info.winnerLaps - car.lapCount) + ' behind the class winner' : 'full distance'],
+       [Math.round(car.lapCount * race.miles).toLocaleString('en-US') + ' mi', 'distance', car.lapCount + ' laps' + (car.lapCount < info.winnerLaps ? ', ' + (info.winnerLaps - car.lapCount) + ' behind the class winner' : ', full distance')],
        [lapTime(car.best), 'best lap', car.gapPct ? '+' + car.gapPct.toFixed(2) + '% to class best' : 'class best'],
        [car.stopCount, 'pit stops', duration(car.pitTotal) + ' in pit lane'],
        [fuel.length ? Math.round(fuel.reduce(function (a, s) { return a + s.fuel; }, 0)) + ' gal' : '–', 'fuel added',
-        fuel.length ? 'from the team track sheet' : 'not logged for this race']
+        fuel.length ? 'from the team track sheet' : 'not logged for this race'],
+       [car.stats.passesAll, car.stats.passesAll === 1 ? 'pass made' : 'passes made', 'on track, for position · ' + car.stats.lapsLed + ' lap' + (car.stats.lapsLed === 1 ? '' : 's') + ' led in class']
       ].forEach(function (x) {
         var d = el('div', null, null, h);
         el('strong', null, x[0], d);
@@ -679,6 +680,7 @@
       if (S.svc === 'tires') return !!s.tires;
       if (S.svc === 'driver') return !!s.swap;
       if (S.svc === 'notes') return !!s.note;
+      if (S.svc === 'c60') return s.cond > 0;
       return true;
     }
     function shownStops(car) {
@@ -691,47 +693,99 @@
       if (s.swap) list.push(['driver']);
       return list;
     }
-    function serviceCell(parent, s) {
-      var list = services(s);
-      if (!list.length) el('span', 'muted', s.logged === false || (s.fuel == null && !s.tires) ? 'Not logged' : 'No service', parent);
-      list.forEach(function (k) { iconOrText('icons/pit-' + k[0] + '.png', SERVICE[k[0]], 'rx-service-item', parent, k[1]); });
+
+
+    var COND = ['Green', 'Code 60', 'Red flag'];
+    function stopImage(car, s) {
+      var k = s.fuel > 0 && s.tires ? 'fuel and tires' : s.fuel > 0 ? 'fuel' : s.tires ? 'tires' : 'regular';
+      return encodeURI('pictures/pit/' + car.number + ' ' + k + '.png');
+    }
+    function stopAlt(car, s) {
+      var w = [];
+      if (s.fuel > 0) w.push('fuel');
+      if (s.tires) w.push('tires');
+      return 'Car ' + car.number + (w.length ? ', ' + w.join(' and ') + ' highlighted' : ', no fuel or tires');
+    }
+    function fuelText(s) { return s.fuel > 0 ? s.fuel + ' gal' : s.fuel === 0 ? 'None' : 'Not logged'; }
+    function tireText(s) { return s.tires ? 'Changed' : s.logged === false ? 'Not logged' : 'Not changed'; }
+    function gauge(parent, s, tank) {
+      var g = el('span', 'rx-gauge', null, parent);
+      var f = el('span', 'rx-gauge-fill', null, g);
+      f.style.width = (s.fuel > 0 && tank ? Math.min(100, s.fuel / tank * 100) : 0) + '%';
+      g.title = s.fuel > 0 && tank ? Math.round(s.fuel / tank * 100) + '% of a ' + tank + ' gal tank' : '';
+      return g;
+    }
+    function condPill(parent, s) {
+      return el('span', 'rx-cond rx-cond-' + (s.cond || 0), COND[s.cond || 0], parent);
+    }
+    function selectStop(n) { S.sel = { type: 'stop', n: n }; renderTab(); }
+
+    function pitBoard(race, car, stops) {
+      var list = stops.filter(stopMatches);
+      var head = el('div', 'rx-strip-head', null, STRIP);
+      el('h4', null, 'Pit board', head);
+      el('span', null, list.length + ' of ' + car.stops.length + ' stops · select a card for the full breakdown', head);
+      if (!list.length) { el('p', 'rx-empty', 'No stops match this filter.', STRIP); return; }
+      var board = el('ol', 'rx-pitboard', null, STRIP);
+      board.setAttribute('aria-label', 'Pit stops for car ' + car.number);
+      list.forEach(function (s) {
+        var on = S.sel && S.sel.type === 'stop' && S.sel.n === s.n;
+        var li = el('li', null, null, board);
+        var b = button(li, 'rx-pitcard' + (on ? ' is-sel' : '') + (s.dur >= REPAIR_S ? ' is-repair' : ''), null, function () { selectStop(s.n); });
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        var top = el('span', 'rx-pc-top', null, b);
+        el('span', 'rx-pc-n', 'Stop ' + s.n, top);
+        el('span', 'rx-pc-lap', 'Lap ' + s.lap, top);
+        condPill(top, s);
+        var img = el('img', 'rx-pc-img', null, b);
+        img.src = stopImage(car, s); img.alt = stopAlt(car, s); img.loading = 'lazy'; img.width = 480; img.height = 162;
+        img.addEventListener('error', function () { img.remove(); });
+        var t = el('span', 'rx-pc-time', null, b);
+        el('strong', null, duration(s.dur), t);
+        el('span', null, s.dur >= REPAIR_S ? 'in pit lane · repair' : 'in pit lane', t);
+        var facts = el('span', 'rx-pc-facts', null, b);
+        var f1 = el('span', 'rx-pc-fact rx-pc-fuel' + (s.fuel > 0 ? ' is-on' : ''), null, facts);
+        el('span', 'rx-pc-k', 'Fuel', f1); el('span', 'rx-pc-v', fuelText(s), f1); gauge(f1, s, car.tank);
+        var f2 = el('span', 'rx-pc-fact rx-pc-tires' + (s.tires ? ' is-on' : ''), null, facts);
+        el('span', 'rx-pc-k', 'Tires', f2); el('span', 'rx-pc-v', tireText(s), f2);
+        var f3 = el('span', 'rx-pc-fact rx-pc-driver' + (s.swap ? ' is-on' : ''), null, facts);
+        el('span', 'rx-pc-k', 'Driver in', f3);
+        el('span', 'rx-pc-v', s.driverOut, f3);
+        el('span', 'rx-pc-sub', s.swap ? 'Swap from ' + s.driverIn : 'No swap', f3);
+        var f4 = el('span', 'rx-pc-fact', null, facts);
+        el('span', 'rx-pc-k', 'Class pos.', f4);
+        el('span', 'rx-pc-v', 'P' + s.posBefore + ' → P' + s.posAfter, f4);
+        if (s.note) el('span', 'rx-pc-note', s.note, b);
+        b.setAttribute('aria-label', 'Stop ' + s.n + ', lap ' + s.lap + ', ' + duration(s.dur) + ' in pit lane, fuel ' + fuelText(s) +
+          ', tires ' + tireText(s) + ', ' + (s.swap ? s.driverIn + ' handed over to ' + s.driverOut : s.driverOut + ' stayed in') +
+          ', ' + COND[s.cond || 0] + '.');
+      });
     }
 
     function pitsTab(race, car) {
-      var g1 = group(TOOL, 'Highlight');
-      [['all', 'All stops'], ['fuel', 'Fuel'], ['tires', 'Tires'], ['driver', 'Driver change'], ['notes', 'With notes']].forEach(function (o) {
+      var g1 = group(TOOL, 'Show');
+      [['all', 'All stops'], ['fuel', 'Fuel'], ['tires', 'Tires'], ['driver', 'Driver swap'], ['c60', 'Under Code 60'], ['notes', 'Issues & notes']].forEach(function (o) {
         chip(g1, o[1], S.svc === o[0], function () { S.svc = o[0]; renderTab(); });
       });
-      var g2 = group(TOOL, 'Show');
+      var g2 = group(TOOL, 'Filter');
       chip(g2, 'Hide repair stops (10 min+)', S.hideRepairs, toggle('hideRepairs'));
 
       var stops = shownStops(car);
       if (!stops.length) { CHART.innerHTML = ''; el('p', 'rx-empty', 'No pit stops to show.', CHART); }
       else drawPitBars(race, car, stops);
 
-      // Stop list
-      var list = stops.filter(stopMatches);
-      var head = el('div', 'rx-strip-head', null, STRIP);
-      el('h4', null, 'Stops', head);
-      el('span', null, list.length + ' of ' + car.stops.length + ' shown · select one for details', head);
-      var wrap = el('div', 'rx-table-wrap', null, STRIP);
-      var tbl = el('table', 'rx-table', null, wrap);
-      var tr0 = el('tr', null, null, el('thead', null, null, tbl));
-      [['Stop'], ['Lap', 'num'], ['Time in pit', 'num'], ['Service'], ['Driver']].forEach(function (h) {
-        var th = el('th', h[1] || null, h[0], tr0); th.scope = 'col';
-      });
-      var tb = el('tbody', null, null, tbl);
-      list.forEach(function (s) {
-        var on = S.sel && S.sel.type === 'stop' && S.sel.n === s.n;
-        var tr = el('tr', on ? 'is-active' : (s.dur >= REPAIR_S ? 'is-long' : null), null, tb);
-        var th = el('th', null, null, tr); th.scope = 'row';
-        var b = button(th, 'rx-link', 'Stop ' + s.n, function () { S.sel = { type: 'stop', n: s.n }; renderTab(); });
-        b.setAttribute('aria-pressed', on ? 'true' : 'false');
-        el('td', 'num', s.lap, tr);
-        el('td', 'num', duration(s.dur) + (s.dur >= REPAIR_S ? ' (repair)' : ''), tr);
-        serviceCell(el('td', 'rx-service', null, tr), s);
-        el('td', null, s.swap ? s.driverIn + ' → ' + s.driverOut : s.driverIn, tr);
-      });
+      // Pit board: one card per stop
+      pitBoard(race, car, stops);
+
+      // Pit summary
+      var routine = car.stops.filter(function (x) { return x.dur < REPAIR_S; });
+      var sum = el('div', 'rx-pitsum', null, EXTRA);
+      [[car.stops.filter(function (x) { return x.fuel > 0; }).length, 'fuel stops'],
+       [car.stops.filter(function (x) { return x.swap; }).length, 'driver swaps'],
+       [car.stops.filter(function (x) { return x.tires; }).length, 'tire changes (only when needed)'],
+       [car.stops.filter(function (x) { return x.cond > 0; }).length, 'stops under Code 60'],
+       [routine.length ? duration(median(routine.map(function (x) { return x.dur; }))) : '–', 'typical routine stop']
+      ].forEach(function (x) { var d = el('div', null, null, sum); el('strong', null, x[0], d); el('span', null, x[1], d); });
 
       // Class comparison
       var info = race.classInfo[car.class];
@@ -774,7 +828,7 @@
       });
       interact(f, CHART, function (v) { var k = Math.round(v); return k >= 1 && k <= stops.length ? k : null; }, function (k) {
         var s = stops[k - 1];
-        return '<strong>Stop ' + s.n + '</strong> · lap ' + s.lap + '<br>' + duration(s.dur) +
+        return '<strong>Stop ' + s.n + '</strong> · lap ' + s.lap + ' · ' + COND[s.cond || 0] + '<br>' + duration(s.dur) +
           (services(s).length ? '<br>' + services(s).map(function (x) { return SERVICE[x[0]] + (x[1] ? ' ' + x[1] : ''); }).join(', ') : '') +
           '<br><em>Click for details</em>';
       }, function (k) { S.sel = { type: 'stop', n: stops[k - 1].n }; renderTab(); });
@@ -814,7 +868,7 @@
     function renderDetail(race, car) {
       var sel = S.sel;
       if (!sel) {
-        hint(S.tab === 'pits' ? 'Select a bar or a stop to see what was done, the time lost and the positions before and after.'
+        hint(S.tab === 'pits' ? 'Select a bar or a pit board card to see the car, fuel, tires, driver, track condition and positions for that stop.'
           : S.tab === 'position' ? 'Select any lap on the chart to see the full class order and gaps at that point.'
           : 'Select a lap on the chart, or a stint below it, to see the details. Use the arrow keys to step through laps.');
         return;
@@ -908,26 +962,59 @@
       if (!s) { hint('Stop not found.'); return; }
       var i = list.indexOf(s);
       var typical = race.classInfo[car.class].typicalStop;
-      var before = car.byLap[s.lap], after = car.byLap[s.lap + 2] || car.laps[car.laps.length - 1];
-      var go = function (x) { S.sel = { type: 'stop', n: x.n }; renderTab(); };
-      var vs = null;
-      if (s.dur < REPAIR_S && typical) {
-        var d = s.dur - typical;
-        vs = ['Against class typical', Math.abs(d) < 0.05 ? 'Same as the class typical stop'
-          : duration(Math.abs(d)) + (d < 0 ? ' quicker' : ' slower') + ' than the class typical stop'];
+      var go = function (x) { selectStop(x.n); };
+      DETAIL.innerHTML = '';
+      DETAIL.classList.toggle('is-empty', false);
+      var card = el('div', 'rx-stopdetail', null, DETAIL);
+      var side = el('div', 'rx-sd-visual', null, card);
+      var img = el('img', null, null, side);
+      img.src = stopImage(car, s); img.alt = stopAlt(car, s); img.width = 480; img.height = 162;
+      img.addEventListener('error', function () { img.remove(); });
+      var big = el('div', 'rx-sd-time', null, side);
+      el('strong', null, duration(s.dur), big);
+      el('span', null, 'in pit lane' + (s.dur >= REPAIR_S ? ' (repair)' : ''), big);
+      var tags = el('div', 'rx-sd-tags', null, side);
+      condPill(tags, s);
+      if (s.fuel > 0) el('span', 'rx-tag rx-tag-fuel', 'Fuel', tags);
+      if (s.tires) el('span', 'rx-tag rx-tag-tires', 'Tires', tags);
+      if (s.swap) el('span', 'rx-tag rx-tag-driver', 'Driver swap', tags);
+      if (s.dur >= REPAIR_S) el('span', 'rx-tag rx-tag-repair', 'Repair', tags);
+
+      var body = el('div', 'rx-sd-body', null, card);
+      el('h4', null, 'Stop ' + s.n + ' · lap ' + s.lap + ' · #' + car.number, body);
+      var dl = el('dl', 'rx-facts', null, body);
+      function row(k, v, extra) {
+        var d = el('div', null, null, dl);
+        el('dt', null, k, d);
+        var dd = el('dd', null, v, d);
+        if (extra) extra(dd);
       }
-      detail('Stop ' + s.n + ' · lap ' + s.lap, [
-        ['Time in pit lane', duration(s.dur) + (s.dur >= REPAIR_S ? ' (repair)' : '')],
-        vs,
-        ['Service', function (dd) { serviceCell(dd, s); }],
-        ['Fuel added', s.fuel != null ? s.fuel + ' gal' : 'Not logged'],
-        ['Driver', s.swap ? s.driverIn + ' → ' + s.driverOut : s.driverIn + ' stayed in'],
-        before ? ['Class position', 'P' + before[3] + ' before → P' + after[3] + ' after'] : null,
-        before ? ['Track', before[5] ? 'Taken under ' + FLAGS[before[5]] : 'Taken under green'] : null,
-        ['Race time', clock(s.raceTime) + ' into the race'],
-        s.note ? ['Team notes', s.note] : null
-      ], [i > 0 ? ['← Stop ' + list[i - 1].n, function () { go(list[i - 1]); }] : ['← Previous stop'],
-          i >= 0 && i < list.length - 1 ? ['Stop ' + list[i + 1].n + ' →', function () { go(list[i + 1]); }] : ['Next stop →']]);
+      if (s.dur < REPAIR_S && typical) {
+        var dv = s.dur - typical;
+        row('Against class typical', Math.abs(dv) < 0.05 ? 'Same as the class typical stop'
+          : duration(Math.abs(dv)) + (dv < 0 ? ' quicker' : ' slower') + ' than the ' + car.class + ' typical stop (' + duration(typical) + ')');
+      }
+      row('Fuel added', fuelText(s) + (s.fuel > 0 && car.tank ? ' of a ' + car.tank + ' gal tank' : ''), function (dd) { if (s.fuel > 0) gauge(dd, s, car.tank); });
+      if (s.fuel > 0 && s.burnLaps) {
+        var rate = s.fuel / s.burnLaps;
+        if (rate > 0.2 && rate < 1.5) row('Fuel use', '≈ ' + rate.toFixed(2) + ' gal per lap over the ' + s.burnLaps + ' laps since the last fuel');
+      }
+      row('Tires', tireText(s) + (s.tireSet ? ' · set ' + s.tireSet + ' after the stop' : ''));
+      row('Driver in', s.driverOut + (s.swap ? ' (swap: ' + s.driverIn + ' got out)' : ' (no swap, stayed in)'));
+      row('Track during pit cycle', s.cond === 1 ? 'Code 60 (full-course slow zone)' : s.cond === 2 ? 'Red flag' : 'Green flag');
+      row('Class position', 'P' + s.posBefore + ' before → P' + s.posAfter + ' after' +
+        (s.posAfter > s.posBefore ? ' (lost ' + (s.posAfter - s.posBefore) + ')' : s.posAfter < s.posBefore ? ' (gained ' + (s.posBefore - s.posAfter) + ')' : ' (held)'));
+      row('Stint before', s.stint + ' lap' + (s.stint === 1 ? '' : 's') + ' since ' + (s.n > 1 ? 'the last stop' : 'the start'));
+      row('When', clock(s.raceTime) + ' into the race' + (s.clock ? ' · ' + s.clock.slice(0, 5) + ' local' : ''));
+      if (s.issue) row('Issue', s.issue);
+      if (s.remark) row('Team notes', s.remark);
+      if (!s.logged) row('Track sheet', 'No matching entry in the team pit log');
+      var nav = el('div', 'rx-detail-nav', null, body);
+      var pb = button(nav, 'rx-link', i > 0 ? '← Stop ' + list[i - 1].n : '← Previous stop', i > 0 ? function () { go(list[i - 1]); } : null);
+      pb.disabled = !(i > 0);
+      var nb = button(nav, 'rx-link', i >= 0 && i < list.length - 1 ? 'Stop ' + list[i + 1].n + ' →' : 'Next stop →',
+        i >= 0 && i < list.length - 1 ? function () { go(list[i + 1]); } : null);
+      nb.disabled = !(i >= 0 && i < list.length - 1);
     }
 
     // ---------------- Wiring ----------------
