@@ -526,9 +526,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .rx-car-label strong { display: block; font: 600 1rem var(--serif); color: var(--green); line-height: 1.2; }
 .rx-car-label span { font-size: 0.8rem; color: var(--muted); }
 
-.rx-headline { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.rx-headline { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 .rx-headline div { padding: 12px 10px; }
 .rx-headline div + div { border-left: 1px solid var(--rule); }
+.rx-headline div:nth-child(3n+1) { border-left: 0; }
+.rx-headline div:nth-child(n+4) { border-top: 1px solid var(--rule); }
 .rx-headline strong { display: block; font: 600 1.4rem var(--serif); color: var(--green); line-height: 1.2; }
 .rx-head-label { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); margin-top: 2px; }
 .rx-head-sub { display: block; font-size: 0.8rem; color: var(--muted); }
@@ -632,87 +634,85 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
+
+/* Pit board: stop cards on a dark "pit wall" panel, set apart from the light charts */
+.rx-pitboard {
+  list-style: none; margin: 10px 0 0; padding: 18px 16px 16px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px;
+  background: var(--green-dark);
+  background-image: repeating-linear-gradient(90deg, #ffffff 0 14px, var(--green-dark) 14px 28px);
+  background-size: 100% 5px; background-repeat: no-repeat; background-color: var(--green-dark);
+}
+.rx-pitboard li { display: flex; }
+.rx-pitcard {
+  width: 100%; display: flex; flex-direction: column; text-align: left; font: inherit; color: var(--ink); cursor: pointer;
+  background: #f4f5f3; border: 0; border-top: 4px solid #9fb7ae; padding: 0 0 10px; transition: transform .12s, box-shadow .12s;
+}
+.rx-pitcard:hover, .rx-pitcard:focus-visible { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,.35); }
+.rx-pitcard.is-sel { border-top-color: #f2c94c; box-shadow: 0 0 0 3px #f2c94c; }
+.rx-pitcard.is-repair { border-top-color: #b44a3c; }
+.rx-pc-top { display: flex; align-items: center; gap: 8px; padding: 8px 10px 0; }
+.rx-pc-n { font: 600 1rem var(--serif); color: var(--green); }
+.rx-pc-lap { font-size: 0.8rem; color: var(--muted); }
+.rx-pc-top .rx-cond { margin-left: auto; }
+.rx-pc-img { display: block; width: 100%; height: auto; aspect-ratio: 480 / 162; object-fit: contain; padding: 4px 8px 0; }
+.rx-pc-time { display: flex; align-items: baseline; gap: 8px; padding: 2px 10px 6px; border-bottom: 1px dashed #c9cfcb; }
+.rx-pc-time strong { font: 600 1.6rem var(--serif); color: var(--ink); font-variant-numeric: tabular-nums; }
+.rx-pc-time span { font-size: 0.78rem; color: var(--muted); }
+.rx-pc-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px; padding: 8px 10px 0; }
+.rx-pc-fact { display: flex; flex-direction: column; min-width: 0; }
+.rx-pc-k { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.rx-pc-v { font-size: 0.92rem; font-weight: 600; }
+.rx-pc-sub { font-size: 0.75rem; color: var(--muted); }
+.rx-pc-fact:not(.is-on) .rx-pc-v { font-weight: 400; color: var(--muted); }
+.rx-pc-fuel.is-on .rx-pc-v { color: #b5382a; }
+.rx-pc-tires.is-on .rx-pc-v { color: #b5382a; }
+.rx-pc-driver.is-on .rx-pc-v { color: var(--green); }
+.rx-pc-note { margin: 8px 10px 0; padding: 5px 8px; font-size: 0.8rem; background: #fff6dc; border-left: 3px solid #e0b43a; }
+.rx-gauge { display: block; height: 5px; margin-top: 3px; background: #dde1de; max-width: 110px; }
+.rx-gauge-fill { display: block; height: 100%; background: #b5382a; }
+.rx-cond { display: inline-block; padding: 1px 8px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; }
+.rx-cond-0 { background: #dfeee6; color: #1d5c3f; }
+.rx-cond-1 { background: #f6d34a; color: #3a2f00; }
+.rx-cond-2 { background: #b5382a; color: #fff; }
+
+/* Stop breakdown in the details panel */
+.rx-stopdetail { display: grid; grid-template-columns: minmax(220px, 300px) 1fr; gap: 20px; }
+.rx-sd-visual { background: var(--green-dark); padding: 14px; color: #fff; display: flex; flex-direction: column; gap: 8px; }
+.rx-sd-visual img { width: 100%; height: auto; background: #f4f5f3; padding: 6px; }
+.rx-sd-time strong { display: block; font: 600 2rem var(--serif); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.rx-sd-time span { font-size: 0.8rem; opacity: .8; }
+.rx-sd-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.rx-tag { display: inline-block; padding: 1px 8px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid rgba(255,255,255,.6); color: #fff; }
+.rx-tag-fuel, .rx-tag-tires { background: #b5382a; border-color: #b5382a; }
+.rx-tag-repair { background: #6b2a22; border-color: #6b2a22; }
+.rx-sd-body h4 { margin-top: 0; }
+.rx-sd-body .rx-facts { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.rx-facts dd .rx-gauge { max-width: 160px; }
+
+/* Pit summary numbers */
+.rx-pitsum { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin: 0 0 18px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.rx-pitsum div { padding: 10px; }
+.rx-pitsum div + div { border-left: 1px solid var(--rule); }
+.rx-pitsum strong { display: block; font: 600 1.25rem var(--serif); color: var(--green); }
+.rx-pitsum span { font-size: 0.78rem; color: var(--muted); }
+
+/* Expanded results */
+.results-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin: 18px 0; }
+.results-grid div { padding: 14px 12px; border-left: 1px solid var(--rule); border-top: 1px solid var(--rule); margin-top: -1px; margin-left: -1px; }
+.results-grid strong { display: block; font: 600 1.6rem var(--serif); color: var(--green); line-height: 1.15; }
+.results-grid span { display: block; font-size: 0.85rem; color: var(--muted); }
+.results-table-wrap { overflow-x: auto; margin: 10px 0 8px; }
+.results-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; font-variant-numeric: tabular-nums; }
+.results-table th, .results-table td { padding: 6px 8px; border-bottom: 1px solid var(--rule); text-align: right; white-space: nowrap; }
+.results-table th:first-child, .results-table td:first-child, .results-table td:nth-child(2) { text-align: left; }
+.results-table thead th { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.results-table tr.is-win td:nth-child(3) { color: var(--green); font-weight: 700; }
+.results-table tfoot td { font-weight: 700; border-top: 2px solid var(--ink); }
+.results-note { font-size: 0.85rem; color: var(--muted); }
+
 /* 9. Contact ------------------------------------------------- */
 .contact-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px; align-items: start; }
 
 .form-field { margin-bottom: 20px; }
 .form-field label { display: block; font-weight: 600; margin-bottom: 6px; }
-.form-field input,
-.form-field textarea {
-  width: 100%;
-  padding: 11px 12px;
-  font: inherit;
-  color: var(--ink);
-  background: var(--white);
-  border: 1px solid #cfcbc2;
-}
-.form-field input:focus,
-.form-field textarea:focus { border-color: var(--green); }
-
-.contact-aside { border-top: 2px solid var(--green); padding-top: 16px; }
-.contact-aside h2 { font-size: 1.3rem; }
-.contact-aside dl { margin: 0 0 24px; }
-.contact-aside dt {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  margin-top: 14px;
-}
-.contact-aside dd { margin: 2px 0 0; }
-
-/* 10. 404 ---------------------------------------------------- */
-.not-found {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 56px;
-  align-items: center;
-  padding-top: 80px;
-}
-.not-found-code { font-family: var(--serif); font-size: 5rem; line-height: 1; color: var(--green); margin: 0; }
-.not-found p { color: var(--muted); }
-
-/* 11. Small screens ------------------------------------------ */
-@media (max-width: 1000px) {
-  .card-grid { grid-template-columns: repeat(2, 1fr); }
-  .skill-groups { grid-template-columns: repeat(2, 1fr); }
-  .rx-cards { grid-template-columns: repeat(2, 1fr); }
-  .rx-headline { grid-template-columns: repeat(3, 1fr); }
-  .rx-headline div:nth-child(4) { border-left: 0; }
-  .rx-headline div:nth-child(n+4) { border-top: 1px solid var(--rule); }
-}
-
-@media (max-width: 900px) {
-  .home-hero,
-  .featured-layout,
-  .case-layout,
-  .contact-layout,
-  .not-found { grid-template-columns: 1fr; gap: 32px; }
-  .home-hero .photo { order: -1; }
-  .now-list { grid-template-columns: 1fr; }
-  .skills-list { grid-template-columns: 1fr 1fr; }
-  .case-facts { position: static; }
-  .history-item { grid-template-columns: 1fr; gap: 4px; }
-}
-
-@media (max-width: 640px) {
-  body { font-size: 1rem; }
-  .site-header-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .site-nav { gap: 20px; }
-  .site-logo { height: 36px; }
-  .stats > div + div { border-left: 0; border-top: 1px solid var(--rule); padding-top: 18px; margin-top: 18px; }
-  .card-grid,
-  .skill-groups,
-  .skills-list,
-  .featured-item { grid-template-columns: 1fr; }
-  .case-results div + div { border-left: 0; border-top: 1px solid var(--rule); }
-  .rx-cards { grid-template-columns: 1fr; }
-  .rx-headline { grid-template-columns: 1fr 1fr; }
-  .rx-headline div:nth-child(odd) { border-left: 0; }
-  .rx-headline div:nth-child(4) { border-left: 1px solid var(--rule); }
-  .rx-headline div:nth-child(n+3) { border-top: 1px solid var(--rule); }
-  .rx-order { columns: 1; }
-  .rx-hbar { grid-template-columns: 100px 1fr 60px; }
-  .rx-field select { min-width: 0; width: 100%; }
-  .rx-selects, .rx-field { width: 100%; }
-}
