@@ -19,7 +19,7 @@
    marker position, and move the camera to read orbit / target values.
 */
 window.DUODECIM_3D = {
-  "model": "models/duodecim.glb?v=6",
+  "model": "models/duodecim.glb?v=7",
   "placeholder": false,
   "overview": {
     "orbit": "35deg 68deg 7.5m",
@@ -391,5 +391,5 @@ window.DUODECIM_3D = {
       }
     }
   ],
-  "note": "Model from the team&rsquo;s master CAD in Duodecim&rsquo;s 2024 race livery, with sponsor names shown as plain text. The steering rack and steering wheel are simplified stand-ins, and the 420 battery cells are drawn as simple cylinders."
+  "note": "Model from the team&rsquo;s master CAD in Duodecim&rsquo;s 2024 race livery with the team&rsquo;s sponsor logos. The steering rack and steering wheel are simplified stand-ins, and the 420 battery cells are drawn as simple cylinders."
 };
