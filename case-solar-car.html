@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!--
 PROGRAMMER: Ian Burress
-PURPOSE: Case study - Solar CAr
+PURPOSE: Case study - Solar Car
 DATE CREATED: 11/10/2026
-RECENT EDIT: 11/17/2026
+RECENT EDIT: 11/18/2026
 PURPOSE: Engineering Portfolio of Ian Burress
 CONTACT INFO: ian.n.burress@gmail.com
 -->
@@ -17,8 +17,11 @@ CONTACT INFO: ian.n.burress@gmail.com
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600;700&display=swap" />
-  <link rel="stylesheet" href="style.css?v=12" />
+  <link rel="stylesheet" href="style.css?v=13" />
   <script src="script.js" defer></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <script src="solar-car-data.js?v=2" defer></script>
+  <script src="solar-car-3d.js?v=2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -76,6 +79,13 @@ CONTACT INFO: ian.n.burress@gmail.com
 <h2>Approach</h2>
 <p>I applied what I had learned leading the business side of Michigan State’s solar car team: define the competition rules as hard requirements early, structure sub-teams around vehicle systems, and hold regular design reviews so integration problems surfaced before fabrication.</p>
 <p class="todo-note"><strong>To fill in:</strong> Add 2–3 specifics: how you recruited and structured the team, a key technical or schedule decision, and one major obstacle the team overcame during the event.</p>
+</section>
+<section aria-labelledby="explore-car">
+<h2 id="explore-car">Explore the Car</h2>
+<p>Duodecim is the car our team took through scrutineering and across the country. Rotate the model and pick a system to see what it does, the key numbers, and the design decisions behind it.</p>
+<div id="car-explorer">
+<noscript><p>The interactive model needs JavaScript. The car&rsquo;s nine systems are the solar array, battery pack, power distribution, aeroshell, roll cage, driver control systems, steering, suspension and telemetry.</p></noscript>
+</div>
 </section>
 <section>
 <h2>Results</h2>
