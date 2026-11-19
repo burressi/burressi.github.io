@@ -19,7 +19,7 @@
    marker position, and move the camera to read orbit / target values.
 */
 window.DUODECIM_3D = {
-  "model": "models/duodecim.glb",
+  "model": "models/duodecim.glb?v=6",
   "placeholder": false,
   "overview": {
     "orbit": "35deg 68deg 7.5m",
@@ -116,7 +116,9 @@ window.DUODECIM_3D = {
       ],
       "story": "We tested the donor pack against an 80% capacity threshold before deciding whether to rebuild it, and designed a backup pack of 405 LG MJ1 cells (27s15p) for that case. The battery management system watches every cell's voltage and the pack current, and it can open the contactors on its own if anything goes out of range. Fans at the back of the box pull warm air out of the car, away from the driver.",
       "materials": [
-        "battery"
+        "battery",
+        "batterylid",
+        "cells"
       ],
       "hotspot": {
         "position": "1.325m 0.636m 0m",
@@ -389,5 +391,5 @@ window.DUODECIM_3D = {
       }
     }
   ],
-  "note": "Model from the team&rsquo;s master CAD. A few internal parts (roll cage tubes, battery cells and pedals) are not shown yet."
+  "note": "Model from the team&rsquo;s master CAD in Duodecim&rsquo;s 2024 race livery, with sponsor names shown as plain text. The steering rack and steering wheel are simplified stand-ins, and the 420 battery cells are drawn as simple cylinders."
 };
