@@ -5,9 +5,9 @@
    layer that you slide along (or across) the belt, plus the
    centre-of-layer depth-dose curve and the numbers behind it.
    Settings and run data live in ebeam-dose-data.js; each run's voxels
-   are a small binary file in models/dose/ (uint16 dose as a share of
-   the run's peak voxel, then uint8 3-sigma uncertainty in percent,
-   x fastest, depth slowest).
+   are in models/dose/<run>.js, loaded with a script tag (base64 of:
+   uint16 dose as a share of the run's peak voxel, then uint8 3-sigma
+   uncertainty in percent, x fastest, depth slowest).
    ========================================================== */
 (function () {
   'use strict';
@@ -435,13 +435,32 @@
   // ---------- data ----------
   var V = null;
   var cache = {};
+  // Each run's dose map is a small script (models/dose/<run>.js) that hands its bytes to
+  // window.EBEAM_DOSE_MAP. A <script> tag loads from GitHub Pages, any web server, or a
+  // page opened straight from disk, where fetch() is blocked.
+  var waiting = {};
+  window.EBEAM_DOSE_MAP = function (id, b64) {
+    var w = waiting[id]; if (!w) return;
+    try {
+      var bin = atob(b64), buf = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+      w.ok(buf.buffer);
+    } catch (e) { w.fail(e); }
+  };
   function fetchRun(r) {
     if (cache[r.id]) return cache[r.id];
-    cache[r.id] = fetch(D.binPath + r.id + '.bin?v=1').then(function (res) {
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      return res.arrayBuffer();
+    cache[r.id] = new Promise(function (ok, fail) {
+      var src = D.binPath + r.id + '.js?v=' + (D.mapVersion || 1);
+      var sc = document.createElement('script');
+      var timer = setTimeout(function () { done(); fail(new Error('timeout ' + src)); }, 30000);
+      function done() { clearTimeout(timer); delete waiting[r.id]; sc.onerror = null; if (sc.parentNode) sc.parentNode.removeChild(sc); }
+      waiting[r.id] = { ok: function (b) { done(); ok(b); }, fail: function (e) { done(); fail(e); } };
+      sc.onerror = function () { done(); fail(new Error('missing ' + src)); };
+      sc.async = true; sc.src = src;
+      document.head.appendChild(sc);
     }).then(function (buf) {
       var n = r.nb[0] * r.nb[1] * r.nb[2];
+      if (buf.byteLength < 3 * n) throw new Error('short ' + r.id);
       return { q: new Uint16Array(buf, 0, n), u: new Uint8Array(buf, 2 * n, n) };
     });
     cache[r.id].catch(function () { delete cache[r.id]; });
@@ -469,14 +488,15 @@
       if (!data) { status.hidden = false; status.textContent = 'Loading the dose map…'; }
       fetchRun(r).then(function (dd) {
         if (my !== token) return;
-        cur = r; data = dd; status.hidden = true; status.textContent = '';
+        cur = r; data = dd;
+        stage.classList.remove('is-failed'); status.hidden = true; status.textContent = '';
         draw();
-      }).catch(function () {
+      }).catch(function (err) {
         if (my !== token) return;
-        if (!data) {
-          stage.classList.add('is-failed');
-          status.textContent = 'The dose map could not load here, but the chart and numbers below still work.';
-        } else status.textContent = '';
+        cur = null; data = null; tip.hidden = true;
+        stage.classList.add('is-failed'); status.hidden = false;
+        status.textContent = 'The dose map for this run could not load (' + D.binPath + r.id + '.js). The chart and numbers below still work.';
+        if (window.console) console.warn('Dose explorer:', err && err.message);
       });
     }
 
