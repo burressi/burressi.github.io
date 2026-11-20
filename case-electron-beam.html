@@ -3,7 +3,7 @@
 PROGRAMMER: Ian Burress
 PURPOSE: Case study - Mobile Electron Beam Treatment Station
 DATE CREATED: 11/10/2026
-RECENT EDIT: 11/17/2026
+RECENT EDIT: 11/20/2026
 PURPOSE: Engineering Portfolio of Ian Burress
 CONTACT INFO: ian.n.burress@gmail.com
 -->
@@ -17,8 +17,11 @@ CONTACT INFO: ian.n.burress@gmail.com
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600;700&display=swap" />
-  <link rel="stylesheet" href="style.css?v=12" />
+  <link rel="stylesheet" href="style.css?v=13" />
   <script src="script.js" defer></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <script src="ebeam-3d-data.js?v=2" defer></script>
+  <script src="ebeam-3d.js?v=1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -50,7 +53,7 @@ CONTACT INFO: ian.n.burress@gmail.com
 <dt>Timeline</dt><dd>Aug 2022 – May 2024</dd>
 <dt>Institution</dt><dd>Texas A&amp;M University, Dr. David Staack's Plasma Lab</dd>
 <dt>Sponsor</dt><dd>U.S. Department of Energy</dd>
-<dt>Tools</dt><dd>SolidWorks, FEA, dose-profile simulation</dd>
+<dt>Tools</dt><dd>SolidWorks, FEA, PUFFIn+ simulation</dd>
 </dl>
 <div class="case-links">
 <a class="link-arrow" href="https://drive.google.com/file/d/1gdNsjJjIsdINwzuMXbQe2TtEMGbL5sUI/view?usp=sharing" rel="noopener noreferrer" target="_blank">Published Thesis →</a>
@@ -63,7 +66,7 @@ CONTACT INFO: ian.n.burress@gmail.com
 <h2>The Problem</h2>
 <p>Contaminated soils, including soils carrying persistent “forever chemicals,” are expensive and slow to clean up when they have to be excavated and transported to a fixed treatment facility. Electron beam irradiation can break down contaminants, but conventional accelerator facilities are permanent installations.</p>
 <p>The goal of this Department of Energy–funded research was to determine whether an electron beam treatment station could be made mobile, meaning designed to fit on a road-going trailer and still deliver an effective dose to the soil.</p>
-<p class="todo-note"><strong>To fill in:</strong> Add 1–2 sentences on the specific design constraints you worked against (e.g., legal trailer weight and size limits, shielding, beam energy, target throughput).</p>
+<p>The hard part was fitting a radiation facility onto the road. The station had to carry enough shielding to contain the beam, stay within what a trailer can haul, and still treat soil fast enough to be worth moving. My first layout weighed about 40 tons, far too heavy to pull on a trailer, so I had to rethink how and where to shield it.</p>
 </section>
 <section>
 <h2>My Role</h2>
@@ -77,16 +80,30 @@ CONTACT INFO: ian.n.burress@gmail.com
 <section>
 <h2>Approach</h2>
 <p>I developed the trailer layout and soil-loading assembly in CAD, then iterated on the design using weight estimates and FEA results to keep the system within mobile-transport limits. Dose-profile simulations were used to check that soil passing under the beam received an effective, even treatment.</p>
-<p class="todo-note"><strong>To fill in:</strong> Describe 2–3 key design decisions or trade-offs (e.g., how the soil is conveyed under the beam, shielding approach, how you balanced weight against structural margin).</p>
+<p>The thesis compared two design configurations for a scaled pilot on radiation shielding, manufacturability, size and throughput, mobility, cost and ease of setup. I checked the structure with SolidWorks FEA and used PUFFIn+ to simulate how beam energy, soil thickness and beam use affect treatment. The key decisions:</p>
+<ul>
+<li><strong>One trailer.</strong> The whole facility travels on a single trailer with three or more axles, as an oversize load.</li>
+<li><strong>Shield only the beam rooms.</strong> About 6 in of stainless steel surrounds the treatment room, with clamshell shielding around the accelerator.</li>
+<li><strong>Thin, even soil layer.</strong> A 3 MeV, 50 kW beam treating a 0.5 cm layer of soil on a metal-alloy conveyor, so nothing in the soil path becomes a source of contamination.</li>
+</ul>
+</section>
+<section aria-labelledby="explore-station">
+<h2 id="explore-station">Explore the Station</h2>
+<p>This is the final trailer layout from my thesis CAD. Rotate the model, switch between transport and operating modes, and pick a system to see what it does and the numbers behind it.</p>
+<div id="station-explorer">
+<noscript><p>The interactive model needs JavaScript. The station&rsquo;s nine systems are the shielded trailer and vault, contaminated soil feed, belt conveyor, scan horn and beam window, electron accelerator, treated soil return, stepped radiation door, off-gas capture and chimney, and cooling and controls.</p></noscript>
+</div>
 </section>
 <section>
 <h2>Results</h2>
 <div class="case-results">
-<div><strong>DOE</strong><span>funded research program</span></div>
-<div><strong>M.S.</strong><span>thesis published and defended, 2024</span></div>
-<div><strong>2024</strong><span>accelerator conference presentation</span></div>
+<div><strong>1 trailer</strong><span>whole facility on one oversize trailer, 3+ axles</span></div>
+<div><strong>3 MeV</strong><span>50 kW beam recommended</span></div>
+<div><strong>0.5 cm</strong><span>optimal soil layer at 3 MeV</span></div>
+<div><strong>~6 in</strong><span>stainless steel around the treatment room</span></div>
 </div>
-<p class="todo-note"><strong>To fill in:</strong> Add quantitative outcomes if you can share them (final facility weight, FEA safety factor, treatment throughput or dose uniformity).</p>
+<p>The Department of Energy&ndash;funded work became my M.S. thesis, published and defended in May 2024, and I presented it at the 2024 International Topical Meeting on Nuclear Applications of Accelerators.</p>
+<p class="todo-note"><strong>To fill in:</strong> Add any other numbers you can share, such as final facility weight, FEA safety factor or treatment throughput.</p>
 </section>
 <section>
 <h2>What I Learned</h2>
