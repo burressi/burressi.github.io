@@ -22,6 +22,8 @@ CONTACT INFO: ian.n.burress@gmail.com
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
   <script src="ebeam-3d-data.js?v=2" defer></script>
   <script src="ebeam-3d.js?v=1" defer></script>
+  <script src="ebeam-dose-data.js?v=2" defer></script>
+  <script src="ebeam-dose.js?v=2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -92,6 +94,13 @@ CONTACT INFO: ian.n.burress@gmail.com
 <p>This is the final trailer layout from my thesis CAD. Rotate the model, switch between transport and operating modes, and pick a system to see what it does and the numbers behind it.</p>
 <div id="station-explorer">
 <noscript><p>The interactive model needs JavaScript. The station&rsquo;s nine systems are the shielded trailer and vault, contaminated soil feed, belt conveyor, scan horn and beam window, electron accelerator, treated soil return, stepped radiation door, off-gas capture and chimney, and cooling and controls.</p></noscript>
+</div>
+</section>
+<section aria-labelledby="explore-dose">
+<h2 id="explore-dose">Explore the Dose Profile</h2>
+<p>These are the dose maps from my PUFFIn+ simulations, one for each pairing of beam energy and soil layer thickness I ran. Pick a pairing, then slide the cut through the soil layer to see where the energy lands, and compare how deep each beam reaches. The goal is a layer the beam treats all the way through, with as little difference as possible between the most- and least-treated soil.</p>
+<div id="dose-explorer">
+<noscript><p>The interactive dose explorer needs JavaScript. It shows PUFFIn+ dose maps for beam energies from 0.5 to 10 MeV and soil layers from 0.5 to 10 cm thick.</p></noscript>
 </div>
 </section>
 <section>
