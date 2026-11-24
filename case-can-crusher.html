@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--
+PROGRAMMER: Ian Burress
+PURPOSE: Case study - CAN CRUSHER
+DATE CREATED: 11/10/2026
+RECENT EDIT: 11/24/2026
+PURPOSE: Engineering Portfolio of Ian Burress
+CONTACT INFO: ian.n.burress@gmail.com
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study: Mechanical Can Crusher | Ian Burress</title>
+  <meta name="description" content="Case study of a hand-cranked, gear-driven slider-crank can crusher designed, analysed and 3D printed for ME 470 at Michigan State University, with an interactive 3D model and live kinematics." />
+  <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css?v=13" />
+  <link rel="stylesheet" href="mechanism.css?v=1" />
+  <script src="script.js" defer></script>
+  <script src="linkage-explorer.js?v=1" defer></script>
+  <script src="can-crusher-data.js?v=1" defer></script>
+  <script src="models/can-crusher-parts.js?v=1" defer></script>
+  <script src="can-crusher-3d.js?v=1" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-name"><img src="icons/ClearBlack2.png" alt="" class="site-logo" /><span>Ian Burress</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="projects1.html" aria-current="page">Projects</a>
+        <a href="about.html">About</a>
+        <a href="accolades.html">Recognition</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <header class="page-header">
+        <p class="eyebrow">Case Study &middot; ME 470 Team Design Project</p>
+        <h1>Mechanical Can Crusher</h1>
+        <p>A hand-cranked, gear-driven slider-crank that turns two turns of a handle into a 3.6&nbsp;in crushing stroke. Our five-person team chose the mechanism, sized it with a spreadsheet kinematics model, and 3D printed every structural part.</p>
+      </header>
+      <figure class="case-cover"><img src="pictures/can-crusher-render.jpg" alt="3D model of the can crusher: a handle and gear pair drive a crank, connecting rod and ram that flattens a can in a printed channel" /></figure>
+      <div class="case-layout">
+        <aside class="case-facts" aria-label="Project facts">
+          <dl>
+            <dt>Role</dt><dd>Design team member, ME 470 Group 2 (5 students)</dd>
+            <dt>Timeline</dt><dd>Fall 2021</dd>
+            <dt>Course</dt><dd>ME 470 Mechanical Design &amp; Manufacturing II, Michigan State University</dd>
+            <dt>Mechanism</dt><dd>Offset slider-crank with a 2:1 gear stage</dd>
+            <dt>Tools</dt><dd>Siemens NX, spreadsheet kinematics and force model, FDM 3D printing</dd>
+          </dl>
+          <div class="case-links">
+            <a class="link-arrow" href="#explore-crusher">Run the 3D model &rarr;</a>
+            <a class="link-arrow" href="case-slider-crank.html">Project A: Slider Crank &rarr;</a>
+          </div>
+        </aside>
+
+        <article class="case-body">
+          <section>
+            <h2>The Problem</h2>
+            <p>ME 470 at Michigan State covers the kinematics of linkages and spur gears, and it finishes with a design-and-build project. For our team, that project was a mechanical can crusher: turn a handle, flatten a can. It followed Project A, a slider-crank paperweight that served as our warm-up.</p>
+            <p>The design has to balance three things at once. The stroke must be long enough to take a whole can. The ram has to deliver enough force to crush it; we designed for 112&nbsp;lbf at the ram. And the handle force has to stay comfortable for one hand. All of this had to work in 3D-printed plastic.</p>
+          </section>
+
+          <section>
+            <h2>My Role</h2>
+            <ul>
+              <li>One of five engineers in ME 470 Group 2, sharing concept selection, linkage analysis, CAD and the build.</li>
+              <li>Carried our Project A lessons into the crusher: we added an offset to the slider line and compared a four-bar linkage before committing.</li>
+            </ul>
+            <p class="todo-note"><strong>To fill in:</strong> Name the parts of the crusher you owned, for example the kinematic analysis, the gear check, a specific printed part, or the assembly.</p>
+          </section>
+
+          <section>
+            <h2>Approach</h2>
+            <p>We built one spreadsheet model for position, velocity and acceleration, and ran every candidate through it. A four-bar linkage (links of 5, 8, 6 and 8&nbsp;in) let the transmission angle fall to about 19&deg;, far below the usual 40&deg; guideline. At angles that low, most of the hand&rsquo;s effort goes into the joints instead of the can. An offset slider-crank also gives the straight-line motion a ram needs, so we refined it over three versions:</p>
+            <div class="mx-table-wrap">
+              <table class="mx-table">
+                <caption class="visually-hidden">Design versions compared in the spreadsheet model</caption>
+                <thead>
+                  <tr><th scope="col">Version</th><th scope="col">Crank, a</th><th scope="col">Rod, b</th><th scope="col">Offset, c</th><th scope="col">Stroke</th><th scope="col">Min. transmission angle</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Project A paperweight</td><td class="num">0.75 in</td><td class="num">3.00 in</td><td class="num">0</td><td class="num">1.50 in</td><td class="num">75.5&deg;</td></tr>
+                  <tr><td>Crusher, first pass</td><td class="num">1.40 in</td><td class="num">4.00 in</td><td class="num">1.00 in</td><td class="num">2.91 in</td><td class="num">53.1&deg;</td></tr>
+                  <tr class="is-final"><td>Crusher, final</td><td class="num">1.75 in</td><td class="num">5.25 in</td><td class="num">1.00 in</td><td class="num">3.57 in</td><td class="num">58.4&deg;</td></tr>
+                  <tr><td>Four-bar alternative</td><td colspan="4">Links of 5, 8, 6 and 8 in (rocker output, no straight stroke)</td><td class="num">18.6&deg;</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>The key decisions:</p>
+            <ul>
+              <li><strong>Longer crank and rod.</strong> A 1.75&nbsp;in crank and 5.25&nbsp;in rod give a 3.57&nbsp;in stroke, which takes a full can and still stops the ram 0.67&nbsp;in short of the end wall.</li>
+              <li><strong>A 1&nbsp;in offset.</strong> Our Project A report recommended adding an offset. With the ram&rsquo;s line 1&nbsp;in below the crank axis, the outward stroke takes 188&deg; of crank rotation and the return takes 172&deg;. Turned in the direction shown in the model, the crushing stroke is the slower, higher-force one.</li>
+              <li><strong>A 2:1 gear stage.</strong> A 1.2&nbsp;in pinion on the handle drives a 2.4&nbsp;in gear on the crank, which doubles the torque reaching the crank.</li>
+              <li><strong>Parts designed for printing and assembly.</strong> The crankshaft prints in two halves so the closed end of the connecting rod can slide onto the pin. Split pillow blocks with screw-down caps hold the crank. An opening in the chamber floor lets each flattened can drop out on its own.</li>
+            </ul>
+          </section>
+
+          <section aria-labelledby="explore-crusher">
+            <h2 id="explore-crusher">Explore the Crusher</h2>
+            <p>This is our CAD, built from the team&rsquo;s STL files. Press play to run a full cycle: a can drops in, the ram flattens it, and on the return stroke the flattened can falls out through the floor. Drag the crank-angle slider to stop anywhere in the cycle, and pick a part to see what it does.</p>
+            <div id="crusher-explorer">
+              <noscript><p>The interactive model needs JavaScript. The crusher&rsquo;s parts are the handle and grip, a 2:1 gear pair, the gear support, a two-piece crankshaft, two split crank supports, the connecting rod, the crusher ram, the housing and a mounting board.</p></noscript>
+            </div>
+          </section>
+
+          <section aria-labelledby="crusher-kin-title">
+            <h2 id="crusher-kin-title">Kinematics, Live</h2>
+            <p>This is the spreadsheet model we used to size the crusher, running live and synced to the 3D model above. Drag the orange crank pin in the diagram, or click and drag across any chart, to move the crusher.</p>
+            <div id="crusher-kinematics">
+              <noscript><p>The live kinematics need JavaScript.</p></noscript>
+            </div>
+            <p>Two things stand out. Mechanical advantage is lowest mid-stroke, at about 4:1 from handle to ram, so the worst case at the handle is about 28&nbsp;lbf for a 112&nbsp;lbf crush (a frictionless estimate). Toward the end of the stroke it climbs steeply as the crank and rod line up, right where the ram gives the can its final squeeze. The transmission angle stays between 58&deg; and 90&deg; all the way round, well above the 40&deg; guideline.</p>
+          </section>
+
+          <section>
+            <h2>Analysis</h2>
+            <p>Beyond position and velocity, we ran an acceleration analysis at a crank speed of 5&nbsp;rad/s and 10&nbsp;rad/s&sup2;. Then we ran a dynamic force analysis that solved the joint forces and input torque as an 8&nbsp;&times;&nbsp;8 matrix at three crank angles, with the 112&nbsp;lbf crush load on the ram.</p>
+            <p>The gear check used a design torque of 395&nbsp;lb&middot;in at the crank. That is about 1.8 times the 225&nbsp;lb&middot;in quasi-static peak for a 112&nbsp;lbf crush, so the gears carry margin. At the 1.2&nbsp;in pinion, that torque puts 329&nbsp;lbf of tangential load and 120&nbsp;lbf of radial load on the 20&deg; teeth.</p>
+          </section>
+
+          <section>
+            <h2>Results</h2>
+            <div class="case-results">
+              <div><strong>3.57 in</strong><span>ram stroke</span></div>
+              <div><strong>2 : 1</strong><span>gear reduction at the handle</span></div>
+              <div><strong>58&deg;</strong><span>minimum transmission angle</span></div>
+              <div><strong>0.67 in</strong><span>final gap to the end wall</span></div>
+            </div>
+            <p>The final design packs 10 printed part designs (12 prints) onto one base, driven by a 3.75&nbsp;in handle. It needs about 28&nbsp;lbf at the handle in the worst case to push 112&nbsp;lbf at the ram, before friction.</p>
+            <p class="todo-note"><strong>To fill in:</strong> Add how the physical prototype performed, for example whether it crushed cans on demo day, how many handle turns it took, and any part that cracked or needed a reprint.</p>
+          </section>
+
+          <section>
+            <h2>From Project A to the Crusher</h2>
+            <p>The <a href="case-slider-crank.html">slider-crank paperweight</a> ended with two recommendations, and both shaped this design:</p>
+            <ul>
+              <li><strong>&ldquo;Add an offset (link c).&rdquo;</strong> The crusher&rsquo;s ram runs 1&nbsp;in below the crank axis.</li>
+              <li><strong>&ldquo;Look at four-bar designs.&rdquo;</strong> We did, and the spreadsheet showed the four-bar&rsquo;s 19&deg; transmission angle against the slider-crank&rsquo;s 58&deg;.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Gallery</h2>
+            <div class="case-gallery">
+              <figure><img src="pictures/CanCrusher2.png" alt="Mechanical can crusher prototype, view 2" loading="lazy" /><figcaption>Can crusher prototype</figcaption></figure>
+              <figure><img src="pictures/CanCrusher1.png" alt="Mechanical can crusher prototype, view 1" loading="lazy" /><figcaption>Can crusher prototype</figcaption></figure>
+              <figure><img src="pictures/CanCrusher3.png" alt="Mechanical can crusher prototype, view 3" loading="lazy" /><figcaption>Can crusher prototype</figcaption></figure>
+              <figure><img src="pictures/can-crusher-chamber.jpg" alt="3D model looking into the crushing chamber with a flattened can against the end wall" loading="lazy" /><figcaption>3D model: the can at full stroke</figcaption></figure>
+            </div>
+          </section>
+
+          <nav class="case-nav" aria-label="More case studies">
+            <a class="link-arrow" href="case-slider-crank.html">&larr; Slider Crank Paperweight</a>
+            <a class="link-arrow" href="projects1.html">All projects &rarr;</a>
+          </nav>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p>&copy; 2026 Ian Burress</p>
+      <p class="site-footer-links">
+        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/burressi" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:ian.n.burress@gmail.com">ian.n.burress@gmail.com</a>
+        <a href="Burress%20Resume.pdf">R&eacute;sum&eacute; (PDF)</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
