@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--
+PROGRAMMER: Ian Burress
+PURPOSE: Case study - SLIDER CRANK
+DATE CREATED: 11/10/2026
+RECENT EDIT: 11/24/2026
+PURPOSE: Engineering Portfolio of Ian Burress
+CONTACT INFO: ian.n.burress@gmail.com
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study: Slider Crank Paperweight | Ian Burress</title>
+  <meta name="description" content="Case study of a 3D-printed slider-crank desk paperweight designed and analysed for ME 470 at Michigan State University, with a live, interactive kinematics model." />
+  <link rel="icon" type="image/png" href="icons/ClearWLogo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css?v=13" />
+  <link rel="stylesheet" href="mechanism.css?v=1" />
+  <script src="script.js" defer></script>
+  <script src="slider-crank-data.js?v=1" defer></script>
+  <script src="linkage-explorer.js?v=1" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-name"><img src="icons/ClearBlack2.png" alt="" class="site-logo" /><span>Ian Burress</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="projects1.html" aria-current="page">Projects</a>
+        <a href="about.html">About</a>
+        <a href="accolades.html">Recognition</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <header class="page-header">
+        <p class="eyebrow">Case Study &middot; ME 470 Project A</p>
+        <h1>Slider Crank Paperweight</h1>
+        <p>A 3D-printed, hand-turned slider crank built as a desk ornament. It was our team&rsquo;s warm-up for the can crusher, and an early lesson in reading the requirements twice.</p>
+      </header>
+      <figure class="case-cover"><img src="pictures/slider-crank-cover.png" alt="CAD assembly of the slider crank paperweight beside a top view labelled with the link lengths: a = 0.75 in, b = 3 in, c = 0 in and a 3.5 in handle" /></figure>
+      <div class="case-layout">
+        <aside class="case-facts" aria-label="Project facts">
+          <dl>
+            <dt>Role</dt><dd>Design team member, ME 470 Group 2 (5 students)</dd>
+            <dt>Timeline</dt><dd>Fall 2021</dd>
+            <dt>Course</dt><dd>ME 470 Mechanical Design &amp; Manufacturing II, Michigan State University</dd>
+            <dt>Mechanism</dt><dd>In-line slider crank, 1 degree of freedom</dd>
+            <dt>Tools</dt><dd>Siemens NX, spreadsheet kinematics model, FDM 3D printing</dd>
+          </dl>
+          <div class="case-links">
+            <a class="link-arrow" href="#explore-slider">Run the mechanism &rarr;</a>
+            <a class="link-arrow" href="case-can-crusher.html">Final project: Can Crusher &rarr;</a>
+          </div>
+        </aside>
+
+        <article class="case-body">
+          <section>
+            <h2>The Brief</h2>
+            <p>Project A asked each team to design and build a slider-crank mechanism that works as a desk paperweight. Our goal statement was simple: how might we design and manufacture an easy-to-use, 3D-printed slider crank?</p>
+            <p>The brief set three requirements. It had to turn smoothly, run quietly, and keep working upside down. We added our own priorities: good mechanical advantage and ease of use.</p>
+          </section>
+
+          <section>
+            <h2>My Role</h2>
+            <ul>
+              <li>One of five engineers in ME 470 Group 2, sharing concept generation, linkage analysis, CAD and the build.</li>
+              <li>Co-authored the Project A report, including the lessons we carried into the can crusher.</li>
+            </ul>
+            <p class="todo-note"><strong>To fill in:</strong> Name the parts you owned, for example the kinematic analysis, a specific printed part, or the assembly and threading fix.</p>
+          </section>
+
+          <section>
+            <h2>Concepts</h2>
+            <p>We started with five ideas:</p>
+            <ul>
+              <li>A large disc with the crank turning parallel to the baseplate</li>
+              <li>A large disc with the crank turning perpendicular to the baseplate</li>
+              <li>A long, formal track for the slider</li>
+              <li>No formal track at all</li>
+              <li>A large handle driving a large crank</li>
+            </ul>
+            <p>We chose the large handle. It is the easiest to use, it looks distinctive (which is the point of a desk ornament), and its transmission angle never drops below 40&deg;. To save material and print time, we also removed the wheel the crank would normally mount to, so the crank drives the slider directly. Keeping the rod short and the offset at zero kept the parts small and light.</p>
+          </section>
+
+          <section>
+            <h2>How It Works</h2>
+            <figure class="mx-figure">
+              <img src="pictures/slider-crank-top-view.png" alt="Top view of the slider crank with the link lengths marked: crank a = 0.75 in, rod b = 3 in, offset c = 0 in, handle radius 3.5 in, and slider position d" loading="lazy" />
+              <figcaption>Top view with the link lengths (report Figure 1)</figcaption>
+            </figure>
+            <p>You turn the handle by its red collar, which spins freely on the grip. The upper crank, which is the handle, locks into the lower crank through a cylinder with two flats cut on it, so the two turn together. They turn around a &frac12;&nbsp;in bolt held in the bracket with a nut and two washers to cut friction.</p>
+            <p>The connecting rod rides on the lower crank with enough clearance to turn freely, and a pin joins it to the piston, which slides in the piston support. That gives 4 links and 4 joints, so the mechanism has one degree of freedom. It is also Grashof: b&nbsp;&minus;&nbsp;a (2.25&nbsp;in) is greater than the offset c (0&nbsp;in), so the crank can turn all the way round.</p>
+          </section>
+
+          <section aria-labelledby="explore-slider">
+            <h2 id="explore-slider">Explore the Mechanism</h2>
+            <p>This is our Project A spreadsheet model running live. It uses the link lengths from Figure 1 and the 3.5&nbsp;in handle. Press play, drag the orange crank pin, or click and drag across any chart. <strong>Jump to 100&deg;</strong> sets the angle from the worked example in our report.</p>
+            <div id="slider-explorer" data-linkage="SLIDER_CRANK">
+              <noscript><p>The live model needs JavaScript. At a crank angle of 100&deg;, the slider is at d = 2.78 in, the rod angle is 165.7&deg;, the transmission angle is 75.7&deg; and the slider moves at about 3.5 in/s toward the crank.</p></noscript>
+            </div>
+            <p>At 100&deg;, the model reproduces our Table 1 to within rounding: d&nbsp;=&nbsp;2.78&nbsp;in, &theta;<sub>3</sub>&nbsp;=&nbsp;165.7&deg;, &mu;&nbsp;=&nbsp;75.7&deg;, and the slider moves at about 3.5&nbsp;in/s toward the crank. Table 1 gave a mechanical advantage of 1.98 because it used a 1.4&nbsp;in input radius. With the 3.5&nbsp;in handle we built, the advantage at that angle is 5.0, and it never drops below 4.5 across the whole turn.</p>
+          </section>
+
+          <section>
+            <h2>Results</h2>
+            <div class="case-results">
+              <div><strong>1.50 in</strong><span>slider stroke</span></div>
+              <div><strong>75.5&deg;</strong><span>minimum transmission angle</span></div>
+              <div><strong>4.5 : 1</strong><span>minimum mechanical advantage</span></div>
+              <div><strong>1</strong><span>degree of freedom</span></div>
+            </div>
+            <p>On paper, the linkage met its goals: a full-rotation crank with a transmission angle far above the 40&deg; guideline. The miss was the upside-down requirement. Nothing locked the piston into its support, so the paperweight couldn&rsquo;t run upside down. Our fix was a revised piston support that encloses the slider.</p>
+            <div class="mx-pair">
+              <figure class="mx-figure">
+                <img src="pictures/slider-crank-assembly.png" alt="CAD assembly of the slider crank: colored printed parts on a grey baseplate with metal fasteners" loading="lazy" />
+                <figcaption>CAD assembly. Colored parts are printed; grey parts are shop fasteners.</figcaption>
+              </figure>
+              <figure class="mx-figure">
+                <img src="pictures/slider-crank-revised-support.png" alt="Revised piston support with a closed channel over the slider" loading="lazy" />
+                <figcaption>Revised piston support that keeps the slider in place upside down</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section>
+            <h2>What I Learned</h2>
+            <ul>
+              <li><strong>Read the requirements twice.</strong> We designed for smooth, quiet running and missed that the paperweight also had to work upside down.</li>
+              <li><strong>Design around the hardware you can get.</strong> Our main crank needed a &frac12;&nbsp;in threaded hole, but the largest tap in the lab was &#8540;&nbsp;in. We found larger fasteners in the basement shop and borrowed a drill to thread the hole, and we had to swap fasteners and washers that didn&rsquo;t fit.</li>
+              <li><strong>Collaborate earlier.</strong> We agreed to run a more collaborative design process and spend more time on the requirements for the next project.</li>
+            </ul>
+            <p>The report ended with two ideas for doing better: add an offset (link c) to improve mechanical advantage, and look at four-bar linkages. We did both on the <a href="case-can-crusher.html">can crusher</a>.</p>
+          </section>
+
+          <section>
+            <h2>Gallery</h2>
+            <div class="case-gallery">
+              <figure><img src="pictures/Slider_Crank_1.PNG" alt="Slider crank paperweight design" loading="lazy" /><figcaption>Slider crank paperweight</figcaption></figure>
+              <figure><img src="pictures/Slider_Crank_2.PNG" alt="Slider crank paperweight design" loading="lazy" /><figcaption>Slider crank paperweight</figcaption></figure>
+              <figure><img src="pictures/Slider_Crank.JPG" alt="Slider crank paperweight" loading="lazy" /><figcaption>Slider crank paperweight</figcaption></figure>
+              <figure><img src="pictures/slider-crank-parts.jpg" alt="Renders of the six main printed parts: lower crank, upper crank and handle, handle collar, connecting rod, piston and piston support" loading="lazy" /><figcaption>The main printed parts</figcaption></figure>
+            </div>
+          </section>
+
+          <nav class="case-nav" aria-label="More case studies">
+            <a class="link-arrow" href="projects1.html">&larr; All projects</a>
+            <a class="link-arrow" href="case-can-crusher.html">Mechanical Can Crusher &rarr;</a>
+          </nav>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p>&copy; 2026 Ian Burress</p>
+      <p class="site-footer-links">
+        <a href="https://www.linkedin.com/in/ian-burress22/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/burressi" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:ian.n.burress@gmail.com">ian.n.burress@gmail.com</a>
+        <a href="Burress%20Resume.pdf">R&eacute;sum&eacute; (PDF)</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
